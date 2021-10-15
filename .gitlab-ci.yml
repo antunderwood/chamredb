@@ -1,0 +1,15 @@
+image : continuumio/miniconda3:4.10.3-alpine
+
+stages:
+  - package
+
+package:
+  stage: package
+  script:
+    - conda env create --file environment.yml && conda clean --all
+    - conda activate chamredb
+    - snakemake
+    - ls
+  artifacts:
+    paths:
+    - packaged.gz
