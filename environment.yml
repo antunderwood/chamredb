@@ -4,6 +4,7 @@ channels:
     - bioconda
     - defaults
 dependencies:
+    - git
     - snakemake
     - biopython
     - mmseqs2
