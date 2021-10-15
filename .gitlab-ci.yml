@@ -7,7 +7,7 @@ package:
   stage: package
   script:
     - conda env create --file environment.yml && conda clean --all
-    - conda init bash && activate chamredb
+    - conda init bash && source ~/.bashrc && activate chamredb
     - snakemake
     - ls
   artifacts:
