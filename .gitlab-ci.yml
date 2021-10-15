@@ -7,7 +7,7 @@ package:
   stage: package
   script:
     - conda env create --file environment.yml && conda clean --all
-    - conda run -n chamredb snakemake
+    - conda run -n chamredb snakemake --cores 1
     - ls
   artifacts:
     paths:
