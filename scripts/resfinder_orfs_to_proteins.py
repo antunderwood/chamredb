@@ -1,10 +1,27 @@
 from typing import Sequence
 import orfipy_core 
 import re
+import argparse
 from Bio import SeqIO
 from Bio.Seq import Seq
 
-with open("/data/mAMRite/db_fastas/resfinder.nucl.fasta") as in_file, open("/data/mAMRite/db_fastas/resfinder.protein.fasta", "w") as out_file:
+parser = argparse.ArgumentParser(description='Process input/output files')
+parser.add_argument('--nucl', type=str, help='input file name')
+parser.add_argument('--protein', type=str, help='output file name')
+
+args = parser.parse_args()
+
+if args.nucl:
+	nucl_path = args.nucl
+else:
+	nucl_path = "chamredb/data/db_fastas/resfinder.nucl.fasta"
+
+if args.protein:
+	prot_path = args.protein
+else:
+	prot_path = "chamredb/data/db_fastas/resfinder.protein.fasta"
+
+with open(nucl_path) as in_file, open(prot_path, "w") as out_file:
     genes_added = []
     for record in SeqIO.parse(in_file, "fasta"):
         id = record.id.split("_")[0]
