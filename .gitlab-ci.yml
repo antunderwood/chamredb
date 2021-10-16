@@ -1,4 +1,4 @@
-image : continuumio/miniconda3:4.10.3-alpine
+image : mambaorg/micromamba:0.17.0
 
 stages:
   - package
@@ -6,8 +6,9 @@ stages:
 package:
   stage: package
   script:
-    - conda env create --file environment.yml && conda clean --all
-    - conda run -n chamredb snakemake --cores 1  --latency-wait 60
+    - micromamba install --file environment.yml && micromamba clean --all
+    - eval "$(micromamba shell hook -s bash)"
+    - snakemake --cores 1  --latency-wait 60
     - ls
   artifacts:
     paths:
