@@ -9,7 +9,6 @@ package:
     - micromamba create --file environment.yml --yes && micromamba clean --all --yes
     - eval "$(micromamba shell hook -s bash)"
     - micromamba activate chamredb
-    - snakemake --cores 1  --latency-wait 60
     - ls
   artifacts:
     paths:
