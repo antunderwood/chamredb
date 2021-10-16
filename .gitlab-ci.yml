@@ -8,7 +8,7 @@ package:
   script:
     - micromamba create --file environment.yml --yes && micromamba clean --all --yes
     - eval "$(micromamba shell hook -s bash)"
-    - micromamba activate chamredb
+    - /bin/micromamba activate chamredb
     - ls
   artifacts:
     paths:
