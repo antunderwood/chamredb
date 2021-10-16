@@ -7,9 +7,9 @@ package:
   stage: package
   script:
     - micromamba create --file environment.yml --yes && micromamba clean --all --yes
-    - eval "$(micromamba shell hook -s bash)"
-    - /bin/micromamba activate chamredb
-    - ls
+    - ./bin/micromamba shell init -s bash -p ~/micromamba
+    - source ~/.bashrc
+    - micromamba chamredb
   artifacts:
     paths:
     - packaged.gz
