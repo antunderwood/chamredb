@@ -7,7 +7,7 @@ package:
   stage: package
   script:
     - conda env create --file environment.yml && conda clean --all
-    - conda run -n chamredb snakemake --cores 1  --latency-wait 60
+    - conda run  --no-capture-output -n chamredb snakemake --cores 1  --latency-wait 60
     - ls
   artifacts:
     paths:
