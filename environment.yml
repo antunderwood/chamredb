@@ -4,11 +4,11 @@ channels:
     - bioconda
     - defaults
 dependencies:
-    - git
+    - git=2.23.0
     - python=3.9
-    - pip
-    - snakemake
-    - biopython
-    - pronto
-    - orfipy
-    - mmseqs2
+    - pip=2.23.0
+    - snakemake=6.9.1
+    - biopython=1.78
+    - pronto=2.4.3
+    - orfipy=0.0.4
+    - mmseqs2=13.45111
