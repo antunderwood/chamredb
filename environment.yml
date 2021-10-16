@@ -6,7 +6,7 @@ channels:
 dependencies:
     - git=2.23.0
     - python=3.9
-    - pip=2.23.0
+    - pip=21.2.4
     - snakemake=6.9.1
     - biopython=1.78
     - pronto=2.4.3
