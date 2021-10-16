@@ -6,9 +6,9 @@ stages:
 package:
   stage: package
   script:
-    - micromamba create --file environment.yml --yes && micromamba clean --all --yes
     - /bin/micromamba shell init -s bash -p ~/micromamba
     - source ~/.bashrc
+    - micromamba create --file environment.yml --yes && micromamba clean --all --yes
     - micromamba activate chamredb
   artifacts:
     paths:
