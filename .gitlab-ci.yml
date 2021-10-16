@@ -6,7 +6,7 @@ stages:
 package:
   stage: package
   script:
-    - micromamba install --file environment.yml && micromamba clean --all
+    - micromamba create --file environment.yml --yes && micromamba clean --all --yes
     - eval "$(micromamba shell hook -s bash)"
     - snakemake --cores 1  --latency-wait 60
     - ls
