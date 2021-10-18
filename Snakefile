@@ -181,6 +181,7 @@ rule mmseqs_search:
 	shell:
 		"""
 		mmseqs search {input.db1} {input.db2} {params.stem} tmp -s {params.sensitivity} --max-accept {params.max_accept}
+        ls -l {DATA}
 		"""
 
 rule mmseqs_convertalis:
