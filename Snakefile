@@ -156,6 +156,7 @@ rule mmseqs_easy_rbh:
 		"""
 		mmseqs easy-rbh {input.db1} {input.db2} {output} tmp -s {params.sensitivity}
         df -h
+        free -m | grep -v "Swap"
         ls -lh {DATA}/*
 		"""
 
@@ -184,6 +185,7 @@ rule mmseqs_search:
 		"""
 		mmseqs search {input.db1} {input.db2} {params.stem} tmp -s {params.sensitivity} --max-accept {params.max_accept}
         df -h
+        free -m | grep -v "Swap"
         ls -lh {DATA}/*
 		"""
 
