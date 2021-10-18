@@ -155,7 +155,8 @@ rule mmseqs_easy_rbh:
 	shell:
 		"""
 		mmseqs easy-rbh {input.db1} {input.db2} {output} tmp -s {params.sensitivity}
-        ls -l {DATA}/*
+        df -h
+        ls -lh {DATA}/*
 		"""
 
 rule mmseqs_createdb:
@@ -182,7 +183,8 @@ rule mmseqs_search:
 	shell:
 		"""
 		mmseqs search {input.db1} {input.db2} {params.stem} tmp -s {params.sensitivity} --max-accept {params.max_accept}
-        \
+        df -h
+        ls -lh {DATA}/*
 		"""
 
 rule mmseqs_convertalis:
