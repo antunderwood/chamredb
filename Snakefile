@@ -29,9 +29,9 @@ rule all:
 		join(DATA, 'db_fastas', 'resfinder.protein.fasta'),
 		join(DATA, 'db_metadata', 'resfinder.metadata.json'),
 		# RBH
-		expand(join(DATA, 'mmseqs2_results', 'mmseqs_{db1}_vs_{db2}.rbh.tsv'), db1='resfinder', db2=['card','ncbi']),
-		expand(join(DATA, 'mmseqs2_results', 'mmseqs_{db1}_vs_{db2}.rbh.tsv'), db1='card', db2=['resfinder','ncbi']),
-		expand(join(DATA, 'mmseqs2_results', 'mmseqs_{db1}_vs_{db2}.rbh.tsv'), db1='ncbi', db2=['card','resfinder']),
+		expand(join(DATA, 'mmseqs2_results', '{db1}_vs_{db2}.rbh.tsv'), db1='resfinder', db2=['card','ncbi']),
+		expand(join(DATA, 'mmseqs2_results', '{db1}_vs_{db2}.rbh.tsv'), db1='card', db2=['resfinder','ncbi']),
+		expand(join(DATA, 'mmseqs2_results', '{db1}_vs_{db2}.rbh.tsv'), db1='ncbi', db2=['card','resfinder']),
 		expand(join(DATA, 'mmseqs2_DBs', '{db1}.protein'), db1=['resfinder','card','ncbi']),
 		expand(join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}.search.index'), db1='resfinder', db2=['card','ncbi']),
 		expand(join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}.search.index'), db1='card', db2=['resfinder','ncbi']),
