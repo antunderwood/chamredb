@@ -8,7 +8,7 @@ package:
   script:
     - conda env create --file environment.yml && conda clean --all
     - conda run  --no-capture-output -n chamredb snakemake --verbose --cores 1  --latency-wait 60
-    - ls
+    - conda run  --no-capture-output -n chamredb python scripts/build.graph.py
   artifacts:
     paths:
     - data/graph.json
