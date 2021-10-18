@@ -9,9 +9,6 @@ shell.executable("bash")
 
 DATA       = 'data'
 
-wildcard_constraints:
-    suffix=".*"
-
 rule all:
 	input:
 		# CARD
@@ -36,9 +33,9 @@ rule all:
 		expand(join(DATA, 'mmseqs2_results', 'mmseqs_{db1}_vs_{db2}.rbh.tsv'), db1='card', db2=['resfinder','ncbi']),
 		expand(join(DATA, 'mmseqs2_results', 'mmseqs_{db1}_vs_{db2}.rbh.tsv'), db1='ncbi', db2=['card','resfinder']),
 		expand(join(DATA, 'mmseqs2_DBs', '{db1}.protein'), db1=['resfinder','card','ncbi']),
-		expand(join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}_search{suffix}'), db1='resfinder', db2=['card','ncbi']),
-		expand(join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}_search{suffix}'), db1='card', db2=['resfinder','ncbi']),
-		expand(join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}_search{suffix}'), db1='ncbi', db2=['card','resfinder']),
+		expand(join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}_search.index'), db1='resfinder', db2=['card','ncbi']),
+		expand(join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}_search.index'), db1='card', db2=['resfinder','ncbi']),
+		expand(join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}_search.index'), db1='ncbi', db2=['card','resfinder']),
 		expand(join(DATA, 'mmseqs2_results', '{db1}_vs_{db2}_search.tsv'), db1='resfinder', db2=['card','ncbi']),
 		expand(join(DATA, 'mmseqs2_results', '{db1}_vs_{db2}_search.tsv'), db1='card', db2=['resfinder','ncbi']),
 		expand(join(DATA, 'mmseqs2_results', '{db1}_vs_{db2}_search.tsv'), db1='ncbi', db2=['card','resfinder']),
@@ -180,7 +177,7 @@ rule mmseqs_search:
 		db1 = join(DATA, 'mmseqs2_DBs', '{db1}.protein'),
 		db2 = join(DATA, 'mmseqs2_DBs', '{db2}.protein'),
 	output:
-		join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}_search{suffix}')
+		join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}_search.index')
 	shell:
 		"""
 		mmseqs search {input.db1} {input.db2} {params.stem} tmp -s {params.sensitivity} --max-accept {params.max_accept}
@@ -192,7 +189,7 @@ rule mmseqs_convertalis:
 	input:
 		db1 = join(DATA, 'mmseqs2_DBs', '{db1}.protein'),
 		db2 = join(DATA, 'mmseqs2_DBs', '{db2}.protein'),
-		search = join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}_search{suffix}')
+		search = join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}_search.index')
 	output:
 		join(DATA, 'mmseqs2_results', '{db1}_vs_{db2}_search.tsv')
 	shell:
