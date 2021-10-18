@@ -180,7 +180,7 @@ rule mmseqs_search:
 		db1 = join(DATA, 'mmseqs2_DBs', '{db1}.protein'),
 		db2 = join(DATA, 'mmseqs2_DBs', '{db2}.protein'),
 	output:
-		join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}_search.0')
+		join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}_search*')
 	shell:
 		"""
 		mmseqs search {input.db1} {input.db2} {params.stem} tmp -s {params.sensitivity} --max-accept {params.max_accept}
