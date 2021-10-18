@@ -33,12 +33,12 @@ rule all:
 		expand(join(DATA, 'mmseqs2_results', 'mmseqs_{db1}_vs_{db2}.rbh.tsv'), db1='card', db2=['resfinder','ncbi']),
 		expand(join(DATA, 'mmseqs2_results', 'mmseqs_{db1}_vs_{db2}.rbh.tsv'), db1='ncbi', db2=['card','resfinder']),
 		expand(join(DATA, 'mmseqs2_DBs', '{db1}.protein'), db1=['resfinder','card','ncbi']),
-		expand(join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}_search.index'), db1='resfinder', db2=['card','ncbi']),
-		expand(join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}_search.index'), db1='card', db2=['resfinder','ncbi']),
-		expand(join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}_search.index'), db1='ncbi', db2=['card','resfinder']),
-		expand(join(DATA, 'mmseqs2_results', '{db1}_vs_{db2}_search.tsv'), db1='resfinder', db2=['card','ncbi']),
-		expand(join(DATA, 'mmseqs2_results', '{db1}_vs_{db2}_search.tsv'), db1='card', db2=['resfinder','ncbi']),
-		expand(join(DATA, 'mmseqs2_results', '{db1}_vs_{db2}_search.tsv'), db1='ncbi', db2=['card','resfinder']),
+		expand(join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}.search.index'), db1='resfinder', db2=['card','ncbi']),
+		expand(join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}.search.index'), db1='card', db2=['resfinder','ncbi']),
+		expand(join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}.search.index'), db1='ncbi', db2=['card','resfinder']),
+		expand(join(DATA, 'mmseqs2_results', '{db1}_vs_{db2}.search.tsv'), db1='resfinder', db2=['card','ncbi']),
+		expand(join(DATA, 'mmseqs2_results', '{db1}_vs_{db2}.search.tsv'), db1='card', db2=['resfinder','ncbi']),
+		expand(join(DATA, 'mmseqs2_results', '{db1}_vs_{db2}.search.tsv'), db1='ncbi', db2=['card','resfinder']),
 
 rule card_download:
 	output:
@@ -141,8 +141,6 @@ rule resfinder_parse_metadata:
 		"""
 		python scripts/parse_resfinder_metadata.py --meta {input} --output {output}
 		"""
-#		cp chamredb/data/db_metadata/resfinder.metadata.tsv data/db_metadata/
-
 
 rule mmseqs_easy_rbh:
 	params:
@@ -151,7 +149,7 @@ rule mmseqs_easy_rbh:
 		db1 = join(DATA, 'db_fastas', '{db1}.protein.fasta'),
 		db2 = join(DATA, 'db_fastas', '{db2}.protein.fasta')
 	output:
-		join(DATA, 'mmseqs2_results', 'mmseqs_{db1}_vs_{db2}.rbh.tsv')
+		join(DATA, 'mmseqs2_results', '{db1}_vs_{db2}.rbh.tsv')
 	shell:
 		"""
 		mmseqs easy-rbh {input.db1} {input.db2} {output} tmp -s {params.sensitivity}
@@ -172,12 +170,12 @@ rule mmseqs_search:
 	params:
 		sensitivity = 7.0,
 		max_accept = 3,
-		stem = join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}_search')
+		stem = join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}.search')
 	input:
 		db1 = join(DATA, 'mmseqs2_DBs', '{db1}.protein'),
 		db2 = join(DATA, 'mmseqs2_DBs', '{db2}.protein'),
 	output:
-		join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}_search.index')
+		join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}.search.index')
 	shell:
 		"""
 		mmseqs search {input.db1} {input.db2} {params.stem} tmp -s {params.sensitivity} --max-accept {params.max_accept}
@@ -185,13 +183,13 @@ rule mmseqs_search:
 
 rule mmseqs_convertalis:
 	params:
-		stem = join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}_search')
+		stem = join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}.search')
 	input:
 		db1 = join(DATA, 'mmseqs2_DBs', '{db1}.protein'),
 		db2 = join(DATA, 'mmseqs2_DBs', '{db2}.protein'),
-		search = join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}_search.index')
+		search = join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}.search.index')
 	output:
-		join(DATA, 'mmseqs2_results', '{db1}_vs_{db2}_search.tsv')
+		join(DATA, 'mmseqs2_results', '{db1}_vs_{db2}.search.tsv')
 	shell:
 		"""
 		mmseqs convertalis {input.db1} {input.db2} {params.stem} {output}

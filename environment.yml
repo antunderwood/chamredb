@@ -12,3 +12,6 @@ dependencies:
     - pronto=2.4.3
     - orfipy
     - mmseqs2=13.45111
+    - pip:
+      - pandas
+      - networkx

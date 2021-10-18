@@ -14,12 +14,12 @@ args = parser.parse_args()
 if args.nucl:
 	nucl_path = args.nucl
 else:
-	nucl_path = "chamredb/data/db_fastas/resfinder.nucl.fasta"
+	nucl_path = "../data/db_fastas/resfinder.nucl.fasta"
 
 if args.protein:
 	prot_path = args.protein
 else:
-	prot_path = "chamredb/data/db_fastas/resfinder.protein.fasta"
+	prot_path = "../data/db_fastas/resfinder.protein.fasta"
 
 with open(nucl_path) as in_file, open(prot_path, "w") as out_file:
     genes_added = []

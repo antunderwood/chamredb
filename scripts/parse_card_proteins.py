@@ -14,7 +14,7 @@ if args.input:
 else:
 	in_path = os.path.join(
 		        os.path.dirname(os.path.abspath(__file__)),
-			    "..", "card_db",
+			    "..", "data", "card_db",
 				"protein_fasta_protein_homolog_model.fasta"
 	)
 
@@ -23,7 +23,7 @@ if args.output:
 else:
 	out_path = os.path.join(
 		       os.path.dirname(os.path.abspath(__file__)),
-			    "..", "db_fastas",
+			    "..", "data", "db_fastas",
 				"card.protein.fasta"
 	)
 

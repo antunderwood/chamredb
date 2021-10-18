@@ -17,7 +17,7 @@ if args.input:
 else:
 	metadata_file =  os.path.join(
 		os.path.dirname(os.path.abspath(__file__)),
-		"..", "chamredb", "data", "db_metadata",
+		"..", "data", "db_metadata",
 		"card.metadata.obo"
 	)
 
@@ -26,7 +26,7 @@ if args.output:
 else:
 	out_path =  os.path.join(
 		os.path.dirname(os.path.abspath(__file__)),
-		"..", "chamredb", "data", "db_metadata",
+		"..", "data", "db_metadata",
 		"card.metadata.json"
 	)
 

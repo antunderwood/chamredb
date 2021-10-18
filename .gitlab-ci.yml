@@ -11,4 +11,4 @@ package:
     - ls
   artifacts:
     paths:
-    - packaged.gz
+    - data/graph.json

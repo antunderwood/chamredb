@@ -15,7 +15,7 @@ if args.meta:
 else:
 	metadata_file =  os.path.join(
 		os.path.dirname(os.path.abspath(__file__)),
-		"..", "db_metadata",
+		"..", "data", "db_metadata",
 		"ncbi.metadata.tsv"
 	)
 
@@ -24,7 +24,7 @@ if args.input:
 else:
 	in_path = os.path.join(
 		os.path.dirname(os.path.abspath(__file__)),
-		"..", "db_fastas",
+		"..", "data", "db_fastas",
 		"ncbi.protein.raw.fasta"
 	)
 
