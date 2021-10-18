@@ -155,9 +155,6 @@ rule mmseqs_easy_rbh:
 	shell:
 		"""
 		mmseqs easy-rbh {input.db1} {input.db2} {output} tmp -s {params.sensitivity}
-        df -h
-        free -m | grep -v "Swap"
-        ls -lh {DATA}/*
 		"""
 
 rule mmseqs_createdb:
@@ -184,9 +181,6 @@ rule mmseqs_search:
 	shell:
 		"""
 		mmseqs search {input.db1} {input.db2} {params.stem} tmp -s {params.sensitivity} --max-accept {params.max_accept}
-        df -h
-        free -m | grep -v "Swap"
-        ls -lh {DATA}/*
 		"""
 
 rule mmseqs_convertalis:
@@ -195,7 +189,7 @@ rule mmseqs_convertalis:
 	input:
 		db1 = join(DATA, 'mmseqs2_DBs', '{db1}.protein'),
 		db2 = join(DATA, 'mmseqs2_DBs', '{db2}.protein'),
-		search = join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}_search.0')
+		search = join(DATA, 'mmseqs2_search_DBs', '{db1}_vs_{db2}_search*')
 	output:
 		join(DATA, 'mmseqs2_results', '{db1}_vs_{db2}_search.tsv')
 	shell:
