@@ -25,7 +25,7 @@ for permutation in itertools.permutations(['card', 'ncbi', 'resfinder'], r=2):
 
 out_path = os.path.join(
                 os.path.dirname(os.path.abspath(__file__)),
-                "..", "data", "graph.json"
+                "..", "graph.json"
             )
 print("Saving graph to {}".format(out_path))
 with open(out_path, "w") as out_file:
