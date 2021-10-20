@@ -44,7 +44,7 @@ with open(metadata_file) as metadata_fh:
 			name = row['Gene_accession no.'].split("_")[0]
 			metadata[name] = {
 				'name': name,
-				'phenotype': [f"confers resistance to {row['Phenotype']}"]
+				'phenotype': f"confers resistance to {row['Phenotype']}"
 			}
 
 		with open(out_path, "w") as out_file:

@@ -3,7 +3,7 @@ image : continuumio/miniconda3:4.10.3-alpine
 stages:
   - build
 
-build_graph:
+graph.json:
   stage: build
   script:
     - conda env create --file environment.yml && conda clean --all
