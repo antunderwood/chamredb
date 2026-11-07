@@ -1,0 +1,17 @@
+name: chamredb
+channels:
+    - conda-forge
+    - bioconda
+    - defaults
+dependencies:
+    - git
+    - python=3
+    - pip
+    - snakemake
+    - biopython
+    - pronto=2.4.3
+    - orfipy
+    - mmseqs2=13.45111
+    - pip:
+      - pandas
+      - networkx
