@@ -11,3 +11,14 @@ build
 .python-version
 poetry.lock
 pyproject.toml
+
+# raw data (bio-skills guard)
+*.bam
+*.cram
+*.fastq.gz
+*.vcf.gz
+data/raw/
+!tests/**/*.bam
+!tests/**/*.cram
+!tests/**/*.fastq.gz
+!tests/**/*.vcf.gz
