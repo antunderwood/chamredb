@@ -1,0 +1,20 @@
+allele	gene_family	whitelisted_taxa	product_name	scope	type	subtype	class	subclass	refseq_protein_accession	refseq_nucleotide_accession	curated_refseq_start	genbank_protein_accession	genbank_nucleotide_accession	genbank_strand_orientation	genbank_cds_start	genbank_cds_stop	pubmed_reference	blacklisted_taxa	db_version
+dfrB3	dfrB		trimethoprim-resistant dihydrofolate reductase DfrB3	core	AMR	AMR	TRIMETHOPRIM	TRIMETHOPRIM	WP_010890144.1	NG_047747.1	No	CAA51181.1	X72585.1	-	5957	6193	22507248		2021-03-01.1
+dfrB6	dfrB		trimethoprim-resistant dihydrofolate reductase DfrB6	core	AMR	AMR	TRIMETHOPRIM	TRIMETHOPRIM	WP_063844479.1	NG_047750.1	No	ABB72057.1	DQ274503.1	+	394	630	16870788		2021-03-01.1
+dfrB8	dfrB		trimethoprim-resistant dihydrofolate reductase DfrB8	core	AMR	AMR	TRIMETHOPRIM	TRIMETHOPRIM	WP_063844480.1	NG_047751.1	No	ADB54781.1	GU295656.1	+	1048	1296	21627486		2021-03-01.1
+dfrB9	dfrB		trimethoprim-resistant dihydrofolate reductase DfrB9	core	AMR	AMR	TRIMETHOPRIM	TRIMETHOPRIM	WP_071846200.1	NG_052167.1	No	AGM20434.1	KC675185.1	+	1468	1704			2021-03-01.1
+	dfrB1		trimethoprim-resistant dihydrofolate reductase DfrB1	core	AMR	AMR	TRIMETHOPRIM	TRIMETHOPRIM	WP_063844476.1	NG_047744.1	Yes		AM993098.1	+	1423	1659			2021-03-01.1
+	dfrB2		trimethoprim-resistant dihydrofolate reductase DfrB2	core	AMR	AMR	TRIMETHOPRIM	TRIMETHOPRIM	WP_063844477.1	NG_047746.1	No	AAT49071.1	AY553333.1	+	1094	1330			2021-03-01.1
+	mecI		mecA-type methicillin resistance repressor MecI	core	AMR	AMR	BETA-LACTAM	METHICILLIN	WP_000369216.1	NG_047956.1	No	ADL64127.1	CP002120.1	+	49003	49374			2021-03-01.1
+qnrB4	qnrB		quinolone resistance pentapeptide repeat protein QnrB4	core	AMR	AMR	QUINOLONE	QUINOLONE	WP_017900990.1	NG_050502.1	No	ABC17630.3	DQ303921.2	+	4	648	16870791		2021-03-01.1
+	tet(37)		tetracycline resistance NADPH-dependent oxidoreductase Tet(37)	core	AMR	AMR	TETRACYCLINE	TETRACYCLINE	WP_063855713.1	NG_048132.1	No	AAN28721.1	AF540889.1	+	1	327	12654685		2021-03-01.1
+	vanU-G		glycopeptide resistance transcriptional regulator VanU-G	core	AMR	AMR	GLYCOPEPTIDE	VANCOMYCIN	WP_021418929.1	NG_048466.1	No	AAQ16267.1	AY271782.1	+	17095	17322			2021-03-01.1
+	ble		bleomycin binding protein Ble-MBL	core	AMR	AMR	BLEOMYCIN	BLEOMYCIN	WP_004201167.1	NG_047559.1	No	AGB57375.1	KC149527.1	+	2951	3316			2021-03-01.1
+	ble		BLMA family bleomycin binding protein	core	AMR	AMR	BLEOMYCIN	BLEOMYCIN	WP_063842962.1	NG_047553.1	No	AAB00464.1	L26954.1	+	10	378			2021-03-01.1
+	ble		BLMA family bleomycin binding protein	core	AMR	AMR	BLEOMYCIN	BLEOMYCIN	WP_063842967.1	NG_047554.1	No	CAA02068.1	A31900.1	+	6	374			2021-03-01.1
+	blmA		bleomycin binding protein BLMA	core	AMR	AMR	BLEOMYCIN	BLEOMYCIN	WP_072081991.1	NG_052580.1	Yes		AORZ01000054.1	-	24043	24411			2021-03-01.1
+	mecI		mecA-type methicillin resistance repressor MecI	core	AMR	AMR	BETA-LACTAM	METHICILLIN	WP_000369214.1	NG_055650.1	No	EUK27095.1	JBTS01000004.1	-	162935	163306	24564530		2021-03-01.1
+	mecI		mecC-type methicillin resistance repressor MecI	core	AMR	AMR	BETA-LACTAM	METHICILLIN	WP_000196386.1	NG_050586.1	No	CCC86797.1	FR821779.1	+	39530	39904	21641281		2021-03-01.1
+	ble-Sh		phleomycin/bleomycin binding protein Ble-Sh	core	AMR	AMR	BLEOMYCIN	BLEOMYCIN	WP_063842998.1	NG_047556.1	No	CAA37050.1	X52869.1	+	3	377			2021-03-01.1
+	ble		bleomycin binding protein BLMT	core	AMR	AMR	BLEOMYCIN	BLEOMYCIN	WP_000131935.1	NG_047555.1	No	BAF34030.1	AB255435.1	+	117277	117657			2021-03-01.1
+	icr-Mo		phosphoethanolamine--lipid A transferase ICR-Mo	plus	AMR	AMR	COLISTIN	COLISTIN	WP_082741435.1		No		CP014234.1	+	1701630	1703306	29758020		2021-03-01.1

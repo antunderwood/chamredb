@@ -1,0 +1,24 @@
+Gene_accession no.	Class	Phenotype	PMID	Mechanism of resistance	Notes	Required_gene
+aac(6')-Iak_1_AB894482	Aminoglycoside	Tobramycin,Dibekacin,Amikacin,Sisomicin,Netilmicin	25092711	Enzymatic modification
+aac(6')-Iz_1_AF140221	Aminoglycoside	Amikacin, Tobramycin	10508008	Enzymatic modification	Chromosomal in Stenotrophomonas maltophilia
+aac(6')-Iz_2_AB971834	Aminoglycoside	Amikacin, Tobramycin	18419807	Enzymatic modification	Chromosomal in Stenotrophomonas maltophilia, Alternative name aac(6')-Iak
+dfrB1_1_U36276 	Folate pathway antagonist	Trimethoprim	unpublished
+dfrB1_2_AM993098	Folate pathway antagonist	Trimethoprim	unpublished
+dfrB2_1_J01773 	Folate pathway antagonist	Trimethoprim	7022127
+dfrB2_2_AY553333	Folate pathway antagonist	Trimethoprim	unpublished
+dfrB3_2_FM877478	Folate pathway antagonist	Trimethoprim	unpublished
+dfrB3_1_X72585	Folate pathway antagonist	Trimethoprim	8195081
+dfrB6_1_DQ274503	Folate pathway antagonist	Trimethoprim	16870788
+dfrB7_1_DQ993182	Folate pathway antagonist	Trimethoprim	unpublished
+dfrB8_1_GU295656	Folate pathway antagonist	Trimethoprim	unpublished
+fosA4_1_AB908992	Fosfomycin	Fosfomycin	24951800	Enzymatic inactivation
+ole(C)_1_L06249	Macrolide	Oleandomycin	8326867, 27006457	Target protection	ABC transporter
+mph(D)_1_AB048591	Macrolide	Erythromycin, Azithromycin	11184231	Enzymatic inactivation 	Macrolide phosphotransferase; Partial sequence only
+mre(A)_1_U92073	Macrolide	Erythromycin, Azithromycin, Spiramycin	9420045	Increased efflux
+erm(E)_1_X51891	Macrolide, Lincosamide, Streptogramin B	Erythromycin, Lincomycin, Clindamycin, Quinupristin, Pristinamycin IA, Virginiamycin S	2335200	Target modification	23S rRNA methylase; Azithromycin, Spiramycin resistance in Staphylococcus sp. and Streptococcus sp.; If inducible phenotype, patterns of spiramycin, lincomycin and clindamycin resistance may vary
+erm(E)_2_M11200	Macrolide, Lincosamide, Streptogramin B	Erythromycin, Lincomycin, Clindamycin, Quinupristin, Pristinamycin IA, Virginiamycin S	3934045	Target modification	23S rRNA methylase; Azithromycin, Spiramycin resistance in Staphylococcus sp. and Streptococcus sp.; If inducible phenotype, patterns of spiramycin, lincomycin and clindamycin resistance may vary
+erm(S)_1_M19269	Macrolide, Lincosamide, Streptogramin B	Erythromycin, Lincomycin, Clindamycin, Quinupristin, Pristinamycin IA, Virginiamycin S	3127381	Target modification	23S rRNA methylase; Azithromycin, Spiramycin resistance in Staphylococcus sp. and Streptococcus sp.; If inducible phenotype, patterns of spiramycin, lincomycin and clindamycin resistance may vary
+erm(37)_1_AL123456	Macrolide, Lincosamide, Streptogramin B	Erythromycin, Telithromycin, Lincomycin, Clindamycin	9634230	Target modification	23S rRNA methylase; Natural in Mycobacterium tubercolosis
+oqxA_1_EU370913	Fluoroquinolone	Nalidixic acid,Ciprofloxacin	17526501	Increased efflux	Must be in an operon with oqxB,phenotype differs based on genomic location of the operon PMID 25801572,also nitrofurantoin resistance PMID 26552976
+tet(37)_1_AF540889	Tetracycline	Tetracycline	12654685	Enzymatic inactivation
+formA_1_X73835	Aldehydes	Formaldehyde	8891129	Enzymatic degradation
