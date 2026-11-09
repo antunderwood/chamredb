@@ -61,7 +61,7 @@ def single_node_info_text(identifier, database, graph, coverage_threshold = 0.9,
     return info_text
 
 
-def write_multiple_node_info(id_data,graph,out_filepath,coverage_threshold=0.9,identity_threshold=0.9):
+def write_multiple_node_info(id_data,graph,out_filepath,coverage_threshold=0.9,identity_threshold=0.9,data_release=None):
     """
     write_multiple_node_info Given a list of dict objects containing ids and their corresponding databases find
     matches and write the match metadata to a file
@@ -72,7 +72,9 @@ def write_multiple_node_info(id_data,graph,out_filepath,coverage_threshold=0.9,i
         out_filepath (string): path to the outfile that will contain the id matches
         coverage_threshold (float, optional): The covergae value below which a match will not be reported. Defaults to 0.9.
         identity_threshold (float, optional): The identity value below which a match will not be reported. Defaults to 0.9.
+        data_release (string, optional): if given, written as an extra last column `data_release`
     """
+    suffix = f'\t{data_release}' if data_release else ''
     all_databases = set([graph.nodes[node_name]['database'] for node_name in graph.nodes])
     id_databases = set([ id_info['database'] for id_info in id_data])
     # if only one database in ids_and_databases then the header databases should not include this database
@@ -90,7 +92,7 @@ def write_multiple_node_info(id_data,graph,out_filepath,coverage_threshold=0.9,i
     
     with open(out_filepath, 'w') as out:
         header = __multiple_ids_header(header_databases, target_node_field_titles, multiple_samples)
-        out.write(f'{header}')
+        out.write(header.rstrip('\n') + ('\tdata_release' if data_release else '') + '\n')
         missing_ids = {}
         for id_info in track(id_data, description=f'Finding metadata'):
             source_id = id_info['id']
@@ -144,9 +146,9 @@ def write_multiple_node_info(id_data,graph,out_filepath,coverage_threshold=0.9,i
             target_node_info_string = "\t".join(target_node_info_list)
             if multiple_samples:
                 source_file = id_info['file']
-                out.write(f'{source_file}\t{source_id}\t{source_database}\t{name}\t{metadata_string}\t{target_node_info_string}\n')
+                out.write(f'{source_file}\t{source_id}\t{source_database}\t{name}\t{metadata_string}\t{target_node_info_string}{suffix}\n')
             else:
-                out.write(f'{source_id}\t{source_database}\t{name}\t{metadata_string}\t{target_node_info_string}\n')
+                out.write(f'{source_id}\t{source_database}\t{name}\t{metadata_string}\t{target_node_info_string}{suffix}\n')
         # print missing ids message
         __missing_ids_message(missing_ids, multiple_samples, id_data)
 

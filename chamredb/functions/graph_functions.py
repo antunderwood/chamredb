@@ -1,4 +1,5 @@
 import pandas as pd
+from chamredb import graph_loader
 from networkx.readwrite import json_graph
 import os
 import json
@@ -70,11 +71,9 @@ def get_graph_node(identifier,database,graph):
                 return(node_id, graph.nodes[node_id])
         return(None, None)
 
-def read_graph():
-    json_path = os.path.join(
-                os.path.dirname(os.path.abspath(__file__)),
-                "..", "data", "graph.json"
-                )
+def read_graph(graph_path=None):
+    """Load the graph from graph_path, or from the pinned default release (see chamredb.graph_loader)."""
+    json_path, _ = graph_loader.resolve_graph(graph_path)
     with open(json_path) as json_file:
         G = json_graph.node_link_graph(json.load(json_file), edges="links")
     return(G)

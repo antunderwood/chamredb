@@ -1,0 +1,6 @@
+{
+  "data_release": "2021-10-20",
+  "note": "Bundled graph built 2021-10-20 (reproduced from archived inputs, see builder/reproduce_2021). Set url to a release asset to download and cache instead.",
+  "sha256": "14e395c34426ab5e3dd1005d05ab8bbded5cd6bd38785541b11199bcba06203d",
+  "url": null
+}

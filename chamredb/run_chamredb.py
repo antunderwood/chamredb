@@ -59,6 +59,7 @@ def parse_arguments():
     query.add_argument('-d', '--database', help='which database are the gene(s) in', choices=['card', 'ncbi', 'resfinder'], required='-i' in sys.argv or '--id' in sys.argv or '-f' in sys.argv or '--id_file' in sys.argv)
     query.add_argument('-ct', '--coverage_threshold', help='coverage threshold below which a match will not be reported', type=float, default=0.9)
     query.add_argument('-it', '--identity_threshold', help='identity threshold below which a match will not be reported', type=float, default=0.9)
+    query.add_argument('--graph', help='Path to a graph JSON file to use instead of the default pinned release (offline use)', default=None)
     id_source = query.add_mutually_exclusive_group(required=True)
     id_source.add_argument('-i', '--id',  help='The id of a ARG in the specified database')
     id_source.add_argument('-f', '--id_file', help='Path to a file containing ids of ARGs in the specified database', type=lambda x: is_valid_file(parser, x))
@@ -89,14 +90,14 @@ def main():
     print_ascii_header()
     if options.command == 'query':
         if options.id:
-            query_graph_single_id(options.id, options.database, options.coverage_threshold, options.identity_threshold)
+            query_graph_single_id(options.id, options.database, options.coverage_threshold, options.identity_threshold, options.graph)
         elif options.id_file:
             ids = parse_id_file(options.id_file)
             id_data = [{'id': id, 'database': options.database} for id in ids]
-            query_graph_multiple_ids(id_data, options.outfile_path, options.coverage_threshold, options.identity_threshold)
+            query_graph_multiple_ids(id_data, options.outfile_path, options.coverage_threshold, options.identity_threshold, options.graph)
         elif options.hamronization_json_file:
             id_data = parse_hamronization_json_file(options.hamronization_json_file)
-            query_graph_multiple_ids(id_data, options.outfile_path, options.coverage_threshold, options.identity_threshold)
+            query_graph_multiple_ids(id_data, options.outfile_path, options.coverage_threshold, options.identity_threshold, options.graph)
             print(f'\nResults available at {options.outfile_path}')
 
 if __name__ == "__main__":

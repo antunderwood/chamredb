@@ -34,4 +34,4 @@ include = ["chamredb*"]
 exclude = ["chamredb.tests*"]
 
 [tool.setuptools.package-data]
-chamredb = ["data/graph.json", "data/db_metadata/*.json", "data/db_fastas/*.fasta", "data/mmseqs2_results/*.tsv"]
+chamredb = ["data/graph.json", "data/graph_release.json", "data/db_metadata/*.json", "data/db_fastas/*.fasta", "data/mmseqs2_results/*.tsv"]
