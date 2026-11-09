@@ -21,7 +21,7 @@ import pytest
 HERE = Path(__file__).resolve().parent
 FIXTURE = HERE / "fixtures" / "data"
 EXPECTED = HERE / "expected" / "fixture_graph.json"
-MMSEQS2_VERSION = "13.45111"
+MMSEQS2_VERSION = "18.8cc5c"
 TOLERANCE = 1e-3
 
 

@@ -7,7 +7,7 @@
 
 ## Context
 
-The shipped `graph.json` (11,718 nodes, 33,632 edges) was built from CARD ARO 2021-04-23, NCBI Reference Gene Catalog 2021-03-01.1, a ResFinder snapshot of unknown date, and MMseqs2 13.45111. Upstream data and MMseqs2 (17.b804f on bioconda) have both moved. Changing everything at once makes any difference in the new graph unattributable.
+The shipped `graph.json` (11,718 nodes, 33,632 edges) was built from CARD ARO 2021-04-23, NCBI Reference Gene Catalog 2021-03-01.1, a ResFinder snapshot of unknown date, and MMseqs2 13.45111. Upstream data and MMseqs2 (18.8cc5c on bioconda) have both moved. Changing everything at once makes any difference in the new graph unattributable.
 
 ## Options considered
 

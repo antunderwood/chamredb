@@ -1,7 +1,7 @@
 # Builder characterisation harness
 
 `make test` builds the graph from a tiny fixture and compares it with `expected/fixture_graph.json`.
-It needs MMseqs2 13.45111 on Linux amd64 (no macOS arm64 build). `make test-docker` runs the same in a
+It needs MMseqs2 18.8cc5c (Linux or macOS; the 2021 reproduction still uses 13.45111, Linux amd64 only). `make test-docker` runs the same in a
 container; it takes about 5 minutes under emulation on arm64, so the 60 s target in `.bio-skills.yaml`
 is only checkable on native Linux CI (the workflow prints the measured time).
 
@@ -67,7 +67,7 @@ first parent only and depends on visit order by design of the 2021 code, now a f
 - `FIXTURE_BUILD_DIR=<dir>` reuses a finished build. It has no staleness check, so a build from before
   a code change will pass.
 - `builder/environment.yml` was pinned for the harness (Python 3.9, Snakemake 7.32.4, pandas 1.5.3,
-  networkx 2.8.8, Biopython 1.81, pronto 2.4.3, MMseqs2 13.45111, pytest). The `defaults` channel was dropped,
+  networkx 2.8.8, Biopython 1.81, pronto 2.4.3, MMseqs2 18.8cc5c, pytest). The `defaults` channel was dropped,
   `pip` dependencies moved to conda, and `git` and `orfipy` are not pinned in the file (orfipy 0.0.4 is
   recorded in `VERSIONS.txt` and asserted). Python 3.9 applies to the builder only; the package target is
   Python 3.10 or newer (ADR 0004).

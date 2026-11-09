@@ -1,0 +1,17 @@
+# 2021 reproduction environment: MMseqs2 13.45111, the tool the shipped 2021 graph was built with (ADR 0003 step 1).
+name: chamredb
+channels:
+    - conda-forge
+    - bioconda
+dependencies:
+    - git
+    - python=3.9
+    - pip
+    - snakemake=7.32.4
+    - biopython=1.81
+    - pronto=2.4.3
+    - orfipy
+    - mmseqs2=13.45111
+    - pandas=1.5.3
+    - networkx=2.8.8
+    - pytest

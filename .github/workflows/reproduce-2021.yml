@@ -7,6 +7,7 @@ on:
     paths:
       - builder/reproduce_2021/**
       - builder/scripts/**
+      - builder/environment-mmseqs13.yml
       - .github/workflows/reproduce-2021.yml
 
 jobs:
@@ -17,8 +18,8 @@ jobs:
       - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - uses: mamba-org/setup-micromamba@f8b8a1e23a26f60a44c853292711bacfd3eac822 # v1.9.0
         with:
-          environment-file: builder/environment.yml
-          environment-name: chamredb
+          environment-file: builder/environment-mmseqs13.yml
+          environment-name: chamredb-mmseqs13
           cache-environment: true
       - name: Comparison tests
         shell: micromamba-shell {0}
