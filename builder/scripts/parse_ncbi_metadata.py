@@ -3,6 +3,7 @@ import pandas as pd
 import json
 import os
 import argparse
+from functions import validation
 
 # %%
 parser = argparse.ArgumentParser(description='Process input/output files')
@@ -31,6 +32,11 @@ else:
 
 # %%
 metadata_df = pd.read_csv(metadata_file, sep="\t")
+validation.require_columns(
+    metadata_df.columns,
+    ['scope', 'subtype', 'product_name', 'allele', 'gene_family', 'subclass',
+     'refseq_protein_accession', 'refseq_nucleotide_accession'],
+    metadata_file)
 
 # %%
 metadata_df = metadata_df.query('scope == "core" and subtype !="POINT"' )

@@ -8,6 +8,8 @@ from    os.path import join as join
 shell.executable("bash")
 
 DATA       = 'data'
+# optional JSON of protein count bounds per database: snakemake --config bounds=path/to/bounds.json
+BOUNDS     = ('--bounds ' + config['bounds']) if config.get('bounds') else ''
 
 rule all:
 	input:
@@ -88,7 +90,7 @@ rule card_parse_proteins:
 		join(DATA, 'db_fastas', 'card.protein.fasta')
 	shell:
 		"""
-		python scripts/parse_card_proteins.py --input {input} --output {output}
+		python scripts/parse_card_proteins.py --input {input} --output {output} {BOUNDS}
 		"""
 
 rule card_parse_metadata:
@@ -109,7 +111,7 @@ rule ncbi_parse_proteins:
 		join(DATA, 'db_fastas', 'ncbi.protein.fasta')
 	shell:
 		"""
-		python scripts/parse_ncbi_proteins.py --meta {input.meta} --input {input.prot} --output {output}
+		python scripts/parse_ncbi_proteins.py --meta {input.meta} --input {input.prot} --output {output} {BOUNDS}
 		"""
 
 rule ncbi_parse_metdata:
@@ -129,7 +131,7 @@ rule resfinder_parse_proteins:
 		join(DATA, 'db_fastas', 'resfinder.protein.fasta')
 	shell:
 		"""
-		python scripts/resfinder_orfs_to_proteins.py --nucl {input} --protein {output}
+		python scripts/resfinder_orfs_to_proteins.py --nucl {input} --protein {output} {BOUNDS}
 		"""
 
 rule resfinder_parse_metadata:

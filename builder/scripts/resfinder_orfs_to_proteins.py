@@ -2,12 +2,15 @@ from typing import Sequence
 import orfipy_core 
 import re
 import argparse
+from functions import validation
 from Bio import SeqIO
 from Bio.Seq import Seq
 
 parser = argparse.ArgumentParser(description='Process input/output files')
 parser.add_argument('--nucl', type=str, help='input file name')
 parser.add_argument('--protein', type=str, help='output file name')
+
+parser.add_argument('--bounds', type=str, help='JSON file with min and max protein counts per database (optional)')
 
 args = parser.parse_args()
 
@@ -48,3 +51,4 @@ with open(nucl_path) as in_file, open(prot_path, "w") as out_file:
 
         out_file.write(f">{id}\n{protein_sequence}\n")
 
+validation.check_count(len(genes_added), validation.load_bounds(args.bounds).get('resfinder'), 'resfinder proteins')

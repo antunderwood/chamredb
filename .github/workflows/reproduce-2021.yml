@@ -37,5 +37,6 @@ jobs:
           path: |
             ${{ runner.temp }}/repro/graph.json
             ${{ runner.temp }}/repro/report.md
+            ${{ runner.temp }}/repro/data_manifest.json
             ${{ runner.temp }}/repro/timings.txt
             ${{ runner.temp }}/repro/versions.txt

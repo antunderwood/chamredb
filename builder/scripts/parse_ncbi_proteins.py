@@ -1,12 +1,15 @@
 import os
 import pandas as pd
 import argparse
+from functions import validation
 from Bio import SeqIO
 
 parser = argparse.ArgumentParser(description='Process input/output files')
 parser.add_argument('--meta', type=str, help='input metadata file name')
 parser.add_argument('--input', type=str, help='input file name')
 parser.add_argument('--output', type=str, help='output file name')
+
+parser.add_argument('--bounds', type=str, help='JSON file with min and max protein counts per database (optional)')
 
 args = parser.parse_args()
 
@@ -38,6 +41,10 @@ else:
 	)
 
 metadata = pd.read_csv(metadata_file, sep="\t")
+validation.require_columns(
+    metadata.columns,
+    ['scope', 'type', 'subtype', 'allele', 'gene_family', 'refseq_protein_accession'],
+    metadata_file)
 
 
 metadata = metadata.query('scope == "core" and type == "AMR" and subtype =="AMR"' )
@@ -65,4 +72,5 @@ with open(in_path) as in_file, open(out_path, "w") as out_file:
             accessions_added.append(accession)
             out_file.write(f">{accession}\n{str(record.seq)}\n")
 
-
+validation.check_unique(accessions_added, 'ncbi proteins')
+validation.check_count(len(accessions_added), validation.load_bounds(args.bounds).get('ncbi'), 'ncbi proteins')

@@ -3,6 +3,7 @@ import os
 import json
 import argparse
 import tempfile
+from functions import validation
 
 parser = argparse.ArgumentParser(description='Process input/output files')
 parser.add_argument('--meta', type=str, help='input metadata file name')
@@ -37,6 +38,7 @@ with open(metadata_file) as metadata_fh:
 			metadata_parsed.write(line)
 		metadata_parsed.flush()
 		metadata_df = pd.read_csv(metadata_parsed.name, sep = "\t", on_bad_lines="warn")
+		validation.require_columns(metadata_df.columns, ['Gene_accession no.', 'Phenotype'], metadata_file)
 		metadata_df = metadata_df[['Gene_accession no.', 'Phenotype']]
 
 		metadata = {}
