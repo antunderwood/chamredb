@@ -1,4 +1,4 @@
-mmseqs2 13.45111
+mmseqs2 18.8cc5c
 snakemake 7.32.4
 python 3.9.19
 pandas 1.5.3
@@ -9,3 +9,4 @@ orfipy 0.0.4
 data: public 2021 files committed in chamredb/data (CARD ARO 2021-04-23, NCBI Reference Gene Catalog 2021-03-01.1, ResFinder snapshot date unrecorded); this fixture is NOT a reproduction of the shipped 2021 graph.json, which was built from later downloads
 fixtures: builder/tests/fixtures/data (checksums in SHA256SUMS), selected by builder/tests/make_fixtures.py
 frozen: 2026-11-07 on linux/amd64 (Docker, emulated on arm64), MMSEQS_NUM_THREADS=1
+mmseqs2 changed 13.45111 to 18.8cc5c on 2026-11-09 (ticket #11): the fixture graph rebuilt with 18 matched fieldwise within 0.001, so fixture_graph.json is unchanged; versions.txt was re-recorded (python 3.9.23)

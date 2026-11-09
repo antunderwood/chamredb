@@ -1,3 +1,4 @@
+# Builder environment. MMseqs2 18.8cc5c adopted 2026-11-09 (ADR 0003 step 2, ticket #11).
 name: chamredb
 channels:
     - conda-forge
@@ -10,7 +11,7 @@ dependencies:
     - biopython=1.81
     - pronto=2.4.3
     - orfipy
-    - mmseqs2=13.45111
+    - mmseqs2=18.8cc5c
     - pandas=1.5.3
     - networkx=2.8.8
     - pytest

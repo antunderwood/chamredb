@@ -2,7 +2,8 @@
 # Rebuild the graph from the archived 2021 inputs and compare it with the shipped graph (ADR 0003 step 1).
 # Usage: run_reproduction.sh <workdir>  -> <workdir>/graph.json, data_manifest.json, report.md, invariants.txt, timings.txt, versions.txt
 # REPORT_ONLY=1 writes an informational diff report (for tool upgrades) instead of the pass/fail comparison.
-# Needs the builder environment (builder/environment.yml, MMseqs2 13.45111 on Linux amd64) and network.
+# Run in builder/environment-mmseqs13.yml (MMseqs2 13.45111, Linux amd64) to reproduce the 2021 graph; any other
+# environment (REPORT_ONLY=1) gives a diff report and network.
 set -euo pipefail
 here=$(cd "$(dirname "$0")" && pwd)
 builder=$(cd "$here/.." && pwd)

@@ -1,7 +1,7 @@
-"""Pins for the MMseqs2 upgrade comparison (ticket #11, ADR 0003 step 2).
+"""Pins for the builder environments (ticket #11, ADR 0003).
 
-The baseline environment keeps MMseqs2 13.45111 (the tool the 2021 graph was built with). The upgrade
-environment must differ from it in the MMseqs2 pin only, so any change in the graph is attributable to the tool.
+environment.yml uses the current MMseqs2 (adopted 2026-11-09 after reviewing the diff report on the 2021 inputs).
+environment-mmseqs13.yml reproduces the shipped 2021 graph and must differ from it in the MMseqs2 pin only.
 """
 from pathlib import Path
 
@@ -18,11 +18,11 @@ def pins(name):
     return out
 
 
-def test_baseline_keeps_mmseqs2_13():
-    assert pins("environment.yml")["mmseqs2"] == "13.45111"
+def test_main_environment_uses_mmseqs2_18():
+    assert pins("environment.yml")["mmseqs2"] == "18.8cc5c"
 
 
-def test_upgrade_environment_differs_only_in_mmseqs2():
-    base, new = pins("environment.yml"), pins("environment-mmseqs18.yml")
-    assert new["mmseqs2"] == "18.8cc5c"
-    assert {k: v for k, v in new.items() if k != "mmseqs2"} == {k: v for k, v in base.items() if k != "mmseqs2"}
+def test_reproduction_environment_differs_only_in_mmseqs2():
+    main, old = pins("environment.yml"), pins("environment-mmseqs13.yml")
+    assert old["mmseqs2"] == "13.45111"
+    assert {k: v for k, v in old.items() if k != "mmseqs2"} == {k: v for k, v in main.items() if k != "mmseqs2"}

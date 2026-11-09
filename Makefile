@@ -1,4 +1,4 @@
-# Feedback loop for the builder (ticket #9). The fixture build needs MMseqs2 13.45111 on Linux amd64.
+# Feedback loop for the builder (ticket #9). The fixture build needs MMseqs2 18.8cc5c on Linux amd64 (or macOS arm64).
 .PHONY: test test-docker test-invariants test-package
 
 test:

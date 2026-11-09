@@ -1,4 +1,4 @@
-# Linux amd64 image for the fixture build (MMseqs2 13.45111 has no macOS arm64 build)
+# Linux amd64 image for the fixture build (kept amd64: pronto and orfipy builds for arm64 are not verified)
 FROM --platform=linux/amd64 mambaorg/micromamba:1.5.8
 # build context is builder/ (see Makefile)
 COPY --chown=$MAMBA_USER:$MAMBA_USER environment.yml /tmp/environment.yml
