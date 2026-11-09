@@ -144,7 +144,7 @@ def test_write_manifest_records_every_input_with_its_hash(tmp_path):
         (data / n).write_text(n)
     inputs = tmp_path / "inputs.json"
     inputs.write_text(json.dumps({
-        "card": {"release": "3.1.4", "url": "u1"}, "aro": {"release": "c42", "url": "u2"},
+        "card": {"release": "3.1.4", "url": "u1"}, "ontology": {"release": "3.1.4", "url": "u2"},
         "ncbi": {"release": "2021-09-30.1", "base_url": "u3/"}, "resfinder": {"git_url": "u4", "commit": "abc"}}))
     out = tmp_path / "m.json"
     r = run("write_manifest.py", "--inputs", inputs, "--data", data, "--out", out, "--retrieved", "2026-11-09")
@@ -154,3 +154,15 @@ def test_write_manifest_records_every_input_with_its_hash(tmp_path):
     assert all(f["retrieved"] == "2026-11-09" and f["sha256"] == v.sha256_file(data / f["path"]) for f in files)
     (data / "db_metadata/card.metadata.obo").unlink()
     assert run("write_manifest.py", "--inputs", inputs, "--data", data, "--out", out).returncode != 0
+
+
+# ---- ticket #12: CARD release agreement is checked against the URLs, not only declared ----
+
+def test_manifest_rejects_card_files_whose_urls_name_different_releases():
+    m = manifest(card_release="4.0.2", obo_release="4.0.2")
+    m["files"][0]["url"] = "https://card.mcmaster.ca/download/0/broadstreet-v4.0.2.tar.bz2"
+    m["files"][1]["url"] = "https://card.mcmaster.ca/download/5/ontology-v3.1.4.tar.bz2"
+    with pytest.raises(ValueError, match="URL.*3.1.4.*4.0.2"):
+        v.check_manifest(m)
+    m["files"][1]["url"] = "https://card.mcmaster.ca/download/5/ontology-v4.0.2.tar.bz2"
+    v.check_manifest(m)

@@ -5,6 +5,7 @@ format stops the build instead of producing plausible but wrong data.
 """
 import hashlib
 import json
+import re
 from pathlib import Path
 
 
@@ -54,6 +55,12 @@ def check_manifest(manifest, data_dir=None):
         raise ValueError(f"CARD manifest entries must all declare card_release: {card}")
     if len(set(card.values())) > 1:
         raise ValueError(f"CARD files come from different releases: {card}")
+    declared = next(iter(card.values()))
+    for f in files:
+        if f["database"] == "card":
+            named = re.search(r"-v(\d+(?:\.\d+)+)\.tar", f.get("url", ""))
+            if named and named.group(1) != declared:
+                raise ValueError(f"{f['path']}: URL names CARD release {named.group(1)} but card_release is {declared}")
     for f in files:
         for key in ("database", "role", "url", "release", "retrieved", "sha256"):
             if not f.get(key):

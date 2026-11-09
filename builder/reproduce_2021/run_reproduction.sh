@@ -15,8 +15,9 @@ cp "$builder/Snakefile" "$work/"; cp -r "$builder/scripts" "$work/scripts"
 cd "$work"
 export MMSEQS_NUM_THREADS=1   # one thread keeps MMseqs2 output order deterministic
 t0=$(date +%s)
-python "$here/fetch_inputs.py" data
-python scripts/write_manifest.py --inputs "$here/inputs.json" --data data --out data_manifest.json
+inputs=${INPUTS:-$here/inputs.json}   # INPUTS=<file> selects another set of pinned inputs (e.g. builder/refresh)
+python "$here/fetch_inputs.py" data "$inputs"
+python scripts/write_manifest.py --inputs "$inputs" --data data --out data_manifest.json
 t1=$(date +%s)
 targets=""
 for db in card ncbi resfinder; do targets="$targets data/db_metadata/$db.metadata.json"; done

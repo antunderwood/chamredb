@@ -1,7 +1,7 @@
 """Write data_manifest.json: for every input file, its source URL, release, retrieval date and sha256.
 
 Usage: python write_manifest.py --inputs inputs.json --data data --out data_manifest.json [--retrieved YYYY-MM-DD]
-inputs.json has the keys card, aro, ncbi and resfinder (see builder/reproduce_2021/inputs.json). The
+inputs.json has the keys card, ontology, ncbi and resfinder (see builder/reproduce_2021/inputs.json). The
 manifest is checked (CARD release agreement, every file present with its hash) before it is written.
 """
 import argparse
@@ -33,9 +33,8 @@ rf = src["resfinder"]
 files = [
     entry("card", "sequences", "protein_fasta_protein_homolog_model.fasta", src["card"]["url"], card_release,
           card_release=card_release, note="extracted from the release tarball; sha256 is of the extracted file"),
-    entry("card", "ontology", "db_metadata/card.metadata.obo", src["aro"]["url"], src["aro"]["release"],
-          card_release=card_release,
-          note="ontology is a separate download without a release tag; paired with the CARD release above"),
+    entry("card", "ontology", "db_metadata/card.metadata.obo", src["ontology"]["url"], src["ontology"]["release"],
+          card_release=card_release, note="extracted from the CARD ontology tarball of the same release; sha256 is of the extracted aro.obo"),
     entry("ncbi", "catalogue", "db_metadata/ncbi.metadata.tsv", ncbi["base_url"] + "ReferenceGeneCatalog.txt", ncbi["release"]),
     entry("ncbi", "proteins", "db_fastas/ncbi.protein.raw.fasta", ncbi["base_url"] + "AMRProt", ncbi["release"]),
     entry("ncbi", "nucleotides", "db_fastas/ncbi.nucl.raw.fasta", ncbi["base_url"] + "AMR_CDS", ncbi["release"]),

@@ -1,5 +1,6 @@
-"""Download the archived 2021 inputs, verify sha256, and lay them out as the builder expects.
-Standard library plus git. Usage: python fetch_inputs.py <data_dir>   (data_dir = <build>/data)
+"""Download the pinned inputs, verify sha256, and lay them out as the builder expects.
+Standard library plus git. Usage: python fetch_inputs.py <data_dir> [inputs.json]   (data_dir = <build>/data;
+inputs.json defaults to the 2021 inputs next to this file)
 """
 import hashlib
 import json
@@ -22,15 +23,22 @@ def get(url, sha256, dest):
     dest.write_bytes(data)
 
 
-def main(data):
-    m = json.loads((HERE / "inputs.json").read_text())
+def main(data, inputs=None):
+    m = json.loads(Path(inputs or HERE / "inputs.json").read_text())
     data.mkdir(parents=True, exist_ok=True)
     tmp = data / "_download"
     get(m["card"]["url"], m["card"]["sha256"], tmp / "card.tar.bz2")
     with tarfile.open(tmp / "card.tar.bz2") as tar:
         member = tar.getmember(m["card"]["member"])
         (data / "protein_fasta_protein_homolog_model.fasta").write_bytes(tar.extractfile(member).read())
-    get(m["aro"]["url"], m["aro"]["sha256"], data / "db_metadata" / "card.metadata.obo")
+    o = m["ontology"]
+    get(o["url"], o["sha256"], tmp / "ontology.tar.bz2")
+    with tarfile.open(tmp / "ontology.tar.bz2") as tar:
+        obo = tar.extractfile(tar.getmember(o["member"])).read()
+    if hashlib.sha256(obo).hexdigest() != o["member_sha256"]:
+        sys.exit(f"sha256 mismatch for {o['member']} in {o['url']}")
+    (data / "db_metadata").mkdir(parents=True, exist_ok=True)
+    (data / "db_metadata" / "card.metadata.obo").write_bytes(obo)
     n = m["ncbi"]
     for name, dest in (("ReferenceGeneCatalog.txt", "db_metadata/ncbi.metadata.tsv"),
                        ("AMRProt", "db_fastas/ncbi.protein.raw.fasta"), ("AMR_CDS", "db_fastas/ncbi.nucl.raw.fasta")):
@@ -48,4 +56,4 @@ def main(data):
 
 
 if __name__ == "__main__":
-    main(Path(sys.argv[1]))
+    main(Path(sys.argv[1]), sys.argv[2] if len(sys.argv) > 2 else None)
