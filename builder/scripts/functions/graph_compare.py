@@ -2,7 +2,7 @@
 
 Pass criterion (spec #1): identical node set, edge set and edge types; identity and coverage within
 TOLERANCE. Node attribute differences are reported as findings but do not fail the comparison.
-Usage: python compare_graphs.py SHIPPED.json REBUILT.json [REPORT.md]   (exit 0 if ok, 1 if not)
+Usage: python graph_compare.py SHIPPED.json REBUILT.json [REPORT.md]   (exit 0 if ok, 1 if not)
 """
 import json
 import sys

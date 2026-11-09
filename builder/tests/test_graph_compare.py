@@ -1,10 +1,10 @@
-"""Hand-checkable cases for compare_graphs (ticket #2, oracle level 1: tiny graphs whose differences are known by construction)."""
+"""Hand-checkable cases for graph_compare (ticket #2, oracle level 1: tiny graphs whose differences are known by construction)."""
 import copy
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-from compare_graphs import compare  # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts" / "functions"))
+from graph_compare import compare  # noqa: E402
 
 BASE = {
     "nodes": [{"id": "card:A", "PMID": ["2", "1"]}, {"id": "ncbi:B", "name": "x"}, {"id": "resfinder:C"}],

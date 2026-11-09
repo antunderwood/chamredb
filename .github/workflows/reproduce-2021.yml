@@ -6,6 +6,7 @@ on:
   pull_request:
     paths:
       - builder/reproduce_2021/**
+      - builder/scripts/**
       - .github/workflows/reproduce-2021.yml
 
 jobs:
@@ -21,7 +22,7 @@ jobs:
           cache-environment: true
       - name: Comparison tests
         shell: micromamba-shell {0}
-        run: python -m pytest -p no:cacheprovider -q builder/reproduce_2021
+        run: python -m pytest -p no:cacheprovider -q builder/tests/test_graph_compare.py
       - name: Rebuild and compare
         shell: micromamba-shell {0}
         run: |
