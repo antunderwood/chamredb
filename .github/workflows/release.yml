@@ -94,6 +94,9 @@ jobs:
           path: |
             ${{ runner.temp }}/build/graph.json
             ${{ runner.temp }}/build/data_manifest.json
+            ${{ runner.temp }}/build/data/db_metadata/card.metadata.json
+            ${{ runner.temp }}/build/data/db_metadata/ncbi.metadata.json
+            ${{ runner.temp }}/build/data/db_metadata/resfinder.metadata.json
             ${{ runner.temp }}/build/invariants.txt
             ${{ runner.temp }}/build/timings.txt
             ${{ runner.temp }}/build/versions.txt
@@ -130,7 +133,9 @@ jobs:
           if gh release view "$tag" >/dev/null 2>&1; then echo "release $tag already exists" >&2; exit 1; fi
           python3 builder/release/plan_release.py notes --tag "$tag" --manifest artifacts/build/data_manifest.json --report diff_report.md --out notes.md
           cp artifacts/build/graph.json graph.json; cp artifacts/build/data_manifest.json data_manifest.json
-          gh release create "$tag" --title "$tag" --notes-file notes.md graph.json data_manifest.json diff_report.md
+          cp artifacts/build/data/db_metadata/card.metadata.json artifacts/build/data/db_metadata/ncbi.metadata.json artifacts/build/data/db_metadata/resfinder.metadata.json .
+          gh release create "$tag" --title "$tag" --notes-file notes.md graph.json data_manifest.json diff_report.md \
+            card.metadata.json ncbi.metadata.json resfinder.metadata.json
       - uses: actions/upload-artifact@0b2256b8c012f0828dc542b3febcab082c67f72b # v4.3.4
         with:
           name: release-report
