@@ -29,15 +29,21 @@ def entry(db, role, path, url, release, **extra):
 
 
 ncbi = src["ncbi"]
+
+
+def _ncbi_name(prefix):
+    return next(name for name in ncbi["files"] if name.split(".")[0] == prefix)
+
+
 rf = src["resfinder"]
 files = [
     entry("card", "sequences", "protein_fasta_protein_homolog_model.fasta", src["card"]["url"], card_release,
           card_release=card_release, note="extracted from the release tarball; sha256 is of the extracted file"),
     entry("card", "ontology", "db_metadata/card.metadata.obo", src["ontology"]["url"], src["ontology"]["release"],
           card_release=card_release, note="extracted from the CARD ontology tarball of the same release; sha256 is of the extracted aro.obo"),
-    entry("ncbi", "catalogue", "db_metadata/ncbi.metadata.tsv", ncbi["base_url"] + "ReferenceGeneCatalog.txt", ncbi["release"]),
-    entry("ncbi", "proteins", "db_fastas/ncbi.protein.raw.fasta", ncbi["base_url"] + "AMRProt", ncbi["release"]),
-    entry("ncbi", "nucleotides", "db_fastas/ncbi.nucl.raw.fasta", ncbi["base_url"] + "AMR_CDS", ncbi["release"]),
+    entry("ncbi", "catalogue", "db_metadata/ncbi.metadata.tsv", ncbi["base_url"] + _ncbi_name("ReferenceGeneCatalog"), ncbi["release"]),
+    entry("ncbi", "proteins", "db_fastas/ncbi.protein.raw.fasta", ncbi["base_url"] + _ncbi_name("AMRProt"), ncbi["release"]),
+    entry("ncbi", "nucleotides", "db_fastas/ncbi.nucl.raw.fasta", ncbi["base_url"] + _ncbi_name("AMR_CDS"), ncbi["release"]),
     entry("resfinder", "phenotypes", "db_metadata/resfinder.metadata.tsv", rf["git_url"], rf["commit"]),
     entry("resfinder", "nucleotides", "db_fastas/resfinder.nucl.fasta", rf["git_url"], rf["commit"],
           note="concatenation of the per-class *.fsa files at this commit"),

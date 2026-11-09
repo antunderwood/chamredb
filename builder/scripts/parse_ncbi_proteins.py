@@ -2,6 +2,7 @@ import os
 import pandas as pd
 import argparse
 from functions import validation
+from functions import ncbi_headers
 from Bio import SeqIO
 
 parser = argparse.ArgumentParser(description='Process input/output files')
@@ -67,7 +68,7 @@ with open(in_path) as in_file, open(out_path, "w") as out_file:
     accessions_added = []
     for record in SeqIO.parse(in_file, "fasta"):
 
-        accession, allele = (record.id.split("|")[1],record.id.split("|")[4])
+        accession, allele = ncbi_headers.parse_header(record.id)
         if accession in deduplicated_accessions and accession not in accessions_added:
             accessions_added.append(accession)
             out_file.write(f">{accession}\n{str(record.seq)}\n")
