@@ -1,0 +1,598 @@
+source_name,cleaned_source_name,source_database,target_name,cleaned_target_name,target_database,sequence_identity,name_similarity,source_id,target_id,cleaner_source_name,cleaner_target_name,name_similarity_without_alleles,predicted_similarity,similarity_difference
+vanA,vana,card,VanHAX,vanhax,resfinder,0.997,0.6666666666666667,card:ARO:3000010,resfinder:VanHAX,vana,vanhax,0.6666666666666667,0.9936013422092473,0.3269346755425806
+vanA,vana,ncbi,VanHAX,vanhax,resfinder,1.0,0.6666666666666667,ncbi:WP_063856521.1,resfinder:VanHAX,vana,vanhax,0.6666666666666667,0.9974061095507618,0.33073944288409507
+vanB,vanb,card,VanHBX,vanhbx,resfinder,0.991,0.6666666666666667,card:ARO:3000013,resfinder:VanHBX,vanb,vanhbx,0.6666666666666667,0.9859918075262186,0.3193251408595519
+vanB,vanb,ncbi,VanHBX,vanhbx,resfinder,0.991,0.6666666666666667,ncbi:WP_002593938.1,resfinder:VanHBX,vanb,vanhbx,0.6666666666666667,0.9859918075262186,0.3193251408595519
+mecA-type mecI,mecatype meci,card,mecI,meci,ncbi,1.0,0.3076923076923077,card:ARO:3000124,ncbi:WP_000369216.1,mecatype meci,meci,0.3076923076923077,0.9974061095507618,0.6897138018584541
+mecI,meci,ncbi,mecA-type mecI,mecatype meci,card,1.0,0.3076923076923077,ncbi:WP_000369216.1,card:ARO:3000124,meci,mecatype meci,0.3076923076923077,0.9974061095507618,0.6897138018584541
+tet(S),tets,ncbi,tet(S/M),tets/m,resfinder,0.998,0.6666666666666667,ncbi:WP_109544237.1,resfinder:tet(S/M),tets,tets/m,0.6666666666666667,0.9948695979897522,0.3282029313230854
+rphA,rpha,card,rph,rph,ncbi,1.0,0.75,card:ARO:3000444,ncbi:WP_063854910.1,rpha,rph,0.75,0.9974061095507618,0.2474061095507618
+rph,rph,ncbi,rphA,rpha,card,1.0,0.75,ncbi:WP_063854910.1,card:ARO:3000444,rph,rpha,0.75,0.9974061095507618,0.2474061095507618
+gimA,gima,card,mgt,mgt,ncbi,1.0,0.0,card:ARO:3000463,ncbi:WP_053138975.1,gima,mgt,0.0,0.9974061095507618,0.9974061095507618
+mgt,mgt,ncbi,gimA,gima,card,1.0,0.0,ncbi:WP_053138975.1,card:ARO:3000463,mgt,gima,0.0,0.9974061095507618,0.9974061095507618
+CcrA,ccra,card,cfiA,cfia,ncbi,1.0,0.5,card:ARO:3000578,ncbi:WP_005808062.1,ccra,cfia,0.5,0.9974061095507618,0.4974061095507618
+CcrA,ccra,card,cfiA13,cfia13,resfinder,1.0,0.33333333333333337,card:ARO:3000578,resfinder:cfiA13,ccra,cfia,0.5,0.9974061095507618,0.4974061095507618
+cfiA,cfia,ncbi,CcrA,ccra,card,1.0,0.5,ncbi:WP_005808062.1,card:ARO:3000578,cfia,ccra,0.5,0.9974061095507618,0.4974061095507618
+mel,mel,card,mef(A),mefa,ncbi,0.995,0.5,card:ARO:3000616,ncbi:WP_063853591.1,mel,mefa,0.5,0.9910648306482379,0.4910648306482379
+mel,mel,card,mef(A),mefa,resfinder,1.0,0.5,card:ARO:3000616,resfinder:mef(A),mel,mefa,0.5,0.9974061095507618,0.4974061095507618
+mef(A),mefa,ncbi,mel,mel,card,0.995,0.5,ncbi:WP_063853591.1,card:ARO:3000616,mefa,mel,0.5,0.9910648306482379,0.4910648306482379
+tlrB,tlrb,card,erm(32),erm32,ncbi,1.0,0.0,card:ARO:3001299,ncbi:WP_063844496.1,tlrb,erm,0.25,0.9974061095507618,0.7474061095507618
+tlrB,tlrb,card,erm(32),erm32,resfinder,0.952,0.0,card:ARO:3001299,resfinder:erm(32),tlrb,erm,0.25,0.9365298320865318,0.6865298320865318
+erm(32),erm32,ncbi,tlrB,tlrb,card,1.0,0.0,ncbi:WP_063844496.1,card:ARO:3001299,erm,tlrb,0.25,0.9974061095507618,0.7474061095507618
+ErmO-srmA,ermosrma,card,erm(O),ermo,ncbi,1.0,0.5,card:ARO:3001303,ncbi:WP_053138973.1,ermosrma,ermo,0.5,0.9974061095507618,0.4974061095507618
+erm(O),ermo,ncbi,ErmO-srmA,ermosrma,card,1.0,0.5,ncbi:WP_053138973.1,card:ARO:3001303,ermo,ermosrma,0.5,0.9974061095507618,0.4974061095507618
+OXA-12,oxa12,card,ampS,amps,resfinder,0.95,0.0,card:ARO:3001407,resfinder:ampS,oxa,amps,0.0,0.9339933205255222,0.9339933205255222
+blaOXA-12,oxa12,ncbi,ampS,amps,resfinder,0.95,0.0,ncbi:WP_063861029.1,resfinder:ampS,oxa,amps,0.0,0.9339933205255222,0.9339933205255222
+DHA-21,dha21,card,blaMOR,mor,resfinder,1.0,0.0,card:ARO:3002152,resfinder:blaMOR,dha,mor,0.0,0.9974061095507618,0.9974061095507618
+blaDHA-21,dha21,ncbi,blaMOR,mor,resfinder,1.0,0.0,ncbi:WP_063860105.1,resfinder:blaMOR,dha,mor,0.0,0.9974061095507618,0.9974061095507618
+LRA-13,lra13,card,blaOXA/blaLRA13,oxa/blalra13,ncbi,1.0,0.41666666666666663,card:ARO:3002484,ncbi:WP_063839877.1,lra,oxa/blalra13,0.25,0.9974061095507618,0.7474061095507618
+blaOXA/blaLRA13,oxa/blalra13,ncbi,LRA-13,lra13,card,1.0,0.41666666666666663,ncbi:WP_063839877.1,card:ARO:3002484,oxa/blalra13,lra,0.25,0.9974061095507618,0.7474061095507618
+AAC(6')-Ib-cr1,aac6'ibcr1,card,aac(6')-Ib-cr,aac6'ibcr,ncbi,1.0,0.9,card:ARO:3002547,ncbi:WP_071846215.1,aac6'ibcr1,aac6'ibcr,0.9,0.9974061095507618,0.09740610955076179
+AAC(6')-Ib-cr1,aac6'ibcr1,card,aac(6')-Ib-cr,aac6'ibcr,resfinder,0.971,0.9,card:ARO:3002547,resfinder:aac(6')-Ib-cr,aac6'ibcr1,aac6'ibcr,0.9,0.9606266919161228,0.0606266919161228
+aac(6')-Ib-cr,aac6'ibcr,ncbi,AAC(6')-Ib-cr1,aac6'ibcr1,card,1.0,0.9,ncbi:WP_071846215.1,card:ARO:3002547,aac6'ibcr,aac6'ibcr1,0.9,0.9974061095507618,0.09740610955076179
+AAC(6')-Ip,aac6'ip,card,aac(6')-Iaf,aac6'iaf,resfinder,0.978,0.75,card:ARO:3002559,resfinder:aac(6')-Iaf,aac6'ip,aac6'iaf,0.75,0.9695044823796564,0.21950448237965636
+aac(6')-Ip,aac6'ip,ncbi,aac(6')-Iaf,aac6'iaf,resfinder,0.966,0.75,ncbi:WP_069453146.1,resfinder:aac(6')-Iaf,aac6'ip,aac6'iaf,0.75,0.9542854130135989,0.20428541301359893
+AAC(6')-Iy,aac6'iy,card,aac(6')-Iaa,aac6'iaa,resfinder,0.993,0.75,card:ARO:3002569,resfinder:aac(6')-Iaa,aac6'iy,aac6'iaa,0.75,0.9885283190872283,0.23852831908722827
+AAC(6')-Ib3,aac6'ib3,card,aac(6')-Ib,aac6'ib,resfinder,0.983,0.875,card:ARO:3002576,resfinder:aac(6')-Ib,aac6'ib3,aac6'ib,0.875,0.9758457612821803,0.10084576128218026
+aac(6')-Ib3,aac6'ib3,ncbi,aac(6')-Ib,aac6'ib,resfinder,0.983,0.875,ncbi:WP_032488579.1,resfinder:aac(6')-Ib,aac6'ib3,aac6'ib,0.875,0.9758457612821803,0.10084576128218026
+AAC(6')-Ib4,aac6'ib4,card,ant(3'')-Ii-aac(6')-IId,ant3''iiaac6'iid,resfinder,0.981,0.375,card:ARO:3002577,resfinder:ant(3'')-Ii-aac(6')-IId,aac6'ib4,ant3''iiaac6'iid,0.375,0.9733092497211708,0.5983092497211708
+aac(6')-Ib4,aac6'ib4,ncbi,ant(3'')-Ii-aac(6')-IId,ant3''iiaac6'iid,resfinder,0.981,0.375,ncbi:WP_003159191.1,resfinder:ant(3'')-Ii-aac(6')-IId,aac6'ib4,ant3''iiaac6'iid,0.375,0.9733092497211708,0.5983092497211708
+AAC(6')-29a,aac6'29a,card,aac(6')-29b,aac6'29b,resfinder,1.0,0.875,card:ARO:3002583,resfinder:aac(6')-29b,aac6'29a,aac6'29b,0.875,0.9974061095507618,0.12240610955076181
+aac(6')-29a,aac6'29a,ncbi,aac(6')-29b,aac6'29b,resfinder,1.0,0.875,ncbi:WP_064190968.1,resfinder:aac(6')-29b,aac6'29a,aac6'29b,0.875,0.9974061095507618,0.12240610955076181
+AAC(6')-I33,aac6'i33,card,aac(6')-33,aac6'33,ncbi,1.0,0.875,card:ARO:3002587,ncbi:WP_015059044.1,aac6'i33,aac6'33,0.875,0.9974061095507618,0.12240610955076181
+AAC(6')-I33,aac6'i33,card,aac(6')-33,aac6'33,resfinder,1.0,0.875,card:ARO:3002587,resfinder:aac(6')-33,aac6'i33,aac6'33,0.875,0.9974061095507618,0.12240610955076181
+aac(6')-33,aac6'33,ncbi,AAC(6')-I33,aac6'i33,card,1.0,0.875,ncbi:WP_015059044.1,card:ARO:3002587,aac6'33,aac6'i33,0.875,0.9974061095507618,0.12240610955076181
+AAC(6')-Ib-SK,aac6'ibsk,card,aac(6')-kana,aac6'kana,ncbi,0.993,0.5555555555555556,card:ARO:3002593,ncbi:WP_055545096.1,aac6'ibsk,aac6'kana,0.5555555555555556,0.9885283190872283,0.4329727635316727
+aac(6')-kana,aac6'kana,ncbi,AAC(6')-Ib-SK,aac6'ibsk,card,0.993,0.5555555555555556,ncbi:WP_055545096.1,card:ARO:3002593,aac6'kana,aac6'ibsk,0.5555555555555556,0.9885283190872283,0.4329727635316727
+AAC(6')-Ie-APH(2'')-Ia bifunctional protein,aac6'ieaph2''ia bifunctional protein,card,aac(6')-Ie/aph(2'')-Ia,aac6'ie/aph2''ia,ncbi,0.997,0.38888888888888884,card:ARO:3002597,ncbi:WP_032490744.1,aac6'ieaph2''ia bifunctional protein,aac6'ie/aph2''ia,0.38888888888888884,0.9936013422092473,0.6047124533203585
+AAC(6')-Ie-APH(2'')-Ia bifunctional protein,aac6'ieaph2''ia bifunctional protein,card,aac(6')-aph(2''),aac6'aph2'',resfinder,1.0,0.3055555555555556,card:ARO:3002597,resfinder:aac(6')-aph(2''),aac6'ieaph2''ia bifunctional protein,aac6'aph2'',0.3055555555555556,0.9974061095507618,0.6918505539952062
+aac(6')-Ie/aph(2'')-Ia,aac6'ie/aph2''ia,ncbi,AAC(6')-Ie-APH(2'')-Ia bifunctional protein,aac6'ieaph2''ia bifunctional protein,card,0.997,0.38888888888888884,ncbi:WP_032490744.1,card:ARO:3002597,aac6'ie/aph2''ia,aac6'ieaph2''ia bifunctional protein,0.38888888888888884,0.9936013422092473,0.6047124533203585
+aac(6')-Ie/aph(2'')-Ia,aac6'ie/aph2''ia,ncbi,aac(6')-aph(2''),aac6'aph2'',resfinder,0.997,0.6875,ncbi:WP_032490744.1,resfinder:aac(6')-aph(2''),aac6'ie/aph2''ia,aac6'aph2'',0.6875,0.9936013422092473,0.30610134220924734
+ANT(3'')-II-AAC(6')-IId bifunctional protein,ant3''iiaac6'iid bifunctional protein,card,ant(3'')-Ih/aac(6')-IId,ant3''ih/aac6'iid,ncbi,1.0,0.3783783783783784,card:ARO:3002598,ncbi:WP_063839878.1,ant3''iiaac6'iid bifunctional protein,ant3''ih/aac6'iid,0.3783783783783784,0.9974061095507618,0.6190277311723834
+ANT(3'')-II-AAC(6')-IId bifunctional protein,ant3''iiaac6'iid bifunctional protein,card,ant(3'')-Ii-aac(6')-IId,ant3''iiaac6'iid,resfinder,1.0,0.43243243243243246,card:ARO:3002598,resfinder:ant(3'')-Ii-aac(6')-IId,ant3''iiaac6'iid bifunctional protein,ant3''iiaac6'iid,0.43243243243243246,0.9974061095507618,0.5649736771183294
+ant(3'')-Ih/aac(6')-IId,ant3''ih/aac6'iid,ncbi,ANT(3'')-II-AAC(6')-IId bifunctional protein,ant3''iiaac6'iid bifunctional protein,card,1.0,0.3783783783783784,ncbi:WP_063839878.1,card:ARO:3002598,ant3''ih/aac6'iid,ant3''iiaac6'iid bifunctional protein,0.3783783783783784,0.9974061095507618,0.6190277311723834
+ant(3'')-Ih/aac(6')-IId,ant3''ih/aac6'iid,ncbi,ant(3'')-Ii-aac(6')-IId,ant3''iiaac6'iid,resfinder,1.0,0.8823529411764706,ncbi:WP_063839878.1,resfinder:ant(3'')-Ii-aac(6')-IId,ant3''ih/aac6'iid,ant3''iiaac6'iid,0.8823529411764706,0.9974061095507618,0.11505316837429125
+AAC(6')-30/AAC(6')-Ib' bifunctional protein,aac6'30/aac6'ib' bifunctional protein,card,aac(6')-30/aac(6')-Ib',aac6'30/aac6'ib',ncbi,1.0,0.43243243243243246,card:ARO:3002599,ncbi:WP_063838853.1,aac6'30/aac6'ib' bifunctional protein,aac6'30/aac6'ib',0.43243243243243246,0.9974061095507618,0.5649736771183294
+AAC(6')-30/AAC(6')-Ib' bifunctional protein,aac6'30/aac6'ib' bifunctional protein,card,aac(6')-30-aac(6')-Ib',aac6'30aac6'ib',resfinder,1.0,0.4054054054054054,card:ARO:3002599,resfinder:aac(6')-30-aac(6')-Ib',aac6'30/aac6'ib' bifunctional protein,aac6'30aac6'ib',0.4054054054054054,0.9974061095507618,0.5920007041453564
+aac(6')-30/aac(6')-Ib',aac6'30/aac6'ib',ncbi,AAC(6')-30/AAC(6')-Ib' bifunctional protein,aac6'30/aac6'ib' bifunctional protein,card,1.0,0.43243243243243246,ncbi:WP_063838853.1,card:ARO:3002599,aac6'30/aac6'ib',aac6'30/aac6'ib' bifunctional protein,0.43243243243243246,0.9974061095507618,0.5649736771183294
+AAC(3)-Ib/AAC(6')-Ib3 bifunctional protein,aac3ib/aac6'ib3 bifunctional protein,card,aac(3)-Ib/aac(6')-Ib'',aac3ib/aac6'ib'',ncbi,1.0,0.38888888888888884,card:ARO:3002600,ncbi:WP_063838852.1,aac3ib/aac6'ib3 bifunctional protein,aac3ib/aac6'ib'',0.38888888888888884,0.9974061095507618,0.608517220661873
+AAC(3)-Ib/AAC(6')-Ib3 bifunctional protein,aac3ib/aac6'ib3 bifunctional protein,card,aac(3)-Ib-aac(6')-Ib,aac3ibaac6'ib,resfinder,1.0,0.36111111111111116,card:ARO:3002600,resfinder:aac(3)-Ib-aac(6')-Ib,aac3ib/aac6'ib3 bifunctional protein,aac3ibaac6'ib,0.36111111111111116,0.9974061095507618,0.6362949984396506
+aac(3)-Ib/aac(6')-Ib'',aac3ib/aac6'ib'',ncbi,AAC(3)-Ib/AAC(6')-Ib3 bifunctional protein,aac3ib/aac6'ib3 bifunctional protein,card,1.0,0.38888888888888884,ncbi:WP_063838852.1,card:ARO:3002600,aac3ib/aac6'ib'',aac3ib/aac6'ib3 bifunctional protein,0.38888888888888884,0.9974061095507618,0.608517220661873
+aac(3)-Ib/aac(6')-Ib'',aac3ib/aac6'ib'',ncbi,aac(3)-Ib-aac(6')-Ib,aac3ibaac6'ib,resfinder,1.0,0.8125,ncbi:WP_063838852.1,resfinder:aac(3)-Ib-aac(6')-Ib,aac3ib/aac6'ib'',aac3ibaac6'ib,0.8125,0.9974061095507618,0.1849061095507618
+aadA,aada,card,ant(3'')-Ia,ant3''ia,resfinder,1.0,0.25,card:ARO:3002601,resfinder:ant(3'')-Ia,aada,ant3''ia,0.25,0.9974061095507618,0.7474061095507618
+aadA1,aada1,ncbi,ant(3'')-Ia,ant3''ia,resfinder,0.996,0.125,ncbi:WP_001910823.1,resfinder:ant(3'')-Ia,aada,ant3''ia,0.25,0.9923330864287427,0.7423330864287427
+ANT(4')-Ia,ant4'ia,card,aadD,aadd,resfinder,0.995,0.1428571428571429,card:ARO:3002623,resfinder:aadD,ant4'ia,aadd,0.1428571428571429,0.9910648306482379,0.848207687791095
+aad(6),aad6,card,ant(6)-Ia,ant6ia,ncbi,0.996,0.33333333333333337,card:ARO:3002628,ncbi:WP_032491779.1,aad,ant,0.33333333333333337,0.9923330864287427,0.6589997530954094
+aad(6),aad6,card,ant(6)-Ia,ant6ia,resfinder,0.996,0.33333333333333337,card:ARO:3002628,resfinder:ant(6)-Ia,aad,ant,0.33333333333333337,0.9923330864287427,0.6589997530954094
+ant(6)-Ia,ant6ia,ncbi,aad(6),aad6,card,0.996,0.33333333333333337,ncbi:WP_032491779.1,card:ARO:3002628,ant,aad,0.33333333333333337,0.9923330864287427,0.6589997530954094
+APH(2'')-IIa,aph2''iia,card,aph(2'')-Ib,aph2''ib,resfinder,0.989,0.7777777777777778,card:ARO:3002635,resfinder:aph(2'')-Ib,aph2''iia,aph2''ib,0.7777777777777778,0.9834552959652092,0.2056775181874314
+aph(2'')-IIa,aph2''iia,ncbi,aph(2'')-Ib,aph2''ib,resfinder,1.0,0.7777777777777778,ncbi:WP_016439437.1,resfinder:aph(2'')-Ib,aph2''iia,aph2''ib,0.7777777777777778,0.9974061095507618,0.21962833177298402
+APH(2'')-IIIa,aph2''iiia,card,aph(2'')-Ic,aph2''ic,resfinder,1.0,0.7,card:ARO:3002636,resfinder:aph(2'')-Ic,aph2''iiia,aph2''ic,0.7,0.9974061095507618,0.29740610955076185
+aph(2'')-IIIa,aph2''iiia,ncbi,aph(2'')-Ic,aph2''ic,resfinder,1.0,0.7,ncbi:WP_018659526.1,resfinder:aph(2'')-Ic,aph2''iiia,aph2''ic,0.7,0.9974061095507618,0.29740610955076185
+APH(2'')-IVa,aph2''iva,card,aph(2'')-Id,aph2''id,resfinder,1.0,0.7777777777777778,card:ARO:3002637,resfinder:aph(2'')-Id,aph2''iva,aph2''id,0.7777777777777778,0.9974061095507618,0.21962833177298402
+aph(2'')-IVa,aph2''iva,ncbi,aph(2'')-Id,aph2''id,resfinder,1.0,0.7777777777777778,ncbi:WP_021401024.1,resfinder:aph(2'')-Id,aph2''iva,aph2''id,0.7777777777777778,0.9974061095507618,0.21962833177298402
+APH(3')-IIIa,aph3'iiia,card,aph(3')-III,aph3'iii,resfinder,1.0,0.8888888888888888,card:ARO:3002647,resfinder:aph(3')-III,aph3'iiia,aph3'iii,0.8888888888888888,0.9974061095507618,0.10851722066187297
+APH(3')-IVa,aph3'iva,card,aph(3')-IV,aph3'iv,resfinder,1.0,0.875,card:ARO:3002648,resfinder:aph(3')-IV,aph3'iva,aph3'iv,0.875,0.9974061095507618,0.12240610955076181
+aph(3')-IVa,aph3'iva,ncbi,aph(3')-IV,aph3'iv,resfinder,1.0,0.875,ncbi:WP_063841674.1,resfinder:aph(3')-IV,aph3'iva,aph3'iv,0.875,0.9974061095507618,0.12240610955076181
+Limosilactobacillus reuteri cat-TC,cattc,card,cat(pC194),catpc194,resfinder,0.992,0.5,card:ARO:3002671,resfinder:cat(pC194),cattc,catpc,0.8,0.9872600633067234,0.1872600633067234
+cat-TC,cattc,ncbi,cat(pC194),catpc194,resfinder,0.992,0.5,ncbi:WP_032488880.1,resfinder:cat(pC194),cattc,catpc,0.8,0.9872600633067234,0.1872600633067234
+Clostridium butyricum catB,catb,card,catA15,cata15,ncbi,1.0,0.5,card:ARO:3002674,ncbi:WP_063843219.1,catb,cata,0.75,0.9974061095507618,0.2474061095507618
+catA15,cata15,ncbi,Clostridium butyricum catB,catb,card,1.0,0.5,ncbi:WP_063843219.1,card:ARO:3002674,cata,catb,0.75,0.9974061095507618,0.2474061095507618
+catA15,cata15,ncbi,catB,catb,resfinder,1.0,0.5,ncbi:WP_063843219.1,resfinder:catB,cata,catb,0.75,0.9974061095507618,0.2474061095507618
+catII,catii,card,catA2,cata2,ncbi,0.995,0.6,card:ARO:3002684,ncbi:WP_011751353.1,catii,cata,0.6,0.9910648306482379,0.39106483064823794
+catA2,cata2,ncbi,catII,catii,card,0.995,0.6,ncbi:WP_011751353.1,card:ARO:3002684,cata,catii,0.6,0.9910648306482379,0.39106483064823794
+catIII,catiii,card,catA3,cata3,ncbi,0.995,0.5,card:ARO:3002685,ncbi:WP_005826111.1,catiii,cata,0.5,0.9910648306482379,0.4910648306482379
+catIII,catiii,card,catA3,cata3,resfinder,1.0,0.5,card:ARO:3002685,resfinder:catA3,catiii,cata,0.5,0.9974061095507618,0.4974061095507618
+catA3,cata3,ncbi,catIII,catiii,card,0.995,0.5,ncbi:WP_005826111.1,card:ARO:3002685,cata,catiii,0.5,0.9910648306482379,0.4910648306482379
+catQ,catq,card,catA16,cata16,ncbi,0.954,0.5,card:ARO:3002687,ncbi:WP_063843221.1,catq,cata,0.75,0.9390663436475415,0.1890663436475415
+catA16,cata16,ncbi,catQ,catq,card,0.954,0.5,ncbi:WP_063843221.1,card:ARO:3002687,cata,catq,0.75,0.9390663436475415,0.1890663436475415
+catA16,cata16,ncbi,catQ,catq,resfinder,0.954,0.5,ncbi:WP_063843221.1,resfinder:catQ,cata,catq,0.75,0.9390663436475415,0.1890663436475415
+Plasmid-encoded cat (pp-cat),plasmidencoded cat ppcat,card,catA1,cata1,ncbi,1.0,0.16666666666666663,card:ARO:3002689,ncbi:WP_002210545.1,plasmidencoded cat ppcat,cata,0.16666666666666663,0.9974061095507618,0.8307394428840952
+Plasmid-encoded cat (pp-cat),plasmidencoded cat ppcat,card,catA1,cata1,resfinder,1.0,0.16666666666666663,card:ARO:3002689,resfinder:catA1,plasmidencoded cat ppcat,cata,0.16666666666666663,0.9974061095507618,0.8307394428840952
+catA1,cata1,ncbi,Plasmid-encoded cat (pp-cat),plasmidencoded cat ppcat,card,1.0,0.16666666666666663,ncbi:WP_002210545.1,card:ARO:3002689,cata,plasmidencoded cat ppcat,0.16666666666666663,0.9974061095507618,0.8307394428840952
+cmlB,cmlb,card,CmlA2,cmla2,resfinder,1.0,0.6,card:ARO:3002698,resfinder:CmlA2,cmlb,cmla,0.75,0.9974061095507618,0.2474061095507618
+cmlB,cmlb,ncbi,CmlA2,cmla2,resfinder,1.0,0.6,ncbi:WP_032492328.1,resfinder:CmlA2,cmlb,cmla,0.75,0.9974061095507618,0.2474061095507618
+clbB,clbb,card,clbC,clbc,ncbi,1.0,0.75,card:ARO:3002815,ncbi:WP_015892743.1,clbb,clbc,0.75,0.9974061095507618,0.2474061095507618
+clbC,clbc,ncbi,clbB,clbb,card,1.0,0.75,ncbi:WP_015892743.1,card:ARO:3002815,clbc,clbb,0.75,0.9974061095507618,0.2474061095507618
+clbC,clbc,card,clbB,clbb,ncbi,1.0,0.75,card:ARO:3002816,ncbi:WP_011245929.1,clbc,clbb,0.75,0.9974061095507618,0.2474061095507618
+clbB,clbb,ncbi,clbC,clbc,card,1.0,0.75,ncbi:WP_011245929.1,card:ARO:3002816,clbb,clbc,0.75,0.9974061095507618,0.2474061095507618
+dfrC,dfrc,card,dfrS1,dfrs1,ncbi,0.981,0.6,card:ARO:3002865,ncbi:WP_000175735.1,dfrc,dfrs,0.75,0.9733092497211708,0.22330924972117083
+dfrS1,dfrs1,ncbi,dfrC,dfrc,card,0.981,0.6,ncbi:WP_000175735.1,card:ARO:3002865,dfrs,dfrc,0.75,0.9733092497211708,0.22330924972117083
+SAT-2,sat2,card,estX/sat2,estx/sat2,ncbi,1.0,0.4444444444444444,card:ARO:3002895,ncbi:WP_446913733.1,sat,estx/sat2,0.33333333333333337,0.9974061095507618,0.6640727762174284
+estX/sat2,estx/sat2,ncbi,SAT-2,sat2,card,1.0,0.4444444444444444,ncbi:WP_446913733.1,card:ARO:3002895,estx/sat2,sat,0.33333333333333337,0.9974061095507618,0.6640727762174284
+vanE,vane,card,VanEXY,vanexy,resfinder,1.0,0.6666666666666667,card:ARO:3002907,resfinder:VanEXY,vane,vanexy,0.6666666666666667,0.9974061095507618,0.33073944288409507
+vanE,vane,ncbi,VanEXY,vanexy,resfinder,1.0,0.6666666666666667,ncbi:WP_063856694.1,resfinder:VanEXY,vane,vanexy,0.6666666666666667,0.9974061095507618,0.33073944288409507
+vanG,vang,card,VanGXY,vangxy,resfinder,1.0,0.6666666666666667,card:ARO:3002909,resfinder:VanGXY,vang,vangxy,0.6666666666666667,0.9974061095507618,0.33073944288409507
+vanG,vang,ncbi,VanGXY,vangxy,resfinder,0.997,0.6666666666666667,ncbi:WP_063856695.1,resfinder:VanGXY,vang,vangxy,0.6666666666666667,0.9936013422092473,0.3269346755425806
+vanL,vanl,card,VanLXY,vanlxy,resfinder,1.0,0.6666666666666667,card:ARO:3002910,resfinder:VanLXY,vanl,vanlxy,0.6666666666666667,0.9974061095507618,0.33073944288409507
+vanL,vanl,ncbi,VanLXY,vanlxy,resfinder,1.0,0.6666666666666667,ncbi:WP_063856711.1,resfinder:VanLXY,vanl,vanlxy,0.6666666666666667,0.9974061095507618,0.33073944288409507
+vanM,vanm,card,VanHMX,vanhmx,resfinder,1.0,0.6666666666666667,card:ARO:3002911,resfinder:VanHMX,vanm,vanhmx,0.6666666666666667,0.9974061095507618,0.33073944288409507
+vanM,vanm,ncbi,VanHMX,vanhmx,resfinder,1.0,0.6666666666666667,ncbi:WP_063856712.1,resfinder:VanHMX,vanm,vanhmx,0.6666666666666667,0.9974061095507618,0.33073944288409507
+vanN,vann,card,VanNXY,vannxy,resfinder,1.0,0.6666666666666667,card:ARO:3002912,resfinder:VanNXY,vann,vannxy,0.6666666666666667,0.9974061095507618,0.33073944288409507
+vanN,vann,ncbi,VanNXY,vannxy,resfinder,1.0,0.6666666666666667,ncbi:WP_063856713.1,resfinder:VanNXY,vann,vannxy,0.6666666666666667,0.9974061095507618,0.33073944288409507
+vanR gene in vanB cluster,vanr gene in vanb cluster,card,vanR-B,vanrb,ncbi,0.959,0.19999999999999996,card:ARO:3002921,ncbi:WP_032489743.1,vanr gene in vanb cluster,vanrb,0.19999999999999996,0.9454076225500654,0.7454076225500654
+vanR-B,vanrb,ncbi,vanR gene in vanB cluster,vanr gene in vanb cluster,card,0.959,0.19999999999999996,ncbi:WP_032489743.1,card:ARO:3002921,vanrb,vanr gene in vanb cluster,0.19999999999999996,0.9454076225500654,0.7454076225500654
+vanR gene in vanC cluster,vanr gene in vanc cluster,card,vanR-C,vanrc,ncbi,1.0,0.19999999999999996,card:ARO:3002922,ncbi:WP_003126775.1,vanr gene in vanc cluster,vanrc,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanR-C,vanrc,ncbi,vanR gene in vanC cluster,vanr gene in vanc cluster,card,1.0,0.19999999999999996,ncbi:WP_003126775.1,card:ARO:3002922,vanrc,vanr gene in vanc cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanR gene in vanD cluster,vanr gene in vand cluster,card,vanR-D,vanrd,ncbi,0.969,0.19999999999999996,card:ARO:3002923,ncbi:WP_023042613.1,vanr gene in vand cluster,vanrd,0.19999999999999996,0.9580901803551134,0.7580901803551134
+vanR-D,vanrd,ncbi,vanR gene in vanD cluster,vanr gene in vand cluster,card,0.969,0.19999999999999996,ncbi:WP_023042613.1,card:ARO:3002923,vanrd,vanr gene in vand cluster,0.19999999999999996,0.9580901803551134,0.7580901803551134
+vanR gene in vanE cluster,vanr gene in vane cluster,card,vanR-E,vanre,ncbi,1.0,0.19999999999999996,card:ARO:3002924,ncbi:WP_063856718.1,vanr gene in vane cluster,vanre,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanR-E,vanre,ncbi,vanR gene in vanE cluster,vanr gene in vane cluster,card,1.0,0.19999999999999996,ncbi:WP_063856718.1,card:ARO:3002924,vanre,vanr gene in vane cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanR gene in vanF cluster,vanr gene in vanf cluster,card,vanR-F,vanrf,ncbi,1.0,0.19999999999999996,card:ARO:3002925,ncbi:WP_006285581.1,vanr gene in vanf cluster,vanrf,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanR-F,vanrf,ncbi,vanR gene in vanF cluster,vanr gene in vanf cluster,card,1.0,0.19999999999999996,ncbi:WP_006285581.1,card:ARO:3002925,vanrf,vanr gene in vanf cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanR gene in vanG cluster,vanr gene in vang cluster,card,vanR-G,vanrg,ncbi,1.0,0.19999999999999996,card:ARO:3002926,ncbi:WP_021418928.1,vanr gene in vang cluster,vanrg,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanR-G,vanrg,ncbi,vanR gene in vanG cluster,vanr gene in vang cluster,card,1.0,0.19999999999999996,ncbi:WP_021418928.1,card:ARO:3002926,vanrg,vanr gene in vang cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanR gene in vanL cluster,vanr gene in vanl cluster,card,vanR-L,vanrl,ncbi,1.0,0.19999999999999996,card:ARO:3002927,ncbi:WP_063856724.1,vanr gene in vanl cluster,vanrl,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanR-L,vanrl,ncbi,vanR gene in vanL cluster,vanr gene in vanl cluster,card,1.0,0.19999999999999996,ncbi:WP_063856724.1,card:ARO:3002927,vanrl,vanr gene in vanl cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanR gene in vanM cluster,vanr gene in vanm cluster,card,vanR-M,vanrm,ncbi,1.0,0.19999999999999996,card:ARO:3002928,ncbi:WP_063856726.1,vanr gene in vanm cluster,vanrm,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanR-M,vanrm,ncbi,vanR gene in vanM cluster,vanr gene in vanm cluster,card,1.0,0.19999999999999996,ncbi:WP_063856726.1,card:ARO:3002928,vanrm,vanr gene in vanm cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanR gene in vanN cluster,vanr gene in vann cluster,card,vanR-N,vanrn,ncbi,1.0,0.19999999999999996,card:ARO:3002929,ncbi:WP_063856728.1,vanr gene in vann cluster,vanrn,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanR-N,vanrn,ncbi,vanR gene in vanN cluster,vanr gene in vann cluster,card,1.0,0.19999999999999996,ncbi:WP_063856728.1,card:ARO:3002929,vanrn,vanr gene in vann cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanR gene in vanO cluster,vanr gene in vano cluster,card,vanR-O,vanro,ncbi,1.0,0.19999999999999996,card:ARO:3002930,ncbi:WP_063856729.1,vanr gene in vano cluster,vanro,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanR-O,vanro,ncbi,vanR gene in vanO cluster,vanr gene in vano cluster,card,1.0,0.19999999999999996,ncbi:WP_063856729.1,card:ARO:3002930,vanro,vanr gene in vano cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanS gene in vanA cluster,vans gene in vana cluster,card,vanS-A,vansa,ncbi,1.0,0.19999999999999996,card:ARO:3002931,ncbi:WP_002305818.1,vans gene in vana cluster,vansa,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanS-A,vansa,ncbi,vanS gene in vanA cluster,vans gene in vana cluster,card,1.0,0.19999999999999996,ncbi:WP_002305818.1,card:ARO:3002931,vansa,vans gene in vana cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanS gene in vanB cluster,vans gene in vanb cluster,card,vanS-B,vansb,ncbi,0.957,0.19999999999999996,card:ARO:3002932,ncbi:WP_012579101.1,vans gene in vanb cluster,vansb,0.19999999999999996,0.9428711109890557,0.7428711109890558
+vanS-B,vansb,ncbi,vanS gene in vanB cluster,vans gene in vanb cluster,card,0.957,0.19999999999999996,ncbi:WP_012579101.1,card:ARO:3002932,vansb,vans gene in vanb cluster,0.19999999999999996,0.9428711109890557,0.7428711109890558
+vanS gene in vanC cluster,vans gene in vanc cluster,card,vanS-C,vansc,ncbi,1.0,0.19999999999999996,card:ARO:3002933,ncbi:WP_063856733.1,vans gene in vanc cluster,vansc,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanS-C,vansc,ncbi,vanS gene in vanC cluster,vans gene in vanc cluster,card,1.0,0.19999999999999996,ncbi:WP_063856733.1,card:ARO:3002933,vansc,vans gene in vanc cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanS gene in vanE cluster,vans gene in vane cluster,card,vanS-E,vanse,ncbi,1.0,0.19999999999999996,card:ARO:3002935,ncbi:WP_063856734.1,vans gene in vane cluster,vanse,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanS-E,vanse,ncbi,vanS gene in vanE cluster,vans gene in vane cluster,card,1.0,0.19999999999999996,ncbi:WP_063856734.1,card:ARO:3002935,vanse,vans gene in vane cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanS gene in vanF cluster,vans gene in vanf cluster,card,vanS-F,vansf,ncbi,1.0,0.19999999999999996,card:ARO:3002936,ncbi:WP_006285582.1,vans gene in vanf cluster,vansf,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanS-F,vansf,ncbi,vanS gene in vanF cluster,vans gene in vanf cluster,card,1.0,0.19999999999999996,ncbi:WP_006285582.1,card:ARO:3002936,vansf,vans gene in vanf cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanS gene in vanG cluster,vans gene in vang cluster,card,vanS-G,vansg,ncbi,0.975,0.19999999999999996,card:ARO:3002937,ncbi:WP_063856732.1,vans gene in vang cluster,vansg,0.19999999999999996,0.9656997150381421,0.7656997150381422
+vanS-G,vansg,ncbi,vanS gene in vanG cluster,vans gene in vang cluster,card,0.975,0.19999999999999996,ncbi:WP_063856732.1,card:ARO:3002937,vansg,vans gene in vang cluster,0.19999999999999996,0.9656997150381421,0.7656997150381422
+vanS gene in vanL cluster,vans gene in vanl cluster,card,vanS-L,vansl,ncbi,1.0,0.19999999999999996,card:ARO:3002938,ncbi:WP_063856745.1,vans gene in vanl cluster,vansl,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanS-L,vansl,ncbi,vanS gene in vanL cluster,vans gene in vanl cluster,card,1.0,0.19999999999999996,ncbi:WP_063856745.1,card:ARO:3002938,vansl,vans gene in vanl cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanS gene in vanM cluster,vans gene in vanm cluster,card,vanS-M,vansm,ncbi,1.0,0.19999999999999996,card:ARO:3002939,ncbi:WP_063856748.1,vans gene in vanm cluster,vansm,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanS-M,vansm,ncbi,vanS gene in vanM cluster,vans gene in vanm cluster,card,1.0,0.19999999999999996,ncbi:WP_063856748.1,card:ARO:3002939,vansm,vans gene in vanm cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanS gene in vanN cluster,vans gene in vann cluster,card,vanS-N,vansn,ncbi,1.0,0.19999999999999996,card:ARO:3002940,ncbi:WP_063856749.1,vans gene in vann cluster,vansn,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanS-N,vansn,ncbi,vanS gene in vanN cluster,vans gene in vann cluster,card,1.0,0.19999999999999996,ncbi:WP_063856749.1,card:ARO:3002940,vansn,vans gene in vann cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanS gene in vanO cluster,vans gene in vano cluster,card,vanS-O,vanso,ncbi,1.0,0.19999999999999996,card:ARO:3002941,ncbi:WP_070064533.1,vans gene in vano cluster,vanso,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanS-O,vanso,ncbi,vanS gene in vanO cluster,vans gene in vano cluster,card,1.0,0.19999999999999996,ncbi:WP_070064533.1,card:ARO:3002941,vanso,vans gene in vano cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanH gene in vanA cluster,vanh gene in vana cluster,card,vanH-A,vanha,ncbi,1.0,0.19999999999999996,card:ARO:3002942,ncbi:WP_001059542.1,vanh gene in vana cluster,vanha,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanH-A,vanha,ncbi,vanH gene in vanA cluster,vanh gene in vana cluster,card,1.0,0.19999999999999996,ncbi:WP_001059542.1,card:ARO:3002942,vanha,vanh gene in vana cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanH gene in vanD cluster,vanh gene in vand cluster,card,vanH-D,vanhd,ncbi,0.996,0.19999999999999996,card:ARO:3002944,ncbi:WP_023043160.1,vanh gene in vand cluster,vanhd,0.19999999999999996,0.9923330864287427,0.7923330864287428
+vanH-D,vanhd,ncbi,vanH gene in vanD cluster,vanh gene in vand cluster,card,0.996,0.19999999999999996,ncbi:WP_023043160.1,card:ARO:3002944,vanhd,vanh gene in vand cluster,0.19999999999999996,0.9923330864287427,0.7923330864287428
+vanH gene in vanF cluster,vanh gene in vanf cluster,card,vanH-F,vanhf,ncbi,1.0,0.19999999999999996,card:ARO:3002945,ncbi:WP_006285586.1,vanh gene in vanf cluster,vanhf,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanH-F,vanhf,ncbi,vanH gene in vanF cluster,vanh gene in vanf cluster,card,1.0,0.19999999999999996,ncbi:WP_006285586.1,card:ARO:3002945,vanhf,vanh gene in vanf cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanH gene in vanM cluster,vanh gene in vanm cluster,card,vanH-M,vanhm,ncbi,1.0,0.19999999999999996,card:ARO:3002947,ncbi:WP_063856706.1,vanh gene in vanm cluster,vanhm,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanH-M,vanhm,ncbi,vanH gene in vanM cluster,vanh gene in vanm cluster,card,1.0,0.19999999999999996,ncbi:WP_063856706.1,card:ARO:3002947,vanhm,vanh gene in vanm cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanH gene in vanO cluster,vanh gene in vano cluster,card,vanH-O,vanho,ncbi,1.0,0.19999999999999996,card:ARO:3002948,ncbi:WP_063856707.1,vanh gene in vano cluster,vanho,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanH gene in vanO cluster,vanh gene in vano cluster,card,VanHOX,vanhox,resfinder,1.0,0.19999999999999996,card:ARO:3002948,resfinder:VanHOX,vanh gene in vano cluster,vanhox,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanH-O,vanho,ncbi,vanH gene in vanO cluster,vanh gene in vano cluster,card,1.0,0.19999999999999996,ncbi:WP_063856707.1,card:ARO:3002948,vanho,vanh gene in vano cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanH-O,vanho,ncbi,VanHOX,vanhox,resfinder,1.0,0.8333333333333334,ncbi:WP_063856707.1,resfinder:VanHOX,vanho,vanhox,0.8333333333333334,0.9974061095507618,0.16407277621742844
+vanX gene in vanA cluster,vanx gene in vana cluster,card,vanX-A,vanxa,ncbi,1.0,0.19999999999999996,card:ARO:3002949,ncbi:WP_000402347.1,vanx gene in vana cluster,vanxa,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanX-A,vanxa,ncbi,vanX gene in vanA cluster,vanx gene in vana cluster,card,1.0,0.19999999999999996,ncbi:WP_000402347.1,card:ARO:3002949,vanxa,vanx gene in vana cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanX gene in vanB cluster,vanx gene in vanb cluster,card,vanX-B,vanxb,ncbi,0.955,0.19999999999999996,card:ARO:3002950,ncbi:WP_012579102.1,vanx gene in vanb cluster,vanxb,0.19999999999999996,0.9403345994280463,0.7403345994280464
+vanX-B,vanxb,ncbi,vanX gene in vanB cluster,vanx gene in vanb cluster,card,0.955,0.19999999999999996,ncbi:WP_012579102.1,card:ARO:3002950,vanxb,vanx gene in vanb cluster,0.19999999999999996,0.9403345994280463,0.7403345994280464
+vanX gene in vanF cluster,vanx gene in vanf cluster,card,vanX-F,vanxf,ncbi,1.0,0.19999999999999996,card:ARO:3002952,ncbi:WP_006285588.1,vanx gene in vanf cluster,vanxf,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanX-F,vanxf,ncbi,vanX gene in vanF cluster,vanx gene in vanf cluster,card,1.0,0.19999999999999996,ncbi:WP_006285588.1,card:ARO:3002952,vanxf,vanx gene in vanf cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanX gene in vanM cluster,vanx gene in vanm cluster,card,vanX-M,vanxm,ncbi,1.0,0.19999999999999996,card:ARO:3002953,ncbi:WP_063856777.1,vanx gene in vanm cluster,vanxm,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanX-M,vanxm,ncbi,vanX gene in vanM cluster,vanx gene in vanm cluster,card,1.0,0.19999999999999996,ncbi:WP_063856777.1,card:ARO:3002953,vanxm,vanx gene in vanm cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanX gene in vanO cluster,vanx gene in vano cluster,card,vanX-O,vanxo,ncbi,1.0,0.19999999999999996,card:ARO:3002954,ncbi:WP_063856778.1,vanx gene in vano cluster,vanxo,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanX-O,vanxo,ncbi,vanX gene in vanO cluster,vanx gene in vano cluster,card,1.0,0.19999999999999996,ncbi:WP_063856778.1,card:ARO:3002954,vanxo,vanx gene in vano cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanY gene in vanA cluster,vany gene in vana cluster,card,vanY-A,vanya,ncbi,1.0,0.19999999999999996,card:ARO:3002955,ncbi:WP_001812592.1,vany gene in vana cluster,vanya,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanY-A,vanya,ncbi,vanY gene in vanA cluster,vany gene in vana cluster,card,1.0,0.19999999999999996,ncbi:WP_001812592.1,card:ARO:3002955,vanya,vany gene in vana cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanY gene in vanD cluster,vany gene in vand cluster,card,vanY-D,vanyd,ncbi,1.0,0.19999999999999996,card:ARO:3002957,ncbi:WP_063856881.1,vany gene in vand cluster,vanyd,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanY-D,vanyd,ncbi,vanY gene in vanD cluster,vany gene in vand cluster,card,1.0,0.19999999999999996,ncbi:WP_063856881.1,card:ARO:3002957,vanyd,vany gene in vand cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanY gene in vanF cluster,vany gene in vanf cluster,card,vanY-F,vanyf,ncbi,1.0,0.19999999999999996,card:ARO:3002958,ncbi:WP_006285584.1,vany gene in vanf cluster,vanyf,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanY-F,vanyf,ncbi,vanY gene in vanF cluster,vany gene in vanf cluster,card,1.0,0.19999999999999996,ncbi:WP_006285584.1,card:ARO:3002958,vanyf,vany gene in vanf cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanY gene in vanG cluster,vany gene in vang cluster,card,vanY-G1,vanyg1,ncbi,1.0,0.19999999999999996,card:ARO:3002959,ncbi:WP_021418926.1,vany gene in vang cluster,vanyg,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanY-G1,vanyg1,ncbi,vanY gene in vanG cluster,vany gene in vang cluster,card,1.0,0.19999999999999996,ncbi:WP_021418926.1,card:ARO:3002959,vanyg,vany gene in vang cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanY gene in vanM cluster,vany gene in vanm cluster,card,vanY-M,vanym,ncbi,1.0,0.19999999999999996,card:ARO:3002961,ncbi:WP_107309513.1,vany gene in vanm cluster,vanym,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanY-M,vanym,ncbi,vanY gene in vanM cluster,vany gene in vanm cluster,card,1.0,0.19999999999999996,ncbi:WP_107309513.1,card:ARO:3002961,vanym,vany gene in vanm cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanZ gene in vanA cluster,vanz gene in vana cluster,card,vanZ-A,vanza,ncbi,1.0,0.19999999999999996,card:ARO:3002962,ncbi:WP_000516404.1,vanz gene in vana cluster,vanza,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanZ-A,vanza,ncbi,vanZ gene in vanA cluster,vanz gene in vana cluster,card,1.0,0.19999999999999996,ncbi:WP_000516404.1,card:ARO:3002962,vanza,vanz gene in vana cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanZ gene in vanF cluster,vanz gene in vanf cluster,card,vanZ-F,vanzf,ncbi,1.0,0.19999999999999996,card:ARO:3002963,ncbi:WP_006285585.1,vanz gene in vanf cluster,vanzf,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanZ-F,vanzf,ncbi,vanZ gene in vanF cluster,vanz gene in vanf cluster,card,1.0,0.19999999999999996,ncbi:WP_006285585.1,card:ARO:3002963,vanzf,vanz gene in vanf cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanW gene in vanG cluster,vanw gene in vang cluster,card,vanW-G,vanwg,ncbi,0.996,0.19999999999999996,card:ARO:3002965,ncbi:WP_063856762.1,vanw gene in vang cluster,vanwg,0.19999999999999996,0.9923330864287427,0.7923330864287428
+vanW-G,vanwg,ncbi,vanW gene in vanG cluster,vanw gene in vang cluster,card,0.996,0.19999999999999996,ncbi:WP_063856762.1,card:ARO:3002965,vanwg,vanw gene in vang cluster,0.19999999999999996,0.9923330864287427,0.7923330864287428
+vanXY gene in vanC cluster,vanxy gene in vanc cluster,card,vanXY-C,vanxyc,ncbi,1.0,0.23076923076923073,card:ARO:3002966,ncbi:WP_003126779.1,vanxy gene in vanc cluster,vanxyc,0.23076923076923073,0.9974061095507618,0.7666368787815311
+vanXY-C,vanxyc,ncbi,vanXY gene in vanC cluster,vanxy gene in vanc cluster,card,1.0,0.23076923076923073,ncbi:WP_003126779.1,card:ARO:3002966,vanxyc,vanxy gene in vanc cluster,0.23076923076923073,0.9974061095507618,0.7666368787815311
+vanXY gene in vanE cluster,vanxy gene in vane cluster,card,vanXY-E,vanxye,ncbi,1.0,0.23076923076923073,card:ARO:3002967,ncbi:WP_063856813.1,vanxy gene in vane cluster,vanxye,0.23076923076923073,0.9974061095507618,0.7666368787815311
+vanXY-E,vanxye,ncbi,vanXY gene in vanE cluster,vanxy gene in vane cluster,card,1.0,0.23076923076923073,ncbi:WP_063856813.1,card:ARO:3002967,vanxye,vanxy gene in vane cluster,0.23076923076923073,0.9974061095507618,0.7666368787815311
+vanXY gene in vanL cluster,vanxy gene in vanl cluster,card,vanXY-L,vanxyl,ncbi,1.0,0.23076923076923073,card:ARO:3002968,ncbi:WP_063856817.1,vanxy gene in vanl cluster,vanxyl,0.23076923076923073,0.9974061095507618,0.7666368787815311
+vanXY-L,vanxyl,ncbi,vanXY gene in vanL cluster,vanxy gene in vanl cluster,card,1.0,0.23076923076923073,ncbi:WP_063856817.1,card:ARO:3002968,vanxyl,vanxy gene in vanl cluster,0.23076923076923073,0.9974061095507618,0.7666368787815311
+vanXY gene in vanN cluster,vanxy gene in vann cluster,card,vanXY-N,vanxyn,ncbi,1.0,0.23076923076923073,card:ARO:3002969,ncbi:WP_063856820.1,vanxy gene in vann cluster,vanxyn,0.23076923076923073,0.9974061095507618,0.7666368787815311
+vanXY-N,vanxyn,ncbi,vanXY gene in vanN cluster,vanxy gene in vann cluster,card,1.0,0.23076923076923073,ncbi:WP_063856820.1,card:ARO:3002969,vanxyn,vanxy gene in vann cluster,0.23076923076923073,0.9974061095507618,0.7666368787815311
+vanT gene in vanC cluster,vant gene in vanc cluster,card,vanT-C,vantc,ncbi,1.0,0.19999999999999996,card:ARO:3002970,ncbi:WP_003126777.1,vant gene in vanc cluster,vantc,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanT-C,vantc,ncbi,vanT gene in vanC cluster,vant gene in vanc cluster,card,1.0,0.19999999999999996,ncbi:WP_003126777.1,card:ARO:3002970,vantc,vant gene in vanc cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanT gene in vanE cluster,vant gene in vane cluster,card,vanT-E,vante,ncbi,1.0,0.19999999999999996,card:ARO:3002971,ncbi:WP_063856753.1,vant gene in vane cluster,vante,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanT-E,vante,ncbi,vanT gene in vanE cluster,vant gene in vane cluster,card,1.0,0.19999999999999996,ncbi:WP_063856753.1,card:ARO:3002971,vante,vant gene in vane cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanTm gene in vanL cluster,vantm gene in vanl cluster,card,vanTm,vantm,ncbi,1.0,0.1923076923076923,card:ARO:3002973,ncbi:WP_063856760.1,vantm gene in vanl cluster,vantm,0.1923076923076923,0.9974061095507618,0.8050984172430695
+vanTm,vantm,ncbi,vanTm gene in vanL cluster,vantm gene in vanl cluster,card,1.0,0.1923076923076923,ncbi:WP_063856760.1,card:ARO:3002973,vantm,vantm gene in vanl cluster,0.1923076923076923,0.9974061095507618,0.8050984172430695
+vanTr gene in vanL cluster,vantr gene in vanl cluster,card,vanTr,vantr,ncbi,1.0,0.1923076923076923,card:ARO:3002974,ncbi:WP_063856761.1,vantr gene in vanl cluster,vantr,0.1923076923076923,0.9974061095507618,0.8050984172430695
+vanTr,vantr,ncbi,vanTr gene in vanL cluster,vantr gene in vanl cluster,card,1.0,0.1923076923076923,ncbi:WP_063856761.1,card:ARO:3002974,vantr,vantr gene in vanl cluster,0.1923076923076923,0.9974061095507618,0.8050984172430695
+vanT gene in vanN cluster,vant gene in vann cluster,card,vanT-N,vantn,ncbi,1.0,0.19999999999999996,card:ARO:3002975,ncbi:WP_063856757.1,vant gene in vann cluster,vantn,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanT-N,vantn,ncbi,vanT gene in vanN cluster,vant gene in vann cluster,card,1.0,0.19999999999999996,ncbi:WP_063856757.1,card:ARO:3002975,vantn,vant gene in vann cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanXY gene in vanG cluster,vanxy gene in vang cluster,card,vanXY,vanxy,ncbi,1.0,0.1923076923076923,card:ARO:3003069,ncbi:WP_063856782.1,vanxy gene in vang cluster,vanxy,0.1923076923076923,0.9974061095507618,0.8050984172430695
+vanXY,vanxy,ncbi,vanXY gene in vanG cluster,vanxy gene in vang cluster,card,1.0,0.1923076923076923,ncbi:WP_063856782.1,card:ARO:3003069,vanxy,vanxy gene in vang cluster,0.1923076923076923,0.9974061095507618,0.8050984172430695
+vanX gene in vanD cluster,vanx gene in vand cluster,card,vanX-D,vanxd,ncbi,1.0,0.19999999999999996,card:ARO:3003070,ncbi:WP_023043158.1,vanx gene in vand cluster,vanxd,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanX-D,vanxd,ncbi,vanX gene in vanD cluster,vanx gene in vand cluster,card,1.0,0.19999999999999996,ncbi:WP_023043158.1,card:ARO:3003070,vanxd,vanx gene in vand cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+cphA3,cpha3,card,blaCEPH-A3,cepha3,resfinder,1.0,0.8333333333333334,card:ARO:3003093,resfinder:blaCEPH-A3,cpha,cepha,0.8,0.9974061095507618,0.19740610955076177
+cphA-16,cpha16,ncbi,blaCEPH-A3,cepha3,resfinder,1.0,0.5,ncbi:WP_063844281.1,resfinder:blaCEPH-A3,cpha,cepha,0.8,0.9974061095507618,0.19740610955076177
+imiH,imih,card,cphA-13,cpha13,ncbi,1.0,0.0,card:ARO:3003094,ncbi:WP_063865292.1,imih,cpha,0.0,0.9974061095507618,0.9974061095507618
+cphA-13,cpha13,ncbi,imiH,imih,card,1.0,0.0,ncbi:WP_063865292.1,card:ARO:3003094,cpha,imih,0.0,0.9974061095507618,0.9974061095507618
+cphA-13,cpha13,ncbi,imiH,imih,resfinder,1.0,0.0,ncbi:WP_063865292.1,resfinder:imiH,cpha,imih,0.0,0.9974061095507618,0.9974061095507618
+imiS,imis,card,cphA-11,cpha11,ncbi,1.0,0.0,card:ARO:3003095,ncbi:WP_063865298.1,imis,cpha,0.0,0.9974061095507618,0.9974061095507618
+cphA-11,cpha11,ncbi,imiS,imis,card,1.0,0.0,ncbi:WP_063865298.1,card:ARO:3003095,cpha,imis,0.0,0.9974061095507618,0.9974061095507618
+cphA-11,cpha11,ncbi,imiS,imis,resfinder,1.0,0.0,ncbi:WP_063865298.1,resfinder:imiS,cpha,imis,0.0,0.9974061095507618,0.9974061095507618
+AAC(6')-Ian,aac6'ian,card,aacA57-2,aaca572,ncbi,0.968,0.375,card:ARO:3003200,ncbi:WP_000959805.1,aac6'ian,aaca,0.5,0.9568219245746086,0.4568219245746086
+aacA57-2,aaca572,ncbi,AAC(6')-Ian,aac6'ian,card,0.968,0.375,ncbi:WP_000959805.1,card:ARO:3003200,aaca,aac6'ian,0.5,0.9568219245746086,0.4568219245746086
+aacA57-2,aaca572,ncbi,aac(6')-Ian,aac6'ian,resfinder,0.968,0.375,ncbi:WP_000959805.1,resfinder:aac(6')-Ian,aaca,aac6'ian,0.5,0.9568219245746086,0.4568219245746086
+y56 beta-lactamase,y56 betalactamase,card,blaA,a,ncbi,0.959,0.05882352941176472,card:ARO:3003558,ncbi:WP_011816299.1,y56 betalactamase,a,0.05882352941176472,0.9454076225500654,0.8865840931383007
+y56 beta-lactamase,y56 betalactamase,card,blaA,a,resfinder,0.985,0.05882352941176472,card:ARO:3003558,resfinder:blaA,y56 betalactamase,a,0.05882352941176472,0.9783822728431899,0.9195587434314252
+blaA,a,ncbi,y56 beta-lactamase,y56 betalactamase,card,0.959,0.05882352941176472,ncbi:WP_011816299.1,card:ARO:3003558,a,y56 betalactamase,0.05882352941176472,0.9454076225500654,0.8865840931383007
+EXO-1,exo1,card,bla2a,2a,ncbi,1.0,0.0,card:ARO:3003564,ncbi:WP_063842239.1,exo,2a,0.0,0.9974061095507618,0.9974061095507618
+bla2a,2a,ncbi,EXO-1,exo1,card,1.0,0.0,ncbi:WP_063842239.1,card:ARO:3003564,2a,exo,0.0,0.9974061095507618,0.9974061095507618
+AAC(6')-Ib',aac6'ib',card,aac(6')-30-aac(6')-Ib',aac6'30aac6'ib',resfinder,0.981,0.5333333333333333,card:ARO:3003676,resfinder:aac(6')-30-aac(6')-Ib',aac6'ib',aac6'30aac6'ib',0.5333333333333333,0.9733092497211708,0.4399759163878375
+aac(6')-Ib',aac6'ib',ncbi,aac(6')-30-aac(6')-Ib',aac6'30aac6'ib',resfinder,0.981,0.5333333333333333,ncbi:WP_014454105.1,resfinder:aac(6')-30-aac(6')-Ib',aac6'ib',aac6'30aac6'ib',0.5333333333333333,0.9733092497211708,0.4399759163878375
+MSI-OXA,msioxa,card,blaOXA-MSI,oxamsi,ncbi,1.0,0.0,card:ARO:3003719,ncbi:WP_263305326.1,msioxa,oxamsi,0.0,0.9974061095507618,0.9974061095507618
+blaOXA-MSI,oxamsi,ncbi,MSI-OXA,msioxa,card,1.0,0.0,ncbi:WP_263305326.1,card:ARO:3003719,oxamsi,msioxa,0.0,0.9974061095507618,0.9974061095507618
+vanW gene in vanI cluster,vanw gene in vani cluster,card,vanW-I,vanwi,ncbi,1.0,0.19999999999999996,card:ARO:3003724,ncbi:WP_005813024.1,vanw gene in vani cluster,vanwi,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanW-I,vanwi,ncbi,vanW gene in vanI cluster,vanw gene in vani cluster,card,1.0,0.19999999999999996,ncbi:WP_005813024.1,card:ARO:3003724,vanwi,vanw gene in vani cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanX gene in vanI cluster,vanx gene in vani cluster,card,vanX-I,vanxi,ncbi,1.0,0.19999999999999996,card:ARO:3003725,ncbi:WP_015943580.1,vanx gene in vani cluster,vanxi,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanX-I,vanxi,ncbi,vanX gene in vanI cluster,vanx gene in vani cluster,card,1.0,0.19999999999999996,ncbi:WP_015943580.1,card:ARO:3003725,vanxi,vanx gene in vani cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanK gene in vanI cluster,vank gene in vani cluster,card,vanK-I,vanki,ncbi,1.0,0.19999999999999996,card:ARO:3003727,ncbi:WP_011461306.1,vank gene in vani cluster,vanki,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanK-I,vanki,ncbi,vanK gene in vanI cluster,vank gene in vani cluster,card,1.0,0.19999999999999996,ncbi:WP_011461306.1,card:ARO:3003727,vanki,vank gene in vani cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanR gene in vanI cluster,vanr gene in vani cluster,card,vanR-I,vanri,ncbi,1.0,0.19999999999999996,card:ARO:3003728,ncbi:WP_011461303.1,vanr gene in vani cluster,vanri,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanR-I,vanri,ncbi,vanR gene in vanI cluster,vanr gene in vani cluster,card,1.0,0.19999999999999996,ncbi:WP_011461303.1,card:ARO:3003728,vanri,vanr gene in vani cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+Mrx,mrx,card,mrx(A),mrxa,ncbi,1.0,0.75,card:ARO:3003839,ncbi:WP_000004159.1,mrx,mrxa,0.75,0.9974061095507618,0.2474061095507618
+mrx(A),mrxa,ncbi,Mrx,mrx,card,1.0,0.75,ncbi:WP_000004159.1,card:ARO:3003839,mrxa,mrx,0.75,0.9974061095507618,0.2474061095507618
+ANT(4')-Ib,ant4'ib,card,aadD2,aadd2,ncbi,1.0,0.1428571428571429,card:ARO:3003905,ncbi:WP_035202393.1,ant4'ib,aadd,0.1428571428571429,0.9974061095507618,0.8545489666936189
+aadD2,aadd2,ncbi,ANT(4')-Ib,ant4'ib,card,1.0,0.1428571428571429,ncbi:WP_035202393.1,card:ARO:3003905,aadd,ant4'ib,0.1428571428571429,0.9974061095507618,0.8545489666936189
+aadD2,aadd2,ncbi,ant(4')-Ib,ant4'ib,resfinder,1.0,0.1428571428571429,ncbi:WP_035202393.1,resfinder:ant(4')-Ib,aadd,ant4'ib,0.1428571428571429,0.9974061095507618,0.8545489666936189
+APH(3')-VIIIb,aph3'viiib,card,aph(3')-VIII,aph3'viii,resfinder,1.0,0.9,card:ARO:3004086,resfinder:aph(3')-VIII,aph3'viiib,aph3'viii,0.9,0.9974061095507618,0.09740610955076179
+aph(3')-VIIIb,aph3'viiib,ncbi,aph(3')-VIII,aph3'viii,resfinder,1.0,0.9,ncbi:WP_016656536.1,resfinder:aph(3')-VIII,aph3'viiib,aph3'viii,0.9,0.9974061095507618,0.09740610955076179
+APH(3')-IXa,aph3'ixa,card,aph(3')-IX,aph3'ix,ncbi,1.0,0.875,card:ARO:3004087,ncbi:WP_004861468.1,aph3'ixa,aph3'ix,0.875,0.9974061095507618,0.12240610955076181
+APH(3')-IXa,aph3'ixa,card,aph(3')-IX,aph3'ix,resfinder,1.0,0.875,card:ARO:3004087,resfinder:aph(3')-IX,aph3'ixa,aph3'ix,0.875,0.9974061095507618,0.12240610955076181
+aph(3')-IX,aph3'ix,ncbi,APH(3')-IXa,aph3'ixa,card,1.0,0.875,ncbi:WP_004861468.1,card:ARO:3004087,aph3'ix,aph3'ixa,0.875,0.9974061095507618,0.12240610955076181
+cfrC,cfrc,card,cfr,cfr,ncbi,1.0,0.75,card:ARO:3004146,ncbi:WP_011987126.1,cfrc,cfr,0.75,0.9974061095507618,0.2474061095507618
+cfr,cfr,ncbi,cfrC,cfrc,card,1.0,0.75,ncbi:WP_011987126.1,card:ARO:3004146,cfr,cfrc,0.75,0.9974061095507618,0.2474061095507618
+vanU gene in vanG cluster,vanu gene in vang cluster,card,vanU-G,vanug,ncbi,1.0,0.19999999999999996,card:ARO:3004253,ncbi:WP_021418929.1,vanu gene in vang cluster,vanug,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanU-G,vanug,ncbi,vanU gene in vanG cluster,vanu gene in vang cluster,card,1.0,0.19999999999999996,ncbi:WP_021418929.1,card:ARO:3004253,vanug,vanu gene in vang cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+Rhodobacter sphaeroides ampC beta-lactamase,ampc betalactamase,card,blaRHO,rho,ncbi,1.0,0.0,card:ARO:3004291,ncbi:WP_011339581.1,ampc betalactamase,rho,0.0,0.9974061095507618,0.9974061095507618
+blaRHO,rho,ncbi,Rhodobacter sphaeroides ampC beta-lactamase,ampc betalactamase,card,1.0,0.0,ncbi:WP_011339581.1,card:ARO:3004291,rho,ampc betalactamase,0.0,0.9974061095507618,0.9974061095507618
+Agrobacterium fabrum chloramphenicol acetyltransferase,chloramphenicol acetyltransferase,card,catB1,catb1,ncbi,1.0,0.09090909090909094,card:ARO:3004451,ncbi:WP_010974114.1,chloramphenicol acetyltransferase,catb,0.09090909090909094,0.9974061095507618,0.9064970186416709
+Agrobacterium fabrum chloramphenicol acetyltransferase,chloramphenicol acetyltransferase,card,catB1,catb1,resfinder,1.0,0.09090909090909094,card:ARO:3004451,resfinder:catB1,chloramphenicol acetyltransferase,catb,0.09090909090909094,0.9974061095507618,0.9064970186416709
+catB1,catb1,ncbi,Agrobacterium fabrum chloramphenicol acetyltransferase,chloramphenicol acetyltransferase,card,1.0,0.09090909090909094,ncbi:WP_010974114.1,card:ARO:3004451,catb,chloramphenicol acetyltransferase,0.09090909090909094,0.9974061095507618,0.9064970186416709
+Campylobacter coli chloramphenicol acetyltransferase,chloramphenicol acetyltransferase,card,catA13,cata13,ncbi,0.961,0.12121212121212122,card:ARO:3004454,ncbi:WP_043774378.1,chloramphenicol acetyltransferase,cata,0.12121212121212122,0.947944134111075,0.8267320128989538
+catA13,cata13,ncbi,Campylobacter coli chloramphenicol acetyltransferase,chloramphenicol acetyltransferase,card,0.961,0.12121212121212122,ncbi:WP_043774378.1,card:ARO:3004454,cata,chloramphenicol acetyltransferase,0.12121212121212122,0.947944134111075,0.8267320128989538
+Streptococcus suis chloramphenicol acetyltransferase,chloramphenicol acetyltransferase,card,catA,cata,ncbi,1.0,0.12121212121212122,card:ARO:3004455,ncbi:WP_039139170.1,chloramphenicol acetyltransferase,cata,0.12121212121212122,0.9974061095507618,0.8761939883386406
+Streptococcus suis chloramphenicol acetyltransferase,chloramphenicol acetyltransferase,card,cat(pC194),catpc194,resfinder,0.953,0.12121212121212122,card:ARO:3004455,resfinder:cat(pC194),chloramphenicol acetyltransferase,catpc,0.12121212121212122,0.9377980878670367,0.8165859666549155
+catA,cata,ncbi,Streptococcus suis chloramphenicol acetyltransferase,chloramphenicol acetyltransferase,card,1.0,0.12121212121212122,ncbi:WP_039139170.1,card:ARO:3004455,cata,chloramphenicol acetyltransferase,0.12121212121212122,0.9974061095507618,0.8761939883386406
+catA,cata,ncbi,cat(pC194),catpc194,resfinder,0.953,0.375,ncbi:WP_039139170.1,resfinder:cat(pC194),cata,catpc,0.6,0.9377980878670367,0.3377980878670367
+Staphylococcus intermedius chloramphenicol acetyltransferase,chloramphenicol acetyltransferase,card,catA7,cata7,ncbi,1.0,0.12121212121212122,card:ARO:3004457,ncbi:WP_063843211.1,chloramphenicol acetyltransferase,cata,0.12121212121212122,0.9974061095507618,0.8761939883386406
+Staphylococcus intermedius chloramphenicol acetyltransferase,chloramphenicol acetyltransferase,card,cat(pC221),catpc221,resfinder,0.981,0.12121212121212122,card:ARO:3004457,resfinder:cat(pC221),chloramphenicol acetyltransferase,catpc,0.12121212121212122,0.9733092497211708,0.8520971285090496
+catA7,cata7,ncbi,Staphylococcus intermedius chloramphenicol acetyltransferase,chloramphenicol acetyltransferase,card,1.0,0.12121212121212122,ncbi:WP_063843211.1,card:ARO:3004457,cata,chloramphenicol acetyltransferase,0.12121212121212122,0.9974061095507618,0.8761939883386406
+catA7,cata7,ncbi,cat(pC221),catpc221,resfinder,0.981,0.375,ncbi:WP_063843211.1,resfinder:cat(pC221),cata,catpc,0.6,0.9733092497211708,0.37330924972117085
+clcD,clcd,card,cfr(B),cfrb,ncbi,1.0,0.25,card:ARO:3004599,ncbi:WP_111690897.1,clcd,cfrb,0.25,0.9974061095507618,0.7474061095507618
+clcD,clcd,card,cfr(B),cfrb,resfinder,0.963,0.25,card:ARO:3004599,resfinder:cfr(B),clcd,cfrb,0.25,0.9504806456720845,0.7004806456720845
+cfr(B),cfrb,ncbi,clcD,clcd,card,1.0,0.25,ncbi:WP_111690897.1,card:ARO:3004599,cfrb,clcd,0.25,0.9974061095507618,0.7474061095507618
+AAC(6')-I-48,aac6'i48,card,aacA48,aaca48,ncbi,1.0,0.625,card:ARO:3004638,ncbi:WP_071593201.1,aac6'i48,aaca,0.375,0.9974061095507618,0.6224061095507618
+AAC(6')-I-48,aac6'i48,card,aac(6')-Iag,aac6'iag,resfinder,1.0,0.75,card:ARO:3004638,resfinder:aac(6')-Iag,aac6'i48,aac6'iag,0.75,0.9974061095507618,0.2474061095507618
+aacA48,aaca48,ncbi,AAC(6')-I-48,aac6'i48,card,1.0,0.625,ncbi:WP_071593201.1,card:ARO:3004638,aaca,aac6'i48,0.375,0.9974061095507618,0.6224061095507618
+aacA48,aaca48,ncbi,aac(6')-Iag,aac6'iag,resfinder,1.0,0.375,ncbi:WP_071593201.1,resfinder:aac(6')-Iag,aaca,aac6'iag,0.5,0.9974061095507618,0.4974061095507618
+AAC(6')-I-43,aac6'i43,card,aacA43,aaca43,ncbi,0.989,0.625,card:ARO:3004641,ncbi:WP_024437351.1,aac6'i43,aaca,0.375,0.9834552959652092,0.6084552959652092
+AAC(6')-I-43,aac6'i43,card,aacA43,aaca43,resfinder,1.0,0.625,card:ARO:3004641,resfinder:aacA43,aac6'i43,aaca,0.375,0.9974061095507618,0.6224061095507618
+aacA43,aaca43,ncbi,AAC(6')-I-43,aac6'i43,card,0.989,0.625,ncbi:WP_024437351.1,card:ARO:3004641,aaca,aac6'i43,0.375,0.9834552959652092,0.6084552959652092
+lin,lin,card,vga(G),vgag,ncbi,1.0,0.0,card:ARO:3004651,ncbi:WP_010989615.1,lin,vgag,0.0,0.9974061095507618,0.9974061095507618
+vga(G),vgag,ncbi,lin,lin,card,1.0,0.0,ncbi:WP_010989615.1,card:ARO:3004651,vgag,lin,0.0,0.9974061095507618,0.9974061095507618
+catA4,cata4,card,cat,cat,resfinder,1.0,0.6,card:ARO:3004657,resfinder:cat,cata,cat,0.75,0.9974061095507618,0.2474061095507618
+catA4,cata4,ncbi,cat,cat,resfinder,1.0,0.6,ncbi:WP_063843208.1,resfinder:cat,cata,cat,0.75,0.9974061095507618,0.2474061095507618
+aphA15,apha15,card,aph(3')-XV,aph3'xv,ncbi,0.988,0.4285714285714286,card:ARO:3004675,ncbi:WP_034067921.1,apha,aph3'xv,0.4285714285714286,0.9821870401847044,0.5536156116132758
+aphA15,apha15,card,aph(3')-XV,aph3'xv,resfinder,1.0,0.4285714285714286,card:ARO:3004675,resfinder:aph(3')-XV,apha,aph3'xv,0.4285714285714286,0.9974061095507618,0.5688346809793332
+aph(3')-XV,aph3'xv,ncbi,aphA15,apha15,card,0.988,0.4285714285714286,ncbi:WP_034067921.1,card:ARO:3004675,aph3'xv,apha,0.4285714285714286,0.9821870401847044,0.5536156116132758
+OXA-724,oxa724,card,ampH,amph,resfinder,1.0,0.16666666666666663,card:ARO:3004837,resfinder:ampH,oxa,amph,0.0,0.9974061095507618,0.9974061095507618
+blaOXA-724,oxa724,ncbi,ampH,amph,resfinder,1.0,0.16666666666666663,ncbi:WP_077096319.1,resfinder:ampH,oxa,amph,0.0,0.9974061095507618,0.9974061095507618
+FLC-1,flc1,card,blaFRI-8,fri8,resfinder,0.959,0.25,card:ARO:3005033,resfinder:blaFRI-8,flc,fri,0.33333333333333337,0.9454076225500654,0.612074289216732
+blaFLC-1,flc1,ncbi,blaFRI-8,fri8,resfinder,0.959,0.25,ncbi:WP_123061077.1,resfinder:blaFRI-8,flc,fri,0.33333333333333337,0.9454076225500654,0.612074289216732
+cmlA9,cmla9,card,floR2,flor2,ncbi,1.0,0.0,card:ARO:3005043,ncbi:WP_000214125.1,cmla,flor,0.0,0.9974061095507618,0.9974061095507618
+floR2,flor2,ncbi,cmlA9,cmla9,card,1.0,0.0,ncbi:WP_000214125.1,card:ARO:3005043,flor,cmla,0.0,0.9974061095507618,0.9974061095507618
+floR2,flor2,ncbi,CmlA9,cmla9,resfinder,1.0,0.0,ncbi:WP_000214125.1,resfinder:CmlA9,flor,cmla,0.0,0.9974061095507618,0.9974061095507618
+AAC(6')-Ib-cr3,aac6'ibcr3,card,aac(6')-Ib-cr,aac6'ibcr,resfinder,0.963,0.9,card:ARO:3005112,resfinder:aac(6')-Ib-cr,aac6'ibcr3,aac6'ibcr,0.9,0.9504806456720845,0.050480645672084434
+aac(6')-Ib-cr3,aac6'ibcr3,ncbi,aac(6')-Ib-cr,aac6'ibcr,resfinder,0.964,0.9,ncbi:WP_071766621.1,resfinder:aac(6')-Ib-cr,aac6'ibcr3,aac6'ibcr,0.9,0.9517489014525893,0.05174890145258926
+AAC(6')-Ib-cr4,aac6'ibcr4,card,aac(6')-Ib-cr,aac6'ibcr,resfinder,0.968,0.9,card:ARO:3005114,resfinder:aac(6')-Ib-cr,aac6'ibcr4,aac6'ibcr,0.9,0.9568219245746086,0.05682192457460855
+aac(6')-Ib-cr4,aac6'ibcr4,ncbi,aac(6')-Ib-cr,aac6'ibcr,resfinder,0.969,0.9,ncbi:WP_065187000.1,resfinder:aac(6')-Ib-cr,aac6'ibcr4,aac6'ibcr,0.9,0.9580901803551134,0.058090180355113374
+AAC(6')-Ib-cr5,aac6'ibcr5,card,aac(6')-Ib-cr,aac6'ibcr,resfinder,0.975,0.9,card:ARO:3005115,resfinder:aac(6')-Ib-cr,aac6'ibcr5,aac6'ibcr,0.9,0.9656997150381421,0.06569971503814209
+aac(6')-Ib-cr5,aac6'ibcr5,ncbi,aac(6')-Ib-cr,aac6'ibcr,resfinder,0.976,0.9,ncbi:WP_063840321.1,resfinder:aac(6')-Ib-cr,aac6'ibcr5,aac6'ibcr,0.9,0.9669679708186469,0.06696797081864692
+AAC(6')-Ib-cr6,aac6'ibcr6,card,aac(6')-Ib-cr,aac6'ibcr,resfinder,0.965,0.9,card:ARO:3005116,resfinder:aac(6')-Ib-cr,aac6'ibcr6,aac6'ibcr,0.9,0.9530171572330941,0.05301715723309408
+aac(6')-Ib-cr6,aac6'ibcr6,ncbi,aac(6')-Ib-cr,aac6'ibcr,resfinder,0.966,0.9,ncbi:WP_063840320.1,resfinder:aac(6')-Ib-cr,aac6'ibcr6,aac6'ibcr,0.9,0.9542854130135989,0.054285413013598904
+AAC(6')-Ib-cr7,aac6'ibcr7,card,aac(6')-Ib-cr,aac6'ibcr,resfinder,0.967,0.9,card:ARO:3005117,resfinder:aac(6')-Ib-cr,aac6'ibcr7,aac6'ibcr,0.9,0.9555536687941037,0.05555366879410373
+aac(6')-Ib-cr7,aac6'ibcr7,ncbi,aac(6')-Ib-cr,aac6'ibcr,resfinder,0.967,0.9,ncbi:WP_071766399.1,resfinder:aac(6')-Ib-cr,aac6'ibcr7,aac6'ibcr,0.9,0.9555536687941037,0.05555366879410373
+AAC(6')-Ib-cr8,aac6'ibcr8,card,aac(6')-Ib-cr,aac6'ibcr,resfinder,0.963,0.9,card:ARO:3005118,resfinder:aac(6')-Ib-cr,aac6'ibcr8,aac6'ibcr,0.9,0.9504806456720845,0.050480645672084434
+aac(6')-Ib-cr8,aac6'ibcr8,ncbi,aac(6')-Ib-cr,aac6'ibcr,resfinder,0.963,0.9,ncbi:WP_151346866.1,resfinder:aac(6')-Ib-cr,aac6'ibcr8,aac6'ibcr,0.9,0.9504806456720845,0.050480645672084434
+AAC(6')-Ib-cr9,aac6'ibcr9,card,aac(6')-Ib-cr,aac6'ibcr,resfinder,0.98,0.9,card:ARO:3005119,resfinder:aac(6')-Ib-cr,aac6'ibcr9,aac6'ibcr,0.9,0.972040993940666,0.07204099394066599
+aac(6')-Ib-cr9,aac6'ibcr9,ncbi,aac(6')-Ib-cr,aac6'ibcr,resfinder,0.981,0.9,ncbi:WP_131534982.1,resfinder:aac(6')-Ib-cr,aac6'ibcr9,aac6'ibcr,0.9,0.9733092497211708,0.07330924972117081
+Trimethoprim-resistant dihydrofolate reductase DfrA42,trimethoprimresistant dihydrofolate reductase dfra42,card,dfrA42,dfra42,ncbi,1.0,0.11538461538461542,card:ARO:3005334,ncbi:WP_045475347.1,trimethoprimresistant dihydrofolate reductase dfra42,dfra,0.07692307692307687,0.9974061095507618,0.9204830326276849
+dfrA42,dfra42,ncbi,Trimethoprim-resistant dihydrofolate reductase DfrA42,trimethoprimresistant dihydrofolate reductase dfra42,card,1.0,0.11538461538461542,ncbi:WP_045475347.1,card:ARO:3005334,dfra,trimethoprimresistant dihydrofolate reductase dfra42,0.07692307692307687,0.9974061095507618,0.9204830326276849
+Trimethoprim-resistant dihydrofolate reductase DfrA43,trimethoprimresistant dihydrofolate reductase dfra43,card,dfrA43,dfra43,ncbi,1.0,0.11538461538461542,card:ARO:3005345,ncbi:WP_188331861.1,trimethoprimresistant dihydrofolate reductase dfra43,dfra,0.07692307692307687,0.9974061095507618,0.9204830326276849
+dfrA43,dfra43,ncbi,Trimethoprim-resistant dihydrofolate reductase DfrA43,trimethoprimresistant dihydrofolate reductase dfra43,card,1.0,0.11538461538461542,ncbi:WP_188331861.1,card:ARO:3005345,dfra,trimethoprimresistant dihydrofolate reductase dfra43,0.07692307692307687,0.9974061095507618,0.9204830326276849
+dfr22,dfr22,card,dfrA22,dfra22,ncbi,1.0,0.8333333333333334,card:ARO:3005354,ncbi:WP_032667553.1,dfr,dfra,0.75,0.9974061095507618,0.2474061095507618
+dfr22,dfr22,card,dfrA22,dfra22,resfinder,0.975,0.8333333333333334,card:ARO:3005354,resfinder:dfrA22,dfr,dfra,0.75,0.9656997150381421,0.21569971503814211
+dfrA22,dfra22,ncbi,dfr22,dfr22,card,1.0,0.8333333333333334,ncbi:WP_032667553.1,card:ARO:3005354,dfra,dfr,0.75,0.9974061095507618,0.2474061095507618
+OXA-726,oxa726,card,ampH,amph,resfinder,0.978,0.16666666666666663,card:ARO:3005931,resfinder:ampH,oxa,amph,0.0,0.9695044823796564,0.9695044823796564
+blaOXA-726,oxa726,ncbi,ampH,amph,resfinder,0.978,0.16666666666666663,ncbi:WP_101150415.1,resfinder:ampH,oxa,amph,0.0,0.9695044823796564,0.9695044823796564
+OXA-729,oxa729,card,blaOXA-SHE,oxashe,resfinder,1.0,0.5,card:ARO:3005934,resfinder:blaOXA-SHE,oxa,oxashe,0.5,0.9974061095507618,0.4974061095507618
+blaOXA-729,oxa729,ncbi,blaOXA-SHE,oxashe,resfinder,1.0,0.5,ncbi:WP_114699266.1,resfinder:blaOXA-SHE,oxa,oxashe,0.5,0.9974061095507618,0.4974061095507618
+OXA-912,oxa912,card,ampS,amps,resfinder,0.956,0.16666666666666663,card:ARO:3006099,resfinder:ampS,oxa,amps,0.0,0.9416028552085509,0.9416028552085509
+blaOXA-912,oxa912,ncbi,ampS,amps,resfinder,0.956,0.16666666666666663,ncbi:WP_040068451.1,resfinder:ampS,oxa,amps,0.0,0.9416028552085509,0.9416028552085509
+ACT-62,act62,card,blaCMG,cmg,resfinder,0.956,0.19999999999999996,card:ARO:3006257,resfinder:blaCMG,act,cmg,0.0,0.9416028552085509,0.9416028552085509
+blaACT-62,act62,ncbi,blaCMG,cmg,resfinder,0.956,0.19999999999999996,ncbi:WP_111967096.1,resfinder:blaCMG,act,cmg,0.0,0.9416028552085509,0.9416028552085509
+MOX-14,mox14,card,blaCMY-10,cmy10,resfinder,0.958,0.19999999999999996,card:ARO:3006479,resfinder:blaCMY-10,mox,cmy,0.0,0.9441393667695606,0.9441393667695606
+blaMOX-14,mox14,ncbi,blaCMY-10,cmy10,resfinder,0.958,0.19999999999999996,ncbi:WP_156404654.1,resfinder:blaCMY-10,mox,cmy,0.0,0.9441393667695606,0.9441393667695606
+SRT-3,srt3,card,blaSST-1,sst1,resfinder,0.95,0.5,card:ARO:3006853,resfinder:blaSST-1,srt,sst,0.6666666666666667,0.9339933205255222,0.26732665385885546
+blaSRT-3,srt3,ncbi,blaSST-1,sst1,resfinder,0.95,0.5,ncbi:WP_033642964.1,resfinder:blaSST-1,srt,sst,0.6666666666666667,0.9339933205255222,0.26732665385885546
+CSP-1,csp1,card,blaSPU-1,spu1,resfinder,1.0,0.5,card:ARO:3006871,resfinder:blaSPU-1,csp,spu,0.33333333333333337,0.9974061095507618,0.6640727762174284
+blaCSP-1,csp1,ncbi,blaSPU-1,spu1,resfinder,1.0,0.5,ncbi:WP_063859920.1,resfinder:blaSPU-1,csp,spu,0.33333333333333337,0.9974061095507618,0.6640727762174284
+VAM-1,vam1,card,blaVMB-2,vmb2,resfinder,1.0,0.25,card:ARO:3007062,resfinder:blaVMB-2,vam,vmb,0.33333333333333337,0.9974061095507618,0.6640727762174284
+blaVAM-1,vam1,ncbi,blaVMB-2,vmb2,resfinder,1.0,0.25,ncbi:WP_181726415.1,resfinder:blaVMB-2,vam,vmb,0.33333333333333337,0.9974061095507618,0.6640727762174284
+BcIII,bciii,card,blaIII,iii,ncbi,1.0,0.6,card:ARO:3007101,ncbi:WP_000497840.1,bciii,iii,0.6,0.9974061095507618,0.39740610955076183
+blaIII,iii,ncbi,BcIII,bciii,card,1.0,0.6,ncbi:WP_000497840.1,card:ARO:3007101,iii,bciii,0.6,0.9974061095507618,0.39740610955076183
+tet(O/W),teto/w,card,tet(O/W)-2,teto/w2,resfinder,1.0,0.8571428571428572,card:ARO:3007121,resfinder:tet(O/W)-2,teto/w,teto/w2,0.8571428571428572,0.9974061095507618,0.1402632524079046
+tet(O/W),teto/w,ncbi,tet(O/W)-2,teto/w2,resfinder,1.0,0.8571428571428572,ncbi:WP_204313008.1,resfinder:tet(O/W)-2,teto/w,teto/w2,0.8571428571428572,0.9974061095507618,0.1402632524079046
+tet(O/W/32/O),teto/w/32/o,card,tet(O/W/32/O/W/O),teto/w/32/o/w/o,resfinder,1.0,0.7333333333333334,card:ARO:3007122,resfinder:tet(O/W/32/O/W/O),teto/w/32/o,teto/w/32/o/w/o,0.7333333333333334,0.9974061095507618,0.2640727762174284
+tet(O/W/32/O),teto/w/32/o,ncbi,tet(O/W/32/O/W/O),teto/w/32/o/w/o,resfinder,1.0,0.7333333333333334,ncbi:WP_063856419.1,resfinder:tet(O/W/32/O/W/O),teto/w/32/o,teto/w/32/o/w/o,0.7333333333333334,0.9974061095507618,0.2640727762174284
+tet(O/W/O),teto/w/o,card,tet(O/W/O)-2,teto/w/o2,resfinder,1.0,0.8888888888888888,card:ARO:3007123,resfinder:tet(O/W/O)-2,teto/w/o,teto/w/o2,0.8888888888888888,0.9974061095507618,0.10851722066187297
+tet(O/W/O),teto/w/o,ncbi,tet(O/W/O)-2,teto/w/o2,resfinder,1.0,0.8888888888888888,ncbi:WP_054336482.1,resfinder:tet(O/W/O)-2,teto/w/o,teto/w/o2,0.8888888888888888,0.9974061095507618,0.10851722066187297
+tet(W/32/O),tetw/32/o,card,tet(W/N/W),tetw/n/w,ncbi,1.0,0.6666666666666667,card:ARO:3007124,ncbi:WP_024963478.1,tetw/32/o,tetw/n/w,0.6666666666666667,0.9974061095507618,0.33073944288409507
+tet(W/N/W),tetw/n/w,ncbi,tet(W/32/O),tetw/32/o,card,1.0,0.6666666666666667,ncbi:WP_024963478.1,card:ARO:3007124,tetw/n/w,tetw/32/o,0.6666666666666667,0.9974061095507618,0.33073944288409507
+Streptomyces lividans otr(A),otra,card,tet,tet,resfinder,1.0,0.25,card:ARO:3007127,resfinder:tet,otra,tet,0.25,0.9974061095507618,0.7474061095507618
+otr(A),otra,ncbi,tet,tet,resfinder,1.0,0.25,ncbi:WP_063854498.1,resfinder:tet,otra,tet,0.25,0.9974061095507618,0.7474061095507618
+vanH gene in vanP cluster,vanh gene in vanp cluster,card,vanH-P,vanhp,ncbi,1.0,0.19999999999999996,card:ARO:3007188,ncbi:WP_222891054.1,vanh gene in vanp cluster,vanhp,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanH-P,vanhp,ncbi,vanH gene in vanP cluster,vanh gene in vanp cluster,card,1.0,0.19999999999999996,ncbi:WP_222891054.1,card:ARO:3007188,vanhp,vanh gene in vanp cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanX gene in vanP cluster,vanx gene in vanp cluster,card,vanX-P,vanxp,ncbi,1.0,0.19999999999999996,card:ARO:3007190,ncbi:WP_222891056.1,vanx gene in vanp cluster,vanxp,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanX-P,vanxp,ncbi,vanX gene in vanP cluster,vanx gene in vanp cluster,card,1.0,0.19999999999999996,ncbi:WP_222891056.1,card:ARO:3007190,vanxp,vanx gene in vanp cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanR gene in vanP cluster,vanr gene in vanp cluster,card,vanR-P,vanrp,ncbi,1.0,0.19999999999999996,card:ARO:3007191,ncbi:WP_222891057.1,vanr gene in vanp cluster,vanrp,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanR-P,vanrp,ncbi,vanR gene in vanP cluster,vanr gene in vanp cluster,card,1.0,0.19999999999999996,ncbi:WP_222891057.1,card:ARO:3007191,vanrp,vanr gene in vanp cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanS gene in vanP cluster,vans gene in vanp cluster,card,vanS-P,vansp,ncbi,1.0,0.19999999999999996,card:ARO:3007192,ncbi:WP_222891058.1,vans gene in vanp cluster,vansp,0.19999999999999996,0.9974061095507618,0.7974061095507619
+vanS-P,vansp,ncbi,vanS gene in vanP cluster,vans gene in vanp cluster,card,1.0,0.19999999999999996,ncbi:WP_222891058.1,card:ARO:3007192,vansp,vans gene in vanp cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+FosBx1,fosbx1,card,fosB1,fosb1,resfinder,0.992,0.8333333333333334,card:ARO:3007372,resfinder:fosB1,fosbx,fosb,0.8,0.9872600633067234,0.1872600633067234
+fosBx1,fosbx1,ncbi,fosB1,fosb1,resfinder,0.992,0.8333333333333334,ncbi:WP_000943763.1,resfinder:fosB1,fosbx,fosb,0.8,0.9872600633067234,0.1872600633067234
+aac(6')-Ib-cr10,aac6'ibcr10,card,aac(6')-Ib-cr,aac6'ibcr,resfinder,0.971,0.8181818181818181,card:ARO:3007770,resfinder:aac(6')-Ib-cr,aac6'ibcr10,aac6'ibcr,0.8181818181818181,0.9606266919161228,0.1424448737343047
+aac(6')-Ib-cr10,aac6'ibcr10,ncbi,aac(6')-Ib-cr,aac6'ibcr,resfinder,0.972,0.8181818181818181,ncbi:WP_124042715.1,resfinder:aac(6')-Ib-cr,aac6'ibcr10,aac6'ibcr,0.8181818181818181,0.9618949476966276,0.14371312951480952
+aac(6')-Ib-cr11,aac6'ibcr11,card,aac(6')-Ib-cr,aac6'ibcr,resfinder,0.968,0.8181818181818181,card:ARO:3007771,resfinder:aac(6')-Ib-cr,aac6'ibcr11,aac6'ibcr,0.8181818181818181,0.9568219245746086,0.13864010639279045
+aac(6')-Ib-cr11,aac6'ibcr11,ncbi,aac(6')-Ib-cr,aac6'ibcr,resfinder,0.969,0.8181818181818181,ncbi:WP_159241551.1,resfinder:aac(6')-Ib-cr,aac6'ibcr11,aac6'ibcr,0.8181818181818181,0.9580901803551134,0.13990836217329528
+ACT-111,act111,card,blaCMG,cmg,resfinder,1.0,0.16666666666666663,card:ARO:3007894,resfinder:blaCMG,act,cmg,0.0,0.9974061095507618,0.9974061095507618
+blaACT-111,act111,ncbi,blaCMG,cmg,resfinder,1.0,0.16666666666666663,ncbi:WP_069720053.1,resfinder:blaCMG,act,cmg,0.0,0.9974061095507618,0.9974061095507618
+ACT-168,act168,card,blaCMG,cmg,resfinder,0.973,0.16666666666666663,card:ARO:3007931,resfinder:blaCMG,act,cmg,0.0,0.9631632034771325,0.9631632034771325
+blaACT-168,act168,ncbi,blaCMG,cmg,resfinder,0.973,0.16666666666666663,ncbi:WP_367187912.1,resfinder:blaCMG,act,cmg,0.0,0.9631632034771325,0.9631632034771325
+ACT-187,act187,card,blaCMG,cmg,resfinder,0.966,0.16666666666666663,card:ARO:3007950,resfinder:blaCMG,act,cmg,0.0,0.9542854130135989,0.9542854130135989
+blaACT-187,act187,ncbi,blaCMG,cmg,resfinder,0.966,0.16666666666666663,ncbi:WP_367187931.1,resfinder:blaCMG,act,cmg,0.0,0.9542854130135989,0.9542854130135989
+ACT-GC1,actgc1,card,blaACT-7,act7,resfinder,0.963,0.5,card:ARO:3007972,resfinder:blaACT-7,actgc,act,0.6,0.9504806456720845,0.3504806456720845
+blaACT-GC1,actgc1,ncbi,blaACT-7,act7,resfinder,0.963,0.5,ncbi:WP_249828058.1,resfinder:blaACT-7,actgc,act,0.6,0.9504806456720845,0.3504806456720845
+HER-1,her1,card,blaHERA-1,hera1,resfinder,1.0,0.8,card:ARO:3008200,resfinder:blaHERA-1,her,hera,0.75,0.9974061095507618,0.2474061095507618
+blaHER-1,her1,ncbi,blaHERA-1,hera1,resfinder,1.0,0.8,ncbi:WP_002437128.1,resfinder:blaHERA-1,her,hera,0.75,0.9974061095507618,0.2474061095507618
+HER-2,her2,card,blaHERA-2,hera2,resfinder,1.0,0.8,card:ARO:3008201,resfinder:blaHERA-2,her,hera,0.75,0.9974061095507618,0.2474061095507618
+blaHER-2,her2,ncbi,blaHERA-2,hera2,resfinder,1.0,0.8,ncbi:WP_063860563.1,resfinder:blaHERA-2,her,hera,0.75,0.9974061095507618,0.2474061095507618
+HER-3,her3,card,blaHERA-3,hera3,resfinder,1.0,0.8,card:ARO:3008202,resfinder:blaHERA-3,her,hera,0.75,0.9974061095507618,0.2474061095507618
+blaHER-3,her3,ncbi,blaHERA-3,hera3,resfinder,1.0,0.8,ncbi:WP_023281079.1,resfinder:blaHERA-3,her,hera,0.75,0.9974061095507618,0.2474061095507618
+HER-4,her4,card,blaHERA-4,hera4,resfinder,1.0,0.8,card:ARO:3008203,resfinder:blaHERA-4,her,hera,0.75,0.9974061095507618,0.2474061095507618
+blaHER-4,her4,ncbi,blaHERA-4,hera4,resfinder,1.0,0.8,ncbi:WP_063860564.1,resfinder:blaHERA-4,her,hera,0.75,0.9974061095507618,0.2474061095507618
+HER-5,her5,card,blaHERA-5,hera5,resfinder,1.0,0.8,card:ARO:3008204,resfinder:blaHERA-5,her,hera,0.75,0.9974061095507618,0.2474061095507618
+blaHER-5,her5,ncbi,blaHERA-5,hera5,resfinder,1.0,0.8,ncbi:WP_063860565.1,resfinder:blaHERA-5,her,hera,0.75,0.9974061095507618,0.2474061095507618
+HER-6,her6,card,blaHERA-6,hera6,resfinder,1.0,0.8,card:ARO:3008205,resfinder:blaHERA-6,her,hera,0.75,0.9974061095507618,0.2474061095507618
+blaHER-6,her6,ncbi,blaHERA-6,hera6,resfinder,1.0,0.8,ncbi:WP_063860566.1,resfinder:blaHERA-6,her,hera,0.75,0.9974061095507618,0.2474061095507618
+HER-8,her8,card,blaHERA-8,hera8,resfinder,1.0,0.8,card:ARO:3008206,resfinder:blaHERA-8,her,hera,0.75,0.9974061095507618,0.2474061095507618
+blaHER-8,her8,ncbi,blaHERA-8,hera8,resfinder,1.0,0.8,ncbi:WP_063860567.1,resfinder:blaHERA-8,her,hera,0.75,0.9974061095507618,0.2474061095507618
+OXA-1162,oxa1162,card,ampS,amps,resfinder,0.954,0.1428571428571429,card:ARO:3008580,resfinder:ampS,oxa,amps,0.0,0.9390663436475415,0.9390663436475415
+blaOXA-1162,oxa1162,ncbi,ampS,amps,resfinder,0.954,0.1428571428571429,ncbi:WP_139462269.1,resfinder:ampS,oxa,amps,0.0,0.9390663436475415,0.9390663436475415
+OXA-725,oxa725,card,ampS,amps,resfinder,1.0,0.16666666666666663,card:ARO:3008720,resfinder:ampS,oxa,amps,0.0,0.9974061095507618,0.9974061095507618
+blaOXA-725,oxa725,ncbi,ampS,amps,resfinder,1.0,0.16666666666666663,ncbi:WP_011707905.1,resfinder:ampS,oxa,amps,0.0,0.9974061095507618,0.9974061095507618
+OXA-950,oxa950,card,ampH,amph,resfinder,0.98,0.16666666666666663,card:ARO:3008727,resfinder:ampH,oxa,amph,0.0,0.972040993940666,0.972040993940666
+blaOXA-950,oxa950,ncbi,ampH,amph,resfinder,0.98,0.16666666666666663,ncbi:WP_029305121.1,resfinder:ampH,oxa,amph,0.0,0.972040993940666,0.972040993940666
+OXA-951,oxa951,card,ampH,amph,resfinder,0.977,0.16666666666666663,card:ARO:3008728,resfinder:ampH,oxa,amph,0.0,0.9682362265991515,0.9682362265991515
+blaOXA-951,oxa951,ncbi,ampH,amph,resfinder,0.977,0.16666666666666663,ncbi:WP_213994597.1,resfinder:ampH,oxa,amph,0.0,0.9682362265991515,0.9682362265991515
+OXA-958,oxa958,card,ampS,amps,resfinder,0.957,0.16666666666666663,card:ARO:3008735,resfinder:ampS,oxa,amps,0.0,0.9428711109890557,0.9428711109890557
+blaOXA-958,oxa958,ncbi,ampS,amps,resfinder,0.958,0.16666666666666663,ncbi:WP_058052637.1,resfinder:ampS,oxa,amps,0.0,0.9441393667695606,0.9441393667695606
+OXA-959,oxa959,card,ampS,amps,resfinder,0.971,0.16666666666666663,card:ARO:3008736,resfinder:ampS,oxa,amps,0.0,0.9606266919161228,0.9606266919161228
+blaOXA-959,oxa959,ncbi,ampS,amps,resfinder,0.971,0.16666666666666663,ncbi:WP_075112279.1,resfinder:ampS,oxa,amps,0.0,0.9606266919161228,0.9606266919161228
+PC1,pc1,card,blaZ,z,resfinder,0.971,0.0,card:ARO:3008823,resfinder:blaZ,pc,z,0.0,0.9606266919161228,0.9606266919161228
+blaPC1,pc1,ncbi,blaZ,z,resfinder,0.971,0.0,ncbi:WP_000733283.1,resfinder:blaZ,pc,z,0.0,0.9606266919161228,0.9606266919161228
+SED-2,sed2,card,cdiA-3,cdia3,ncbi,1.0,0.0,card:ARO:3009044,ncbi:WP_338424140.1,sed,cdia,0.0,0.9974061095507618,0.9974061095507618
+cdiA-3,cdia3,ncbi,SED-2,sed2,card,1.0,0.0,ncbi:WP_338424140.1,card:ARO:3009044,cdia,sed,0.0,0.9974061095507618,0.9974061095507618
+FosB,fosb,card,fosBx1,fosbx1,ncbi,1.0,0.6666666666666667,card:ARO:3000172,ncbi:WP_000943763.1,fosb,fosbx,0.8,0.9974061095507618,0.19740610955076177
+AAC(6')-Ib,aac6'ib,card,aac(6')-Ib4,aac6'ib4,ncbi,0.982,0.875,card:ARO:3002546,ncbi:WP_003159191.1,aac6'ib,aac6'ib4,0.875,0.9745775055016757,0.09957750550167566
+AAC(6')-Ib,aac6'ib,card,ant(3'')-Ii-aac(6')-IId,ant3''iiaac6'iid,resfinder,0.979,0.375,card:ARO:3002546,resfinder:ant(3'')-Ii-aac(6')-IId,aac6'ib,ant3''iiaac6'iid,0.375,0.9707727381601612,0.5957727381601612
+catB8/aac(6')-Ib',catb8/aac6'ib',ncbi,AAC(6')-Ib9,aac6'ib9,card,0.982,0.5,ncbi:WP_071593228.1,card:ARO:3002580,catb8/aac6'ib',aac6'ib9,0.5,0.9745775055016757,0.47457750550167566
+catB8/aac(6')-Ib',catb8/aac6'ib',ncbi,ant(3'')-Ii-aac(6')-IId,ant3''iiaac6'iid,resfinder,0.982,0.4375,ncbi:WP_071593228.1,resfinder:ant(3'')-Ii-aac(6')-IId,catb8/aac6'ib',ant3''iiaac6'iid,0.4375,0.9745775055016757,0.5370775055016757
+AAC(6')-Ib7,aac6'ib7,card,ant(3'')-Ih/aac(6')-IId,ant3''ih/aac6'iid,ncbi,0.975,0.3529411764705882,card:ARO:3002578,ncbi:WP_063839878.1,aac6'ib7,ant3''ih/aac6'iid,0.3529411764705882,0.9656997150381421,0.6127585385675539
+AAC(6')-Ib7,aac6'ib7,card,ant(3'')-Ii-aac(6')-IId,ant3''iiaac6'iid,resfinder,0.975,0.375,card:ARO:3002578,resfinder:ant(3'')-Ii-aac(6')-IId,aac6'ib7,ant3''iiaac6'iid,0.375,0.9656997150381421,0.5906997150381421
+AAC(6')-Ib8,aac6'ib8,card,ant(3'')-Ij/aac(6')-Ib,ant3''ij/aac6'ib,ncbi,0.979,0.375,card:ARO:3002579,ncbi:WP_063839875.1,aac6'ib8,ant3''ij/aac6'ib,0.375,0.9707727381601612,0.5957727381601612
+AAC(6')-Ib8,aac6'ib8,card,ant(3'')-Ii-aac(6')-IId,ant3''iiaac6'iid,resfinder,0.974,0.375,card:ARO:3002579,resfinder:ant(3'')-Ii-aac(6')-IId,aac6'ib8,ant3''iiaac6'iid,0.375,0.9644314592576373,0.5894314592576373
+AAC(6')-Ib9,aac6'ib9,card,catB8/aac(6')-Ib',catb8/aac6'ib',ncbi,0.981,0.5,card:ARO:3002580,ncbi:WP_071593228.1,aac6'ib9,catb8/aac6'ib',0.5,0.9733092497211708,0.47330924972117083
+AAC(6')-Ib9,aac6'ib9,card,ant(3'')-Ii-aac(6')-IId,ant3''iiaac6'iid,resfinder,0.979,0.375,card:ARO:3002580,resfinder:ant(3'')-Ii-aac(6')-IId,aac6'ib9,ant3''iiaac6'iid,0.375,0.9707727381601612,0.5957727381601612
+AAC(6')-Ib10,aac6'ib10,card,catB8/aac(6')-Ib',catb8/aac6'ib',ncbi,0.975,0.4285714285714286,card:ARO:3002581,ncbi:WP_071593228.1,aac6'ib10,catb8/aac6'ib',0.4285714285714286,0.9656997150381421,0.5371282864667135
+AAC(6')-Ib10,aac6'ib10,card,aac(6')-Ib,aac6'ib,resfinder,0.982,0.7777777777777778,card:ARO:3002581,resfinder:aac(6')-Ib,aac6'ib10,aac6'ib,0.7777777777777778,0.9745775055016757,0.19679972772389787
+AAC(6')-Ib-Suzhou,aac6'ibsuzhou,card,aac(6')-Ib3,aac6'ib3,ncbi,0.988,0.5384615384615384,card:ARO:3002591,ncbi:WP_032488579.1,aac6'ibsuzhou,aac6'ib3,0.5384615384615384,0.9821870401847044,0.44372550172316594
+AAC(6')-Ib-Suzhou,aac6'ibsuzhou,card,aac(6')Ib-cr,aac6'ibcr,resfinder,1.0,0.5384615384615384,card:ARO:3002591,resfinder:aac(6')Ib-cr,aac6'ibsuzhou,aac6'ibcr,0.5384615384615384,0.9974061095507618,0.4589445710892234
+AAC(6')-Ib-Hangzhou,aac6'ibhangzhou,card,catB8/aac(6')-Ib',catb8/aac6'ib',ncbi,0.986,0.1333333333333333,card:ARO:3002592,ncbi:WP_071593228.1,aac6'ibhangzhou,catb8/aac6'ib',0.1333333333333333,0.9796505286236947,0.8463171952903614
+aadA6/aadA10,aada6/aada10,card,aadA6,aada6,ncbi,0.95,0.41666666666666663,card:ARO:3002622,ncbi:WP_022675713.1,aada6/aada10,aada,0.33333333333333337,0.9339933205255222,0.6006599871921888
+aadA6/aadA10,aada6/aada10,card,aadA10,aada10,resfinder,1.0,0.5,card:ARO:3002622,resfinder:aadA10,aada6/aada10,aada,0.33333333333333337,0.9974061095507618,0.6640727762174284
+catD,catd,ncbi,catP,catp,card,0.997,0.75,ncbi:WP_063843233.1,card:ARO:3002686,catd,catp,0.75,0.9936013422092473,0.24360134220924734
+catD,catd,ncbi,catP,catp,resfinder,0.997,0.75,ncbi:WP_063843233.1,resfinder:catP,catd,catp,0.75,0.9936013422092473,0.24360134220924734
+Rhodococcus fascians cmr,cmr,card,cmrA,cmra,resfinder,1.0,0.75,card:ARO:3002701,resfinder:cmrA,cmr,cmra,0.75,0.9974061095507618,0.2474061095507618
+vga(A),vgaa,ncbi,vga(A)V,vgaav,resfinder,1.0,0.8,ncbi:WP_063856936.1,resfinder:vga(A)V,vgaa,vgaav,0.8,0.9974061095507618,0.19740610955076177
+linG,ling,card,lnu(F),lnuf,resfinder,1.0,0.25,card:ARO:3002879,resfinder:lnu(F),ling,lnuf,0.25,0.9974061095507618,0.7474061095507618
+cfrA,cfra,card,cfr,cfr,resfinder,1.0,0.75,card:ARO:3003441,resfinder:cfr,cfra,cfr,0.75,0.9974061095507618,0.2474061095507618
+Acinetobacter baumannii ampC beta-lactamase,ampc betalactamase,card,blaADC-11,adc11,ncbi,0.972,0.11111111111111116,card:ARO:3003796,ncbi:WP_001211205.1,ampc betalactamase,adc,0.11111111111111116,0.9618949476966276,0.8507838365855165
+Acinetobacter baumannii ampC beta-lactamase,ampc betalactamase,card,blaADC-25,adc25,resfinder,0.961,0.11111111111111116,card:ARO:3003796,resfinder:blaADC-25,ampc betalactamase,adc,0.11111111111111116,0.947944134111075,0.8368330229999639
+Escherichia coli ampC beta-lactamase,ampc betalactamase,card,blaEC-15,ec15,ncbi,0.967,0.11111111111111116,card:ARO:3004290,ncbi:WP_063610930.1,ampc betalactamase,ec,0.11111111111111116,0.9555536687941037,0.8444425576829926
+Enterococcus faecium chloramphenicol acetyltransferase,chloramphenicol acetyltransferase,card,cat(pC233),catpc233,resfinder,1.0,0.12121212121212122,card:ARO:3004456,resfinder:cat(pC233),chloramphenicol acetyltransferase,catpc,0.12121212121212122,0.9974061095507618,0.8761939883386406
+Enterococcus faecalis chloramphenicol acetyltransferase,chloramphenicol acetyltransferase,card,catA7,cata7,ncbi,0.975,0.12121212121212122,card:ARO:3004458,ncbi:WP_063843211.1,chloramphenicol acetyltransferase,cata,0.12121212121212122,0.9656997150381421,0.8444875938260209
+Enterococcus faecalis chloramphenicol acetyltransferase,chloramphenicol acetyltransferase,card,cat(pC221),catpc221,resfinder,0.986,0.12121212121212122,card:ARO:3004458,resfinder:cat(pC221),chloramphenicol acetyltransferase,catpc,0.12121212121212122,0.9796505286236947,0.8584384074115735
+Erm(O)-lrm,ermolrm,card,erm(O),ermo,resfinder,1.0,0.5714285714285714,card:ARO:3004652,resfinder:erm(O),ermolrm,ermo,0.5714285714285714,0.9974061095507618,0.4259775381221904
+catII from Escherichia coli K-12,catii from escherichia coli k12,card,catA2,cata2,resfinder,1.0,0.16129032258064513,card:ARO:3004656,resfinder:catA2,catii from escherichia coli k12,cata,0.12903225806451613,0.9974061095507618,0.8683738514862457
+VanHAX,vanhax,resfinder,vanA,vana,card,0.997,0.6666666666666667,resfinder:VanHAX,card:ARO:3000010,vanhax,vana,0.6666666666666667,0.9936013422092473,0.3269346755425806
+VanHAX,vanhax,resfinder,vanA,vana,ncbi,1.0,0.6666666666666667,resfinder:VanHAX,ncbi:WP_063856521.1,vanhax,vana,0.6666666666666667,0.9974061095507618,0.33073944288409507
+VanHBX,vanhbx,resfinder,vanB,vanb,card,0.991,0.6666666666666667,resfinder:VanHBX,card:ARO:3000013,vanhbx,vanb,0.6666666666666667,0.9859918075262186,0.3193251408595519
+VanHBX,vanhbx,resfinder,vanB,vanb,ncbi,0.991,0.6666666666666667,resfinder:VanHBX,ncbi:WP_002593938.1,vanhbx,vanb,0.6666666666666667,0.9859918075262186,0.3193251408595519
+cfiA13,cfia13,resfinder,CcrA,ccra,card,1.0,0.33333333333333337,resfinder:cfiA13,card:ARO:3000578,cfia,ccra,0.5,0.9974061095507618,0.4974061095507618
+mef(A),mefa,resfinder,mel,mel,card,1.0,0.5,resfinder:mef(A),card:ARO:3000616,mefa,mel,0.5,0.9974061095507618,0.4974061095507618
+blaMOR,mor,resfinder,DHA-21,dha21,card,1.0,0.0,resfinder:blaMOR,card:ARO:3002152,mor,dha,0.0,0.9974061095507618,0.9974061095507618
+blaMOR,mor,resfinder,blaDHA-21,dha21,ncbi,1.0,0.0,resfinder:blaMOR,ncbi:WP_063860105.1,mor,dha,0.0,0.9974061095507618,0.9974061095507618
+aac(6')-29b,aac6'29b,resfinder,AAC(6')-29a,aac6'29a,card,1.0,0.875,resfinder:aac(6')-29b,card:ARO:3002583,aac6'29b,aac6'29a,0.875,0.9974061095507618,0.12240610955076181
+aac(6')-29b,aac6'29b,resfinder,aac(6')-29a,aac6'29a,ncbi,1.0,0.875,resfinder:aac(6')-29b,ncbi:WP_064190968.1,aac6'29b,aac6'29a,0.875,0.9974061095507618,0.12240610955076181
+aac(6')-33,aac6'33,resfinder,AAC(6')-I33,aac6'i33,card,1.0,0.875,resfinder:aac(6')-33,card:ARO:3002587,aac6'33,aac6'i33,0.875,0.9974061095507618,0.12240610955076181
+aac(6')Ib-cr,aac6'ibcr,resfinder,AAC(6')-Ib-Suzhou,aac6'ibsuzhou,card,1.0,0.5384615384615384,resfinder:aac(6')Ib-cr,card:ARO:3002591,aac6'ibcr,aac6'ibsuzhou,0.5384615384615384,0.9974061095507618,0.4589445710892234
+aac(6')Ib-cr,aac6'ibcr,resfinder,aac(6')-Ib3,aac6'ib3,ncbi,0.988,0.7777777777777778,resfinder:aac(6')Ib-cr,ncbi:WP_032488579.1,aac6'ibcr,aac6'ib3,0.7777777777777778,0.9821870401847044,0.20440926240692658
+aac(6')-Ib-Hangzhou,aac6'ibhangzhou,resfinder,catB8/aac(6')-Ib',catb8/aac6'ib',ncbi,0.986,0.1333333333333333,resfinder:aac(6')-Ib-Hangzhou,ncbi:WP_071593228.1,aac6'ibhangzhou,catb8/aac6'ib',0.1333333333333333,0.9796505286236947,0.8463171952903614
+aac(6')-aph(2''),aac6'aph2'',resfinder,AAC(6')-Ie-APH(2'')-Ia bifunctional protein,aac6'ieaph2''ia bifunctional protein,card,1.0,0.3055555555555556,resfinder:aac(6')-aph(2''),card:ARO:3002597,aac6'aph2'',aac6'ieaph2''ia bifunctional protein,0.3055555555555556,0.9974061095507618,0.6918505539952062
+aac(6')-aph(2''),aac6'aph2'',resfinder,aac(6')-Ie/aph(2'')-Ia,aac6'ie/aph2''ia,ncbi,0.997,0.6875,resfinder:aac(6')-aph(2''),ncbi:WP_032490744.1,aac6'aph2'',aac6'ie/aph2''ia,0.6875,0.9936013422092473,0.30610134220924734
+ant(3'')-Ii-aac(6')-IId,ant3''iiaac6'iid,resfinder,ANT(3'')-II-AAC(6')-IId bifunctional protein,ant3''iiaac6'iid bifunctional protein,card,1.0,0.43243243243243246,resfinder:ant(3'')-Ii-aac(6')-IId,card:ARO:3002598,ant3''iiaac6'iid,ant3''iiaac6'iid bifunctional protein,0.43243243243243246,0.9974061095507618,0.5649736771183294
+ant(3'')-Ii-aac(6')-IId,ant3''iiaac6'iid,resfinder,ant(3'')-Ih/aac(6')-IId,ant3''ih/aac6'iid,ncbi,1.0,0.8823529411764706,resfinder:ant(3'')-Ii-aac(6')-IId,ncbi:WP_063839878.1,ant3''iiaac6'iid,ant3''ih/aac6'iid,0.8823529411764706,0.9974061095507618,0.11505316837429125
+aac(6')-30-aac(6')-Ib',aac6'30aac6'ib',resfinder,AAC(6')-30/AAC(6')-Ib' bifunctional protein,aac6'30/aac6'ib' bifunctional protein,card,1.0,0.4054054054054054,resfinder:aac(6')-30-aac(6')-Ib',card:ARO:3002599,aac6'30aac6'ib',aac6'30/aac6'ib' bifunctional protein,0.4054054054054054,0.9974061095507618,0.5920007041453564
+aac(3)-Ib-aac(6')-Ib,aac3ibaac6'ib,resfinder,AAC(3)-Ib/AAC(6')-Ib3 bifunctional protein,aac3ib/aac6'ib3 bifunctional protein,card,1.0,0.36111111111111116,resfinder:aac(3)-Ib-aac(6')-Ib,card:ARO:3002600,aac3ibaac6'ib,aac3ib/aac6'ib3 bifunctional protein,0.36111111111111116,0.9974061095507618,0.6362949984396506
+aac(3)-Ib-aac(6')-Ib,aac3ibaac6'ib,resfinder,aac(3)-Ib/aac(6')-Ib'',aac3ib/aac6'ib'',ncbi,1.0,0.8125,resfinder:aac(3)-Ib-aac(6')-Ib,ncbi:WP_063838852.1,aac3ibaac6'ib,aac3ib/aac6'ib'',0.8125,0.9974061095507618,0.1849061095507618
+ant(3'')-Ia,ant3''ia,resfinder,aadA,aada,card,1.0,0.25,resfinder:ant(3'')-Ia,card:ARO:3002601,ant3''ia,aada,0.25,0.9974061095507618,0.7474061095507618
+ant(3'')-Ia,ant3''ia,resfinder,aadA1,aada1,ncbi,0.996,0.125,resfinder:ant(3'')-Ia,ncbi:WP_001910823.1,ant3''ia,aada,0.25,0.9923330864287427,0.7423330864287427
+aadA10,aada10,resfinder,aadA6/aadA10,aada6/aada10,card,1.0,0.5,resfinder:aadA10,card:ARO:3002622,aada,aada6/aada10,0.33333333333333337,0.9974061095507618,0.6640727762174284
+aadD,aadd,resfinder,ANT(4')-Ia,ant4'ia,card,0.995,0.1428571428571429,resfinder:aadD,card:ARO:3002623,aadd,ant4'ia,0.1428571428571429,0.9910648306482379,0.848207687791095
+ant(6)-Ia,ant6ia,resfinder,aad(6),aad6,card,0.996,0.33333333333333337,resfinder:ant(6)-Ia,card:ARO:3002628,ant,aad,0.33333333333333337,0.9923330864287427,0.6589997530954094
+aph(2'')-Ib,aph2''ib,resfinder,APH(2'')-IIa,aph2''iia,card,0.989,0.7777777777777778,resfinder:aph(2'')-Ib,card:ARO:3002635,aph2''ib,aph2''iia,0.7777777777777778,0.9834552959652092,0.2056775181874314
+aph(2'')-Ib,aph2''ib,resfinder,aph(2'')-IIa,aph2''iia,ncbi,1.0,0.7777777777777778,resfinder:aph(2'')-Ib,ncbi:WP_016439437.1,aph2''ib,aph2''iia,0.7777777777777778,0.9974061095507618,0.21962833177298402
+aph(2'')-Ic,aph2''ic,resfinder,APH(2'')-IIIa,aph2''iiia,card,1.0,0.7,resfinder:aph(2'')-Ic,card:ARO:3002636,aph2''ic,aph2''iiia,0.7,0.9974061095507618,0.29740610955076185
+aph(2'')-Ic,aph2''ic,resfinder,aph(2'')-IIIa,aph2''iiia,ncbi,1.0,0.7,resfinder:aph(2'')-Ic,ncbi:WP_018659526.1,aph2''ic,aph2''iiia,0.7,0.9974061095507618,0.29740610955076185
+aph(2'')-Id,aph2''id,resfinder,APH(2'')-IVa,aph2''iva,card,1.0,0.7777777777777778,resfinder:aph(2'')-Id,card:ARO:3002637,aph2''id,aph2''iva,0.7777777777777778,0.9974061095507618,0.21962833177298402
+aph(2'')-Id,aph2''id,resfinder,aph(2'')-IVa,aph2''iva,ncbi,1.0,0.7777777777777778,resfinder:aph(2'')-Id,ncbi:WP_021401024.1,aph2''id,aph2''iva,0.7777777777777778,0.9974061095507618,0.21962833177298402
+aph(3')-III,aph3'iii,resfinder,APH(3')-IIIa,aph3'iiia,card,1.0,0.8888888888888888,resfinder:aph(3')-III,card:ARO:3002647,aph3'iii,aph3'iiia,0.8888888888888888,0.9974061095507618,0.10851722066187297
+aph(3')-III,aph3'iii,resfinder,aph(3')-IIIa,aph3'iiia,ncbi,0.965,0.8888888888888888,resfinder:aph(3')-III,ncbi:WP_032491780.1,aph3'iii,aph3'iiia,0.8888888888888888,0.9530171572330941,0.06412826834420526
+aph(3')-IV,aph3'iv,resfinder,APH(3')-IVa,aph3'iva,card,1.0,0.875,resfinder:aph(3')-IV,card:ARO:3002648,aph3'iv,aph3'iva,0.875,0.9974061095507618,0.12240610955076181
+aph(3')-IV,aph3'iv,resfinder,aph(3')-IVa,aph3'iva,ncbi,1.0,0.875,resfinder:aph(3')-IV,ncbi:WP_063841674.1,aph3'iv,aph3'iva,0.875,0.9974061095507618,0.12240610955076181
+catB,catb,resfinder,catA15,cata15,ncbi,1.0,0.5,resfinder:catB,ncbi:WP_063843219.1,catb,cata,0.75,0.9974061095507618,0.2474061095507618
+catA3,cata3,resfinder,catIII,catiii,card,1.0,0.5,resfinder:catA3,card:ARO:3002685,cata,catiii,0.5,0.9974061095507618,0.4974061095507618
+catQ,catq,resfinder,catA16,cata16,ncbi,0.954,0.5,resfinder:catQ,ncbi:WP_063843221.1,catq,cata,0.75,0.9390663436475415,0.1890663436475415
+CmlA2,cmla2,resfinder,cmlB,cmlb,card,1.0,0.6,resfinder:CmlA2,card:ARO:3002698,cmla,cmlb,0.75,0.9974061095507618,0.2474061095507618
+CmlA2,cmla2,resfinder,cmlB,cmlb,ncbi,1.0,0.6,resfinder:CmlA2,ncbi:WP_032492328.1,cmla,cmlb,0.75,0.9974061095507618,0.2474061095507618
+cmrA,cmra,resfinder,Rhodococcus fascians cmr,cmr,card,1.0,0.75,resfinder:cmrA,card:ARO:3002701,cmra,cmr,0.75,0.9974061095507618,0.2474061095507618
+lnu(F),lnuf,resfinder,linG,ling,card,1.0,0.25,resfinder:lnu(F),card:ARO:3002879,lnuf,ling,0.25,0.9974061095507618,0.7474061095507618
+VanEXY,vanexy,resfinder,vanE,vane,card,1.0,0.6666666666666667,resfinder:VanEXY,card:ARO:3002907,vanexy,vane,0.6666666666666667,0.9974061095507618,0.33073944288409507
+VanEXY,vanexy,resfinder,vanE,vane,ncbi,1.0,0.6666666666666667,resfinder:VanEXY,ncbi:WP_063856694.1,vanexy,vane,0.6666666666666667,0.9974061095507618,0.33073944288409507
+VanGXY,vangxy,resfinder,vanG,vang,card,1.0,0.6666666666666667,resfinder:VanGXY,card:ARO:3002909,vangxy,vang,0.6666666666666667,0.9974061095507618,0.33073944288409507
+VanGXY,vangxy,resfinder,vanG,vang,ncbi,0.997,0.6666666666666667,resfinder:VanGXY,ncbi:WP_063856695.1,vangxy,vang,0.6666666666666667,0.9936013422092473,0.3269346755425806
+VanLXY,vanlxy,resfinder,vanL,vanl,card,1.0,0.6666666666666667,resfinder:VanLXY,card:ARO:3002910,vanlxy,vanl,0.6666666666666667,0.9974061095507618,0.33073944288409507
+VanLXY,vanlxy,resfinder,vanL,vanl,ncbi,1.0,0.6666666666666667,resfinder:VanLXY,ncbi:WP_063856711.1,vanlxy,vanl,0.6666666666666667,0.9974061095507618,0.33073944288409507
+VanHMX,vanhmx,resfinder,vanM,vanm,card,1.0,0.6666666666666667,resfinder:VanHMX,card:ARO:3002911,vanhmx,vanm,0.6666666666666667,0.9974061095507618,0.33073944288409507
+VanHMX,vanhmx,resfinder,vanM,vanm,ncbi,1.0,0.6666666666666667,resfinder:VanHMX,ncbi:WP_063856712.1,vanhmx,vanm,0.6666666666666667,0.9974061095507618,0.33073944288409507
+VanNXY,vannxy,resfinder,vanN,vann,card,1.0,0.6666666666666667,resfinder:VanNXY,card:ARO:3002912,vannxy,vann,0.6666666666666667,0.9974061095507618,0.33073944288409507
+VanNXY,vannxy,resfinder,vanN,vann,ncbi,1.0,0.6666666666666667,resfinder:VanNXY,ncbi:WP_063856713.1,vannxy,vann,0.6666666666666667,0.9974061095507618,0.33073944288409507
+VanHOX,vanhox,resfinder,vanH gene in vanO cluster,vanh gene in vano cluster,card,1.0,0.19999999999999996,resfinder:VanHOX,card:ARO:3002948,vanhox,vanh gene in vano cluster,0.19999999999999996,0.9974061095507618,0.7974061095507619
+VanHOX,vanhox,resfinder,vanH-O,vanho,ncbi,1.0,0.8333333333333334,resfinder:VanHOX,ncbi:WP_063856707.1,vanhox,vanho,0.8333333333333334,0.9974061095507618,0.16407277621742844
+blaCEPH-A3,cepha3,resfinder,cphA3,cpha3,card,1.0,0.8333333333333334,resfinder:blaCEPH-A3,card:ARO:3003093,cepha,cpha,0.8,0.9974061095507618,0.19740610955076177
+blaCEPH-A3,cepha3,resfinder,cphA-16,cpha16,ncbi,1.0,0.5,resfinder:blaCEPH-A3,ncbi:WP_063844281.1,cepha,cpha,0.8,0.9974061095507618,0.19740610955076177
+imiH,imih,resfinder,cphA-13,cpha13,ncbi,1.0,0.0,resfinder:imiH,ncbi:WP_063865292.1,imih,cpha,0.0,0.9974061095507618,0.9974061095507618
+imiS,imis,resfinder,cphA-11,cpha11,ncbi,1.0,0.0,resfinder:imiS,ncbi:WP_063865298.1,imis,cpha,0.0,0.9974061095507618,0.9974061095507618
+aac(6')-Ian,aac6'ian,resfinder,aacA57-2,aaca572,ncbi,0.968,0.375,resfinder:aac(6')-Ian,ncbi:WP_000959805.1,aac6'ian,aaca,0.5,0.9568219245746086,0.4568219245746086
+cfr,cfr,resfinder,cfrA,cfra,card,1.0,0.75,resfinder:cfr,card:ARO:3003441,cfr,cfra,0.75,0.9974061095507618,0.2474061095507618
+blaA,a,resfinder,y56 beta-lactamase,y56 betalactamase,card,0.985,0.05882352941176472,resfinder:blaA,card:ARO:3003558,a,y56 betalactamase,0.05882352941176472,0.9783822728431899,0.9195587434314252
+ant(4')-Ib,ant4'ib,resfinder,aadD2,aadd2,ncbi,1.0,0.1428571428571429,resfinder:ant(4')-Ib,ncbi:WP_035202393.1,ant4'ib,aadd,0.1428571428571429,0.9974061095507618,0.8545489666936189
+aph(3')-VIII,aph3'viii,resfinder,APH(3')-VIIIb,aph3'viiib,card,1.0,0.9,resfinder:aph(3')-VIII,card:ARO:3004086,aph3'viii,aph3'viiib,0.9,0.9974061095507618,0.09740610955076179
+aph(3')-VIII,aph3'viii,resfinder,aph(3')-VIIIb,aph3'viiib,ncbi,1.0,0.9,resfinder:aph(3')-VIII,ncbi:WP_016656536.1,aph3'viii,aph3'viiib,0.9,0.9974061095507618,0.09740610955076179
+aph(3')-IX,aph3'ix,resfinder,APH(3')-IXa,aph3'ixa,card,1.0,0.875,resfinder:aph(3')-IX,card:ARO:3004087,aph3'ix,aph3'ixa,0.875,0.9974061095507618,0.12240610955076181
+catB1,catb1,resfinder,Agrobacterium fabrum chloramphenicol acetyltransferase,chloramphenicol acetyltransferase,card,1.0,0.09090909090909094,resfinder:catB1,card:ARO:3004451,catb,chloramphenicol acetyltransferase,0.09090909090909094,0.9974061095507618,0.9064970186416709
+cat(pC194),catpc194,resfinder,Streptococcus suis chloramphenicol acetyltransferase,chloramphenicol acetyltransferase,card,0.953,0.12121212121212122,resfinder:cat(pC194),card:ARO:3004455,catpc,chloramphenicol acetyltransferase,0.12121212121212122,0.9377980878670367,0.8165859666549155
+cat(pC194),catpc194,resfinder,catA,cata,ncbi,0.953,0.375,resfinder:cat(pC194),ncbi:WP_039139170.1,catpc,cata,0.6,0.9377980878670367,0.3377980878670367
+cat(pC233),catpc233,resfinder,Enterococcus faecium chloramphenicol acetyltransferase,chloramphenicol acetyltransferase,card,1.0,0.12121212121212122,resfinder:cat(pC233),card:ARO:3004456,catpc,chloramphenicol acetyltransferase,0.12121212121212122,0.9974061095507618,0.8761939883386406
+cat(pC221),catpc221,resfinder,Staphylococcus intermedius chloramphenicol acetyltransferase,chloramphenicol acetyltransferase,card,0.981,0.12121212121212122,resfinder:cat(pC221),card:ARO:3004457,catpc,chloramphenicol acetyltransferase,0.12121212121212122,0.9733092497211708,0.8520971285090496
+cat(pC221),catpc221,resfinder,catA7,cata7,ncbi,0.981,0.375,resfinder:cat(pC221),ncbi:WP_063843211.1,catpc,cata,0.6,0.9733092497211708,0.37330924972117085
+aac(6')-Iag,aac6'iag,resfinder,AAC(6')-I-48,aac6'i48,card,1.0,0.75,resfinder:aac(6')-Iag,card:ARO:3004638,aac6'iag,aac6'i48,0.75,0.9974061095507618,0.2474061095507618
+aac(6')-Iag,aac6'iag,resfinder,aacA48,aaca48,ncbi,1.0,0.375,resfinder:aac(6')-Iag,ncbi:WP_071593201.1,aac6'iag,aaca,0.5,0.9974061095507618,0.4974061095507618
+aacA43,aaca43,resfinder,AAC(6')-I-43,aac6'i43,card,1.0,0.625,resfinder:aacA43,card:ARO:3004641,aaca,aac6'i43,0.375,0.9974061095507618,0.6224061095507618
+erm(O),ermo,resfinder,Erm(O)-lrm,ermolrm,card,1.0,0.5714285714285714,resfinder:erm(O),card:ARO:3004652,ermo,ermolrm,0.5714285714285714,0.9974061095507618,0.4259775381221904
+catA2,cata2,resfinder,catII from Escherichia coli K-12,catii from escherichia coli k12,card,1.0,0.16129032258064513,resfinder:catA2,card:ARO:3004656,cata,catii from escherichia coli k12,0.12903225806451613,0.9974061095507618,0.8683738514862457
+cat,cat,resfinder,catA4,cata4,card,1.0,0.6,resfinder:cat,card:ARO:3004657,cat,cata,0.75,0.9974061095507618,0.2474061095507618
+cat,cat,resfinder,catA4,cata4,ncbi,1.0,0.6,resfinder:cat,ncbi:WP_063843208.1,cat,cata,0.75,0.9974061095507618,0.2474061095507618
+aph(3')-XV,aph3'xv,resfinder,aphA15,apha15,card,1.0,0.4285714285714286,resfinder:aph(3')-XV,card:ARO:3004675,aph3'xv,apha,0.4285714285714286,0.9974061095507618,0.5688346809793332
+ampH,amph,resfinder,OXA-724,oxa724,card,1.0,0.16666666666666663,resfinder:ampH,card:ARO:3004837,amph,oxa,0.0,0.9974061095507618,0.9974061095507618
+ampH,amph,resfinder,blaOXA-724,oxa724,ncbi,1.0,0.16666666666666663,resfinder:ampH,ncbi:WP_077096319.1,amph,oxa,0.0,0.9974061095507618,0.9974061095507618
+CmlA9,cmla9,resfinder,floR2,flor2,ncbi,1.0,0.0,resfinder:CmlA9,ncbi:WP_000214125.1,cmla,flor,0.0,0.9974061095507618,0.9974061095507618
+dfrA22,dfra22,resfinder,dfr22,dfr22,card,0.975,0.8333333333333334,resfinder:dfrA22,card:ARO:3005354,dfra,dfr,0.75,0.9656997150381421,0.21569971503814211
+blaOXA-SHE,oxashe,resfinder,OXA-729,oxa729,card,1.0,0.5,resfinder:blaOXA-SHE,card:ARO:3005934,oxashe,oxa,0.5,0.9974061095507618,0.4974061095507618
+blaOXA-SHE,oxashe,resfinder,blaOXA-729,oxa729,ncbi,1.0,0.5,resfinder:blaOXA-SHE,ncbi:WP_114699266.1,oxashe,oxa,0.5,0.9974061095507618,0.4974061095507618
+blaSPU-1,spu1,resfinder,CSP-1,csp1,card,1.0,0.5,resfinder:blaSPU-1,card:ARO:3006871,spu,csp,0.33333333333333337,0.9974061095507618,0.6640727762174284
+blaSPU-1,spu1,resfinder,blaCSP-1,csp1,ncbi,1.0,0.5,resfinder:blaSPU-1,ncbi:WP_063859920.1,spu,csp,0.33333333333333337,0.9974061095507618,0.6640727762174284
+blaVMB-2,vmb2,resfinder,VAM-1,vam1,card,1.0,0.25,resfinder:blaVMB-2,card:ARO:3007062,vmb,vam,0.33333333333333337,0.9974061095507618,0.6640727762174284
+blaVMB-2,vmb2,resfinder,blaVAM-1,vam1,ncbi,1.0,0.25,resfinder:blaVMB-2,ncbi:WP_181726415.1,vmb,vam,0.33333333333333337,0.9974061095507618,0.6640727762174284
+tet(O/W)-2,teto/w2,resfinder,tet(O/W),teto/w,card,1.0,0.8571428571428572,resfinder:tet(O/W)-2,card:ARO:3007121,teto/w2,teto/w,0.8571428571428572,0.9974061095507618,0.1402632524079046
+tet(O/W)-2,teto/w2,resfinder,tet(O/W),teto/w,ncbi,1.0,0.8571428571428572,resfinder:tet(O/W)-2,ncbi:WP_204313008.1,teto/w2,teto/w,0.8571428571428572,0.9974061095507618,0.1402632524079046
+tet(O/W/32/O/W/O),teto/w/32/o/w/o,resfinder,tet(O/W/32/O),teto/w/32/o,card,1.0,0.7333333333333334,resfinder:tet(O/W/32/O/W/O),card:ARO:3007122,teto/w/32/o/w/o,teto/w/32/o,0.7333333333333334,0.9974061095507618,0.2640727762174284
+tet(O/W/32/O/W/O),teto/w/32/o/w/o,resfinder,tet(O/W/32/O),teto/w/32/o,ncbi,1.0,0.7333333333333334,resfinder:tet(O/W/32/O/W/O),ncbi:WP_063856419.1,teto/w/32/o/w/o,teto/w/32/o,0.7333333333333334,0.9974061095507618,0.2640727762174284
+tet(O/W/O)-2,teto/w/o2,resfinder,tet(O/W/O),teto/w/o,card,1.0,0.8888888888888888,resfinder:tet(O/W/O)-2,card:ARO:3007123,teto/w/o2,teto/w/o,0.8888888888888888,0.9974061095507618,0.10851722066187297
+tet(O/W/O)-2,teto/w/o2,resfinder,tet(O/W/O),teto/w/o,ncbi,1.0,0.8888888888888888,resfinder:tet(O/W/O)-2,ncbi:WP_054336482.1,teto/w/o2,teto/w/o,0.8888888888888888,0.9974061095507618,0.10851722066187297
+tet,tet,resfinder,Streptomyces lividans otr(A),otra,card,1.0,0.25,resfinder:tet,card:ARO:3007127,tet,otra,0.25,0.9974061095507618,0.7474061095507618
+tet,tet,resfinder,otr(A),otra,ncbi,1.0,0.25,resfinder:tet,ncbi:WP_063854498.1,tet,otra,0.25,0.9974061095507618,0.7474061095507618
+fosB1,fosb1,resfinder,FosBx1,fosbx1,card,0.992,0.8333333333333334,resfinder:fosB1,card:ARO:3007372,fosb,fosbx,0.8,0.9872600633067234,0.1872600633067234
+fosB1,fosb1,resfinder,fosBx1,fosbx1,ncbi,0.992,0.8333333333333334,resfinder:fosB1,ncbi:WP_000943763.1,fosb,fosbx,0.8,0.9872600633067234,0.1872600633067234
+blaCMG,cmg,resfinder,ACT-111,act111,card,1.0,0.16666666666666663,resfinder:blaCMG,card:ARO:3007894,cmg,act,0.0,0.9974061095507618,0.9974061095507618
+blaCMG,cmg,resfinder,blaACT-111,act111,ncbi,1.0,0.16666666666666663,resfinder:blaCMG,ncbi:WP_069720053.1,cmg,act,0.0,0.9974061095507618,0.9974061095507618
+blaHERA-1,hera1,resfinder,HER-1,her1,card,1.0,0.8,resfinder:blaHERA-1,card:ARO:3008200,hera,her,0.75,0.9974061095507618,0.2474061095507618
+blaHERA-1,hera1,resfinder,blaHER-1,her1,ncbi,1.0,0.8,resfinder:blaHERA-1,ncbi:WP_002437128.1,hera,her,0.75,0.9974061095507618,0.2474061095507618
+blaHERA-2,hera2,resfinder,HER-2,her2,card,1.0,0.8,resfinder:blaHERA-2,card:ARO:3008201,hera,her,0.75,0.9974061095507618,0.2474061095507618
+blaHERA-2,hera2,resfinder,blaHER-2,her2,ncbi,1.0,0.8,resfinder:blaHERA-2,ncbi:WP_063860563.1,hera,her,0.75,0.9974061095507618,0.2474061095507618
+blaHERA-3,hera3,resfinder,HER-3,her3,card,1.0,0.8,resfinder:blaHERA-3,card:ARO:3008202,hera,her,0.75,0.9974061095507618,0.2474061095507618
+blaHERA-3,hera3,resfinder,blaHER-3,her3,ncbi,1.0,0.8,resfinder:blaHERA-3,ncbi:WP_023281079.1,hera,her,0.75,0.9974061095507618,0.2474061095507618
+blaHERA-4,hera4,resfinder,HER-4,her4,card,1.0,0.8,resfinder:blaHERA-4,card:ARO:3008203,hera,her,0.75,0.9974061095507618,0.2474061095507618
+blaHERA-4,hera4,resfinder,blaHER-4,her4,ncbi,1.0,0.8,resfinder:blaHERA-4,ncbi:WP_063860564.1,hera,her,0.75,0.9974061095507618,0.2474061095507618
+blaHERA-5,hera5,resfinder,HER-5,her5,card,1.0,0.8,resfinder:blaHERA-5,card:ARO:3008204,hera,her,0.75,0.9974061095507618,0.2474061095507618
+blaHERA-5,hera5,resfinder,blaHER-5,her5,ncbi,1.0,0.8,resfinder:blaHERA-5,ncbi:WP_063860565.1,hera,her,0.75,0.9974061095507618,0.2474061095507618
+blaHERA-6,hera6,resfinder,HER-6,her6,card,1.0,0.8,resfinder:blaHERA-6,card:ARO:3008205,hera,her,0.75,0.9974061095507618,0.2474061095507618
+blaHERA-6,hera6,resfinder,blaHER-6,her6,ncbi,1.0,0.8,resfinder:blaHERA-6,ncbi:WP_063860566.1,hera,her,0.75,0.9974061095507618,0.2474061095507618
+blaHERA-8,hera8,resfinder,HER-8,her8,card,1.0,0.8,resfinder:blaHERA-8,card:ARO:3008206,hera,her,0.75,0.9974061095507618,0.2474061095507618
+blaHERA-8,hera8,resfinder,blaHER-8,her8,ncbi,1.0,0.8,resfinder:blaHERA-8,ncbi:WP_063860567.1,hera,her,0.75,0.9974061095507618,0.2474061095507618
+ampS,amps,resfinder,OXA-725,oxa725,card,1.0,0.16666666666666663,resfinder:ampS,card:ARO:3008720,amps,oxa,0.0,0.9974061095507618,0.9974061095507618
+ampS,amps,resfinder,blaOXA-725,oxa725,ncbi,1.0,0.16666666666666663,resfinder:ampS,ncbi:WP_011707905.1,amps,oxa,0.0,0.9974061095507618,0.9974061095507618
+blaZ,z,resfinder,PC1,pc1,card,0.971,0.0,resfinder:blaZ,card:ARO:3008823,z,pc,0.0,0.9606266919161228,0.9606266919161228
+blaZ,z,resfinder,blaPC1,pc1,ncbi,0.971,0.0,resfinder:blaZ,ncbi:WP_000733283.1,z,pc,0.0,0.9606266919161228,0.9606266919161228
+aac(6')-Ib-cr,aac6'ibcr,resfinder,catB8/aac(6')-Ib',catb8/aac6'ib',ncbi,0.954,0.4285714285714286,resfinder:aac(6')-Ib-cr,ncbi:WP_071593228.1,aac6'ibcr,catb8/aac6'ib',0.4285714285714286,0.9390663436475415,0.5104949150761129
+aac(6')-Ib,aac6'ib,resfinder,AAC(6')-Ib10,aac6'ib10,card,0.984,0.7777777777777778,resfinder:aac(6')-Ib,card:ARO:3002581,aac6'ib,aac6'ib10,0.7777777777777778,0.9771140170626851,0.1993362392849073
+aac(6')-Ib,aac6'ib,resfinder,catB8/aac(6')-Ib',catb8/aac6'ib',ncbi,0.979,0.5,resfinder:aac(6')-Ib,ncbi:WP_071593228.1,aac6'ib,catb8/aac6'ib',0.5,0.9707727381601612,0.4707727381601612
+tet(O/W)-1,teto/w1,resfinder,tet(O/W),teto/w,card,1.0,0.8571428571428572,resfinder:tet(O/W)-1,card:ARO:3007121,teto/w1,teto/w,0.8571428571428572,0.9974061095507618,0.1402632524079046
+tet(O/W)-1,teto/w1,resfinder,tet(O/W),teto/w,ncbi,1.0,0.8571428571428572,resfinder:tet(O/W)-1,ncbi:WP_204313008.1,teto/w1,teto/w,0.8571428571428572,0.9974061095507618,0.1402632524079046
+vga(A)V,vgaav,resfinder,vga(A),vgaa,ncbi,1.0,0.8,resfinder:vga(A)V,ncbi:WP_063856936.1,vgaav,vgaa,0.8,0.9974061095507618,0.19740610955076177
+aacA16,aaca16,ncbi,AAC(6')-Ip,aac6'ip,card,1.0,0.4285714285714286,ncbi:WP_001109644.1,card:ARO:3002559,aaca,aac6'ip,0.4285714285714286,0.9974061095507618,0.5688346809793332
+aacA16,aaca16,ncbi,aac(6')-Iaf,aac6'iaf,resfinder,0.968,0.375,ncbi:WP_001109644.1,resfinder:aac(6')-Iaf,aaca,aac6'iaf,0.5,0.9568219245746086,0.4568219245746086
+aph(6),aph6,ncbi,aph(3')-IIc,aph3'iic,resfinder,1.0,0.375,ncbi:WP_012480135.1,resfinder:aph(3')-IIc,aph,aph3'iic,0.375,0.9974061095507618,0.6224061095507618
+blaLAT-3,lat3,ncbi,CMY-2,cmy2,card,0.974,0.0,ncbi:WP_032489027.1,card:ARO:3002013,lat,cmy,0.0,0.9644314592576373,0.9644314592576373
+blaLAT-3,lat3,ncbi,blaCMY-2b,cmy2b,resfinder,1.0,0.0,ncbi:WP_032489027.1,resfinder:blaCMY-2b,lat,cmy,0.0,0.9974061095507618,0.9974061095507618
+aac(6')-30,aac6'30,ncbi,AAC(6')-30/AAC(6')-Ib' bifunctional protein,aac6'30/aac6'ib' bifunctional protein,card,0.966,0.18918918918918914,ncbi:WP_051645529.1,card:ARO:3002599,aac6'30,aac6'30/aac6'ib' bifunctional protein,0.18918918918918914,0.9542854130135989,0.7650962238244098
+aac(6')-30,aac6'30,ncbi,aac(6')-30-aac(6')-Ib',aac6'30aac6'ib',resfinder,0.966,0.4666666666666667,ncbi:WP_051645529.1,resfinder:aac(6')-30-aac(6')-Ib',aac6'30,aac6'30aac6'ib',0.4666666666666667,0.9542854130135989,0.48761874634693225
+cphA-1,cpha1,ncbi,imiH,imih,card,0.976,0.0,ncbi:WP_063844282.1,card:ARO:3003094,cpha,imih,0.0,0.9669679708186469,0.9669679708186469
+cphA-1,cpha1,ncbi,imiH,imih,resfinder,0.976,0.0,ncbi:WP_063844282.1,resfinder:imiH,cpha,imih,0.0,0.9669679708186469,0.9669679708186469
+cphA-17,cpha17,ncbi,blaCEPH-A3,cepha3,resfinder,0.967,0.5,ncbi:WP_063844285.1,resfinder:blaCEPH-A3,cpha,cepha,0.8,0.9555536687941037,0.1555536687941037
+cphA-10,cpha10,ncbi,imiH,imih,card,0.957,0.0,ncbi:WP_063844286.1,card:ARO:3003094,cpha,imih,0.0,0.9428711109890557,0.9428711109890557
+cphA-10,cpha10,ncbi,imiH,imih,resfinder,0.957,0.0,ncbi:WP_063844286.1,resfinder:imiH,cpha,imih,0.0,0.9428711109890557,0.9428711109890557
+grm,grm,ncbi,grmB,grmb,resfinder,1.0,0.75,ncbi:WP_063851283.1,resfinder:grmB,grm,grmb,0.75,0.9974061095507618,0.2474061095507618
+aacA32,aaca32,ncbi,AAC(6')-32,aac6'32,card,0.963,0.7142857142857143,ncbi:WP_071846213.1,card:ARO:3002586,aaca,aac6'32,0.4285714285714286,0.9504806456720845,0.5219092171006559
+aacA32,aaca32,ncbi,aac(6')-32,aac6'32,resfinder,0.963,0.7142857142857143,ncbi:WP_071846213.1,resfinder:aac(6')-32,aaca,aac6'32,0.4285714285714286,0.9504806456720845,0.5219092171006559
+aac(6')-Ib,aac6'ib,ncbi,AAC(6')-Ib',aac6'ib',card,0.961,0.875,ncbi:WP_071846254.1,card:ARO:3003676,aac6'ib,aac6'ib',0.875,0.947944134111075,0.07294413411107503
+aac(6')-Ib,aac6'ib,ncbi,ant(3'')-Ii-aac(6')-IId,ant3''iiaac6'iid,resfinder,0.966,0.375,ncbi:WP_071846254.1,resfinder:ant(3'')-Ii-aac(6')-IId,aac6'ib,ant3''iiaac6'iid,0.375,0.9542854130135989,0.5792854130135989
+blaCMY-213,cmy213,ncbi,CFE-1,cfe1,card,0.961,0.33333333333333337,ncbi:WP_080625828.1,card:ARO:3001856,cmy,cfe,0.33333333333333337,0.947944134111075,0.6146108007777417
+blaCMY-213,cmy213,ncbi,blaCFE-1,cfe1,resfinder,0.961,0.33333333333333337,ncbi:WP_080625828.1,resfinder:blaCFE-1,cmy,cfe,0.33333333333333337,0.947944134111075,0.6146108007777417
+blaACT-215,act215,ncbi,blaCMG,cmg,resfinder,0.972,0.16666666666666663,ncbi:WP_167214326.1,resfinder:blaCMG,act,cmg,0.0,0.9618949476966276,0.9618949476966276
+blaCMY-209,cmy209,ncbi,CFE-1,cfe1,card,0.964,0.16666666666666663,ncbi:WP_200007927.1,card:ARO:3001856,cmy,cfe,0.33333333333333337,0.9517489014525893,0.6184155681192559
+blaCMY-209,cmy209,ncbi,blaCFE-1,cfe1,resfinder,0.964,0.16666666666666663,ncbi:WP_200007927.1,resfinder:blaCFE-1,cmy,cfe,0.33333333333333337,0.9517489014525893,0.6184155681192559
+blaOXA-1433,oxa1433,ncbi,ampS,amps,resfinder,0.954,0.1428571428571429,ncbi:WP_257691531.1,resfinder:ampS,oxa,amps,0.0,0.9390663436475415,0.9390663436475415
+blaADC-369,adc369,ncbi,Acinetobacter baumannii ampC beta-lactamase,ampc betalactamase,card,0.969,0.11111111111111116,ncbi:WP_272342309.1,card:ARO:3003796,adc,ampc betalactamase,0.11111111111111116,0.9580901803551134,0.8469790692440022
+blaOXA-1394,oxa1394,ncbi,ampH,amph,resfinder,0.971,0.1428571428571429,ncbi:WP_279452048.1,resfinder:ampH,oxa,amph,0.0,0.9606266919161228,0.9606266919161228
+blaACT-164,act164,ncbi,blaCMG,cmg,resfinder,0.967,0.16666666666666663,ncbi:WP_320724323.1,resfinder:blaCMG,act,cmg,0.0,0.9555536687941037,0.9555536687941037
+blaCMY-210,cmy210,ncbi,CFE-1,cfe1,card,0.965,0.33333333333333337,ncbi:WP_420354074.1,card:ARO:3001856,cmy,cfe,0.33333333333333337,0.9530171572330941,0.6196838238997607
+blaCMY-210,cmy210,ncbi,blaCFE-1,cfe1,resfinder,0.965,0.33333333333333337,ncbi:WP_420354074.1,resfinder:blaCFE-1,cmy,cfe,0.33333333333333337,0.9530171572330941,0.6196838238997607
+blaCMY-212,cmy212,ncbi,CFE-1,cfe1,card,0.963,0.33333333333333337,ncbi:WP_420354076.1,card:ARO:3001856,cmy,cfe,0.33333333333333337,0.9504806456720845,0.6171473123387511
+blaCMY-212,cmy212,ncbi,blaCFE-1,cfe1,resfinder,0.963,0.33333333333333337,ncbi:WP_420354076.1,resfinder:blaCFE-1,cmy,cfe,0.33333333333333337,0.9504806456720845,0.6171473123387511
+cphA-18,cpha18,ncbi,imiH,imih,card,0.968,0.0,ncbi:WP_431419235.1,card:ARO:3003094,cpha,imih,0.0,0.9568219245746086,0.9568219245746086
+cphA-18,cpha18,ncbi,imiH,imih,resfinder,0.968,0.0,ncbi:WP_431419235.1,resfinder:imiH,cpha,imih,0.0,0.9568219245746086,0.9568219245746086
+blaOXA-1386,oxa1386,ncbi,ampH,amph,resfinder,0.972,0.1428571428571429,ncbi:WP_431419749.1,resfinder:ampH,oxa,amph,0.0,0.9618949476966276,0.9618949476966276
+blaMOX-27,mox27,ncbi,CMY-8b,cmy8b,card,0.956,0.0,ncbi:WP_459076545.1,card:ARO:3006464,mox,cmy,0.0,0.9416028552085509,0.9416028552085509
+blaMOX-27,mox27,ncbi,blaCMY-8b,cmy8b,resfinder,0.956,0.0,ncbi:WP_459076545.1,resfinder:blaCMY-8b,mox,cmy,0.0,0.9416028552085509,0.9416028552085509
+blaMOX-28,mox28,ncbi,CMY-1,cmy1,card,0.95,0.0,ncbi:WP_459076546.1,card:ARO:3002012,mox,cmy,0.0,0.9339933205255222,0.9339933205255222
+blaMOX-28,mox28,ncbi,blaCMY-1,cmy1,resfinder,0.95,0.0,ncbi:WP_459076546.1,resfinder:blaCMY-1,mox,cmy,0.0,0.9339933205255222,0.9339933205255222
+blaMOX-31,mox31,ncbi,CMY-8b,cmy8b,card,0.952,0.0,ncbi:WP_459076549.1,card:ARO:3006464,mox,cmy,0.0,0.9365298320865318,0.9365298320865318
+blaMOX-31,mox31,ncbi,blaCMY-8b,cmy8b,resfinder,0.952,0.0,ncbi:WP_459076549.1,resfinder:blaCMY-8b,mox,cmy,0.0,0.9365298320865318,0.9365298320865318
+aph(3')-IIc,aph3'iic,resfinder,aph(6),aph6,ncbi,1.0,0.375,resfinder:aph(3')-IIc,ncbi:WP_012480135.1,aph3'iic,aph,0.375,0.9974061095507618,0.6224061095507618
+blaCMY-2b,cmy2b,resfinder,blaLAT-3,lat3,ncbi,1.0,0.0,resfinder:blaCMY-2b,ncbi:WP_032489027.1,cmy,lat,0.0,0.9974061095507618,0.9974061095507618
+grmB,grmb,resfinder,grm,grm,ncbi,1.0,0.75,resfinder:grmB,ncbi:WP_063851283.1,grmb,grm,0.75,0.9974061095507618,0.2474061095507618
+tet(S/M),tets/m,resfinder,tet(S),tets,ncbi,0.998,0.6666666666666667,resfinder:tet(S/M),ncbi:WP_109544237.1,tets/m,tets,0.6666666666666667,0.9948695979897522,0.3282029313230854
+aph(2'')-Ia,aph2''ia,resfinder,AAC(6')-Ie-APH(2'')-Ia bifunctional protein,aac6'ieaph2''ia bifunctional protein,card,0.984,0.2222222222222222,resfinder:aph(2'')-Ia,card:ARO:3002597,aph2''ia,aac6'ieaph2''ia bifunctional protein,0.2222222222222222,0.9771140170626851,0.7548917948404629
+aph(2'')-Ia,aph2''ia,resfinder,aac(6')-Ie/aph(2'')-Ia,aac6'ie/aph2''ia,ncbi,0.98,0.5,resfinder:aph(2'')-Ia,ncbi:WP_032490744.1,aph2''ia,aac6'ie/aph2''ia,0.5,0.972040993940666,0.472040993940666
+blaFLC-1,flc1,resfinder,FRI-8,fri8,card,0.988,0.25,resfinder:blaFLC-1,card:ARO:3005031,flc,fri,0.33333333333333337,0.9821870401847044,0.648853706851371

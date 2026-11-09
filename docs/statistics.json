@@ -1,0 +1,42 @@
+{
+  "analysis": {
+    "full_names": {
+      "intercept": -0.49020675402096,
+      "low_name_similarity_rows": 4153,
+      "matches_at_or_above_threshold": 24637,
+      "predicted_similarity_at_threshold": 0.8391054026290001,
+      "slope": 1.3992759543683793
+    },
+    "identity_threshold": 0.95,
+    "matches_analysed": 30152,
+    "matches_skipped_blaPAO": 1349,
+    "without_alleles": {
+      "intercept": -0.2708496709540278,
+      "low_name_similarity_rows": 597,
+      "matches_at_or_above_threshold": 24637,
+      "predicted_similarity_at_threshold": 0.9339933205255222,
+      "slope": 1.2682557805047896
+    }
+  },
+  "graph": {
+    "edges": 51971,
+    "edges_by_type": {
+      "OWH": 30543,
+      "RBH": 21428
+    },
+    "file": "graph.json",
+    "nodes": 15859,
+    "nodes_by_database": {
+      "card": 5971,
+      "ncbi": 7299,
+      "resfinder": 2589
+    },
+    "rbh_pairs": 10714,
+    "rbh_pairs_by_databases": {
+      "card+ncbi": 5685,
+      "card+resfinder": 2491,
+      "ncbi+resfinder": 2538
+    },
+    "sha256": "1c7f0f080de1faf854ba5e6247c3bf2a9fced864b17670e87fd0efb0fc32b74e"
+  }
+}
