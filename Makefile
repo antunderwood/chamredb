@@ -1,5 +1,5 @@
 # Feedback loop for the builder (ticket #9). The fixture build needs MMseqs2 18.8cc5c on Linux amd64 (or macOS arm64).
-.PHONY: test test-docker test-invariants test-package
+.PHONY: test test-docker test-invariants test-package lint-workflows
 
 test:
 	python -m pytest -p no:cacheprovider -q builder/tests
@@ -15,3 +15,7 @@ test-invariants:
 # Package unit tests and CLI smoke test (needs `pip install -e .[test]`; CI tests the installed wheel).
 test-package:
 	python -m pytest -p no:cacheprovider -q chamredb/tests
+
+# Lint the GitHub Actions workflows (CI runs the same check).
+lint-workflows:
+	uvx --from actionlint-py actionlint .github/workflows/*.yml

@@ -1,0 +1,16 @@
+name: lint-workflows
+
+on:
+  push:
+    branches: [master]
+    paths: [".github/workflows/**"]
+  pull_request:
+    paths: [".github/workflows/**"]
+
+jobs:
+  actionlint:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - run: python3 -m pip install -q "actionlint-py==1.7.12.25" && actionlint

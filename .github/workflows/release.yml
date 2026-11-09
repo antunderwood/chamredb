@@ -1,0 +1,137 @@
+name: release
+
+# Monthly check of the upstream databases; builds and publishes graph-YYYY.MM.DD only when a release changed
+# (ADR 0005). Manual runs: force=true builds even if nothing changed, dry_run=true builds but does not publish.
+# Publishing a release does not change the package default; the pin in chamredb/data/graph_release.json is a
+# separate, reviewed step (ticket #15).
+on:
+  schedule:
+    - cron: "0 5 1 * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: Build even if no upstream release changed
+        type: boolean
+        default: false
+      dry_run:
+        description: Build and report but do not publish a release
+        type: boolean
+        default: false
+  pull_request:
+    paths:
+      - builder/release/**
+      - .github/workflows/release.yml
+
+permissions:
+  contents: read
+
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    outputs:
+      build: ${{ steps.decide.outputs.build }}
+      reasons: ${{ steps.decide.outputs.reasons }}
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - name: Unit tests for the release plan
+        run: |
+          python3 -m pip install -q pytest
+          python3 -m pytest -p no:cacheprovider -q builder/tests/test_release_plan.py
+      - name: Resolve the current upstream releases
+        run: python3 builder/release/resolve_inputs.py resolved_inputs.json
+      - name: Previous release manifest
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag=$(gh release list --limit 50 --json tagName -q '[.[]|select(.tagName|startswith("graph-"))][0].tagName // ""')
+          if [ -n "$tag" ] && gh release download "$tag" --pattern data_manifest.json --output previous_manifest.json; then
+            echo "previous release: $tag"
+          else
+            echo none > previous_manifest.json; echo "no previous release"
+          fi
+      - id: decide
+        run: |
+          prev=previous_manifest.json; [ "$(cat $prev)" = none ] && prev=none
+          python3 builder/release/plan_release.py needs-build --previous "$prev" --inputs resolved_inputs.json | tee decision.txt
+          cat decision.txt >> "$GITHUB_OUTPUT"
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$prev" = none ]; then
+            echo "build=false" >> "$GITHUB_OUTPUT"; echo "scheduled runs never make the first release (ticket #15 is a manual step)" | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.force }}" = "true" ]; then echo "build=true" >> "$GITHUB_OUTPUT"; fi
+          cat decision.txt >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@0b2256b8c012f0828dc542b3febcab082c67f72b # v4.3.4
+        with:
+          name: plan
+          path: |
+            resolved_inputs.json
+            previous_manifest.json
+
+  build:
+    needs: plan
+    if: needs.plan.outputs.build == 'true' && github.event_name != 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16 # v4.1.8
+        with:
+          name: plan
+          path: plan
+      - uses: mamba-org/setup-micromamba@f8b8a1e23a26f60a44c853292711bacfd3eac822 # v1.9.0
+        with:
+          environment-file: builder/environment.yml
+          environment-name: chamredb
+          cache-environment: true
+      - name: Build the graph (fails if the graph invariants do not hold)
+        shell: micromamba-shell {0}
+        run: |
+          REPORT_ONLY=1 INPUTS="$GITHUB_WORKSPACE/plan/resolved_inputs.json" bash builder/reproduce_2021/run_reproduction.sh "$RUNNER_TEMP/build"
+          cat "$RUNNER_TEMP/build/invariants.txt" "$RUNNER_TEMP/build/timings.txt" "$RUNNER_TEMP/build/versions.txt" >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@0b2256b8c012f0828dc542b3febcab082c67f72b # v4.3.4
+        with:
+          name: build
+          path: |
+            ${{ runner.temp }}/build/graph.json
+            ${{ runner.temp }}/build/data_manifest.json
+            ${{ runner.temp }}/build/invariants.txt
+            ${{ runner.temp }}/build/timings.txt
+            ${{ runner.temp }}/build/versions.txt
+
+  publish:
+    needs: [plan, build]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16 # v4.1.8
+        with:
+          path: artifacts
+      - name: Diff and ID-continuity report against the previous release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag=$(gh release list --limit 50 --json tagName -q '[.[]|select(.tagName|startswith("graph-"))][0].tagName // ""')
+          if [ -n "$tag" ]; then
+            gh release download "$tag" --pattern graph.json --output previous_graph.json
+          else
+            cp chamredb/data/graph.json previous_graph.json   # first release: compare with the graph shipped in the package
+          fi
+          python3 builder/scripts/diff_graphs.py previous_graph.json artifacts/build/graph.json --out diff_report.md
+          cat diff_report.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Publish the release
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="graph-$(date -u +%Y.%m.%d)"
+          if gh release view "$tag" >/dev/null 2>&1; then echo "release $tag already exists" >&2; exit 1; fi
+          python3 builder/release/plan_release.py notes --tag "$tag" --manifest artifacts/build/data_manifest.json --report diff_report.md --out notes.md
+          cp artifacts/build/graph.json graph.json; cp artifacts/build/data_manifest.json data_manifest.json
+          gh release create "$tag" --title "$tag" --notes-file notes.md graph.json data_manifest.json diff_report.md
+      - uses: actions/upload-artifact@0b2256b8c012f0828dc542b3febcab082c67f72b # v4.3.4
+        with:
+          name: release-report
+          path: diff_report.md
