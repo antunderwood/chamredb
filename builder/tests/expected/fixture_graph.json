@@ -1,0 +1,758 @@
+{
+  "directed": true,
+  "graph": {},
+  "links": [
+    {
+      "coverage": 1.0,
+      "identity": 0.991,
+      "source": "card:ARO:3000124",
+      "target": "ncbi:WP_000369216.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.991,
+      "source": "ncbi:WP_000369216.1",
+      "target": "card:ARO:3000124",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3001205",
+      "target": "ncbi:WP_004201167.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_004201167.1",
+      "target": "card:ARO:3001205",
+      "type": "RBH"
+    },
+    {
+      "coverage": 0.9953488372093023,
+      "identity": 1.0,
+      "source": "card:ARO:3002718",
+      "target": "ncbi:WP_017900990.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 0.9953488372093023,
+      "identity": 1.0,
+      "source": "ncbi:WP_017900990.1",
+      "target": "card:ARO:3002718",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.987,
+      "source": "card:ARO:3002864",
+      "target": "ncbi:WP_063844476.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3002864",
+      "target": "resfinder:dfrB1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.987,
+      "source": "ncbi:WP_063844476.1",
+      "target": "card:ARO:3002864",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.987,
+      "source": "ncbi:WP_063844476.1",
+      "target": "resfinder:dfrB1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3002871",
+      "target": "ncbi:WP_063855713.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3002871",
+      "target": "resfinder:tet(37)",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_063855713.1",
+      "target": "card:ARO:3002871",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_063855713.1",
+      "target": "resfinder:tet(37)",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.974,
+      "source": "card:ARO:3003021",
+      "target": "ncbi:WP_063844477.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3003021",
+      "target": "resfinder:dfrB2",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.974,
+      "source": "ncbi:WP_063844477.1",
+      "target": "card:ARO:3003021",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.974,
+      "source": "ncbi:WP_063844477.1",
+      "target": "resfinder:dfrB2",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3003022",
+      "target": "ncbi:WP_010890144.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3003022",
+      "target": "resfinder:dfrB3",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_010890144.1",
+      "target": "card:ARO:3003022",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_010890144.1",
+      "target": "resfinder:dfrB3",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3003023",
+      "target": "ncbi:WP_063844479.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3003023",
+      "target": "resfinder:dfrB6",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_063844479.1",
+      "target": "card:ARO:3003023",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_063844479.1",
+      "target": "resfinder:dfrB6",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3004253",
+      "target": "ncbi:WP_021418929.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_021418929.1",
+      "target": "card:ARO:3004253",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3004556",
+      "target": "ncbi:WP_063844480.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3004556",
+      "target": "resfinder:dfrB8",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_063844480.1",
+      "target": "card:ARO:3004556",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_063844480.1",
+      "target": "resfinder:dfrB8",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3005350",
+      "target": "ncbi:WP_071846200.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.853,
+      "source": "card:ARO:3005350",
+      "target": "resfinder:dfrB2",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.851,
+      "source": "card:ARO:3005350",
+      "target": "resfinder:dfrB3",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.841,
+      "source": "card:ARO:3005350",
+      "target": "resfinder:dfrB7",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_071846200.1",
+      "target": "card:ARO:3005350",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.853,
+      "source": "ncbi:WP_071846200.1",
+      "target": "resfinder:dfrB2",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.851,
+      "source": "ncbi:WP_071846200.1",
+      "target": "resfinder:dfrB3",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.841,
+      "source": "ncbi:WP_071846200.1",
+      "target": "resfinder:dfrB7",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.616,
+      "source": "card:ARO:3005036",
+      "target": "ncbi:WP_004201167.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:dfrB1",
+      "target": "card:ARO:3002864",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.987,
+      "source": "resfinder:dfrB1",
+      "target": "ncbi:WP_063844476.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:tet(37)",
+      "target": "card:ARO:3002871",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:tet(37)",
+      "target": "ncbi:WP_063855713.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:dfrB2",
+      "target": "card:ARO:3003021",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.974,
+      "source": "resfinder:dfrB2",
+      "target": "ncbi:WP_063844477.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:dfrB3",
+      "target": "card:ARO:3003022",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:dfrB3",
+      "target": "ncbi:WP_010890144.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:dfrB6",
+      "target": "card:ARO:3003023",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:dfrB6",
+      "target": "ncbi:WP_063844479.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:dfrB8",
+      "target": "card:ARO:3004556",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:dfrB8",
+      "target": "ncbi:WP_063844480.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.853,
+      "source": "resfinder:dfrB7",
+      "target": "card:ARO:3003021",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.848,
+      "source": "resfinder:dfrB7",
+      "target": "card:ARO:3003023",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.845,
+      "source": "resfinder:dfrB7",
+      "target": "card:ARO:3005350",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.848,
+      "source": "resfinder:dfrB7",
+      "target": "ncbi:WP_063844479.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.845,
+      "source": "resfinder:dfrB7",
+      "target": "ncbi:WP_071846200.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.845,
+      "source": "resfinder:dfrB7",
+      "target": "ncbi:WP_063844477.1",
+      "type": "OWH"
+    }
+  ],
+  "multigraph": false,
+  "nodes": [
+    {
+      "PMID": [
+        "24564530"
+      ],
+      "database": "card",
+      "id": "card:ARO:3000124",
+      "is_a": "ARO:3000100:gene modulating beta-lactam resistance",
+      "name": "mecI"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_047956.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [
+          "NG_055650.1",
+          "NG_050586.1"
+        ],
+        "protein_accessions": [
+          "WP_000369214.1",
+          "WP_000196386.1"
+        ]
+      },
+      "id": "ncbi:WP_000369216.1",
+      "name": "mecI",
+      "phenotype": "confers resistance to subclass METHICILLIN",
+      "product": "mecA-type methicillin resistance repressor MecI"
+    },
+    {
+      "PMID": [
+        "18791008",
+        "22290943"
+      ],
+      "additional_phenotype": "confers resistance to drug class: glycopeptide antibiotic",
+      "database": "card",
+      "id": "card:ARO:3001205",
+      "is_a": "ARO:3004256:Bleomycin resistant protein",
+      "name": "BRP(MBL)",
+      "phenotype": "confers resistance to antibiotic: bleomycin A2,bleomycin B2,bleomycinic acid"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_047559.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [
+          "NG_047553.1",
+          "NG_047554.1",
+          "NG_047555.1"
+        ],
+        "protein_accessions": [
+          "WP_063842962.1",
+          "WP_063842967.1",
+          "WP_000131935.1"
+        ]
+      },
+      "id": "ncbi:WP_004201167.1",
+      "name": "ble",
+      "phenotype": "confers resistance to subclass BLEOMYCIN",
+      "product": "bleomycin binding protein Ble-MBL"
+    },
+    {
+      "PMID": [
+        "16870791"
+      ],
+      "additional_phenotype": "confers resistance to drug class: fluoroquinolone antibiotic",
+      "database": "card",
+      "id": "card:ARO:3002718",
+      "is_a": "ARO:3000419:quinolone resistance protein (qnr)",
+      "name": "QnrB4",
+      "phenotype": "confers resistance to antibiotic: ciprofloxacin,gatifloxacin,levofloxacin,moxifloxacin,nalidixic acid,norfloxacin,sparfloxacin"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_050502.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_017900990.1",
+      "name": "qnrB4",
+      "phenotype": "confers resistance to subclass QUINOLONE",
+      "product": "quinolone resistance pentapeptide repeat protein QnrB4"
+    },
+    {
+      "PMID": [
+        "16046466"
+      ],
+      "additional_phenotype": "confers resistance to drug class: diaminopyrimidine antibiotic",
+      "database": "card",
+      "id": "card:ARO:3002864",
+      "is_a": "ARO:3001218:trimethoprim resistant dihydrofolate reductase dfr",
+      "name": "dfrB1",
+      "phenotype": "confers resistance to antibiotic: trimethoprim"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_047744.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063844476.1",
+      "name": "dfrB1",
+      "phenotype": "confers resistance to subclass TRIMETHOPRIM",
+      "product": "trimethoprim-resistant dihydrofolate reductase DfrB1"
+    },
+    {
+      "PMID": [
+        "12654685"
+      ],
+      "additional_phenotype": "confers resistance to drug class: tetracycline antibiotic",
+      "database": "card",
+      "id": "card:ARO:3002871",
+      "is_a": "ARO:3000036:tetracycline inactivation enzyme",
+      "name": "tet37",
+      "phenotype": "confers resistance to antibiotic: tetracycline"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_048132.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063855713.1",
+      "name": "tet(37)",
+      "phenotype": "confers resistance to subclass TETRACYCLINE",
+      "product": "tetracycline resistance NADPH-dependent oxidoreductase Tet(37)"
+    },
+    {
+      "PMID": [
+        "19719593",
+        "17261525"
+      ],
+      "additional_phenotype": "confers resistance to drug class: diaminopyrimidine antibiotic",
+      "database": "card",
+      "id": "card:ARO:3003021",
+      "is_a": "ARO:3001218:trimethoprim resistant dihydrofolate reductase dfr",
+      "name": "dfrB2",
+      "phenotype": "confers resistance to antibiotic: trimethoprim"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_047746.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063844477.1",
+      "name": "dfrB2",
+      "phenotype": "confers resistance to subclass TRIMETHOPRIM",
+      "product": "trimethoprim-resistant dihydrofolate reductase DfrB2"
+    },
+    {
+      "PMID": [
+        "22507248"
+      ],
+      "additional_phenotype": "confers resistance to drug class: diaminopyrimidine antibiotic",
+      "database": "card",
+      "id": "card:ARO:3003022",
+      "is_a": "ARO:3001218:trimethoprim resistant dihydrofolate reductase dfr",
+      "name": "dfrB3",
+      "phenotype": "confers resistance to antibiotic: trimethoprim"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_047747.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_010890144.1",
+      "name": "dfrB3",
+      "phenotype": "confers resistance to subclass TRIMETHOPRIM",
+      "product": "trimethoprim-resistant dihydrofolate reductase DfrB3"
+    },
+    {
+      "PMID": [
+        "16870788"
+      ],
+      "additional_phenotype": "confers resistance to drug class: diaminopyrimidine antibiotic",
+      "database": "card",
+      "id": "card:ARO:3003023",
+      "is_a": "ARO:3001218:trimethoprim resistant dihydrofolate reductase dfr",
+      "name": "dfrB6",
+      "phenotype": "confers resistance to antibiotic: trimethoprim"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_047750.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063844479.1",
+      "name": "dfrB6",
+      "phenotype": "confers resistance to subclass TRIMETHOPRIM",
+      "product": "trimethoprim-resistant dihydrofolate reductase DfrB6"
+    },
+    {
+      "PMID": [
+        "16723588",
+        "14617152",
+        "11036060"
+      ],
+      "database": "card",
+      "id": "card:ARO:3004253",
+      "is_a": "ARO:3000575:vanU",
+      "name": "vanUG",
+      "phenotype": "confers resistance to drug class: glycopeptide antibiotic"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_048466.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_021418929.1",
+      "name": "vanU-G",
+      "phenotype": "confers resistance to subclass VANCOMYCIN",
+      "product": "glycopeptide resistance transcriptional regulator VanU-G"
+    },
+    {
+      "PMID": [
+        "21627486"
+      ],
+      "additional_phenotype": "confers resistance to drug class: diaminopyrimidine antibiotic",
+      "database": "card",
+      "id": "card:ARO:3004556",
+      "is_a": "ARO:3001218:trimethoprim resistant dihydrofolate reductase dfr",
+      "name": "dfrB7",
+      "phenotype": "confers resistance to antibiotic: trimethoprim"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_047751.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063844480.1",
+      "name": "dfrB8",
+      "phenotype": "confers resistance to subclass TRIMETHOPRIM",
+      "product": "trimethoprim-resistant dihydrofolate reductase DfrB8"
+    },
+    {
+      "additional_phenotype": "confers resistance to drug class: diaminopyrimidine antibiotic",
+      "database": "card",
+      "id": "card:ARO:3005350",
+      "is_a": "ARO:3001218:trimethoprim resistant dihydrofolate reductase dfr",
+      "name": "DfrB9",
+      "phenotype": "confers resistance to antibiotic: trimethoprim"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_052167.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_071846200.1",
+      "name": "dfrB9",
+      "phenotype": "confers resistance to subclass TRIMETHOPRIM",
+      "product": "trimethoprim-resistant dihydrofolate reductase DfrB9"
+    },
+    {
+      "database": "card",
+      "id": "card:ARO:3005036",
+      "is_a": "ARO:3004256:Bleomycin resistant protein",
+      "name": "BLMT",
+      "phenotype": "confers resistance to drug class: glycopeptide antibiotic"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:dfrB1",
+      "name": "dfrB1",
+      "phenotype": "confers resistance to Trimethoprim"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:tet(37)",
+      "name": "tet(37)",
+      "phenotype": "confers resistance to Tetracycline"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:dfrB2",
+      "name": "dfrB2",
+      "phenotype": "confers resistance to Trimethoprim"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:dfrB3",
+      "name": "dfrB3",
+      "phenotype": "confers resistance to Trimethoprim"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:dfrB6",
+      "name": "dfrB6",
+      "phenotype": "confers resistance to Trimethoprim"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:dfrB8",
+      "name": "dfrB8",
+      "phenotype": "confers resistance to Trimethoprim"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:dfrB7",
+      "name": "dfrB7",
+      "phenotype": "confers resistance to Trimethoprim"
+    }
+  ]
+}
