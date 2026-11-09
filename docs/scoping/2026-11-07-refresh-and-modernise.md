@@ -92,3 +92,17 @@ User confirmed all three below as the failures of most concern.
 - New databases (MEGARes, ARG-ANNOT, PointFinder) and new CARD model types
 - Changing the matching method (RBH plus one-way hits via MMseqs2)
 - Nextflow port, bioconda packaging, breaking changes to CLI or output columns
+
+## Module-design survey (ticket #3, 2026-11-09)
+
+- **Duplicated graph logic.** `chamredb/functions/graph_functions.py` (`add_rbh_hits_to_graph`, `add_search_hits_to_graph`, `__add_connection`, `__load_metadata`) is copied into `builder/scripts/functions/graph_building.py`. The package copy is exercised by `chamredb/tests`; the builder copy produces the shipped graph. They can drift. Candidate: one shared function module (decide in #5, not changed here).
+- **I/O mixed with science in the builder.** `hit_parsing`, `graph_building` and the parse scripts read and write fixed relative paths (`data/...`) inside the functions, so they cannot be unit-tested without a directory layout. The fixture build in `builder/tests` is the seam today. Candidate: pure functions taking dataframes (as `add_*_hits_to_graph` already do), paths owned by the scripts.
+- **Parsers are scripts, not modules.** `parse_*.py` have logic at import time and no functions, so the strict-parser work in #4 needs a small refactor first.
+- **Conventions owned in several places.** Node id `database:id`, identity as a fraction and coverage as alnlen over query end are created in `graph_building` and re-derived in the package's visualisation code. New module `builder/scripts/functions/graph_invariants.py` is now the one place that states what a valid graph is.
+- **Graph loading.** `read_graph()` reads the packaged `graph.json` through networkx `node_link_graph`; this breaks on networkx 3.x because the default edge key changed from `links` to `edges` (see findings below). Relevant to #5 and #6.
+
+## Findings from the invariant tests (ticket #3)
+
+- **Coverage above 1.** 729 of 33,632 shipped edges (2.2%; 715 OWH, 14 RBH) have coverage above 1 (max 1.198): coverage is alignment length over query end, which exceeds 1 for gapped alignments. The spec assumption 0 < coverage <= 1 is false. **Decision (2026-11-09, @antunderwood): keep the definition, document it in GLOSSARY.md, relax the invariant to coverage > 0.** Predicate 3 in spec #1 is amended accordingly.
+- **ResFinder duplicate ids.** The committed `resfinder.nucl.fasta` (cat of per-class `*.fsa`) has 5 duplicate ids (genes in two class files); the parsed protein FASTA is unique. Predicate 4 holds for the parsed output, not for the raw concatenation.
+- **Predicate 8 and networkx.** `chamredb/tests` pass (7) with networkx 2.8.8, pandas 1.5.3 and Python 3.9, and fail (2 failed, 3 errors) with networkx 3.6.1, because `node_link_data` and `node_link_graph` now default to the `edges` key. The package needs a pinned bound or an explicit `edges="links"` argument (additive-schema rule: keep `links` in graph.json).
