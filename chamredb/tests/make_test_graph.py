@@ -3,7 +3,10 @@
 The unit tests used to read the bundled graph, so every data refresh would change their expected outputs. They now
 read this fixed subset (every queried source node, its out-neighbours and the edges between them, with all node
 attributes), so the expected TSV and text outputs stay valid and a refresh cannot change them.
-Provenance only; the fixture is committed. Usage (from the repository root):
+Also committed, made by hand from the 2021 metadata JSON files (the version on master before the 2026-11-09 release,
+`git show 359d3fe:chamredb/data/db_metadata/{card,ncbi}.metadata.json`): test_data/metadata_2021_subset.json, the entries
+for the 4 CARD and 4 NCBI ids in the test hit tables, used by test_graph_building.py.
+Provenance only; the fixtures are committed. Usage (from the repository root):
     git show 359d3fe:chamredb/data/graph.json > /tmp/graph_2021.json   # the 2021 graph as shipped
     python3 -c "import sys; sys.path.insert(0, 'chamredb/tests'); import make_test_graph as m; m.main('/tmp/graph_2021.json')"
 """

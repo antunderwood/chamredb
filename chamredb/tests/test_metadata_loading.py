@@ -59,9 +59,10 @@ def test_missing_ids_are_named_from_the_metadata_of_the_same_release(tmp_path, c
 def test_every_node_of_the_bundled_graph_is_in_the_bundled_metadata():
     graph = graph_functions.read_graph()
     missing = {}
+    metadata = {db: graph_loader.resolve_metadata(db) for db in ("card", "ncbi", "resfinder")}
     for node_id in graph.nodes:
         database, identifier = node_id.split(":", 1)
-        meta = graph_loader.resolve_metadata(database)
+        meta = metadata[database]
         if identifier not in meta:
             missing.setdefault(database, []).append(identifier)
     assert not missing, {db: (len(v), v[:3]) for db, v in missing.items()}
