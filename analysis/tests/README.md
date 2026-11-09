@@ -1,0 +1,44 @@
+# Analysis harness (ticket #35)
+
+`make test-analysis` runs `test_matches.py` (about 3 s). It needs the optional extra: `pip install -e ".[analysis]" pytest`.
+
+## Oracles
+
+1. **Hand graph (level 1).** 12 nodes, 13 best matches, one skipped `blaPAO` match. Name similarities are exact fractions worked
+   out by hand in the test (qnrb2 vs qnrb20 = 5/6, vana vs vanhax = 2/3, the rest identical); the regression is checked against
+   closed-form least squares with `fractions`, not numpy. One case fixes the quirk below.
+2. **Frozen output of the unmodified script (level 6).** `scripts/assess_matches.py` run unchanged on the committed 176-node
+   subset of the 2021 graph (`chamredb/tests/test_data/graph_2021_subset.json`): the two CSVs in `expected/` and the statistics
+   in the test. It proves "unchanged", not "correct". Environment of the freeze (2026-11-09): Python 3.11.17, networkx 3.4.2,
+   pandas 3.1.1, numpy 2.4.6, scipy 1.17.1, strsimpy 0.4.1, seaborn 0.13.2, matplotlib 3.11.2.
+   The script crashes on networkx 3.6 (`node_link_graph` default key `edges`, as found in #5), so 3.4.2 was used.
+
+## Mutation check (the harness must go red)
+
+Run 2026-11-09 in the working tree, then restored:
+
+| Mutation in `analysis/matches.py` | Tests that fail |
+| --- | --- |
+| name cleaning keeps the `bla` prefix | hand graph (best matches, regression) and the three frozen-script tests |
+| best match ignores identity | the three frozen-script tests |
+| no `blaPAO` skip rule | the two hand-graph tests |
+
+## Behaviour kept on purpose (defects, fixed in later tickets)
+
+- **Best match depends on edge order.** A later target replaces the best only if its coverage *and* its identity both exceed the
+  current best (`best_target`), so a higher-identity target with lower coverage is ignored. Hand-graph case: c4 keeps vanHAX
+  (identity 0.9, coverage 0.95) over blaTEM-1 (0.95, 0.9).
+- **The allele-free threshold uses the wrong regression.** `predicted_similarity_without_alleles` is computed from the full-name
+  fit, so both thresholds are the same number (test asserts equality). This is probably the source of the README's 0.69 and 0.86.
+- **Second CARD species pattern** (`... from Genus species`) takes its group from the first pattern and would raise
+  `AttributeError` (ticket #37).
+- **Skip rule:** the code skips only nodes named exactly `blaPAO`; the README also names blaPDC (decision #36).
+- A node whose targets all have coverage 0 would crash the script; the library skips it (cannot occur on a valid graph: coverage > 0).
+
+## Facts recorded, not tested
+
+Unmodified script on the full 2021 graph (11,718 nodes, 33,632 edges, 3.6 s): 22,276 best matches, 955 `blaPAO` skipped,
+name similarity = 1.3431 x identity - 0.3989, predicted similarity at identity 0.95 = **0.877** (the README says 0.69),
+19,618 matches with identity >= 0.95, 2,360 rows in the low-name-similarity table and 369 without alleles (the committed
+CSVs in `scripts/` have 2,715 and 389). The committed README numbers, CSVs and figures therefore do not come from the shipped 2021
+graph either.

@@ -25,6 +25,8 @@ dependencies = ["networkx>=3.4,<4", "pandas>=2.0,<4", "rich>=13,<16"]
 
 [project.optional-dependencies]
 test = ["pytest>=8"]
+# README analysis (spec #34); not needed to run chamredb
+analysis = ["scipy>=1.10", "strsimpy>=0.2", "matplotlib>=3.7"]
 
 [project.scripts]
 chamredb = "chamredb.run_chamredb:main"

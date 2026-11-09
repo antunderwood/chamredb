@@ -1,0 +1,20 @@
+name: analysis-tests
+
+on:
+  push:
+    branches: [master]
+    paths: ["analysis/**", "chamredb/tests/test_data/graph_2021_subset.json", "pyproject.toml"]
+  pull_request:
+    paths: ["analysis/**", "chamredb/tests/test_data/graph_2021_subset.json", "pyproject.toml", ".github/workflows/analysis-tests.yml"]
+
+jobs:
+  analysis:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - uses: actions/setup-python@39cd14951b08e74b54015e9e001cdefcf80e669f # v5.1.1
+        with:
+          python-version: "3.12"
+      - run: python -m pip install ".[analysis]" pytest
+      - run: python -m pytest -p no:cacheprovider -q analysis/tests

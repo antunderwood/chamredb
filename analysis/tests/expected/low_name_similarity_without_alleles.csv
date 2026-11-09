@@ -1,0 +1,16 @@
+source_name,cleaned_source_name,source_database,target_name,cleaned_target_name,target_database,sequence_identity,name_similarity,cleaner_source_name,cleaner_target_name,name_similarity_without_alleles,predicted_similarity,similarity_difference
+vanM,vanm,card,VanHMX,vanhmx,resfinder,1.0,0.6666666666666667,vanm,vanhmx,0.6666666666666667,0.9770133076337267,0.31034664096706
+AAC(6')-Ib4,aac6'ib4,card,ant(3'')-Ii-aac(6')-IId,ant3''iiaac6'iid,resfinder,0.981,0.375,aac6'ib4,ant3''iiaac6'iid,0.375,0.9524601068691577,0.5774601068691577
+vanM,vanm,ncbi,VanHMX,vanhmx,resfinder,1.0,0.6666666666666667,vanm,vanhmx,0.6666666666666667,0.9770133076337267,0.31034664096706
+aac(6')-Ib-cr,aac6'ibcr,resfinder,catB8/aac(6')-Ib',catb8/aac6'ib',ncbi,0.954,0.4285714285714286,aac6'ibcr,catb8/aac6'ib',0.4285714285714286,0.9175687163089808,0.48899728773755224
+AAC(6')-Ib10,aac6'ib10,card,catB8/aac(6')-Ib',catb8/aac6'ib',ncbi,0.975,0.4285714285714286,aac6'ib10,catb8/aac6'ib',0.4285714285714286,0.9447064645224518,0.5161350359510232
+AAC(6')-Ib10,aac6'ib10,card,aac(6')-Ib,aac6'ib,resfinder,0.982,0.7777777777777778,aac6'ib10,aac6'ib,0.7777777777777778,0.9537523805936087,0.17597460281583088
+aac(6')-Ib4,aac6'ib4,ncbi,ant(3'')-Ii-aac(6')-IId,ant3''iiaac6'iid,resfinder,0.981,0.375,aac6'ib4,ant3''iiaac6'iid,0.375,0.9524601068691577,0.5774601068691577
+ant(3'')-Ih/aac(6')-IId,ant3''ih/aac6'iid,ncbi,ant(3'')-Ii-aac(6')-IId,ant3''iiaac6'iid,resfinder,1.0,0.8823529411764706,ant3''ih/aac6'iid,ant3''iiaac6'iid,0.8823529411764706,0.9770133076337267,0.09466036645725617
+aac(6')-Ib,aac6'ib,resfinder,AAC(6')-Ib10,aac6'ib10,card,0.984,0.7777777777777778,aac6'ib,aac6'ib10,0.7777777777777778,0.9563369280425108,0.178559150264733
+aac(6')-Ib,aac6'ib,resfinder,catB8/aac(6')-Ib',catb8/aac6'ib',ncbi,0.979,0.5,aac6'ib,catb8/aac6'ib',0.5,0.9498755594202558,0.4498755594202558
+VanHMX,vanhmx,resfinder,vanM,vanm,card,1.0,0.6666666666666667,vanhmx,vanm,0.6666666666666667,0.9770133076337267,0.31034664096706
+VanHMX,vanhmx,resfinder,vanM,vanm,ncbi,1.0,0.6666666666666667,vanhmx,vanm,0.6666666666666667,0.9770133076337267,0.31034664096706
+ant(3'')-Ii-aac(6')-IId,ant3''iiaac6'iid,resfinder,ant(3'')-Ih/aac(6')-IId,ant3''ih/aac6'iid,ncbi,1.0,0.8823529411764706,ant3''iiaac6'iid,ant3''ih/aac6'iid,0.8823529411764706,0.9770133076337267,0.09466036645725617
+catB8/aac(6')-Ib',catb8/aac6'ib',ncbi,catB3,catb3,card,0.963,0.2857142857142857,catb8/aac6'ib',catb,0.2857142857142857,0.9291991798290399,0.6434848941147542
+catB8/aac(6')-Ib',catb8/aac6'ib',ncbi,ant(3'')-Ii-aac(6')-IId,ant3''iiaac6'iid,resfinder,0.982,0.4375,catb8/aac6'ib',ant3''iiaac6'iid,0.4375,0.9537523805936087,0.5162523805936087
