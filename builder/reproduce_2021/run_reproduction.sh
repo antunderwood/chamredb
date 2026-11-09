@@ -40,6 +40,6 @@ for m in (pandas, networkx, Bio, pronto):
 print("orfipy", version("orfipy"))
 PY
 } > versions.txt
-python "$here/compare_graphs.py" "$shipped" graph.json report.md || status=$?
+python scripts/functions/graph_compare.py "$shipped" graph.json report.md || status=$?
 cat timings.txt
 exit "${status:-0}"
