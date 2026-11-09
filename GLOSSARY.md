@@ -14,7 +14,7 @@ Agents and humans use these words with exactly these meanings. Resolve ambiguity
 | Source database | One of CARD, NCBI (AMRFinderPlus Reference Gene Catalog) or ResFinder | Target database |
 | RBH | Reciprocal best hit: each protein is the other's best MMseqs2 hit | One-way hit |
 | OWH | One-way hit: best hit from source to target with no reciprocal hit, kept if coverage and identity thresholds are met | RBH |
-| Coverage | Alignment length divided by the query end position of the alignment (not query length); can exceed 1 for gapped alignments (729 of 33,632 edges in the 2021 graph, max 1.198) | Depth |
+| Coverage | Alignment length divided by the query end position of the alignment (not query length); can exceed 1 for gapped alignments (1,352 of 51,971 edges, 2.6%, in the 2026-11-09 graph, max 1.1985; 2.2% in the 2021 graph) | Depth |
 | Identity | MMseqs2 fraction identical (`fident`) over the alignment | Name similarity |
 | Name similarity | Normalised Levenshtein similarity of cleaned database names | Sequence identity |
 | Node | One protein from one database, id `database:id` | Gene family |

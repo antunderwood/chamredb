@@ -60,7 +60,7 @@ def test_duplicate_fasta_ids_are_detected(tmp_path):
     assert gi.duplicate_fasta_ids(f) == []
 
 
-# ---- the shipped 2021 graph and committed FASTAs ----
+# ---- the bundled graph and the committed 2021 FASTAs ----
 
 @pytest.fixture(scope="module")
 def shipped_graph():
@@ -80,9 +80,10 @@ RESFINDER_FINDING = ("FINDING (ticket #3): the committed resfinder.nucl.fasta (c
 
 def test_coverage_above_one_is_documented_behaviour(shipped_graph):
     # Decision 2026-11-09: coverage = alignment length over query end and may exceed 1 (gapped alignments).
-    # Characterisation (level 6) of the 2021 graph: 729 of 33,632 edges, max 1.198. See GLOSSARY.md.
+    # Characterisation (level 6) of the bundled graph: 1,352 of 51,971 edges (2.6%), max 1.1985 in the 2026-11-09
+    # graph (the 2021 graph had 729 of 33,632, max 1.198); the old values were for the graph this one replaced.
     over = [e["coverage"] for e in shipped_graph["links"] if e["coverage"] > 1]
-    assert len(over) == 729 and max(over) < 1.2
+    assert len(over) == 1352 and max(over) < 1.2
 
 
 @pytest.mark.parametrize("name", [

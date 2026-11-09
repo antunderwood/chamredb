@@ -35,7 +35,8 @@ def expected_print_node_info_output():
 
 @pytest.fixture(scope="module") 
 def chamredb_graph():
-    return graph_functions.read_graph()
+    # fixed subset of the 2021 graph (chamredb/tests/make_test_graph.py): data refreshes cannot change these expected outputs
+    return graph_functions.read_graph(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'test_data', 'graph_2021_subset.json'))
 
 
 def test_single_node_info_text(expected_print_node_info_output, chamredb_graph):
