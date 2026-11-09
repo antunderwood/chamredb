@@ -18,6 +18,8 @@ Data refresh and modernisation (spec: GitHub issue #1).
 
 ### Changed
 
+- The database metadata files (used to name ids that are missing from the graph) now come from the same build as the graph, are pinned by sha256 in `graph_release.json`, and are uploaded with each release. The wheel no longer ships the unused FASTA and MMseqs2 intermediates (6.8 MB to 0.9 MB).
+
 - Python 3.10 or newer (was 3.7); dependencies bounded (`networkx>=3.4`, `pandas>=2.0`, `rich>=13`); `pyproject.toml` replaces `setup.py`; unused `pronto`, `seaborn` and `numpy` runtime dependencies removed.
 - `chamredb query` works with current networkx (explicit `edges="links"`; `graph.json` keeps `links`).
 - ResFinder: the phenotype of a gene now comes from the allele whose sequence is used (9 of 2,601 genes changed).
@@ -27,4 +29,3 @@ Data refresh and modernisation (spec: GitHub issue #1).
 
 - The assessment in the README ("Assessing the graph") describes an earlier graph and was not regenerated.
 - Edge `coverage` is alignment length over the query end position and can exceed 1 (2.6% of edges in the 2026-11-09 graph, 2.2% in the 2021 graph).
-- Metadata used only to name ids that are missing from the graph is still the 2021 version.

@@ -1,0 +1,124 @@
+{
+  "card": {
+    "ARO:3000005": {
+      "PMID": [
+        "10368136"
+      ],
+      "is_a": "ARO:3002978:D-Ala-D-Lac ligase",
+      "name": "vanD"
+    },
+    "ARO:3000013": {
+      "PMID": [
+        "9177243"
+      ],
+      "is_a": "ARO:3002978:D-Ala-D-Lac ligase",
+      "name": "vanB"
+    },
+    "ARO:3000024": {
+      "PMID": [
+        "20709735",
+        "20937787"
+      ],
+      "is_a": "ARO:3000748:subunit of efflux pump conferring antibiotic resistance",
+      "name": "patA"
+    },
+    "ARO:3000025": {
+      "PMID": [
+        "20709735",
+        "20937787"
+      ],
+      "is_a": "ARO:3000748:subunit of efflux pump conferring antibiotic resistance",
+      "name": "patB"
+    }
+  },
+  "ncbi": {
+    "WP_002593938.1": {
+      "alternative_id": {
+        "nucleotide_accession": "NG_048341.1"
+      },
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [
+          "NG_048331.1",
+          "NG_048332.1",
+          "NG_048333.1",
+          "NG_048334.1",
+          "NG_048335.1",
+          "NG_048336.1",
+          "NG_048337.1",
+          "NG_048338.1",
+          "NG_048339.1",
+          "NG_048340.1",
+          "NG_048342.1"
+        ],
+        "protein_accessions": [
+          "WP_032489746.1",
+          "WP_063856559.1",
+          "WP_063856565.1",
+          "WP_042958124.1",
+          "WP_014387148.1",
+          "WP_063856580.1",
+          "WP_060763488.1",
+          "WP_063856590.1",
+          "WP_063856593.1",
+          "WP_063856597.1",
+          "WP_063856625.1"
+        ]
+      },
+      "name": "vanB",
+      "phenotype": "confers resistance to subclass VANCOMYCIN",
+      "product": "D-alanine--(R)-lactate ligase VanB"
+    },
+    "WP_049554487.1": {
+      "alternative_id": {
+        "nucleotide_accession": "NG_056046.1"
+      },
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "name": "tetB(60)",
+      "phenotype": "confers resistance to subclass TETRACYCLINE",
+      "product": "tetracycline efflux ABC transporter Tet(60) subunit B"
+    },
+    "WP_063856692.1": {
+      "alternative_id": {
+        "nucleotide_accession": "NG_048363.1"
+      },
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [
+          "NG_048359.1",
+          "NG_048358.1",
+          "NG_048360.1",
+          "NG_048361.1",
+          "NG_048362.1",
+          "NG_048364.1",
+          "NG_048365.1"
+        ],
+        "protein_accessions": [
+          "WP_063856690.1",
+          "WP_063856689.1",
+          "WP_063856691.1",
+          "WP_023043159.1",
+          "WP_023042300.1",
+          "WP_063856693.1",
+          "WP_028530135.1"
+        ]
+      },
+      "name": "vanD",
+      "phenotype": "confers resistance to subclass VANCOMYCIN",
+      "product": "D-alanine--(R)-lactate ligase VanD"
+    },
+    "WP_100931730.1": {
+      "alternative_id": {
+        "nucleotide_accession": "NG_056045.1"
+      },
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "name": "tetA(60)",
+      "phenotype": "confers resistance to subclass TETRACYCLINE",
+      "product": "tetracycline efflux ABC transporter Tet(60) subunit A"
+    }
+  }
+}

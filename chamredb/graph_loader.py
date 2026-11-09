@@ -49,3 +49,23 @@ def resolve_graph(path=None, pin_file=None, cache_dir=None):
     cached.parent.mkdir(parents=True, exist_ok=True)
     cached.write_bytes(data)
     return cached, pin["data_release"]
+
+
+def resolve_metadata(database, graph_path=None, pin_file=None):
+    """Metadata dict of one database from the files pinned next to the graph (ticket #33).
+
+    The pin lists `metadata: {database: {file, sha256}}`, with `file` relative to the pin file. Returns None for a
+    custom graph (its metadata is unknown) or when the pin lists no file for the database; a file whose sha256
+    differs from the pin is an error.
+    """
+    if graph_path:
+        return None
+    pin_path = Path(pin_file or PACKAGE_DATA / "graph_release.json")
+    entry = json.loads(pin_path.read_text()).get("metadata", {}).get(database)
+    if entry is None:
+        return None
+    path = pin_path.parent / entry["file"]
+    if _sha256(path) != entry["sha256"]:
+        raise ValueError(f"{path} sha256 does not match the pin ({database} metadata)")
+    return json.loads(path.read_text())
+

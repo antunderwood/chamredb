@@ -1,9 +1,23 @@
 {
   "data_release": "2026-11-09",
   "release_tag": "graph-2026.11.09",
-  "note": "Bundled graph, byte-identical to the asset of the GitHub release graph-2026.11.09 (built by builder/ from CARD 4.0.2, NCBI AMRFinderPlus 4.2 2026-10-29.1 and ResFinder db 2.6.0 commit eecf0aa with MMseqs2 18.8cc5c; inputs and sha256 in the release's data_manifest.json). The repository is private, so the package default is the bundled copy; set url to the release asset to download and cache instead.",
+  "note": "Bundled graph, byte-identical to the asset of the GitHub release graph-2026.11.09 (built by builder/ from CARD 4.0.2, NCBI AMRFinderPlus 4.2 2026-10-29.1 and ResFinder db 2.6.0 commit eecf0aa with MMseqs2 18.8cc5c; inputs and sha256 in the release's data_manifest.json). The repository is private, so the package default is the bundled copy; the three database metadata files built from the same inputs by the pinned builder environment are bundled next to it (checked by sha256); set url to the release asset to download and cache instead.",
   "sha256": "1c7f0f080de1faf854ba5e6247c3bf2a9fced864b17670e87fd0efb0fc32b74e",
   "nodes": 15859,
   "edges": 51971,
-  "url": null
+  "url": null,
+  "metadata": {
+    "card": {
+      "file": "db_metadata/card.metadata.json",
+      "sha256": "2e849647c8573bd7b1f983859d4817bed63267852ed93aa2602e101c8d546a08"
+    },
+    "ncbi": {
+      "file": "db_metadata/ncbi.metadata.json",
+      "sha256": "cbf62fb3a4cee8f875acaa9394486de5725ad5bfb8fa4e383e7b30f6d4c75f9a"
+    },
+    "resfinder": {
+      "file": "db_metadata/resfinder.metadata.json",
+      "sha256": "94fb7fa59cd5c8a1a077f8e302ae3f22bab9e487ee646ebe498e03307d64aa7c"
+    }
+  }
 }

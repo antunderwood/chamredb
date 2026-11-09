@@ -35,53 +35,85 @@
     "name": "Cfr(E)",
     "phenotype": "confers resistance to Chloramphenicol, Florfenicol, Clindamycin, Lincomycin, Linezolid, Dalfopristin, Pristinamycin IIA, Virginiamycin M, Tiamulin"
   },
-  "ClpL": {
-    "name": "ClpL",
-    "phenotype": "confers resistance to Temperature"
+  "CmlA10": {
+    "name": "CmlA10",
+    "phenotype": "confers resistance to Chloramphenicol"
+  },
+  "CmlA2": {
+    "name": "CmlA2",
+    "phenotype": "confers resistance to Chloramphenicol"
+  },
+  "CmlA4": {
+    "name": "CmlA4",
+    "phenotype": "confers resistance to Chloramphenicol"
+  },
+  "CmlA5": {
+    "name": "CmlA5",
+    "phenotype": "confers resistance to Chloramphenicol"
+  },
+  "CmlA6": {
+    "name": "CmlA6",
+    "phenotype": "confers resistance to Chloramphenicol"
+  },
+  "CmlA7": {
+    "name": "CmlA7",
+    "phenotype": "confers resistance to Chloramphenicol"
+  },
+  "CmlA8": {
+    "name": "CmlA8",
+    "phenotype": "confers resistance to Chloramphenicol"
+  },
+  "CmlA9": {
+    "name": "CmlA9",
+    "phenotype": "confers resistance to Chloramphenicol"
   },
   "EstDL136": {
     "name": "EstDL136",
     "phenotype": "confers resistance to Chloramphenicol, Florfenicol"
   },
+  "FloR": {
+    "name": "FloR",
+    "phenotype": "confers resistance to Chloramphenicol,Florfenicol"
+  },
   "Gar": {
     "name": "Gar",
-    "phenotype": "confers resistance to Gentamicin, Isepamicin,Netilmicin,Sisomicin"
+    "phenotype": "confers resistance to Gentamicin, Isepamicin, Netilmicin, Sisomicin"
+  },
+  "NarA": {
+    "name": "NarA",
+    "phenotype": "confers resistance to Narasin, Salinomycin, Maduramicin"
+  },
+  "NarB": {
+    "name": "NarB",
+    "phenotype": "confers resistance to Narasin, Salinomycin, Maduramicin"
   },
   "OqxA": {
     "name": "OqxA",
-    "phenotype": "confers resistance to Chloramphenicol, Benzylkonium Chloride, Cetylpyridinium Chloride, Nalidixic acid, Ciprofloxacin, Trimethoprim"
+    "phenotype": "confers resistance to Chloramphenicol, Nalidixic acid, Ciprofloxacin, Trimethoprim"
   },
   "OqxB": {
     "name": "OqxB",
-    "phenotype": "confers resistance to Chloramphenicol, Benzylkonium Chloride, Cetylpyridinium Chloride, Nalidixic acid, Ciprofloxacin, Trimethoprim"
+    "phenotype": "confers resistance to Chloramphenicol, Nalidixic acid, Ciprofloxacin, Trimethoprim"
   },
   "POM-1": {
     "name": "POM-1",
     "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
   },
-  "VanA": {
-    "name": "VanA",
-    "phenotype": "confers resistance to Vancomycin, Teicoplanin"
+  "TOprJ1": {
+    "name": "TOprJ1",
+    "phenotype": "confers resistance to Doxycycline, Tetracycline, Minocycline, Tigecycline"
   },
-  "VanC1XY": {
-    "name": "VanC1XY",
-    "phenotype": "confers resistance to Vancomycin"
+  "TOprJ2": {
+    "name": "TOprJ2",
+    "phenotype": "confers resistance to Doxycycline, Tetracycline, Minocycline, Tigecycline"
   },
-  "VanC2": {
-    "name": "VanC2",
-    "phenotype": "confers resistance to Vancomycin"
+  "TOprJ3": {
+    "name": "TOprJ3",
+    "phenotype": "confers resistance to Doxycycline, Tetracycline, Minocycline, Tigecycline"
   },
-  "VanC2XY": {
-    "name": "VanC2XY",
-    "phenotype": "confers resistance to Vancomycin"
-  },
-  "VanC3XY": {
-    "name": "VanC3XY",
-    "phenotype": "confers resistance to Vancomycin"
-  },
-  "VanC4XY": {
-    "name": "VanC4XY",
-    "phenotype": "confers resistance to Vancomycin"
+  "TOprJ4": {
+    "name": "TOprJ4",
+    "phenotype": "confers resistance to Doxycycline, Tetracycline, Minocycline, Tigecycline"
   },
   "VanE": {
     "name": "VanE",
@@ -99,10 +131,6 @@
     "name": "VanGXY",
     "phenotype": "confers resistance to Vancomycin"
   },
-  "VanH": {
-    "name": "VanH",
-    "phenotype": "confers resistance to Vancomycin, Teicoplanin"
-  },
   "VanHAX": {
     "name": "VanHAX",
     "phenotype": "confers resistance to Vancomycin, Teicoplanin"
@@ -114,10 +142,6 @@
   "VanHDX": {
     "name": "VanHDX",
     "phenotype": "confers resistance to Vancomycin, Teicoplanin"
-  },
-  "VanHFX": {
-    "name": "VanHFX",
-    "phenotype": "confers resistance to Vancomycin"
   },
   "VanHMX": {
     "name": "VanHMX",
@@ -135,73 +159,65 @@
     "name": "VanNXY",
     "phenotype": "confers resistance to Vancomycin"
   },
-  "VanX": {
-    "name": "VanX",
-    "phenotype": "confers resistance to Vancomycin, Teicoplanin"
-  },
-  "VanXY": {
-    "name": "VanXY",
-    "phenotype": "confers resistance to Vancomycin"
-  },
   "aac(2')-IIa": {
     "name": "aac(2')-IIa",
     "phenotype": "confers resistance to Kasugamycin"
   },
   "aac(2')-Ia": {
     "name": "aac(2')-Ia",
-    "phenotype": "confers resistance to Gentamicin,Tobramycin,Dibekacin,Netilmicin"
+    "phenotype": "confers resistance to Gentamicin, Tobramycin, Dibekacin, Netilmicin"
   },
   "aac(2')-Ib": {
     "name": "aac(2')-Ib",
-    "phenotype": "confers resistance to Gentamicin,Tobramycin,Dibekacin,Netilmicin"
+    "phenotype": "confers resistance to Gentamicin, Tobramycin, Dibekacin, Netilmicin"
   },
   "aac(2')-Ic": {
     "name": "aac(2')-Ic",
-    "phenotype": "confers resistance to Gentamicin,Tobramycin,Dibekacin,Netilmicin"
+    "phenotype": "confers resistance to Gentamicin, Tobramycin, Dibekacin, Netilmicin"
   },
   "aac(2')-Id": {
     "name": "aac(2')-Id",
-    "phenotype": "confers resistance to Gentamicin,Tobramycin,Dibekacin,Netilmicin"
+    "phenotype": "confers resistance to Gentamicin, Tobramycin, Dibekacin, Netilmicin"
   },
   "aac(2')-Ie": {
     "name": "aac(2')-Ie",
-    "phenotype": "confers resistance to Gentamicin,Tobramycin,Dibekacin,Netilmicin"
+    "phenotype": "confers resistance to Gentamicin, Tobramycin, Dibekacin, Netilmicin"
   },
   "aac(3)-I": {
     "name": "aac(3)-I",
-    "phenotype": "confers resistance to Gentamicin,Astromicin,Fortimicin"
+    "phenotype": "confers resistance to Gentamicin, Astromicin, Fortimicin"
   },
   "aac(3)-IIIa": {
     "name": "aac(3)-IIIa",
-    "phenotype": "confers resistance to Gentamicin,Tobramycin,Dibekacin,Sisomicin"
+    "phenotype": "confers resistance to Gentamicin, Tobramycin, Dibekacin, Sisomicin"
   },
   "aac(3)-IIIb": {
     "name": "aac(3)-IIIb",
-    "phenotype": "confers resistance to Gentamicin, Tobramycin"
+    "phenotype": "confers resistance to Gentamicin, Tobramycin, Dibekacin, Sisomicin"
   },
   "aac(3)-IIIc": {
     "name": "aac(3)-IIIc",
-    "phenotype": "confers resistance to Gentamicin,Tobramycin,Dibekacin,Sisomicin"
+    "phenotype": "confers resistance to Gentamicin, Tobramycin, Dibekacin, Sisomicin"
   },
   "aac(3)-IIa": {
     "name": "aac(3)-IIa",
-    "phenotype": "confers resistance to Gentamicin, Tobramycin"
+    "phenotype": "confers resistance to Apramycin, Gentamicin, Tobramycin, Dibekacin, Netilmicin, Sisomicin"
   },
   "aac(3)-IIb": {
     "name": "aac(3)-IIb",
-    "phenotype": "confers resistance to Apramycin,Gentamicin,Tobramycin,Dibekacin,Netilmicin,Sisomicin"
+    "phenotype": "confers resistance to Apramycin, Gentamicin, Tobramycin, Dibekacin, Netilmicin, Sisomicin"
   },
   "aac(3)-IIc": {
     "name": "aac(3)-IIc",
-    "phenotype": "confers resistance to Apramycin,Gentamicin,Tobramycin,Dibekacin,Netilmicin,Sisomicin"
+    "phenotype": "confers resistance to Apramycin, Gentamicin, Tobramycin, Dibekacin, Netilmicin, Sisomicin"
   },
   "aac(3)-IId": {
     "name": "aac(3)-IId",
-    "phenotype": "confers resistance to Apramycin,Gentamicin,Tobramycin,Dibekacin,Netilmicin,Sisomicin"
+    "phenotype": "confers resistance to Apramycin, Gentamicin, Tobramycin, Dibekacin, Netilmicin, Sisomicin"
   },
   "aac(3)-IIe": {
     "name": "aac(3)-IIe",
-    "phenotype": "confers resistance to Apramycin,Gentamicin,Tobramycin,Dibekacin,Netilmicin,Sisomicin"
+    "phenotype": "confers resistance to Apramycin, Gentamicin, Tobramycin, Dibekacin, Netilmicin, Sisomicin"
   },
   "aac(3)-IV": {
     "name": "aac(3)-IV",
@@ -209,19 +225,19 @@
   },
   "aac(3)-IVa": {
     "name": "aac(3)-IVa",
-    "phenotype": "confers resistance to Apramycin,Gentamicin,Dibekacin,Netilmicin,Sisomicin,Tobramycin"
+    "phenotype": "confers resistance to Apramycin, Gentamicin, Dibekacin, Netilmicin, Sisomicin, Tobramycin"
   },
   "aac(3)-IXa": {
     "name": "aac(3)-IXa",
-    "phenotype": "confers resistance to Gentamicin,Dibekacin,Kanamycin,Neomycin,Paromomycin,Amikacin,Arbekacin"
+    "phenotype": "confers resistance to Gentamicin, Dibekacin, Kanamycin, Neomycin, Paromomycin, Amikacin, Arbekacin"
   },
   "aac(3)-Ia": {
     "name": "aac(3)-Ia",
-    "phenotype": "confers resistance to Gentamicin,Astromicin,Fortimicin"
+    "phenotype": "confers resistance to Gentamicin, Astromicin, Fortimicin"
   },
   "aac(3)-Ib": {
     "name": "aac(3)-Ib",
-    "phenotype": "confers resistance to Gentamicin,Astromicin,Fortimicin"
+    "phenotype": "confers resistance to Gentamicin, Astromicin, Fortimicin"
   },
   "aac(3)-Ib-aac(6')-Ib": {
     "name": "aac(3)-Ib-aac(6')-Ib",
@@ -229,27 +245,27 @@
   },
   "aac(3)-Ic": {
     "name": "aac(3)-Ic",
-    "phenotype": "confers resistance to Gentamicin,Astromicin,Fortimicin"
+    "phenotype": "confers resistance to Gentamicin, Astromicin, Fortimicin"
   },
   "aac(3)-Id": {
     "name": "aac(3)-Id",
-    "phenotype": "confers resistance to Gentamicin,Astromicin,Fortimicin"
+    "phenotype": "confers resistance to Gentamicin, Astromicin, Fortimicin"
   },
   "aac(3)-If": {
     "name": "aac(3)-If",
-    "phenotype": "confers resistance to Gentamicin,Astromicin,Fortimicin"
+    "phenotype": "confers resistance to Gentamicin, Astromicin, Fortimicin"
   },
   "aac(3)-Ig": {
     "name": "aac(3)-Ig",
-    "phenotype": "confers resistance to Gentamicin,Astromicin,Fortimicin"
+    "phenotype": "confers resistance to Gentamicin, Astromicin, Fortimicin"
   },
   "aac(3)-Ih": {
     "name": "aac(3)-Ih",
-    "phenotype": "confers resistance to Gentamicin,Astromicin,Fortimicin"
+    "phenotype": "confers resistance to Gentamicin, Astromicin, Fortimicin"
   },
   "aac(3)-Ii": {
     "name": "aac(3)-Ii",
-    "phenotype": "confers resistance to Gentamicin,Astromicin,Fortimicin"
+    "phenotype": "confers resistance to Gentamicin, Astromicin, Fortimicin"
   },
   "aac(3)-VIII": {
     "name": "aac(3)-VIII",
@@ -257,15 +273,15 @@
   },
   "aac(3)-VIIIa": {
     "name": "aac(3)-VIIIa",
-    "phenotype": "confers resistance to Gentamicin,Dibekacin,Kanamycin,Neomycin,Paromomycin,Amikacin,Arbekacin"
+    "phenotype": "confers resistance to Gentamicin, Dibekacin, Kanamycin, Neomycin, Paromomycin, Amikacin, Arbekacin"
   },
   "aac(3)-VIIa": {
     "name": "aac(3)-VIIa",
-    "phenotype": "confers resistance to Gentamicin,Dibekacin,Kanamycin,Neomycin,Paromomycin,Amikacin,Arbekacin"
+    "phenotype": "confers resistance to Gentamicin, Dibekacin, Kanamycin, Neomycin, Paromomycin, Amikacin, Arbekacin"
   },
   "aac(3)-VIa": {
     "name": "aac(3)-VIa",
-    "phenotype": "confers resistance to Gentamicin"
+    "phenotype": "confers resistance to Gentamicin, Sisomicin, Netilmicin, Tobramycin"
   },
   "aac(3)-XI": {
     "name": "aac(3)-XI",
@@ -273,23 +289,23 @@
   },
   "aac(3)-Xa": {
     "name": "aac(3)-Xa",
-    "phenotype": "confers resistance to Gentamicin,Dibekacin,Kanamycin,Neomycin,Paromomycin,Amikacin,Arbekacin"
+    "phenotype": "confers resistance to Gentamicin, Dibekacin, Kanamycin, Neomycin, Paromomycin, Amikacin, Arbekacin"
   },
   "aac(6')-29a": {
     "name": "aac(6')-29a",
-    "phenotype": "confers resistance to Amikacin, Tobramycin, Neomycin, Kanamycin, Netilmicin, isepamicin, Sisomicin"
+    "phenotype": "confers resistance to Amikacin, Tobramycin, Neomycin, Kanamycin, Netilmicin, Isepamicin, Sisomicin"
   },
   "aac(6')-29b": {
     "name": "aac(6')-29b",
-    "phenotype": "confers resistance to Amikacin, Tobramycin, Neomycin, Kanamycin, Netilmicin, isepamicin, Sisomicin"
+    "phenotype": "confers resistance to Amikacin, Tobramycin, Neomycin, Kanamycin, Netilmicin, Isepamicin, Sisomicin"
   },
   "aac(6')-30-aac(6')-Ib'": {
     "name": "aac(6')-30-aac(6')-Ib'",
-    "phenotype": "confers resistance to Amikacin, Gentamicin, Tobramycin, Neomycin, Kanamycin, Netilmicin, isepamicin, Sisomicin"
+    "phenotype": "confers resistance to Amikacin, Gentamicin, Tobramycin, Neomycin, Kanamycin, Netilmicin, Isepamicin, Sisomicin"
   },
   "aac(6')-31": {
     "name": "aac(6')-31",
-    "phenotype": "confers resistance to Amikacin, Gentamicin, Tobramycin, Neomycin, Kanamycin, Netilmicin, isepamicin, Sisomicin"
+    "phenotype": "confers resistance to Amikacin, Gentamicin, Tobramycin, Neomycin, Kanamycin, Netilmicin, Isepamicin, Sisomicin"
   },
   "aac(6')-32": {
     "name": "aac(6')-32",
@@ -301,15 +317,15 @@
   },
   "aac(6')-I30": {
     "name": "aac(6')-I30",
-    "phenotype": "confers resistance to Tobramycin,Dibekacin,Amikacin,Sisomicin,Netilmicin"
+    "phenotype": "confers resistance to Tobramycin, Dibekacin, Amikacin, Sisomicin, Netilmicin"
   },
   "aac(6')-IIa": {
     "name": "aac(6')-IIa",
-    "phenotype": "confers resistance to Tobramycin,Dibekacin,Gentamicin,Sisomicin,Netilmicin"
+    "phenotype": "confers resistance to Tobramycin, Dibekacin, Gentamicin, Sisomicin, Netilmicin"
   },
   "aac(6')-IIb": {
     "name": "aac(6')-IIb",
-    "phenotype": "confers resistance to Tobramycin,Dibekacin,Gentamicin,Sisomicin,Netilmicin"
+    "phenotype": "confers resistance to Tobramycin, Dibekacin, Gentamicin, Sisomicin, Netilmicin"
   },
   "aac(6')-IIc": {
     "name": "aac(6')-IIc",
@@ -317,7 +333,7 @@
   },
   "aac(6')-Ia": {
     "name": "aac(6')-Ia",
-    "phenotype": "confers resistance to Tobramycin,Dibekacin,Amikacin,Sisomicin,Netilmicin"
+    "phenotype": "confers resistance to Tobramycin, Dibekacin, Amikacin, Sisomicin, Netilmicin"
   },
   "aac(6')-Iaa": {
     "name": "aac(6')-Iaa",
@@ -325,55 +341,47 @@
   },
   "aac(6')-Iad": {
     "name": "aac(6')-Iad",
-    "phenotype": "confers resistance to Tobramycin,Dibekacin,Amikacin,Sisomicin,Netilmicin"
+    "phenotype": "confers resistance to Tobramycin, Dibekacin, Amikacin, Sisomicin, Netilmicin"
   },
   "aac(6')-Iae": {
     "name": "aac(6')-Iae",
-    "phenotype": "confers resistance to Tobramycin,Dibekacin,Amikacin,Sisomicin,Netilmicin"
+    "phenotype": "confers resistance to Tobramycin, Dibekacin, Amikacin, Sisomicin, Netilmicin"
   },
   "aac(6')-Iaf": {
     "name": "aac(6')-Iaf",
-    "phenotype": "confers resistance to Tobramycin,Dibekacin,Amikacin,Sisomicin,Netilmicin"
+    "phenotype": "confers resistance to Tobramycin, Dibekacin, Amikacin, Sisomicin, Netilmicin"
   },
   "aac(6')-Iag": {
     "name": "aac(6')-Iag",
-    "phenotype": "confers resistance to Tobramycin,Dibekacin,Amikacin,Sisomicin,Netilmicin"
+    "phenotype": "confers resistance to Tobramycin, Dibekacin, Amikacin, Sisomicin, Netilmicin"
   },
   "aac(6')-Iai": {
     "name": "aac(6')-Iai",
-    "phenotype": "confers resistance to Tobramycin,Dibekacin,Amikacin,Sisomicin,Netilmicin"
+    "phenotype": "confers resistance to Tobramycin, Dibekacin, Amikacin, Sisomicin, Netilmicin"
   },
   "aac(6')-Iaj": {
     "name": "aac(6')-Iaj",
-    "phenotype": "confers resistance to Tobramycin,Dibekacin,Amikacin,Sisomicin,Netilmicin"
+    "phenotype": "confers resistance to Tobramycin, Dibekacin, Amikacin, Sisomicin, Netilmicin"
   },
   "aac(6')-Iak": {
     "name": "aac(6')-Iak",
-    "phenotype": "confers resistance to Tobramycin,Dibekacin,Amikacin,Sisomicin,Netilmicin"
+    "phenotype": "confers resistance to Tobramycin, Dibekacin, Amikacin, Sisomicin, Netilmicin"
   },
   "aac(6')-Ian": {
     "name": "aac(6')-Ian",
-    "phenotype": "confers resistance to Tobramycin,Dibekacin,Amikacin,Sisomicin,Netilmicin"
+    "phenotype": "confers resistance to Tobramycin, Dibekacin, Amikacin, Sisomicin, Netilmicin"
   },
   "aac(6')-Ib": {
     "name": "aac(6')-Ib",
     "phenotype": "confers resistance to Amikacin, Tobramycin, Kanamycin"
   },
-  "aac(6')-Ib-D179Y": {
-    "name": "aac(6')-Ib-D179Y",
-    "phenotype": "confers resistance to Ciprofloxacin, Tobramycin, Dibekacin, Amikacin, Sisomicin, Netilmicin, Fluoroquinolone, Ciprofloxacin"
-  },
   "aac(6')-Ib-Hangzhou": {
     "name": "aac(6')-Ib-Hangzhou",
     "phenotype": "confers resistance to Amikacin, Tobramycin"
   },
-  "aac(6')-Ib-Suzhou": {
-    "name": "aac(6')-Ib-Suzhou",
-    "phenotype": "confers resistance to Amikacin, Tobramycin"
-  },
   "aac(6')-Ib-cr": {
     "name": "aac(6')-Ib-cr",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Tobramycin, Dibekacin, Amikacin, Sisomicin, Netilmicin, Fluoroquinolone, Ciprofloxacin"
   },
   "aac(6')-Ib11": {
     "name": "aac(6')-Ib11",
@@ -385,15 +393,15 @@
   },
   "aac(6')-Ic": {
     "name": "aac(6')-Ic",
-    "phenotype": "confers resistance to Tobramycin,Dibekacin,Amikacin,Sisomicin,Netilmicin"
+    "phenotype": "confers resistance to Tobramycin, Dibekacin, Amikacin, Sisomicin, Netilmicin"
   },
   "aac(6')-If": {
     "name": "aac(6')-If",
-    "phenotype": "confers resistance to Tobramycin,Dibekacin,Amikacin,Sisomicin,Netilmicin"
+    "phenotype": "confers resistance to Tobramycin, Dibekacin, Amikacin, Sisomicin, Netilmicin"
   },
   "aac(6')-Ig": {
     "name": "aac(6')-Ig",
-    "phenotype": "confers resistance to Tobramycin,Dibekacin,Amikacin,Sisomicin,Netilmicin"
+    "phenotype": "confers resistance to Tobramycin, Dibekacin, Amikacin, Sisomicin, Netilmicin"
   },
   "aac(6')-Ih": {
     "name": "aac(6')-Ih",
@@ -401,7 +409,7 @@
   },
   "aac(6')-Ii": {
     "name": "aac(6')-Ii",
-    "phenotype": "confers resistance to Tobramycin,Dibekacin,Gentamicin,Sisomicin,Netilmicin"
+    "phenotype": "confers resistance to Tobramycin, Dibekacin, Gentamicin, Sisomicin, Netilmicin"
   },
   "aac(6')-Iid": {
     "name": "aac(6')-Iid",
@@ -426,10 +434,6 @@
   "aac(6')-Im": {
     "name": "aac(6')-Im",
     "phenotype": "confers resistance to Amikacin, Tobramycin, Kanamycin"
-  },
-  "aac(6')-Ip": {
-    "name": "aac(6')-Ip",
-    "phenotype": "confers resistance to Amikacin, Tobramycin, Netilmicin"
   },
   "aac(6')-Iq": {
     "name": "aac(6')-Iq",
@@ -473,111 +477,111 @@
   },
   "aac(6')-aph(2'')": {
     "name": "aac(6')-aph(2'')",
-    "phenotype": "confers resistance to Gentamicin,Tobramycin,Netilmicin,Kanamycin,Amikacin,Dibekacin,Isepamicin,Fortimicin,Streptomycin"
+    "phenotype": "confers resistance to Gentamicin, Tobramycin, Netilmicin, Kanamycin, Amikacin, Dibekacin, Isepamicin, Fortimicin, Streptomycin"
   },
   "aac(6')Ib-cr": {
     "name": "aac(6')Ib-cr",
-    "phenotype": "confers resistance to Tobramycin,Dibekacin,Amikacin,Sisomicin,Netilmicin,Fluoroquinolone,Ciprofloxacin"
+    "phenotype": "confers resistance to Tobramycin, Dibekacin, Amikacin, Sisomicin, Netilmicin, Fluoroquinolone, Ciprofloxacin"
   },
   "aacA43": {
     "name": "aacA43",
-    "phenotype": "confers resistance to Tobramycin,Dibekacin,Amikacin,Sisomicin,Netilmicin"
+    "phenotype": "confers resistance to Tobramycin, Dibekacin, Amikacin, Sisomicin, Netilmicin"
   },
   "aadA1": {
     "name": "aadA1",
-    "phenotype": "confers resistance to Spectinomycin,Streptomycin"
+    "phenotype": "confers resistance to Spectinomycin, Streptomycin"
   },
   "aadA10": {
     "name": "aadA10",
-    "phenotype": "confers resistance to Spectinomycin,Streptomycin"
+    "phenotype": "confers resistance to Spectinomycin, Streptomycin"
   },
   "aadA11": {
     "name": "aadA11",
-    "phenotype": "confers resistance to Spectinomycin,Streptomycin"
+    "phenotype": "confers resistance to Spectinomycin, Streptomycin"
   },
   "aadA12": {
     "name": "aadA12",
-    "phenotype": "confers resistance to Spectinomycin,Streptomycin"
+    "phenotype": "confers resistance to Spectinomycin, Streptomycin"
   },
   "aadA13": {
     "name": "aadA13",
-    "phenotype": "confers resistance to Spectinomycin,Streptomycin"
+    "phenotype": "confers resistance to Spectinomycin, Streptomycin"
   },
   "aadA14": {
     "name": "aadA14",
-    "phenotype": "confers resistance to Spectinomycin,Streptomycin"
+    "phenotype": "confers resistance to Spectinomycin, Streptomycin"
   },
   "aadA15": {
     "name": "aadA15",
-    "phenotype": "confers resistance to Spectinomycin,Streptomycin"
+    "phenotype": "confers resistance to Spectinomycin, Streptomycin"
   },
   "aadA16": {
     "name": "aadA16",
-    "phenotype": "confers resistance to Spectinomycin,Streptomycin"
+    "phenotype": "confers resistance to Spectinomycin, Streptomycin"
   },
   "aadA17": {
     "name": "aadA17",
-    "phenotype": "confers resistance to Spectinomycin,Streptomycin"
+    "phenotype": "confers resistance to Spectinomycin, Streptomycin"
   },
   "aadA1b": {
     "name": "aadA1b",
-    "phenotype": "confers resistance to Spectinomycin,Streptomycin"
+    "phenotype": "confers resistance to Spectinomycin, Streptomycin"
   },
   "aadA2": {
     "name": "aadA2",
-    "phenotype": "confers resistance to Spectinomycin,Streptomycin"
+    "phenotype": "confers resistance to Spectinomycin, Streptomycin"
   },
   "aadA21": {
     "name": "aadA21",
-    "phenotype": "confers resistance to Spectinomycin,Streptomycin"
+    "phenotype": "confers resistance to Spectinomycin, Streptomycin"
   },
   "aadA22": {
     "name": "aadA22",
-    "phenotype": "confers resistance to Spectinomycin,Streptomycin"
+    "phenotype": "confers resistance to Spectinomycin, Streptomycin"
   },
   "aadA23": {
     "name": "aadA23",
-    "phenotype": "confers resistance to Spectinomycin,Streptomycin"
+    "phenotype": "confers resistance to Spectinomycin, Streptomycin"
   },
   "aadA24": {
     "name": "aadA24",
-    "phenotype": "confers resistance to Spectinomycin,Streptomycin"
+    "phenotype": "confers resistance to Spectinomycin, Streptomycin"
   },
   "aadA2b": {
     "name": "aadA2b",
-    "phenotype": "confers resistance to Spectinomycin,Streptomycin"
+    "phenotype": "confers resistance to Spectinomycin, Streptomycin"
   },
   "aadA3": {
     "name": "aadA3",
-    "phenotype": "confers resistance to Spectinomycin,Streptomycin"
+    "phenotype": "confers resistance to Spectinomycin, Streptomycin"
   },
   "aadA4": {
     "name": "aadA4",
-    "phenotype": "confers resistance to Spectinomycin,Streptomycin"
+    "phenotype": "confers resistance to Spectinomycin, Streptomycin"
   },
   "aadA5": {
     "name": "aadA5",
-    "phenotype": "confers resistance to Spectinomycin,Streptomycin"
+    "phenotype": "confers resistance to Spectinomycin, Streptomycin"
   },
   "aadA6": {
     "name": "aadA6",
-    "phenotype": "confers resistance to Spectinomycin,Streptomycin"
+    "phenotype": "confers resistance to Spectinomycin, Streptomycin"
   },
   "aadA7": {
     "name": "aadA7",
-    "phenotype": "confers resistance to Spectinomycin,Streptomycin"
+    "phenotype": "confers resistance to Spectinomycin, Streptomycin"
   },
   "aadA8": {
     "name": "aadA8",
-    "phenotype": "confers resistance to Spectinomycin,Streptomycin"
+    "phenotype": "confers resistance to Spectinomycin, Streptomycin"
   },
   "aadA8b": {
     "name": "aadA8b",
-    "phenotype": "confers resistance to Spectinomycin,Streptomycin"
+    "phenotype": "confers resistance to Spectinomycin, Streptomycin"
   },
   "aadA9": {
     "name": "aadA9",
-    "phenotype": "confers resistance to Spectinomycin,Streptomycin"
+    "phenotype": "confers resistance to Spectinomycin, Streptomycin"
   },
   "aadD": {
     "name": "aadD",
@@ -607,13 +611,9 @@
     "name": "ant(3'')-Ia",
     "phenotype": "confers resistance to Streptomycin"
   },
-  "ant(3'')-Ih-aac(6')-IId": {
-    "name": "ant(3'')-Ih-aac(6')-IId",
-    "phenotype": "confers resistance to Gentamicin,Amikacin,Tobramycin,Streptomycin"
-  },
   "ant(3'')-Ii-aac(6')-IId": {
     "name": "ant(3'')-Ii-aac(6')-IId",
-    "phenotype": "confers resistance to Gentamicin, Streptomycin, Tobramycin, Spectinomycin"
+    "phenotype": "confers resistance to Gentamicin, Streptomycin, Tobramycin, Spectinomycin, Amikacin"
   },
   "ant(4')-IIa": {
     "name": "ant(4')-IIa",
@@ -689,7 +689,7 @@
   },
   "aph(3')-IIIa": {
     "name": "aph(3')-IIIa",
-    "phenotype": "confers resistance to Amikacin"
+    "phenotype": "confers resistance to Amikacin, Kanamycin"
   },
   "aph(3')-IIa": {
     "name": "aph(3')-IIa",
@@ -705,7 +705,7 @@
   },
   "aph(3')-IV": {
     "name": "aph(3')-IV",
-    "phenotype": "confers resistance to Butirosin,Kanamycin,Neomycin,Paromomycin,Ribostamycin"
+    "phenotype": "confers resistance to Butirosin, Kanamycin, Neomycin, Paromomycin, Ribostamycin"
   },
   "aph(3')-IX": {
     "name": "aph(3')-IX",
@@ -717,11 +717,11 @@
   },
   "aph(3')-Ib": {
     "name": "aph(3')-Ib",
-    "phenotype": "confers resistance to Kanamycin"
+    "phenotype": "confers resistance to Neomycin, Kanamycin, Lividomycin, Paromomycin, Ribostamycin"
   },
   "aph(3')-Id": {
     "name": "aph(3')-Id",
-    "phenotype": "confers resistance to Neomycin,Kanamycin,Lividomycin,Paromomycin,Ribostamycin"
+    "phenotype": "confers resistance to Neomycin, Kanamycin, Lividomycin, Paromomycin, Ribostamycin"
   },
   "aph(3')-VI": {
     "name": "aph(3')-VI",
@@ -733,15 +733,15 @@
   },
   "aph(3')-VIIa": {
     "name": "aph(3')-VIIa",
-    "phenotype": "confers resistance to Kanamycin,Neomycin,Amikacin"
+    "phenotype": "confers resistance to Kanamycin, Neomycin, Amikacin"
   },
   "aph(3')-VIa": {
     "name": "aph(3')-VIa",
-    "phenotype": "confers resistance to Kanamycin,Neomycin,Paromomycin,Ribostamycin,Butirosin,Gentamicin,Amikacin"
+    "phenotype": "confers resistance to Kanamycin, Neomycin, Paromomycin, Ribostamycin, Butirosin, Gentamicin, Amikacin"
   },
   "aph(3')-VIb": {
     "name": "aph(3')-VIb",
-    "phenotype": "confers resistance to Kanamycin,Neomycin,Paromomycin,Ribostamycin,Butirosin,Gentamicin,Amikacin"
+    "phenotype": "confers resistance to Kanamycin, Neomycin, Paromomycin, Ribostamycin, Butirosin, Gentamicin, Amikacin"
   },
   "aph(3')-Va": {
     "name": "aph(3')-Va",
@@ -753,7 +753,7 @@
   },
   "aph(3')-Vc": {
     "name": "aph(3')-Vc",
-    "phenotype": "confers resistance to Neomycin,Ribostamycin,Paromomycin"
+    "phenotype": "confers resistance to Neomycin, Ribostamycin, Paromomycin"
   },
   "aph(3')-XV": {
     "name": "aph(3')-XV",
@@ -761,10 +761,6 @@
   },
   "aph(4)-Ia": {
     "name": "aph(4)-Ia",
-    "phenotype": "confers resistance to Hygromycin"
-  },
-  "aph(4)-Ib": {
-    "name": "aph(4)-Ib",
     "phenotype": "confers resistance to Hygromycin"
   },
   "aph(6)-Ia": {
@@ -797,7 +793,7 @@
   },
   "armA": {
     "name": "armA",
-    "phenotype": "confers resistance to Amikacin, Gentamicin, Tobramycin,Isepamicin,Netilmicin"
+    "phenotype": "confers resistance to Amikacin, Gentamicin, Tobramycin, Isepamicin, Netilmicin"
   },
   "blaA": {
     "name": "blaA",
@@ -901,7 +897,7 @@
   },
   "blaADC-25": {
     "name": "blaADC-25",
-    "phenotype": "confers resistance to unknown beta-lactam"
+    "phenotype": "confers resistance to Unknown Beta-lactam"
   },
   "blaAER-1": {
     "name": "blaAER-1",
@@ -971,18 +967,6 @@
     "name": "blaBEL-3",
     "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefotaxime, Cefoxitin, Ceftazidime, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid"
   },
-  "blaBEL1": {
-    "name": "blaBEL1",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefotaxime, Cefoxitin, Ceftazidime, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid"
-  },
-  "blaBEL2": {
-    "name": "blaBEL2",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefotaxime, Cefoxitin, Ceftazidime, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid"
-  },
-  "blaBEL3": {
-    "name": "blaBEL3",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefotaxime, Cefoxitin, Ceftazidime, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid"
-  },
   "blaBEL4": {
     "name": "blaBEL4",
     "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefotaxime, Cefoxitin, Ceftazidime, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid"
@@ -995,9 +979,17 @@
     "name": "blaBIC-1",
     "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Imipenem, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid"
   },
+  "blaBIC-2": {
+    "name": "blaBIC-2",
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Imipenem, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid"
+  },
   "blaBIL-1": {
     "name": "blaBIL-1",
     "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefotaxime, Cefoxitin, Ceftazidime, Piperacillin, Piperacillin+Tazobactam"
+  },
+  "blaBIM-1": {
+    "name": "blaBIM-1",
+    "phenotype": "confers resistance to Ceftazidime, Cefepime, Aztreonam, Imipenem, Meropenem"
   },
   "blaBKC": {
     "name": "blaBKC",
@@ -1014,6 +1006,10 @@
   "blaBRO-2": {
     "name": "blaBRO-2",
     "phenotype": "confers resistance to Amoxicillin, Ampicillin, Penicillin, Piperacillin"
+  },
+  "blaCAM-1": {
+    "name": "blaCAM-1",
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
   },
   "blaCARB-1": {
     "name": "blaCARB-1",
@@ -1437,7 +1433,7 @@
   },
   "blaCMY-150": {
     "name": "blaCMY-150",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefotaxime, Cefoxitin, Ceftazidime, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid, Aztreonam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefotaxime, Cefoxitin, Ceftazidime, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid,Aztreonam"
   },
   "blaCMY-151": {
     "name": "blaCMY-151",
@@ -1478,6 +1474,10 @@
   "blaCMY-19": {
     "name": "blaCMY-19",
     "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefotaxime, Cefoxitin, Ceftazidime, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid"
+  },
+  "blaCMY-192": {
+    "name": "blaCMY-192",
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefotaxime, Cefoxitin, Ceftazidime, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid, Ceftazidime+avibactam"
   },
   "blaCMY-2": {
     "name": "blaCMY-2",
@@ -2437,7 +2437,7 @@
   },
   "blaCTX-M-63": {
     "name": "blaCTX-M-63",
-    "phenotype": "confers resistance to Unknown Beta-lactam"
+    "phenotype": "confers resistance to Amoxicillin, Ampicillin, Aztreonam, Cefepime, Cefotaxime, Ceftazidime, Ceftriaxone, Piperacillin, Ticarcillin, Unknown Beta-lactam"
   },
   "blaCTX-M-64": {
     "name": "blaCTX-M-64",
@@ -2711,6 +2711,10 @@
     "name": "blaFAR-1",
     "phenotype": "confers resistance to Unknown Beta-lactam"
   },
+  "blaFLC-1": {
+    "name": "blaFLC-1",
+    "phenotype": "confers resistance to Amoxicillin, Ertapenem, Imipenem, Meropenem"
+  },
   "blaFONA-1": {
     "name": "blaFONA-1",
     "phenotype": "confers resistance to Unknown Beta-lactam"
@@ -2779,6 +2783,18 @@
     "name": "blaFRI-1",
     "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefixime, Cefotaxime, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Aztreonam"
   },
+  "blaFRI-10": {
+    "name": "blaFRI-10",
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Aztreonam"
+  },
+  "blaFRI-11": {
+    "name": "blaFRI-11",
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Aztreonam"
+  },
+  "blaFRI-12": {
+    "name": "blaFRI-12",
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Aztreonam"
+  },
   "blaFRI-2": {
     "name": "blaFRI-2",
     "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Ertapenem, Imipenem, Meropenem, Piperacillin, Aztreonam"
@@ -2793,6 +2809,22 @@
   },
   "blaFRI-5": {
     "name": "blaFRI-5",
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Aztreonam"
+  },
+  "blaFRI-6": {
+    "name": "blaFRI-6",
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Aztreonam"
+  },
+  "blaFRI-7": {
+    "name": "blaFRI-7",
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Aztreonam"
+  },
+  "blaFRI-8": {
+    "name": "blaFRI-8",
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Aztreonam"
+  },
+  "blaFRI-9": {
+    "name": "blaFRI-9",
     "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Aztreonam"
   },
   "blaGES-1": {
@@ -2889,6 +2921,10 @@
   },
   "blaGIM-1": {
     "name": "blaGIM-1",
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
+  },
+  "blaGMB-1": {
+    "name": "blaGMB-1",
     "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
   },
   "blaGOB-1": {
@@ -3053,6 +3089,10 @@
   },
   "blaIMP-19": {
     "name": "blaIMP-19",
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
+  },
+  "blaIMP-1b": {
+    "name": "blaIMP-1b",
     "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
   },
   "blaIMP-2": {
@@ -3415,6 +3455,10 @@
     "name": "blaKPC-22",
     "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Aztreonam, Cefepime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid"
   },
+  "blaKPC-228": {
+    "name": "blaKPC-228",
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Aztreonam, Cefepime, Cefotaxime, Cefoxitin, Ceftazidime,Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid"
+  },
   "blaKPC-23": {
     "name": "blaKPC-23",
     "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Aztreonam, Cefepime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid"
@@ -3473,7 +3517,7 @@
   },
   "blaKPC-36": {
     "name": "blaKPC-36",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Aztreonam, Cefepime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid, Ceftazidime+avibactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Aztreonam, Cefepime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid, Ceftazidime+Avibactam"
   },
   "blaKPC-37": {
     "name": "blaKPC-37",
@@ -3485,7 +3529,7 @@
   },
   "blaKPC-39": {
     "name": "blaKPC-39",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Aztreonam, Cefepime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid, Ceftazidime+avibactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Aztreonam, Cefepime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid, Ceftazidime+Avibactam"
   },
   "blaKPC-4": {
     "name": "blaKPC-4",
@@ -3493,11 +3537,11 @@
   },
   "blaKPC-40": {
     "name": "blaKPC-40",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Aztreonam, Cefepime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid, Ceftazidime+avibactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Aztreonam, Cefepime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid, Ceftazidime+Avibactam"
   },
   "blaKPC-41": {
     "name": "blaKPC-41",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Aztreonam, Cefepime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid, Ceftazidime+avibactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Aztreonam, Cefepime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid, Ceftazidime+Avibactam"
   },
   "blaKPC-5": {
     "name": "blaKPC-5",
@@ -3529,11 +3573,11 @@
   },
   "blaLAP-1": {
     "name": "blaLAP-1",
-    "phenotype": "confers resistance to Amoxicillin, Ampicillin, Cephalotin, Piperacillin, Ticarcillin"
+    "phenotype": "confers resistance to Amoxicillin, Ampicillin, Cephalothin, Piperacillin, Ticarcillin"
   },
   "blaLAP-2": {
     "name": "blaLAP-2",
-    "phenotype": "confers resistance to Amoxicillin, Ampicillin, Cephalotin, Piperacillin, Ticarcillin"
+    "phenotype": "confers resistance to Amoxicillin, Ampicillin, Cephalothin, Piperacillin, Ticarcillin"
   },
   "blaLAT-1": {
     "name": "blaLAT-1",
@@ -3713,99 +3757,107 @@
   },
   "blaNDM-1": {
     "name": "blaNDM-1",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ceftazidime+Avibactam, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Temocillin"
   },
   "blaNDM-10": {
     "name": "blaNDM-10",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Temocillin"
   },
   "blaNDM-11": {
     "name": "blaNDM-11",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Temocillin"
   },
   "blaNDM-12": {
     "name": "blaNDM-12",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Temocillin"
   },
   "blaNDM-13": {
     "name": "blaNDM-13",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Temocillin"
   },
   "blaNDM-14": {
     "name": "blaNDM-14",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Temocillin"
   },
   "blaNDM-15": {
     "name": "blaNDM-15",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Temocillin"
   },
   "blaNDM-16": {
     "name": "blaNDM-16",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Temocillin"
   },
   "blaNDM-17": {
     "name": "blaNDM-17",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Temocillin"
   },
   "blaNDM-18": {
     "name": "blaNDM-18",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Temocillin"
   },
   "blaNDM-19": {
     "name": "blaNDM-19",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Temocillin"
   },
   "blaNDM-2": {
     "name": "blaNDM-2",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Temocillin"
   },
   "blaNDM-20": {
     "name": "blaNDM-20",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Temocillin"
   },
   "blaNDM-21": {
     "name": "blaNDM-21",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Temocillin"
   },
   "blaNDM-22": {
     "name": "blaNDM-22",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Temocillin"
   },
   "blaNDM-23": {
     "name": "blaNDM-23",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Temocillin"
   },
   "blaNDM-24": {
     "name": "blaNDM-24",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Temocillin"
   },
   "blaNDM-3": {
     "name": "blaNDM-3",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Temocillin"
   },
   "blaNDM-4": {
     "name": "blaNDM-4",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Temocillin"
   },
   "blaNDM-5": {
     "name": "blaNDM-5",
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Temocillin"
+  },
+  "blaNDM-58": {
+    "name": "blaNDM-58",
     "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
   },
   "blaNDM-6": {
     "name": "blaNDM-6",
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Temocillin"
+  },
+  "blaNDM-60": {
+    "name": "blaNDM-60",
     "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
   },
   "blaNDM-7": {
     "name": "blaNDM-7",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Temocillin"
   },
   "blaNDM-8": {
     "name": "blaNDM-8",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Temocillin"
   },
   "blaNDM-9": {
     "name": "blaNDM-9",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam, Temocillin"
   },
   "blaNMC-A": {
     "name": "blaNMC-A",
@@ -4094,6 +4146,10 @@
   "blaOXA-118": {
     "name": "blaOXA-118",
     "phenotype": "confers resistance to Unknown Beta-lactam"
+  },
+  "blaOXA-1186": {
+    "name": "blaOXA-1186",
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
   },
   "blaOXA-119": {
     "name": "blaOXA-119",
@@ -5377,7 +5433,7 @@
   },
   "blaOXA-438": {
     "name": "blaOXA-438",
-    "phenotype": "confers resistance to Unknown Beta-lactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Piperacillin, Piperacillin+Tazobactam"
   },
   "blaOXA-439": {
     "name": "blaOXA-439",
@@ -5889,11 +5945,7 @@
   },
   "blaOXA-60": {
     "name": "blaOXA-60",
-    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Imipenem"
-  },
-  "blaOXA-60a": {
-    "name": "blaOXA-60a",
-    "phenotype": "confers resistance to Unknown Beta-lactam"
+    "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Imipenem, Unknown Beta-lactam"
   },
   "blaOXA-60b": {
     "name": "blaOXA-60b",
@@ -6249,7 +6301,7 @@
   },
   "blaPME-1": {
     "name": "blaPME-1",
-    "phenotype": "confers resistance to Amoxicillin, Ampicillin, Cefotaxime, Cefoxitin, Ceftazidime"
+    "phenotype": "confers resistance to Amoxicillin, Ampicillin, Cefotaxime, Cefoxitin, Ceftazidime, Aztreonam"
   },
   "blaRAHN-1": {
     "name": "blaRAHN-1",
@@ -7967,6 +8019,10 @@
     "name": "blaVMB-1",
     "phenotype": "confers resistance to Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
   },
+  "blaVMB-2": {
+    "name": "blaVMB-2",
+    "phenotype": "confers resistance to Ampicillin, Amoxicillin, Ceftriaxone, Ceftazidime, Ceftiofur, Meropenem, Imipenem"
+  },
   "blaZ": {
     "name": "blaZ",
     "phenotype": "confers resistance to Amoxicillin, Ampicillin, Penicillin, Piperacillin"
@@ -7974,6 +8030,10 @@
   "blaZEG-1": {
     "name": "blaZEG-1",
     "phenotype": "confers resistance to Unknown Beta-lactam"
+  },
+  "bleO": {
+    "name": "bleO",
+    "phenotype": "confers resistance to Bleomycin"
   },
   "car(A)": {
     "name": "car(A)",
@@ -8207,10 +8267,6 @@
     "name": "cphA8",
     "phenotype": "confers resistance to Unknown Beta-lactam"
   },
-  "crpP": {
-    "name": "crpP",
-    "phenotype": "confers resistance to Ciprofloxacin"
-  },
   "dfrA1": {
     "name": "dfrA1",
     "phenotype": "confers resistance to Trimethoprim"
@@ -8307,10 +8363,6 @@
     "name": "dfrA32",
     "phenotype": "confers resistance to Trimethoprim"
   },
-  "dfrA33": {
-    "name": "dfrA33",
-    "phenotype": "confers resistance to Trimethoprim"
-  },
   "dfrA34": {
     "name": "dfrA34",
     "phenotype": "confers resistance to Trimethoprim"
@@ -8379,6 +8431,10 @@
     "name": "dfrD",
     "phenotype": "confers resistance to Trimethoprim"
   },
+  "dfrE": {
+    "name": "dfrE",
+    "phenotype": "confers resistance to Trimethoprim"
+  },
   "dfrG": {
     "name": "dfrG",
     "phenotype": "confers resistance to Trimethoprim"
@@ -8386,10 +8442,6 @@
   "dfrK": {
     "name": "dfrK",
     "phenotype": "confers resistance to Trimethoprim"
-  },
-  "dldHA2X": {
-    "name": "dldHA2X",
-    "phenotype": "confers resistance to Vancomycin"
   },
   "ere(A)": {
     "name": "ere(A)",
@@ -8485,6 +8537,10 @@
   },
   "erm(50)": {
     "name": "erm(50)",
+    "phenotype": "confers resistance to Erythromycin, Lincomycin, Clindamycin, Quinupristin, Pristinamycin IA, Virginiamycin S"
+  },
+  "erm(54)": {
+    "name": "erm(54)",
     "phenotype": "confers resistance to Erythromycin, Lincomycin, Clindamycin, Quinupristin, Pristinamycin IA, Virginiamycin S"
   },
   "erm(A)": {
@@ -8591,10 +8647,6 @@
     "name": "fomB",
     "phenotype": "confers resistance to Fosfomycin"
   },
-  "formA": {
-    "name": "formA",
-    "phenotype": "confers resistance to Formaldehyde"
-  },
   "fos": {
     "name": "fos",
     "phenotype": "confers resistance to Fosfomycin"
@@ -8689,6 +8741,10 @@
   },
   "fosX": {
     "name": "fosX",
+    "phenotype": "confers resistance to Fosfomycin"
+  },
+  "fosY": {
+    "name": "fosY",
     "phenotype": "confers resistance to Fosfomycin"
   },
   "fusB": {
@@ -8815,8 +8871,52 @@
     "name": "mcr-1.14",
     "phenotype": "confers resistance to Colistin"
   },
+  "mcr-1.15": {
+    "name": "mcr-1.15",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-1.16": {
+    "name": "mcr-1.16",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-1.17": {
+    "name": "mcr-1.17",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-1.18": {
+    "name": "mcr-1.18",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-1.19": {
+    "name": "mcr-1.19",
+    "phenotype": "confers resistance to Colistin"
+  },
   "mcr-1.2": {
     "name": "mcr-1.2",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-1.20": {
+    "name": "mcr-1.20",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-1.21": {
+    "name": "mcr-1.21",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-1.22": {
+    "name": "mcr-1.22",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-1.23": {
+    "name": "mcr-1.23",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-1.24": {
+    "name": "mcr-1.24",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-1.25": {
+    "name": "mcr-1.25",
     "phenotype": "confers resistance to Colistin"
   },
   "mcr-1.26": {
@@ -8827,8 +8927,40 @@
     "name": "mcr-1.27",
     "phenotype": "confers resistance to Colistin"
   },
+  "mcr-1.28": {
+    "name": "mcr-1.28",
+    "phenotype": "confers resistance to Colistin"
+  },
   "mcr-1.3": {
     "name": "mcr-1.3",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-1.31": {
+    "name": "mcr-1.31",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-1.32": {
+    "name": "mcr-1.32",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-1.33": {
+    "name": "mcr-1.33",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-1.34": {
+    "name": "mcr-1.34",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-1.35": {
+    "name": "mcr-1.35",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-1.36": {
+    "name": "mcr-1.36",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-1.37": {
+    "name": "mcr-1.37",
     "phenotype": "confers resistance to Colistin"
   },
   "mcr-1.4": {
@@ -8859,12 +8991,36 @@
     "name": "mcr-10",
     "phenotype": "confers resistance to Colistin"
   },
+  "mcr-10.2": {
+    "name": "mcr-10.2",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-10.3": {
+    "name": "mcr-10.3",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-10.4": {
+    "name": "mcr-10.4",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-10.5": {
+    "name": "mcr-10.5",
+    "phenotype": "confers resistance to Colistin"
+  },
   "mcr-2.1": {
     "name": "mcr-2.1",
     "phenotype": "confers resistance to Colistin"
   },
   "mcr-2.2": {
     "name": "mcr-2.2",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-2.3": {
+    "name": "mcr-2.3",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-2.8": {
+    "name": "mcr-2.8",
     "phenotype": "confers resistance to Colistin"
   },
   "mcr-3.1": {
@@ -8939,12 +9095,72 @@
     "name": "mcr-3.25",
     "phenotype": "confers resistance to Colistin"
   },
+  "mcr-3.26": {
+    "name": "mcr-3.26",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-3.27": {
+    "name": "mcr-3.27",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-3.28": {
+    "name": "mcr-3.28",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-3.29": {
+    "name": "mcr-3.29",
+    "phenotype": "confers resistance to Colistin"
+  },
   "mcr-3.3": {
     "name": "mcr-3.3",
     "phenotype": "confers resistance to Colistin"
   },
+  "mcr-3.30": {
+    "name": "mcr-3.30",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-3.33": {
+    "name": "mcr-3.33",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-3.34": {
+    "name": "mcr-3.34",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-3.35": {
+    "name": "mcr-3.35",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-3.36": {
+    "name": "mcr-3.36",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-3.37": {
+    "name": "mcr-3.37",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-3.38": {
+    "name": "mcr-3.38",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-3.39": {
+    "name": "mcr-3.39",
+    "phenotype": "confers resistance to Colistin"
+  },
   "mcr-3.4": {
     "name": "mcr-3.4",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-3.40": {
+    "name": "mcr-3.40",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-3.41": {
+    "name": "mcr-3.41",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-3.42": {
+    "name": "mcr-3.42",
     "phenotype": "confers resistance to Colistin"
   },
   "mcr-3.5": {
@@ -8991,12 +9207,32 @@
     "name": "mcr-4.6",
     "phenotype": "confers resistance to Colistin"
   },
+  "mcr-4.7": {
+    "name": "mcr-4.7",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-4.8": {
+    "name": "mcr-4.8",
+    "phenotype": "confers resistance to Colistin"
+  },
   "mcr-5.1": {
     "name": "mcr-5.1",
     "phenotype": "confers resistance to Colistin"
   },
   "mcr-5.2": {
     "name": "mcr-5.2",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-5.3": {
+    "name": "mcr-5.3",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-5.4": {
+    "name": "mcr-5.4",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-5.5": {
+    "name": "mcr-5.5",
     "phenotype": "confers resistance to Colistin"
   },
   "mcr-6.1": {
@@ -9011,13 +9247,33 @@
     "name": "mcr-8",
     "phenotype": "confers resistance to Colistin"
   },
-  "mcr-9": {
-    "name": "mcr-9",
+  "mcr-8.2": {
+    "name": "mcr-8.2",
     "phenotype": "confers resistance to Colistin"
   },
-  "mdf(A)": {
-    "name": "mdf(A)",
-    "phenotype": "confers resistance to Unknown Macrolide, Unknown Aminoglycoside, Unknown Tetracycline, Unknown Fluoroquinolone, Unknown Phenicol, Unknown Rifamycin"
+  "mcr-8.3": {
+    "name": "mcr-8.3",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-8.4": {
+    "name": "mcr-8.4",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-8.5": {
+    "name": "mcr-8.5",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-9.1": {
+    "name": "mcr-9.1",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-9.2": {
+    "name": "mcr-9.2",
+    "phenotype": "confers resistance to Colistin"
+  },
+  "mcr-9.3": {
+    "name": "mcr-9.3",
+    "phenotype": "confers resistance to Colistin"
   },
   "mdt(A)": {
     "name": "mdt(A)",
@@ -9187,14 +9443,6 @@
     "name": "optrA",
     "phenotype": "confers resistance to Linezolid, Chloramphenicol, Florfenicol"
   },
-  "oqxA": {
-    "name": "oqxA",
-    "phenotype": "confers resistance to Nalidixic acid,Ciprofloxacin"
-  },
-  "oqxB": {
-    "name": "oqxB",
-    "phenotype": "confers resistance to Nalidixic acid,Ciprofloxacin "
-  },
   "otr(A)": {
     "name": "otr(A)",
     "phenotype": "confers resistance to Doxycycline, Tetracycline, Minocycline"
@@ -9219,105 +9467,65 @@
     "name": "poxtA",
     "phenotype": "confers resistance to Chloramphenicol, Florfenicol, Linezolid, Doxycycline, Tetracycline"
   },
-  "qacA": {
-    "name": "qacA",
-    "phenotype": "confers resistance to Benzylkonium Chloride, Ethidium Bromide,  Chlorhexidine, Cetylpyridinium Chloride"
-  },
-  "qacA4": {
-    "name": "qacA4",
-    "phenotype": "confers resistance to Benzylkonium Chloride, Ethidium Bromide,  Chlorhexidine, Cetylpyridinium Chloride"
-  },
-  "qacB": {
-    "name": "qacB",
-    "phenotype": "confers resistance to Benzylkonium Chloride, Ethidium Bromide, Chlorhexidine, Cetylpyridinium Chloride"
-  },
-  "qacC": {
-    "name": "qacC",
-    "phenotype": "confers resistance to Benzylkonium Chloride, Ethidium Bromide,  Chlorhexidine, Cetylpyridinium Chloride"
-  },
-  "qacD": {
-    "name": "qacD",
-    "phenotype": "confers resistance to Benzylkonium Chloride, Ethidium Bromide,  Chlorhexidine, Cetylpyridinium Chloride"
-  },
-  "qacE": {
-    "name": "qacE",
-    "phenotype": "confers resistance to Benzylkonium Chloride, Ethidium Bromide,  Chlorhexidine, Cetylpyridinium Chloride"
-  },
-  "qacF": {
-    "name": "qacF",
-    "phenotype": "confers resistance to Benzylkonium Chloride, Ethidium Bromide, Chlorhexidine, Cetylpyridinium Chloride"
-  },
-  "qacG": {
-    "name": "qacG",
-    "phenotype": "confers resistance to Benzylkonium Chloride, Ethidium Bromide,  Chlorhexidine, Cetylpyridinium Chloride"
-  },
-  "qacH": {
-    "name": "qacH",
-    "phenotype": "confers resistance to Benzylkonium Chloride, Ethidium Bromide,  Chlorhexidine, Cetylpyridinium Chloride"
-  },
-  "qacJ": {
-    "name": "qacJ",
-    "phenotype": "confers resistance to Benzylkonium Chloride, Ethidium Bromide,  Chlorhexidine, Cetylpyridinium Chloride"
-  },
-  "qacZ": {
-    "name": "qacZ",
-    "phenotype": "confers resistance to Benzylkonium Chloride, Ethidium Bromide,  Chlorhexidine, Cetylpyridinium Chloride"
+  "poxtA-Ef": {
+    "name": "poxtA-Ef",
+    "phenotype": "confers resistance to Chloramphenicol, Florfenicol, Linezolid, Doxycycline, Tetracycline"
   },
   "qepA": {
     "name": "qepA",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qepA1": {
     "name": "qepA1",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qepA2": {
     "name": "qepA2",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qepA3": {
     "name": "qepA3",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qepA4": {
     "name": "qepA4",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrA1": {
     "name": "qnrA1",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrA2": {
     "name": "qnrA2",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrA3": {
     "name": "qnrA3",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrA4": {
     "name": "qnrA4",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrA5": {
     "name": "qnrA5",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrA6": {
     "name": "qnrA6",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrA7": {
     "name": "qnrA7",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrA8": {
     "name": "qnrA8",
-    "phenotype": "confers resistance to Unknown Fluoroquinolone"
+    "phenotype": "confers resistance to Unknown Quinolone"
   },
   "qnrB1": {
     "name": "qnrB1",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB10": {
     "name": "qnrB10",
@@ -9349,287 +9557,287 @@
   },
   "qnrB17": {
     "name": "qnrB17",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB18": {
     "name": "qnrB18",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB19": {
     "name": "qnrB19",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB2": {
     "name": "qnrB2",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB20": {
     "name": "qnrB20",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB21": {
     "name": "qnrB21",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB22": {
     "name": "qnrB22",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB23": {
     "name": "qnrB23",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB24": {
     "name": "qnrB24",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB25": {
     "name": "qnrB25",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB26": {
     "name": "qnrB26",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB27": {
     "name": "qnrB27",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB28": {
     "name": "qnrB28",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB29": {
     "name": "qnrB29",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB3": {
     "name": "qnrB3",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB30": {
     "name": "qnrB30",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB31": {
     "name": "qnrB31",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB32": {
     "name": "qnrB32",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB33": {
     "name": "qnrB33",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB34": {
     "name": "qnrB34",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB35": {
     "name": "qnrB35",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB36": {
     "name": "qnrB36",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB37": {
     "name": "qnrB37",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB38": {
     "name": "qnrB38",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB39": {
     "name": "qnrB39",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB4": {
     "name": "qnrB4",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB40": {
     "name": "qnrB40",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB41": {
     "name": "qnrB41",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB42": {
     "name": "qnrB42",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB43": {
     "name": "qnrB43",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB44": {
     "name": "qnrB44",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB45": {
     "name": "qnrB45",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB46": {
     "name": "qnrB46",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB47": {
     "name": "qnrB47",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB48": {
     "name": "qnrB48",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB49": {
     "name": "qnrB49",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB5": {
     "name": "qnrB5",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB50": {
     "name": "qnrB50",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB51": {
     "name": "qnrB51",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB52": {
     "name": "qnrB52",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB53": {
     "name": "qnrB53",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB54": {
     "name": "qnrB54",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB55": {
     "name": "qnrB55",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB56": {
     "name": "qnrB56",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB57": {
     "name": "qnrB57",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB58": {
     "name": "qnrB58",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB59": {
     "name": "qnrB59",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB6": {
     "name": "qnrB6",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB60": {
     "name": "qnrB60",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB61": {
     "name": "qnrB61",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB62": {
     "name": "qnrB62",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB64": {
     "name": "qnrB64",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB65": {
     "name": "qnrB65",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB66": {
     "name": "qnrB66",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB67": {
     "name": "qnrB67",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB68": {
     "name": "qnrB68",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB69": {
     "name": "qnrB69",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB7": {
     "name": "qnrB7",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB70": {
     "name": "qnrB70",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB71": {
     "name": "qnrB71",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB72": {
     "name": "qnrB72",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB73": {
     "name": "qnrB73",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB74": {
     "name": "qnrB74",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB75": {
     "name": "qnrB75",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB76": {
     "name": "qnrB76",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB77": {
     "name": "qnrB77",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB78": {
     "name": "qnrB78",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB8": {
     "name": "qnrB8",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB80": {
     "name": "qnrB80",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB81": {
     "name": "qnrB81",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB82": {
     "name": "qnrB82",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB89": {
     "name": "qnrB89",
@@ -9637,7 +9845,7 @@
   },
   "qnrB9": {
     "name": "qnrB9",
-    "phenotype": "confers resistance to Ciprofloxacin "
+    "phenotype": "confers resistance to Ciprofloxacin"
   },
   "qnrB90": {
     "name": "qnrB90",
@@ -9790,10 +9998,6 @@
   "sgm": {
     "name": "sgm",
     "phenotype": "confers resistance to Amikacin, Gentamicin, Tobramycin"
-  },
-  "sitABCD": {
-    "name": "sitABCD",
-    "phenotype": "confers resistance to Hydrogen peroxide"
   },
   "srm(B)": {
     "name": "srm(B)",
@@ -10099,17 +10303,41 @@
     "name": "tlr(C)",
     "phenotype": "confers resistance to Tylosin"
   },
+  "tmexC1": {
+    "name": "tmexC1",
+    "phenotype": "confers resistance to Doxycycline, Tetracycline, Minocycline, Tigecycline"
+  },
+  "tmexC2": {
+    "name": "tmexC2",
+    "phenotype": "confers resistance to Doxycycline, Tetracycline, Minocycline, Tigecycline"
+  },
+  "tmexC3": {
+    "name": "tmexC3",
+    "phenotype": "confers resistance to Doxycycline, Tetracycline, Minocycline, Tigecycline"
+  },
+  "tmexC4": {
+    "name": "tmexC4",
+    "phenotype": "confers resistance to Doxycycline, Tetracycline, Minocycline, Tigecycline"
+  },
+  "tmexD1": {
+    "name": "tmexD1",
+    "phenotype": "confers resistance to Doxycycline, Tetracycline, Minocycline, Tigecycline"
+  },
+  "tmexD2": {
+    "name": "tmexD2",
+    "phenotype": "confers resistance to Doxycycline, Tetracycline, Minocycline, Tigecycline"
+  },
+  "tmexD3": {
+    "name": "tmexD3",
+    "phenotype": "confers resistance to Doxycycline, Tetracycline, Minocycline, Tigecycline"
+  },
+  "tmexD4": {
+    "name": "tmexD4",
+    "phenotype": "confers resistance to Doxycycline, Tetracycline, Minocycline, Tigecycline"
+  },
   "tva(A)": {
     "name": "tva(A)",
     "phenotype": "confers resistance to Tiamulin"
-  },
-  "vanXmurFvanKWI": {
-    "name": "vanXmurFvanKWI",
-    "phenotype": "confers resistance to Vancomycin, Teicoplanin"
-  },
-  "vanXmurFvanWI": {
-    "name": "vanXmurFvanWI",
-    "phenotype": "confers resistance to Vancomycin, Teicoplanin"
   },
   "vat(A)": {
     "name": "vat(A)",
@@ -10141,15 +10369,15 @@
   },
   "vga(A)": {
     "name": "vga(A)",
-    "phenotype": "confers resistance to Lincomycin, Dalfopristin, Pristinamycin IIA, Virginiamycin M, Tiamulin"
+    "phenotype": "confers resistance to Lincomycin, Clindamycin, Dalfopristin, Pristinamycin IIA, Virginiamycin M, Tiamulin"
   },
   "vga(A)LC": {
     "name": "vga(A)LC",
-    "phenotype": "confers resistance to Clindamycin, Dalfopristin, Pristinamycin IIA, Virginiamycin M, Tiamulin"
+    "phenotype": "confers resistance to Lincomycin, Clindamycin, Dalfopristin, Pristinamycin IIA, Virginiamycin M, Tiamulin"
   },
   "vga(A)V": {
     "name": "vga(A)V",
-    "phenotype": "confers resistance to Lincomycin, Dalfopristin, Pristinamycin IIA, Virginiamycin M, Tiamulin"
+    "phenotype": "confers resistance to Lincomycin, Clindamycin, Dalfopristin, Pristinamycin IIA, Virginiamycin M, Tiamulin"
   },
   "vga(B)": {
     "name": "vga(B)",
@@ -10157,7 +10385,7 @@
   },
   "vga(C)": {
     "name": "vga(C)",
-    "phenotype": "confers resistance to Clindamycin, Dalfopristin, Pristinamycin IIA, Virginiamycin M, Tiamulin"
+    "phenotype": "confers resistance to Lincomycin, Clindamycin, Dalfopristin, Pristinamycin IIA, Virginiamycin M, Tiamulin"
   },
   "vga(D)": {
     "name": "vga(D)",
@@ -10165,7 +10393,7 @@
   },
   "vga(E)": {
     "name": "vga(E)",
-    "phenotype": "confers resistance to Clindamycin, Dalfopristin, Pristinamycin IIA, Virginiamycin M, Tiamulin"
+    "phenotype": "confers resistance to Lincomycin, Clindamycin, Dalfopristin, Pristinamycin IIA, Virginiamycin M, Tiamulin"
   },
   "vgb(A)": {
     "name": "vgb(A)",

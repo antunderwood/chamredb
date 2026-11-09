@@ -5,8 +5,9 @@ import os
 import json
 import itertools
 
-def add_rbh_hits_to_graph(sourceDB,targetDB,rbh_data,graph,debug=False):
-    sourceDB_metadata,targetDB_metadata = __load_metadata(sourceDB,targetDB)
+def add_rbh_hits_to_graph(sourceDB,targetDB,rbh_data,graph,debug=False,metadata=None):
+    # metadata: optional (source metadata dict, target metadata dict); default reads the bundled files
+    sourceDB_metadata,targetDB_metadata = metadata or __load_metadata(sourceDB,targetDB)
     for _, row in rbh_data.iterrows():
         source_node_attributes = sourceDB_metadata[row['query']]
         source_node_attributes['database'] = sourceDB
@@ -26,8 +27,8 @@ def add_rbh_hits_to_graph(sourceDB,targetDB,rbh_data,graph,debug=False):
             debug = debug
         )
 
-def add_search_hits_to_graph(sourceDB,targetDB,search_data,graph,debug=False):
-    sourceDB_metadata,targetDB_metadata = __load_metadata(sourceDB,targetDB)
+def add_search_hits_to_graph(sourceDB,targetDB,search_data,graph,debug=False,metadata=None):
+    sourceDB_metadata,targetDB_metadata = metadata or __load_metadata(sourceDB,targetDB)
 
     # OWH == One Way Hit
     for _, row in search_data.iterrows():

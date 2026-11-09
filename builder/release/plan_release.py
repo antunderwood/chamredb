@@ -52,7 +52,7 @@ def release_notes(tag, manifest, report):
         f"- CARD {r['card']} (data and ontology from the same release)",
         f"- NCBI {r['ncbi']}",
         f"- ResFinder db commit {r['resfinder']}", "",
-        "Assets: `graph.json`, `data_manifest.json` (URL, release, retrieval date and sha256 per input file), `diff_report.md`.", "",
+        "Assets: `graph.json`, `data_manifest.json` (URL, release, retrieval date and sha256 per input file), `diff_report.md`, and the three database metadata files (`card`, `ncbi`, `resfinder` `.metadata.json`) that go with the graph.", "",
         "## Changes since the previous release", "", report.strip(), ""])
 
 

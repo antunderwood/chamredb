@@ -3,6 +3,7 @@ import json
 import os
 import itertools
 from rich.progress import track
+from chamredb import graph_loader
 from chamredb.functions import graph_functions
 
 def single_node_info_text(identifier, database, graph, coverage_threshold = 0.9, identity_threshold = 0.9):
@@ -61,7 +62,7 @@ def single_node_info_text(identifier, database, graph, coverage_threshold = 0.9,
     return info_text
 
 
-def write_multiple_node_info(id_data,graph,out_filepath,coverage_threshold=0.9,identity_threshold=0.9,data_release=None):
+def write_multiple_node_info(id_data,graph,out_filepath,coverage_threshold=0.9,identity_threshold=0.9,data_release=None,metadata=None):
     """
     write_multiple_node_info Given a list of dict objects containing ids and their corresponding databases find
     matches and write the match metadata to a file
@@ -73,6 +74,8 @@ def write_multiple_node_info(id_data,graph,out_filepath,coverage_threshold=0.9,i
         coverage_threshold (float, optional): The covergae value below which a match will not be reported. Defaults to 0.9.
         identity_threshold (float, optional): The identity value below which a match will not be reported. Defaults to 0.9.
         data_release (string, optional): if given, written as an extra last column `data_release`
+        metadata (callable, optional): database name -> metadata dict (or None), used to name ids missing from the graph;
+            defaults to the metadata pinned with the bundled graph
     """
     suffix = f'\t{data_release}' if data_release else ''
     all_databases = set([graph.nodes[node_name]['database'] for node_name in graph.nodes])
@@ -150,7 +153,7 @@ def write_multiple_node_info(id_data,graph,out_filepath,coverage_threshold=0.9,i
             else:
                 out.write(f'{source_id}\t{source_database}\t{name}\t{metadata_string}\t{target_node_info_string}{suffix}\n')
         # print missing ids message
-        __missing_ids_message(missing_ids, multiple_samples, id_data)
+        __missing_ids_message(missing_ids, multiple_samples, id_data, metadata)
 
 
 # private methods
@@ -221,12 +224,13 @@ def __multiple_ids_header(databases, field_titles, multiple_samples):
     header = f"{sample_header_string}\t{database_header_title_string}\n"
     return header
 
-def __missing_ids_message(missing_ids, multiple_samples, id_data):
-    # read in database metadata
+def __missing_ids_message(missing_ids, multiple_samples, id_data, metadata_for=None):
+    # read in database metadata (pinned with the graph; None when unknown, then ids are listed without names)
+    metadata_for = metadata_for or (lambda database: graph_loader.resolve_metadata(database))
     metadata = {}
     databases = missing_ids.keys()
     for database in databases:
-        metadata[database] = __get_metadata(database)
+        metadata[database] = metadata_for(database)
     # print message about missing ids
     if multiple_samples:
         number_of_samples = len(set([ id_info['file'] for id_info in id_data]))
@@ -240,26 +244,12 @@ def __missing_ids_message(missing_ids, multiple_samples, id_data):
                     proportion = f' ({round(num_missing_ids/number_of_samples*100,1)}%)'
                 else:
                     proportion = ""
-                database_name = __get_name_for_id(missing_id, metadata[database])
+                database_name = __get_name_for_id(missing_id, metadata[database]) if metadata[database] else None
                 if database_name:
                     database_name_string = f' ({database_name})'
                 else:
                     database_name_string = ''
                 print(f"\t{missing_id}{database_name_string} in {num_missing_ids}{proportion} samples")
-
-def __get_metadata(database):
-    """get metdata from json file for specified database
-
-    Args:
-        database (string): the name of the AMR database
-    
-    Returns:
-        metadata (json): The consistently encoded database metadata in JSON format
-    """
-    metadata_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'db_metadata', f'{database}.metadata.json')
-    with open(metadata_file) as json_file:
-        metadata = json.load(json_file)
-    return metadata
 
 def __get_name_for_id(id_to_match, metadata):
     """get name of AMR determinant from metadata based on id or alternative id
