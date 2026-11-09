@@ -47,7 +47,6 @@ def test_good_graph_has_no_violations():
     ("p3_identity_zero", lambda g: g["links"][0].update(identity=0)),
     ("p3_identity_above_one", lambda g: g["links"][0].update(identity=1.01)),
     ("p3_coverage_zero", lambda g: g["links"][2].update(coverage=0)),
-    ("p3_coverage_above_one", lambda g: g["links"][2].update(coverage=1.2)),
 ])
 def test_each_graph_predicate_fails_on_a_broken_graph(name, fn):
     assert name[:2] in {k[:2] for k in gi.check_graph(broken(fn))}, name
@@ -68,13 +67,7 @@ def shipped_graph():
     return json.loads((SHIPPED / "graph.json").read_text())
 
 
-COVERAGE_FINDING = ("FINDING (ticket #3): 729 of 33,632 edges (2.2%; 715 OWH, 14 RBH) have coverage above 1 "
-                    "(max 1.198) in the shipped 2021 graph, so coverage (alignment length over query end) is not a "
-                    "fraction of the query. Recorded, not relaxed; needs a decision (science review).")
-
-
-@pytest.mark.parametrize("predicate", [
-    "p1", "p2", pytest.param("p3", marks=pytest.mark.xfail(strict=True, reason=COVERAGE_FINDING))])
+@pytest.mark.parametrize("predicate", ["p1", "p2", "p3"])
 def test_shipped_graph_predicate(shipped_graph, predicate):
     violations = {k: v for k, v in gi.check_graph(shipped_graph).items() if k.startswith(predicate)}
     assert not violations, {k: v[:5] for k, v in violations.items()}
@@ -83,6 +76,13 @@ def test_shipped_graph_predicate(shipped_graph, predicate):
 RESFINDER_FINDING = ("FINDING (ticket #3): the committed resfinder.nucl.fasta (cat of the per-class *.fsa) has 5 "
                      "duplicate ids (aac(6')-Ib-cr_1_DQ303918, aac(6')-Ib-cr_2_EF636461, cfr(B)_3_KR610408, "
                      "cfr_1_AM408573, cfr_2_AJ879565): genes listed in two class files. Parsed protein FASTA is unique.")
+
+
+def test_coverage_above_one_is_documented_behaviour(shipped_graph):
+    # Decision 2026-11-09: coverage = alignment length over query end and may exceed 1 (gapped alignments).
+    # Characterisation (level 6) of the 2021 graph: 729 of 33,632 edges, max 1.198. See GLOSSARY.md.
+    over = [e["coverage"] for e in shipped_graph["links"] if e["coverage"] > 1]
+    assert len(over) == 729 and max(over) < 1.2
 
 
 @pytest.mark.parametrize("name", [

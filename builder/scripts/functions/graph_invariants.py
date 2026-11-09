@@ -1,7 +1,7 @@
 """Testable invariants of a chamredb graph (spec #1, predicates 1 to 4). Standard library only.
 
 check_graph returns {violation_name: [examples]}; an empty dict means all graph predicates hold.
-Names start with the predicate: p1 (ids and endpoints), p2 (RBH reciprocal), p3 (identity and coverage range).
+Names start with the predicate: p1 (ids and endpoints), p2 (RBH reciprocal), p3 (0 < identity <= 1 and coverage > 0; coverage may exceed 1, decided 2026-11-09).
 """
 DATABASES = {"card", "ncbi", "resfinder"}
 
@@ -30,7 +30,7 @@ def check_graph(graph):
             add("p1_edge_within_one_database", (s, t))
         if not 0 < e["identity"] <= 1:
             add("p3_identity_out_of_range", (s, t, e["identity"]))
-        if not 0 < e["coverage"] <= 1:
+        if not e["coverage"] > 0:
             add("p3_coverage_out_of_range", (s, t, e["coverage"]))
     for (s, t), ty in types.items():
         if ty == "RBH" and types.get((t, s)) != "RBH":

@@ -103,6 +103,6 @@ User confirmed all three below as the failures of most concern.
 
 ## Findings from the invariant tests (ticket #3)
 
-- **Coverage above 1.** 729 of 33,632 shipped edges (2.2%; 715 OWH, 14 RBH) have coverage above 1 (max 1.198): coverage is alignment length over query end, which exceeds 1 for gapped alignments. The spec assumption 0 < coverage <= 1 is false. Not relaxed; needs a science decision (keep, redefine additively, or clip).
+- **Coverage above 1.** 729 of 33,632 shipped edges (2.2%; 715 OWH, 14 RBH) have coverage above 1 (max 1.198): coverage is alignment length over query end, which exceeds 1 for gapped alignments. The spec assumption 0 < coverage <= 1 is false. **Decision (2026-11-09, @antunderwood): keep the definition, document it in GLOSSARY.md, relax the invariant to coverage > 0.** Predicate 3 in spec #1 is amended accordingly.
 - **ResFinder duplicate ids.** The committed `resfinder.nucl.fasta` (cat of per-class `*.fsa`) has 5 duplicate ids (genes in two class files); the parsed protein FASTA is unique. Predicate 4 holds for the parsed output, not for the raw concatenation.
 - **Predicate 8 and networkx.** `chamredb/tests` pass (7) with networkx 2.8.8, pandas 1.5.3 and Python 3.9, and fail (2 failed, 3 errors) with networkx 3.6.1, because `node_link_data` and `node_link_graph` now default to the `edges` key. The package needs a pinned bound or an explicit `edges="links"` argument (additive-schema rule: keep `links` in graph.json).
