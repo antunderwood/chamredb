@@ -1,6 +1,9 @@
 {
-  "data_release": "2021-10-20",
-  "note": "Bundled graph built 2021-10-20 (reproduced from archived inputs, see builder/reproduce_2021). Set url to a release asset to download and cache instead.",
-  "sha256": "14e395c34426ab5e3dd1005d05ab8bbded5cd6bd38785541b11199bcba06203d",
+  "data_release": "2026-11-09",
+  "release_tag": "graph-2026.11.09",
+  "note": "Bundled graph, byte-identical to the asset of the GitHub release graph-2026.11.09 (built by builder/ from CARD 4.0.2, NCBI AMRFinderPlus 4.2 2026-10-29.1 and ResFinder db 2.6.0 commit eecf0aa with MMseqs2 18.8cc5c; inputs and sha256 in the release's data_manifest.json). The repository is private, so the package default is the bundled copy; set url to the release asset to download and cache instead.",
+  "sha256": "1c7f0f080de1faf854ba5e6247c3bf2a9fced864b17670e87fd0efb0fc32b74e",
+  "nodes": 15859,
+  "edges": 51971,
   "url": null
 }

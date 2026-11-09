@@ -1,0 +1,4394 @@
+{
+  "directed": true,
+  "graph": {},
+  "links": [
+    {
+      "coverage": 1.0,
+      "identity": 0.953,
+      "source": "resfinder:msr(C)",
+      "target": "card:ARO:3002819",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.953,
+      "source": "resfinder:msr(C)",
+      "target": "ncbi:WP_002314314.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3002911",
+      "target": "ncbi:WP_063856712.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3002911",
+      "target": "resfinder:VanHMX",
+      "type": "RBH"
+    },
+    {
+      "coverage": 0.9074074074074074,
+      "identity": 0.385,
+      "source": "card:ARO:3004583",
+      "target": "resfinder:qacE",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9056603773584906,
+      "identity": 0.368,
+      "source": "card:ARO:3004583",
+      "target": "resfinder:qacZ",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9537037037037037,
+      "identity": 0.364,
+      "source": "card:ARO:3004583",
+      "target": "resfinder:qacH",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:blaSHV-11",
+      "target": "card:ARO:3001070",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:blaSHV-11",
+      "target": "ncbi:WP_004176269.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.922,
+      "source": "ncbi:WP_063865408.1",
+      "target": "card:ARO:3003923",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.922,
+      "source": "ncbi:WP_063865408.1",
+      "target": "resfinder:OqxB",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3002554",
+      "target": "resfinder:aac(6')-Ig",
+      "type": "RBH"
+    },
+    {
+      "coverage": 0.9469026548672567,
+      "identity": 1.0,
+      "source": "card:ARO:3002735",
+      "target": "ncbi:WP_063865914.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 0.9469026548672567,
+      "identity": 1.0,
+      "source": "card:ARO:3002735",
+      "target": "resfinder:qnrB20",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.995,
+      "source": "card:ARO:3002735",
+      "target": "ncbi:WP_012695489.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.995,
+      "source": "card:ARO:3002735",
+      "target": "resfinder:qnrB2",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3002439",
+      "target": "ncbi:WP_004205995.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3002439",
+      "target": "resfinder:blaOKP-B-15",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3002577",
+      "target": "ncbi:WP_003159191.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.981,
+      "source": "card:ARO:3002577",
+      "target": "resfinder:ant(3'')-Ii-aac(6')-IId",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.981,
+      "source": "card:ARO:3002577",
+      "target": "resfinder:ant(3'')-Ih-aac(6')-IId",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.976,
+      "source": "card:ARO:3002577",
+      "target": "resfinder:aac(3)-Ib-aac(6')-Ib",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9405940594059405,
+      "identity": 0.346,
+      "source": "card:ARO:3004580",
+      "target": "resfinder:qacJ",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.941747572815534,
+      "identity": 0.333,
+      "source": "card:ARO:3004580",
+      "target": "resfinder:qacZ",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9702970297029703,
+      "identity": 0.322,
+      "source": "card:ARO:3004580",
+      "target": "resfinder:qacH",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.92,
+      "source": "ncbi:WP_063865569.1",
+      "target": "card:ARO:3003923",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.92,
+      "source": "ncbi:WP_063865569.1",
+      "target": "resfinder:OqxB",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.986,
+      "source": "ncbi:WP_002063884.1",
+      "target": "card:ARO:3004621",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.996,
+      "source": "ncbi:WP_002063884.1",
+      "target": "resfinder:aac(3)-IIa",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:qnrB1",
+      "target": "card:ARO:3002714",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:qnrB1",
+      "target": "ncbi:WP_014386481.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3004111",
+      "target": "ncbi:WP_069174570.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3004111",
+      "target": "resfinder:fosA6",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.004863813229572,
+      "identity": 0.413,
+      "source": "card:ARO:3000491",
+      "target": "ncbi:WP_063865418.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.004863813229572,
+      "identity": 0.412,
+      "source": "card:ARO:3000491",
+      "target": "ncbi:WP_063865408.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.004863813229572,
+      "identity": 0.412,
+      "source": "card:ARO:3000491",
+      "target": "ncbi:WP_063865413.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.004863813229572,
+      "identity": 0.412,
+      "source": "card:ARO:3000491",
+      "target": "resfinder:OqxB",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.922,
+      "source": "ncbi:WP_032495443.1",
+      "target": "card:ARO:3003923",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.922,
+      "source": "ncbi:WP_032495443.1",
+      "target": "resfinder:OqxB",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.92,
+      "source": "ncbi:WP_063865413.1",
+      "target": "card:ARO:3003923",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.92,
+      "source": "ncbi:WP_063865413.1",
+      "target": "resfinder:OqxB",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.98,
+      "source": "resfinder:dfrA14",
+      "target": "card:ARO:3002859",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.987,
+      "source": "resfinder:dfrA14",
+      "target": "ncbi:WP_021529707.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3002547",
+      "target": "ncbi:WP_071846215.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.971,
+      "source": "card:ARO:3002547",
+      "target": "resfinder:aac(6')-Ib-cr",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.95,
+      "source": "card:ARO:3002547",
+      "target": "resfinder:ant(3'')-Ii-aac(6')-IId",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.95,
+      "source": "card:ARO:3002547",
+      "target": "resfinder:ant(3'')-Ih-aac(6')-IId",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.922,
+      "source": "ncbi:WP_063501636.1",
+      "target": "card:ARO:3003923",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.922,
+      "source": "ncbi:WP_063501636.1",
+      "target": "resfinder:OqxB",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9667590027700831,
+      "identity": 0.307,
+      "source": "ncbi:WP_088903431.1",
+      "target": "resfinder:OqxA",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_063865053.1",
+      "target": "card:ARO:3000951",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_063865053.1",
+      "target": "resfinder:blaTEM-84",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.996,
+      "source": "resfinder:aac(3)-IIa",
+      "target": "ncbi:WP_002063884.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.967,
+      "source": "resfinder:aac(3)-IIa",
+      "target": "card:ARO:3004621",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.95,
+      "source": "resfinder:aac(3)-IIa",
+      "target": "card:ARO:3004623",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.94,
+      "source": "resfinder:aac(3)-IIa",
+      "target": "card:ARO:3002535",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9849246231155779,
+      "identity": 0.939,
+      "source": "card:ARO:3005116",
+      "target": "ncbi:WP_063839878.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9849246231155779,
+      "identity": 0.934,
+      "source": "card:ARO:3005116",
+      "target": "ncbi:WP_063839875.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.989,
+      "source": "card:ARO:3005116",
+      "target": "resfinder:aac(6')-Ib-cr",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.995,
+      "source": "ncbi:WP_032492683.1",
+      "target": "card:ARO:3002676",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.995,
+      "source": "ncbi:WP_032492683.1",
+      "target": "resfinder:catB3",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.968,
+      "source": "ncbi:WP_038415208.1",
+      "target": "card:ARO:3002804",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.834,
+      "source": "ncbi:WP_038415208.1",
+      "target": "card:ARO:3004113",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.834,
+      "source": "ncbi:WP_038415208.1",
+      "target": "card:ARO:3005162",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_038415208.1",
+      "target": "resfinder:fosA",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_063856777.1",
+      "target": "card:ARO:3002953",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.903,
+      "source": "ncbi:WP_063856777.1",
+      "target": "resfinder:VanX",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_000347934.1",
+      "target": "card:ARO:3003923",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_000347934.1",
+      "target": "resfinder:OqxB",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:blaSHV-182",
+      "target": "card:ARO:3001364",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:blaSHV-182",
+      "target": "ncbi:WP_063864660.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:catB3",
+      "target": "card:ARO:3002676",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.995,
+      "source": "resfinder:catB3",
+      "target": "ncbi:WP_032492683.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_000239590.1",
+      "target": "card:ARO:3001878",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_000239590.1",
+      "target": "resfinder:blaCTX-M-15",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3001350",
+      "target": "ncbi:WP_063864659.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3001350",
+      "target": "resfinder:blaSHV-180",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3001816",
+      "target": "ncbi:WP_063857702.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3001816",
+      "target": "resfinder:blaACC-2",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:blaCTX-M-15",
+      "target": "card:ARO:3001878",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:blaCTX-M-15",
+      "target": "ncbi:WP_000239590.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:tetA(46)",
+      "target": "ncbi:WP_063856469.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3002714",
+      "target": "ncbi:WP_014386481.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3002714",
+      "target": "resfinder:qnrB1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 0.9469026548672567,
+      "identity": 1.0,
+      "source": "ncbi:WP_063865914.1",
+      "target": "card:ARO:3002735",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_063865914.1",
+      "target": "resfinder:qnrB20",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3000589",
+      "target": "ncbi:WP_004201164.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3000589",
+      "target": "resfinder:blaNDM-1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3002819",
+      "target": "ncbi:WP_002314314.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.953,
+      "source": "card:ARO:3002819",
+      "target": "resfinder:msr(C)",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_001334766.1",
+      "target": "card:ARO:3001396",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_001334766.1",
+      "target": "resfinder:blaOXA-1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 0.9469026548672567,
+      "identity": 1.0,
+      "source": "resfinder:qnrB20",
+      "target": "card:ARO:3002735",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:qnrB20",
+      "target": "ncbi:WP_063865914.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:sul1",
+      "target": "card:ARO:3000410",
+      "type": "RBH"
+    },
+    {
+      "coverage": 0.9823321554770318,
+      "identity": 0.989,
+      "source": "resfinder:sul1",
+      "target": "ncbi:WP_063855091.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3002558",
+      "target": "resfinder:aac(6')-Ik",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.917,
+      "source": "ncbi:WP_063865577.1",
+      "target": "card:ARO:3003923",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.917,
+      "source": "ncbi:WP_063865577.1",
+      "target": "resfinder:OqxB",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3002566",
+      "target": "resfinder:aac(6')-Iv",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.421,
+      "source": "card:ARO:3004041",
+      "target": "ncbi:WP_118842626.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.42,
+      "source": "card:ARO:3004041",
+      "target": "ncbi:WP_034039546.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.416,
+      "source": "card:ARO:3004041",
+      "target": "ncbi:WP_088903431.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9921052631578947,
+      "identity": 0.284,
+      "source": "card:ARO:3004041",
+      "target": "resfinder:OqxA",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_063856712.1",
+      "target": "card:ARO:3002911",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_063856712.1",
+      "target": "resfinder:VanHMX",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3004764",
+      "target": "ncbi:WP_012704143.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 0.9572368421052632,
+      "identity": 0.524,
+      "source": "card:ARO:3004764",
+      "target": "resfinder:blaACI-1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9933333333333333,
+      "identity": 0.508,
+      "source": "card:ARO:3004764",
+      "target": "resfinder:blaROB-1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.840531561461794,
+      "identity": 0.499,
+      "source": "card:ARO:3004764",
+      "target": "resfinder:blaAST-1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_004201164.1",
+      "target": "card:ARO:3000589",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_004201164.1",
+      "target": "resfinder:blaNDM-1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3002136",
+      "target": "ncbi:WP_058648119.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3002136",
+      "target": "resfinder:blaDHA-7",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:ant(3'')-Ih-aac(6')-IId",
+      "target": "ncbi:WP_063839878.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 0.9442724458204335,
+      "identity": 0.288,
+      "source": "card:ARO:3004597",
+      "target": "ncbi:WP_063854500.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9673590504451038,
+      "identity": 0.278,
+      "source": "card:ARO:3004597",
+      "target": "ncbi:WP_015585966.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9615384615384616,
+      "identity": 0.266,
+      "source": "card:ARO:3004597",
+      "target": "ncbi:WP_052413892.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9667673716012085,
+      "identity": 0.252,
+      "source": "card:ARO:3004597",
+      "target": "resfinder:qacA",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9667673716012085,
+      "identity": 0.252,
+      "source": "card:ARO:3004597",
+      "target": "resfinder:qacA4",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9667673716012085,
+      "identity": 0.251,
+      "source": "card:ARO:3004597",
+      "target": "resfinder:qacB",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_000855769.1",
+      "target": "card:ARO:3000861",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_000855769.1",
+      "target": "resfinder:rmtC",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_049554487.1",
+      "target": "resfinder:tetB(60)",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:aac(6')-Ik",
+      "target": "card:ARO:3002558",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:rmtC",
+      "target": "card:ARO:3000861",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:rmtC",
+      "target": "ncbi:WP_000855769.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3002435",
+      "target": "ncbi:WP_063860914.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3002435",
+      "target": "resfinder:blaOKP-B-2",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:aac(3)-IId",
+      "target": "card:ARO:3004623",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:aac(3)-IId",
+      "target": "ncbi:WP_000557454.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.989,
+      "source": "resfinder:aac(6')-Ib-cr",
+      "target": "card:ARO:3005116",
+      "type": "RBH"
+    },
+    {
+      "coverage": 0.964824120603015,
+      "identity": 0.954,
+      "source": "resfinder:aac(6')-Ib-cr",
+      "target": "ncbi:WP_071593228.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9849246231155779,
+      "identity": 0.949,
+      "source": "resfinder:aac(6')-Ib-cr",
+      "target": "ncbi:WP_063839878.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9849246231155779,
+      "identity": 0.944,
+      "source": "resfinder:aac(6')-Ib-cr",
+      "target": "ncbi:WP_063839875.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_004176269.1",
+      "target": "card:ARO:3001070",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_004176269.1",
+      "target": "resfinder:blaSHV-11",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_063864660.1",
+      "target": "card:ARO:3001364",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_063864660.1",
+      "target": "resfinder:blaSHV-182",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3001878",
+      "target": "ncbi:WP_000239590.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3001878",
+      "target": "resfinder:blaCTX-M-15",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.458,
+      "source": "card:ARO:3004042",
+      "target": "ncbi:WP_118842626.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.458,
+      "source": "card:ARO:3004042",
+      "target": "ncbi:WP_034039546.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.455,
+      "source": "card:ARO:3004042",
+      "target": "ncbi:WP_088903431.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9920634920634921,
+      "identity": 0.327,
+      "source": "card:ARO:3004042",
+      "target": "resfinder:OqxA",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3002939",
+      "target": "ncbi:WP_063856748.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 0.9948364888123924,
+      "identity": 0.303,
+      "source": "card:ARO:3003950",
+      "target": "ncbi:WP_049554487.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9740932642487047,
+      "identity": 0.301,
+      "source": "card:ARO:3003950",
+      "target": "ncbi:WP_048717443.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9775474956822107,
+      "identity": 0.288,
+      "source": "card:ARO:3003950",
+      "target": "ncbi:WP_063856469.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9948364888123924,
+      "identity": 0.303,
+      "source": "card:ARO:3003950",
+      "target": "resfinder:tetB(60)",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9740932642487047,
+      "identity": 0.301,
+      "source": "card:ARO:3003950",
+      "target": "resfinder:tetB(46)",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9775474956822107,
+      "identity": 0.288,
+      "source": "card:ARO:3003950",
+      "target": "resfinder:tetA(46)",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:blaOKP-B-15",
+      "target": "card:ARO:3002439",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:blaOKP-B-15",
+      "target": "ncbi:WP_004205995.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_004205995.1",
+      "target": "card:ARO:3002439",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_004205995.1",
+      "target": "resfinder:blaOKP-B-15",
+      "type": "RBH"
+    },
+    {
+      "coverage": 0.9458128078817734,
+      "identity": 0.975,
+      "source": "card:ARO:3002581",
+      "target": "ncbi:WP_071593228.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9605911330049262,
+      "identity": 0.974,
+      "source": "card:ARO:3002581",
+      "target": "ncbi:WP_063839878.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9605911330049262,
+      "identity": 0.969,
+      "source": "card:ARO:3002581",
+      "target": "ncbi:WP_063839875.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.95,
+      "identity": 0.982,
+      "source": "card:ARO:3002581",
+      "target": "resfinder:aac(6')-Ib",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9605911330049262,
+      "identity": 0.974,
+      "source": "card:ARO:3002581",
+      "target": "resfinder:ant(3'')-Ii-aac(6')-IId",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9605911330049262,
+      "identity": 0.974,
+      "source": "card:ARO:3002581",
+      "target": "resfinder:ant(3'')-Ih-aac(6')-IId",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_063864659.1",
+      "target": "card:ARO:3001350",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_063864659.1",
+      "target": "resfinder:blaSHV-180",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_012704143.1",
+      "target": "card:ARO:3004764",
+      "type": "RBH"
+    },
+    {
+      "coverage": 0.9572368421052632,
+      "identity": 0.524,
+      "source": "ncbi:WP_012704143.1",
+      "target": "resfinder:blaACI-1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9933333333333333,
+      "identity": 0.508,
+      "source": "ncbi:WP_012704143.1",
+      "target": "resfinder:blaROB-1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.840531561461794,
+      "identity": 0.499,
+      "source": "ncbi:WP_012704143.1",
+      "target": "resfinder:blaAST-1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.973,
+      "source": "resfinder:mdf(A)",
+      "target": "card:ARO:3001328",
+      "type": "RBH"
+    },
+    {
+      "coverage": 0.9076923076923077,
+      "identity": 0.261,
+      "source": "resfinder:mdf(A)",
+      "target": "ncbi:WP_001256773.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9076923076923077,
+      "identity": 0.26,
+      "source": "resfinder:mdf(A)",
+      "target": "ncbi:WP_032492104.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9076923076923077,
+      "identity": 0.259,
+      "source": "resfinder:mdf(A)",
+      "target": "ncbi:WP_001256776.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_014386481.1",
+      "target": "card:ARO:3002714",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_014386481.1",
+      "target": "resfinder:qnrB1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.931,
+      "source": "ncbi:WP_008940904.1",
+      "target": "card:ARO:3002554",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.84,
+      "source": "ncbi:WP_008940904.1",
+      "target": "card:ARO:3002558",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0069444444444444,
+      "identity": 0.728,
+      "source": "ncbi:WP_008940904.1",
+      "target": "card:ARO:3002566",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.931,
+      "source": "ncbi:WP_008940904.1",
+      "target": "resfinder:aac(6')-Ig",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.84,
+      "source": "ncbi:WP_008940904.1",
+      "target": "resfinder:aac(6')-Ik",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0069444444444444,
+      "identity": 0.728,
+      "source": "ncbi:WP_008940904.1",
+      "target": "resfinder:aac(6')-Iv",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_003159191.1",
+      "target": "card:ARO:3002577",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.981,
+      "source": "ncbi:WP_003159191.1",
+      "target": "resfinder:ant(3'')-Ii-aac(6')-IId",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.981,
+      "source": "ncbi:WP_003159191.1",
+      "target": "resfinder:ant(3'')-Ih-aac(6')-IId",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.976,
+      "source": "ncbi:WP_003159191.1",
+      "target": "resfinder:aac(3)-Ib-aac(6')-Ib",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:blaDHA-7",
+      "target": "card:ARO:3002136",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:blaDHA-7",
+      "target": "ncbi:WP_058648119.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.993,
+      "source": "card:ARO:3002859",
+      "target": "ncbi:WP_021529707.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.98,
+      "source": "card:ARO:3002859",
+      "target": "resfinder:dfrA14",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_063839878.1",
+      "target": "resfinder:ant(3'')-Ii-aac(6')-IId",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_063839878.1",
+      "target": "resfinder:ant(3'')-Ih-aac(6')-IId",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_002314314.1",
+      "target": "card:ARO:3002819",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.953,
+      "source": "ncbi:WP_002314314.1",
+      "target": "resfinder:msr(C)",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:tetB(46)",
+      "target": "ncbi:WP_048717443.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3001070",
+      "target": "ncbi:WP_004176269.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3001070",
+      "target": "resfinder:blaSHV-11",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.008780487804878,
+      "identity": 0.274,
+      "source": "card:ARO:3000793",
+      "target": "ncbi:WP_063865404.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.008780487804878,
+      "identity": 0.274,
+      "source": "card:ARO:3000793",
+      "target": "ncbi:WP_063865569.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0087378640776699,
+      "identity": 0.272,
+      "source": "card:ARO:3000793",
+      "target": "ncbi:WP_063865577.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.008780487804878,
+      "identity": 0.273,
+      "source": "card:ARO:3000793",
+      "target": "resfinder:OqxB",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_032488864.1",
+      "target": "card:ARO:3002012",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_032488864.1",
+      "target": "resfinder:blaCMY-1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.993,
+      "source": "ncbi:WP_021529707.1",
+      "target": "card:ARO:3002859",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.987,
+      "source": "ncbi:WP_021529707.1",
+      "target": "resfinder:dfrA14",
+      "type": "RBH"
+    },
+    {
+      "coverage": 0.9742489270386266,
+      "identity": 0.398,
+      "source": "card:ARO:3000828",
+      "target": "ncbi:WP_011461303.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9826086956521739,
+      "identity": 0.384,
+      "source": "card:ARO:3000828",
+      "target": "ncbi:WP_063856724.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9914163090128756,
+      "identity": 0.383,
+      "source": "card:ARO:3000828",
+      "target": "ncbi:WP_021418928.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.923,
+      "source": "ncbi:WP_063865404.1",
+      "target": "card:ARO:3003923",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.923,
+      "source": "ncbi:WP_063865404.1",
+      "target": "resfinder:OqxB",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.005791505791506,
+      "identity": 0.416,
+      "source": "ncbi:WP_034065037.1",
+      "target": "resfinder:OqxB",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_063856748.1",
+      "target": "card:ARO:3002939",
+      "type": "RBH"
+    },
+    {
+      "coverage": 0.996415770609319,
+      "identity": 0.989,
+      "source": "ncbi:WP_063855091.1",
+      "target": "card:ARO:3000410",
+      "type": "RBH"
+    },
+    {
+      "coverage": 0.9823321554770318,
+      "identity": 0.989,
+      "source": "ncbi:WP_063855091.1",
+      "target": "resfinder:sul1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3000951",
+      "target": "ncbi:WP_063865053.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3000951",
+      "target": "resfinder:blaTEM-84",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0080213903743316,
+      "identity": 0.45,
+      "source": "ncbi:WP_034039546.1",
+      "target": "card:ARO:3004042",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9667590027700831,
+      "identity": 0.306,
+      "source": "ncbi:WP_034039546.1",
+      "target": "resfinder:OqxA",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3001082",
+      "target": "ncbi:WP_063864670.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3001082",
+      "target": "resfinder:blaSHV-24",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3003923",
+      "target": "ncbi:WP_000347934.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3003923",
+      "target": "resfinder:OqxB",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3001364",
+      "target": "ncbi:WP_063864660.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3001364",
+      "target": "resfinder:blaSHV-182",
+      "type": "RBH"
+    },
+    {
+      "coverage": 0.9076923076923077,
+      "identity": 0.252,
+      "source": "card:ARO:3001328",
+      "target": "ncbi:WP_001256773.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9076923076923077,
+      "identity": 0.252,
+      "source": "card:ARO:3001328",
+      "target": "ncbi:WP_032492104.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9076923076923077,
+      "identity": 0.25,
+      "source": "card:ARO:3001328",
+      "target": "ncbi:WP_001256776.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.973,
+      "source": "card:ARO:3001328",
+      "target": "resfinder:mdf(A)",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:blaNDM-1",
+      "target": "card:ARO:3000589",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:blaNDM-1",
+      "target": "ncbi:WP_004201164.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.502,
+      "source": "card:ARO:3000216",
+      "target": "ncbi:WP_034065037.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.000965250965251,
+      "identity": 0.414,
+      "source": "card:ARO:3000216",
+      "target": "ncbi:WP_063865552.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.000965250965251,
+      "identity": 0.412,
+      "source": "card:ARO:3000216",
+      "target": "ncbi:WP_063865408.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.000965250965251,
+      "identity": 0.414,
+      "source": "card:ARO:3000216",
+      "target": "resfinder:OqxB",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:blaOXA-1",
+      "target": "card:ARO:3001396",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:blaOXA-1",
+      "target": "ncbi:WP_001334766.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0235063663075417,
+      "identity": 0.273,
+      "source": "card:ARO:3000794",
+      "target": "ncbi:WP_032495443.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0235063663075417,
+      "identity": 0.273,
+      "source": "card:ARO:3000794",
+      "target": "ncbi:WP_063501636.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0235063663075417,
+      "identity": 0.272,
+      "source": "card:ARO:3000794",
+      "target": "ncbi:WP_063865569.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0235063663075417,
+      "identity": 0.273,
+      "source": "card:ARO:3000794",
+      "target": "resfinder:OqxB",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:tetB(60)",
+      "target": "ncbi:WP_049554487.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_063857702.1",
+      "target": "card:ARO:3001816",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_063857702.1",
+      "target": "resfinder:blaACC-2",
+      "type": "RBH"
+    },
+    {
+      "coverage": 0.9595959595959596,
+      "identity": 0.984,
+      "source": "resfinder:aac(6')-Ib",
+      "target": "card:ARO:3002581",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9545454545454546,
+      "identity": 0.979,
+      "source": "resfinder:aac(6')-Ib",
+      "target": "ncbi:WP_071593228.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9595959595959596,
+      "identity": 0.978,
+      "source": "resfinder:aac(6')-Ib",
+      "target": "ncbi:WP_063839878.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:qnrB2",
+      "target": "ncbi:WP_012695489.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.995,
+      "source": "resfinder:qnrB2",
+      "target": "card:ARO:3002735",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:blaSHV-24",
+      "target": "card:ARO:3001082",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:blaSHV-24",
+      "target": "ncbi:WP_063864670.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:aac(6')-Ig",
+      "target": "card:ARO:3002554",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3003922",
+      "target": "ncbi:WP_002914189.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3003922",
+      "target": "resfinder:OqxA",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_000557454.1",
+      "target": "card:ARO:3004623",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_000557454.1",
+      "target": "resfinder:aac(3)-IId",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:blaTEM-84",
+      "target": "card:ARO:3000951",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:blaTEM-84",
+      "target": "ncbi:WP_063865053.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_063864670.1",
+      "target": "card:ARO:3001082",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_063864670.1",
+      "target": "resfinder:blaSHV-24",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:fosA",
+      "target": "ncbi:WP_038415208.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.968,
+      "source": "resfinder:fosA",
+      "target": "card:ARO:3002804",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.834,
+      "source": "resfinder:fosA",
+      "target": "card:ARO:3004113",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.834,
+      "source": "resfinder:fosA",
+      "target": "card:ARO:3005162",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.922,
+      "source": "ncbi:WP_063865418.1",
+      "target": "card:ARO:3003923",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.922,
+      "source": "ncbi:WP_063865418.1",
+      "target": "resfinder:OqxB",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:aac(6')-Iv",
+      "target": "card:ARO:3002566",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3001396",
+      "target": "ncbi:WP_001334766.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3001396",
+      "target": "resfinder:blaOXA-1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:VanHMX",
+      "target": "card:ARO:3002911",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:VanHMX",
+      "target": "ncbi:WP_063856712.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:blaACC-2",
+      "target": "card:ARO:3001816",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:blaACC-2",
+      "target": "ncbi:WP_063857702.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.921,
+      "source": "ncbi:WP_063865552.1",
+      "target": "card:ARO:3003923",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.921,
+      "source": "ncbi:WP_063865552.1",
+      "target": "resfinder:OqxB",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.995,
+      "source": "card:ARO:3002676",
+      "target": "ncbi:WP_032492683.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3002676",
+      "target": "resfinder:catB3",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:blaOKP-B-2",
+      "target": "card:ARO:3002435",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:blaOKP-B-2",
+      "target": "ncbi:WP_063860914.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_063860914.1",
+      "target": "card:ARO:3002435",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_063860914.1",
+      "target": "resfinder:blaOKP-B-2",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:OqxA",
+      "target": "card:ARO:3003922",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:OqxA",
+      "target": "ncbi:WP_002914189.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:blaSHV-180",
+      "target": "card:ARO:3001350",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:blaSHV-180",
+      "target": "ncbi:WP_063864659.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 0.996415770609319,
+      "identity": 0.989,
+      "source": "card:ARO:3000410",
+      "target": "ncbi:WP_063855091.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3000410",
+      "target": "resfinder:sul1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:ant(3'')-Ii-aac(6')-IId",
+      "target": "ncbi:WP_063839878.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:fosA6",
+      "target": "card:ARO:3004111",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:fosA6",
+      "target": "ncbi:WP_069174570.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3000861",
+      "target": "ncbi:WP_000855769.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3000861",
+      "target": "resfinder:rmtC",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.008450704225352,
+      "identity": 0.198,
+      "source": "card:ARO:3004612",
+      "target": "ncbi:WP_164461282.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.008450704225352,
+      "identity": 0.197,
+      "source": "card:ARO:3004612",
+      "target": "ncbi:WP_164461284.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.008450704225352,
+      "identity": 0.196,
+      "source": "card:ARO:3004612",
+      "target": "ncbi:WP_045261282.1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.019718309859155,
+      "identity": 0.212,
+      "source": "card:ARO:3004612",
+      "target": "resfinder:blaCMY-87",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.019718309859155,
+      "identity": 0.211,
+      "source": "card:ARO:3004612",
+      "target": "resfinder:blaBIL-1",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.019718309859155,
+      "identity": 0.211,
+      "source": "card:ARO:3004612",
+      "target": "resfinder:blaCMY-51",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:OqxB",
+      "target": "card:ARO:3003923",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:OqxB",
+      "target": "ncbi:WP_000347934.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_071846215.1",
+      "target": "card:ARO:3002547",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.971,
+      "source": "ncbi:WP_071846215.1",
+      "target": "resfinder:aac(6')-Ib-cr",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.95,
+      "source": "ncbi:WP_071846215.1",
+      "target": "resfinder:ant(3'')-Ii-aac(6')-IId",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.95,
+      "source": "ncbi:WP_071846215.1",
+      "target": "resfinder:ant(3'')-Ih-aac(6')-IId",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.845,
+      "source": "card:ARO:3005162",
+      "target": "resfinder:fosA",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_002914189.1",
+      "target": "card:ARO:3003922",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_002914189.1",
+      "target": "resfinder:OqxA",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.986,
+      "source": "card:ARO:3004621",
+      "target": "ncbi:WP_002063884.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0080213903743316,
+      "identity": 0.453,
+      "source": "ncbi:WP_118842626.1",
+      "target": "card:ARO:3004042",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.9667590027700831,
+      "identity": 0.307,
+      "source": "ncbi:WP_118842626.1",
+      "target": "resfinder:OqxA",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_063856469.1",
+      "target": "resfinder:tetA(46)",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3002947",
+      "target": "ncbi:WP_063856706.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 0.9877300613496932,
+      "identity": 0.709,
+      "source": "card:ARO:3002947",
+      "target": "resfinder:VanH",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.975,
+      "identity": 0.618,
+      "source": "card:ARO:3002947",
+      "target": "resfinder:VanHOX",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_063856706.1",
+      "target": "card:ARO:3002947",
+      "type": "RBH"
+    },
+    {
+      "coverage": 0.9877300613496932,
+      "identity": 0.709,
+      "source": "ncbi:WP_063856706.1",
+      "target": "resfinder:VanH",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.975,
+      "identity": 0.618,
+      "source": "ncbi:WP_063856706.1",
+      "target": "resfinder:VanHOX",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:blaCMY-1",
+      "target": "card:ARO:3002012",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "resfinder:blaCMY-1",
+      "target": "ncbi:WP_032488864.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3002953",
+      "target": "ncbi:WP_063856777.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.903,
+      "source": "card:ARO:3002953",
+      "target": "resfinder:VanX",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3002012",
+      "target": "ncbi:WP_032488864.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3002012",
+      "target": "resfinder:blaCMY-1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_069174570.1",
+      "target": "card:ARO:3004111",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_069174570.1",
+      "target": "resfinder:fosA6",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_048717443.1",
+      "target": "resfinder:tetB(46)",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.963,
+      "source": "ncbi:WP_071593228.1",
+      "target": "card:ARO:3002676",
+      "type": "OWH"
+    },
+    {
+      "coverage": 0.45823389021479716,
+      "identity": 0.982,
+      "source": "ncbi:WP_071593228.1",
+      "target": "resfinder:ant(3'')-Ii-aac(6')-IId",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.963,
+      "source": "ncbi:WP_071593228.1",
+      "target": "resfinder:catB3",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3004623",
+      "target": "ncbi:WP_000557454.1",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "card:ARO:3004623",
+      "target": "resfinder:aac(3)-IId",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_058648119.1",
+      "target": "card:ARO:3002136",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_058648119.1",
+      "target": "resfinder:blaDHA-7",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.995,
+      "source": "ncbi:WP_012695489.1",
+      "target": "card:ARO:3002735",
+      "type": "RBH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 1.0,
+      "source": "ncbi:WP_012695489.1",
+      "target": "resfinder:qnrB2",
+      "type": "RBH"
+    },
+    {
+      "coverage": 0.9400921658986175,
+      "identity": 0.251,
+      "source": "ncbi:WP_052413892.1",
+      "target": "card:ARO:3004597",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.909,
+      "source": "ncbi:WP_063839875.1",
+      "target": "resfinder:ant(3'')-Ii-aac(6')-IId",
+      "type": "OWH"
+    },
+    {
+      "coverage": 1.0,
+      "identity": 0.909,
+      "source": "ncbi:WP_063839875.1",
+      "target": "resfinder:ant(3'')-Ih-aac(6')-IId",
+      "type": "OWH"
+    }
+  ],
+  "multigraph": false,
+  "nodes": [
+    {
+      "database": "resfinder",
+      "id": "resfinder:msr(C)",
+      "name": "msr(C)",
+      "phenotype": "confers resistance to Erythromycin, Telithromycin, Quinupristin, Pristinamycin IA, Virginiamycin S"
+    },
+    {
+      "PMID": [
+        "20733041"
+      ],
+      "database": "card",
+      "id": "card:ARO:3002911",
+      "is_a": "ARO:3002978:D-Ala-D-Lac ligase",
+      "name": "vanM"
+    },
+    {
+      "PMID": [
+        "23836167"
+      ],
+      "database": "card",
+      "id": "card:ARO:3004583",
+      "is_a": "ARO:3000748:subunit of efflux pump conferring antibiotic resistance",
+      "name": "Klebsiella pneumoniae KpnF",
+      "phenotype": "confers resistance to drug class: cephalosporin"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:blaSHV-11",
+      "name": "blaSHV-11",
+      "phenotype": "confers resistance to Amoxicillin, Ampicillin, Cephalothin, Piperacillin, Ticarcillin"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_050429.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063865408.1",
+      "name": "oqxB11",
+      "phenotype": "confers resistance to subclass PHENICOL/QUINOLONE",
+      "product": "multidrug efflux RND transporter permease subunit OqxB11"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:qacB",
+      "name": "qacB",
+      "phenotype": "confers resistance to Benzylkonium Chloride, Ethidium Bromide, Chlorhexidine, Cetylpyridinium Chloride"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_055642.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_011461303.1",
+      "name": "vanR-I",
+      "phenotype": "confers resistance to subclass VANCOMYCIN",
+      "product": "VanI-type vancomycin resistance DNA-binding response regulator VanR"
+    },
+    {
+      "PMID": [
+        "8257129",
+        "7810994"
+      ],
+      "database": "card",
+      "id": "card:ARO:3002554",
+      "is_a": "ARO:3000345:AAC(6')",
+      "name": "AAC(6')-Ig",
+      "phenotype": "confers resistance to drug class: aminoglycoside antibiotic"
+    },
+    {
+      "PMID": [
+        "18993034"
+      ],
+      "additional_phenotype": "confers resistance to drug class: fluoroquinolone antibiotic",
+      "database": "card",
+      "id": "card:ARO:3002735",
+      "is_a": "ARO:3000419:quinolone resistance protein (qnr)",
+      "name": "QnrB20",
+      "phenotype": "confers resistance to antibiotic: ciprofloxacin,gatifloxacin,levofloxacin,moxifloxacin,nalidixic acid,norfloxacin,sparfloxacin"
+    },
+    {
+      "PMID": [
+        "15980410"
+      ],
+      "database": "card",
+      "id": "card:ARO:3002439",
+      "is_a": "ARO:3002417:OKP beta-lactamase",
+      "name": "OKP-B-6",
+      "phenotype": "confers resistance to drug class: cephalosporin,penam"
+    },
+    {
+      "PMID": [
+        "1339319"
+      ],
+      "database": "card",
+      "id": "card:ARO:3002577",
+      "is_a": "ARO:3000345:AAC(6')",
+      "name": "AAC(6')-Ib4",
+      "phenotype": "confers resistance to drug class: aminoglycoside antibiotic"
+    },
+    {
+      "PMID": [
+        "23836167"
+      ],
+      "database": "card",
+      "id": "card:ARO:3004580",
+      "is_a": "ARO:3000748:subunit of efflux pump conferring antibiotic resistance",
+      "name": "Klebsiella pneumoniae KpnE",
+      "phenotype": "confers resistance to drug class: cephalosporin"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_050456.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063865569.1",
+      "name": "oqxB7",
+      "phenotype": "confers resistance to subclass PHENICOL/QUINOLONE",
+      "product": "multidrug efflux RND transporter permease subunit OqxB7"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_048411.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_021418928.1",
+      "name": "vanR-G",
+      "phenotype": "confers resistance to subclass VANCOMYCIN",
+      "product": "VanG-type vancomycin resistance DNA-binding response regulator VanR"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_047247.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [
+          "NG_047252.1",
+          "NG_047248.1",
+          "NG_047244.1"
+        ],
+        "protein_accessions": [
+          "WP_063840267.1",
+          "WP_015060297.1",
+          "WP_000557452.1"
+        ]
+      },
+      "id": "ncbi:WP_002063884.1",
+      "name": "aac(3)-IIe",
+      "phenotype": "confers resistance to subclass GENTAMICIN",
+      "product": "aminoglycoside N-acetyltransferase AAC(3)-IIe"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:qnrB1",
+      "name": "qnrB1",
+      "phenotype": "confers resistance to Ciprofloxacin"
+    },
+    {
+      "PMID": [
+        "27261267"
+      ],
+      "additional_phenotype": "confers resistance to drug class: fosfomycin",
+      "database": "card",
+      "id": "card:ARO:3004111",
+      "is_a": "ARO:3000133:fosfomycin thiol transferase",
+      "name": "FosA6",
+      "phenotype": "confers resistance to antibiotic: fosfomycin"
+    },
+    {
+      "PMID": [
+        "10692383"
+      ],
+      "database": "card",
+      "id": "card:ARO:3000491",
+      "is_a": "ARO:0010004:resistance-nodulation-cell division (RND) antibiotic efflux pump",
+      "name": "acrD",
+      "phenotype": "confers resistance to drug class: aminoglycoside antibiotic"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_050438.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_032495443.1",
+      "name": "oqxB2",
+      "phenotype": "confers resistance to subclass PHENICOL/QUINOLONE",
+      "product": "multidrug efflux RND transporter permease subunit OqxB2"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_050430.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063865413.1",
+      "name": "oqxB12",
+      "phenotype": "confers resistance to subclass PHENICOL/QUINOLONE",
+      "product": "multidrug efflux RND transporter permease subunit OqxB12"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:dfrA14",
+      "name": "dfrA14",
+      "phenotype": "confers resistance to Trimethoprim"
+    },
+    {
+      "PMID": [
+        "18710261",
+        "18812424",
+        "16369542"
+      ],
+      "additional_phenotype": "confers resistance to drug class: aminoglycoside antibiotic,fluoroquinolone antibiotic",
+      "database": "card",
+      "id": "card:ARO:3002547",
+      "is_a": "ARO:3005113:AAC(6')-Ib-cr",
+      "name": "AAC(6')-Ib-cr1",
+      "phenotype": "confers resistance to antibiotic: ciprofloxacin,plazomicin,tobramycin"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:blaROB-1",
+      "name": "blaROB-1",
+      "phenotype": "confers resistance to Penicillin, Amoxicillin, Ampicillin"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_050448.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063501636.1",
+      "name": "oqxB29",
+      "phenotype": "confers resistance to subclass PHENICOL/QUINOLONE",
+      "product": "multidrug efflux RND transporter permease subunit OqxB29"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_076647.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_088903431.1",
+      "name": "tmexC2",
+      "phenotype": "confers resistance to subclass TIGECYCLINE",
+      "product": "multidrug efflux RND transporter periplasmic adaptor subunit TMexC2"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_050294.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063865053.1",
+      "name": "blaTEM-84",
+      "phenotype": "confers resistance to subclass BETA-LACTAM",
+      "product": "inhibitor-resistant class A broad-spectrum beta-lactamase TEM-84"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:aac(3)-IIa",
+      "name": "aac(3)-IIa",
+      "phenotype": "confers resistance to Gentamicin, Tobramycin"
+    },
+    {
+      "database": "card",
+      "id": "card:ARO:3005116",
+      "is_a": "ARO:3005113:AAC(6')-Ib-cr",
+      "name": "AAC(6')-Ib-cr6",
+      "phenotype": "confers resistance to drug class: aminoglycoside antibiotic,fluoroquinolone antibiotic"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_047606.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [
+          "NG_047605.1",
+          "NG_047610.1",
+          "NG_047607.1",
+          "NG_047608.1",
+          "NG_047609.1",
+          "NG_052485.1",
+          "NG_047611.1",
+          "NG_047612.1",
+          "NG_052381.1",
+          "NG_052507.1",
+          "NG_052444.1",
+          "NG_052455.1",
+          "NG_052180.1",
+          "NG_047604.1"
+        ],
+        "protein_accessions": [
+          "WP_032489305.1",
+          "WP_063843227.1",
+          "WP_063843224.1",
+          "WP_063843225.1",
+          "WP_063843226.1",
+          "WP_071846363.1",
+          "WP_063843228.1",
+          "WP_032492194.1",
+          "WP_071846311.1",
+          "WP_071846375.1",
+          "WP_071846347.1",
+          "WP_071846350.1",
+          "WP_071846207.1",
+          "WP_000186237.1"
+        ]
+      },
+      "id": "ncbi:WP_032492683.1",
+      "name": "catB3",
+      "phenotype": "confers resistance to subclass CHLORAMPHENICOL",
+      "product": "type B-3 chloramphenicol O-acetyltransferase CatB3"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_050405.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [
+          "NG_047883.1",
+          "NG_047881.1",
+          "NG_047882.1",
+          "NG_047885.1"
+        ],
+        "protein_accessions": [
+          "WP_003082280.1",
+          "WP_004146118.1",
+          "WP_009486251.1",
+          "WP_004857515.1"
+        ]
+      },
+      "id": "ncbi:WP_038415208.1",
+      "name": "fosA",
+      "phenotype": "confers resistance to subclass FOSFOMYCIN",
+      "product": "fosfomycin resistance glutathione transferase FosA"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_048495.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063856777.1",
+      "name": "vanX-M",
+      "phenotype": "confers resistance to subclass VANCOMYCIN",
+      "product": "D-Ala-D-Ala dipeptidase VanX-M"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_048025.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_000347934.1",
+      "name": "oqxB",
+      "phenotype": "confers resistance to subclass PHENICOL/QUINOLONE",
+      "product": "multidrug efflux RND transporter permease subunit OqxB"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:blaSHV-182",
+      "name": "blaSHV-182",
+      "phenotype": "confers resistance to Unknown Beta-lactam"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:catB3",
+      "name": "catB3",
+      "phenotype": "confers resistance to Chloramphenicol"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_048935.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_000239590.1",
+      "name": "blaCTX-M-15",
+      "phenotype": "confers resistance to subclass CEPHALOSPORIN",
+      "product": "class A extended-spectrum beta-lactamase CTX-M-15"
+    },
+    {
+      "database": "card",
+      "id": "card:ARO:3001350",
+      "is_a": "ARO:3000015:SHV beta-lactamase",
+      "name": "SHV-180",
+      "phenotype": "confers resistance to drug class: carbapenem,cephalosporin,penam"
+    },
+    {
+      "PMID": [
+        "10817695"
+      ],
+      "database": "card",
+      "id": "card:ARO:3001816",
+      "is_a": "ARO:3000073:ACC beta-lactamase",
+      "name": "ACC-2",
+      "phenotype": "confers resistance to drug class: cephalosporin,monobactam,penam"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:blaCTX-M-15",
+      "name": "blaCTX-M-15",
+      "phenotype": "confers resistance to Amoxicillin, Ampicillin, Aztreonam, Cefepime, Cefotaxime, Ceftazidime, Ceftriaxone, Piperacillin, Ticarcillin"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:tetA(46)",
+      "name": "tetA(46)",
+      "phenotype": "confers resistance to Doxycycline, Tetracycline, Tigecycline"
+    },
+    {
+      "PMID": [
+        "16569827"
+      ],
+      "additional_phenotype": "confers resistance to drug class: fluoroquinolone antibiotic",
+      "database": "card",
+      "id": "card:ARO:3002714",
+      "is_a": "ARO:3000419:quinolone resistance protein (qnr)",
+      "name": "QnrB1",
+      "phenotype": "confers resistance to antibiotic: ciprofloxacin,gatifloxacin,levofloxacin,moxifloxacin,nalidixic acid,norfloxacin,sparfloxacin"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_050481.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063865914.1",
+      "name": "qnrB20",
+      "phenotype": "confers resistance to subclass QUINOLONE",
+      "product": "quinolone resistance pentapeptide repeat protein QnrB20"
+    },
+    {
+      "PMID": [
+        "19770275",
+        "24790993",
+        "21507902",
+        "29454953",
+        "21774017",
+        "27575913"
+      ],
+      "additional_phenotype": "confers resistance to drug class: carbapenem,cephalosporin,cephamycin,penam",
+      "database": "card",
+      "id": "card:ARO:3000589",
+      "is_a": "ARO:3000057:NDM beta-lactamase",
+      "name": "NDM-1",
+      "phenotype": "confers resistance to antibiotic: amoxicillin-clavulanic acid,ertapenem,imipenem,meropenem"
+    },
+    {
+      "PMID": [
+        "11120975"
+      ],
+      "database": "card",
+      "id": "card:ARO:3002819",
+      "is_a": "ARO:3004471:msr-type ABC-F protein",
+      "name": "msrC",
+      "phenotype": "confers resistance to antibiotic: erythromycin,quinupristin"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_049392.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_001334766.1",
+      "name": "blaOXA-1",
+      "phenotype": "confers resistance to subclass CEPHALOSPORIN",
+      "product": "oxacillin-hydrolyzing class D beta-lactamase OXA-1"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:qnrB20",
+      "name": "qnrB20",
+      "phenotype": "confers resistance to Ciprofloxacin"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:qacJ",
+      "name": "qacJ",
+      "phenotype": "confers resistance to Benzylkonium Chloride, Ethidium Bromide, Chlorhexidine, Cetylpyridinium Chloride"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:sul1",
+      "name": "sul1",
+      "phenotype": "confers resistance to Sulfamethoxazole"
+    },
+    {
+      "PMID": [
+        "8001769"
+      ],
+      "database": "card",
+      "id": "card:ARO:3002558",
+      "is_a": "ARO:3000345:AAC(6')",
+      "name": "AAC(6')-Ik",
+      "phenotype": "confers resistance to drug class: aminoglycoside antibiotic"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_050457.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063865577.1",
+      "name": "oqxB8",
+      "phenotype": "confers resistance to subclass PHENICOL/QUINOLONE",
+      "product": "multidrug efflux RND transporter permease subunit OqxB8"
+    },
+    {
+      "PMID": [
+        "10188279"
+      ],
+      "database": "card",
+      "id": "card:ARO:3002566",
+      "is_a": "ARO:3000345:AAC(6')",
+      "name": "AAC(6')-Iv",
+      "phenotype": "confers resistance to drug class: aminoglycoside antibiotic"
+    },
+    {
+      "PMID": [
+        "24327941",
+        "19858254"
+      ],
+      "database": "card",
+      "id": "card:ARO:3004041",
+      "is_a": "ARO:3000207:acrA",
+      "name": "Klebsiella pneumoniae acrA"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_048396.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063856712.1",
+      "name": "vanM",
+      "phenotype": "confers resistance to subclass VANCOMYCIN",
+      "product": "D-alanine--(R)-lactate ligase VanM"
+    },
+    {
+      "database": "card",
+      "id": "card:ARO:3004764",
+      "is_a": "ARO:3004763:CBP beta-lactamase",
+      "name": "CBP-1",
+      "phenotype": "confers resistance to drug class: penam"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_049326.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_004201164.1",
+      "name": "blaNDM-1",
+      "phenotype": "confers resistance to subclass CARBAPENEM",
+      "product": "subclass B1 metallo-beta-lactamase NDM-1"
+    },
+    {
+      "database": "card",
+      "id": "card:ARO:3002136",
+      "is_a": "ARO:3000068:DHA beta-lactamase",
+      "name": "DHA-7",
+      "phenotype": "confers resistance to drug class: cephalosporin,cephamycin"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:ant(3'')-Ih-aac(6')-IId",
+      "name": "ant(3'')-Ih-aac(6')-IId",
+      "phenotype": "confers resistance to Gentamicin, Amikacin, Tobramycin, Streptomycin"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:VanX",
+      "name": "VanX",
+      "phenotype": "confers resistance to Vancomycin, Teicoplanin"
+    },
+    {
+      "PMID": [
+        "24823362"
+      ],
+      "database": "card",
+      "id": "card:ARO:3004597",
+      "is_a": "ARO:3000748:subunit of efflux pump conferring antibiotic resistance",
+      "name": "Klebsiella pneumoniae KpnH",
+      "phenotype": "confers resistance to drug class: cephalosporin"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_048060.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_000855769.1",
+      "name": "rmtC",
+      "phenotype": "confers resistance to subclass AMINOGLYCOSIDE",
+      "product": "RmtC family 16S rRNA (guanine(1405)-N(7))-methyltransferase"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_056046.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_049554487.1",
+      "name": "tetB(60)",
+      "phenotype": "confers resistance to subclass TETRACYCLINE",
+      "product": "tetracycline efflux ABC transporter Tet(60) subunit B"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:aac(6')-Ik",
+      "name": "aac(6')-Ik",
+      "phenotype": "confers resistance to Amikacin, Tobramycin"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:qacH",
+      "name": "qacH",
+      "phenotype": "confers resistance to Benzylkonium Chloride, Ethidium Bromide, Chlorhexidine, Cetylpyridinium Chloride"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:rmtC",
+      "name": "rmtC",
+      "phenotype": "confers resistance to Amikacin, Gentamicin, Tobramycin, Kanamycin, Arbekacin, Sisomicin, Isepamicin"
+    },
+    {
+      "PMID": [
+        "16304190"
+      ],
+      "database": "card",
+      "id": "card:ARO:3002435",
+      "is_a": "ARO:3002417:OKP beta-lactamase",
+      "name": "OKP-B-2",
+      "phenotype": "confers resistance to drug class: cephalosporin,penam"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:aac(3)-IId",
+      "name": "aac(3)-IId",
+      "phenotype": "confers resistance to Apramycin, Gentamicin, Tobramycin, Dibekacin, Netilmicin, Sisomicin"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:aac(6')-Ib-cr",
+      "name": "aac(6')-Ib-cr",
+      "phenotype": "confers resistance to Ciprofloxacin"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_050000.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_004176269.1",
+      "name": "blaSHV-11",
+      "phenotype": "confers resistance to subclass BETA-LACTAM",
+      "product": "class A broad-spectrum beta-lactamase SHV-11"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_050049.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063864660.1",
+      "name": "blaSHV-182",
+      "phenotype": "confers resistance to subclass BETA-LACTAM",
+      "product": "class A beta-lactamase SHV-182"
+    },
+    {
+      "PMID": [
+        "12461028",
+        "11470367",
+        "33416461"
+      ],
+      "additional_phenotype": "confers resistance to drug class: cephalosporin",
+      "database": "card",
+      "id": "card:ARO:3001878",
+      "is_a": "ARO:3000016:CTX-M beta-lactamase",
+      "name": "CTX-M-15",
+      "phenotype": "confers resistance to antibiotic: ampicillin,cefalotin,cefazolin,ceftazidime,ceftriaxone"
+    },
+    {
+      "PMID": [
+        "12121946",
+        "17536927"
+      ],
+      "database": "card",
+      "id": "card:ARO:3004042",
+      "is_a": "ARO:3000207:acrA",
+      "name": "Enterobacter cloacae acrA"
+    },
+    {
+      "PMID": [
+        "20733041"
+      ],
+      "database": "card",
+      "id": "card:ARO:3002939",
+      "is_a": "ARO:3000071:vanS",
+      "name": "vanSM",
+      "phenotype": "confers resistance to drug class: glycopeptide antibiotic"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:blaCMY-87",
+      "name": "blaCMY-87",
+      "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefotaxime, Cefoxitin, Ceftazidime, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_050712.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_045261282.1",
+      "name": "blaACT-49",
+      "phenotype": "confers resistance to subclass CEPHALOSPORIN",
+      "product": "cephalosporin-hydrolyzing class C beta-lactamase ACT-49"
+    },
+    {
+      "PMID": [
+        "12195740",
+        "19678712",
+        "27499013",
+        "12358070"
+      ],
+      "database": "card",
+      "id": "card:ARO:3003950",
+      "is_a": "ARO:0010001:ATP-binding cassette (ABC) antibiotic efflux pump",
+      "name": "msbA",
+      "phenotype": "confers resistance to antibiotic: metronidazole"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:blaOKP-B-15",
+      "name": "blaOKP-B-15",
+      "phenotype": "confers resistance to Unknown Beta-lactam"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_049382.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_004205995.1",
+      "name": "blaOKP-B-6",
+      "phenotype": "confers resistance to subclass BETA-LACTAM",
+      "product": "class A broad-spectrum beta-lactamase OKP-B-6"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_067974.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_164461282.1",
+      "name": "blaACT-80",
+      "phenotype": "confers resistance to subclass CEPHALOSPORIN",
+      "product": "cephalosporin-hydrolyzing class C beta-lactamase ACT-80"
+    },
+    {
+      "PMID": [
+        "9579076"
+      ],
+      "database": "card",
+      "id": "card:ARO:3002581",
+      "is_a": "ARO:3000345:AAC(6')",
+      "name": "AAC(6')-Ib10",
+      "phenotype": "confers resistance to drug class: aminoglycoside antibiotic"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_050048.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063864659.1",
+      "name": "blaSHV-180",
+      "phenotype": "confers resistance to subclass BETA-LACTAM",
+      "product": "class A beta-lactamase SHV-180"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_048756.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_012704143.1",
+      "name": "blaCBP-1",
+      "phenotype": "confers resistance to subclass BETA-LACTAM",
+      "product": "penicillin-hydrolyzing class A beta-lactamase CBP-1"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_047647.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [
+          "NG_047648.1",
+          "NG_047646.1"
+        ],
+        "protein_accessions": [
+          "WP_000095725.1",
+          "WP_032488514.1"
+        ]
+      },
+      "id": "ncbi:WP_001256776.1",
+      "name": "cmlA1",
+      "phenotype": "confers resistance to subclass CHLORAMPHENICOL",
+      "product": "chloramphenicol efflux MFS transporter CmlA1"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:mdf(A)",
+      "name": "mdf(A)",
+      "phenotype": "confers resistance to Unknown Macrolide, Unknown Aminoglycoside, Unknown Tetracycline, Unknown Quinolone, Unknown Amphenicol, Unknown Rifamycin"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_050469.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_014386481.1",
+      "name": "qnrB1",
+      "phenotype": "confers resistance to subclass QUINOLONE",
+      "product": "quinolone resistance pentapeptide repeat protein QnrB1"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_052523.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [
+          "NG_052255.1",
+          "NG_052258.1",
+          "NG_052394.1",
+          "NG_052395.1",
+          "NG_052396.1",
+          "NG_052397.1",
+          "NG_052398.1",
+          "NG_052399.1",
+          "NG_052401.1",
+          "NG_052400.1",
+          "NG_052529.1",
+          "NG_052525.1",
+          "NG_052526.1",
+          "NG_052527.1",
+          "NG_052528.1",
+          "NG_052166.1",
+          "NG_052457.1",
+          "NG_052458.1",
+          "NG_052421.1",
+          "NG_052531.1",
+          "NG_052216.1",
+          "NG_052371.1",
+          "NG_052275.1",
+          "NG_052140.1",
+          "NG_052504.1",
+          "NG_052260.1",
+          "NG_052261.1",
+          "NG_052169.1",
+          "NG_052168.1",
+          "NG_052161.1",
+          "NG_052159.1",
+          "NG_052160.1",
+          "NG_052162.1",
+          "NG_052164.1",
+          "NG_052163.1",
+          "NG_052165.1",
+          "NG_052285.1",
+          "NG_052446.1",
+          "NG_052290.1",
+          "NG_052447.1",
+          "NG_052281.1",
+          "NG_052188.1",
+          "NG_052177.1",
+          "NG_052337.1",
+          "NG_052291.1",
+          "NG_052465.1",
+          "NG_052207.1"
+        ],
+        "protein_accessions": [
+          "WP_017395772.1",
+          "WP_009510932.1",
+          "WP_004670361.1",
+          "WP_004770322.1",
+          "WP_004801433.1",
+          "WP_005062866.1",
+          "WP_005091170.1",
+          "WP_005145021.1",
+          "WP_005184197.1",
+          "WP_005197871.1",
+          "WP_005202238.1",
+          "WP_005243483.1",
+          "WP_005259042.1",
+          "WP_005269797.1",
+          "WP_005288246.1",
+          "WP_016162901.1",
+          "WP_032874497.1",
+          "WP_032870384.1",
+          "WP_047426753.1",
+          "WP_032880374.1",
+          "WP_071846216.1",
+          "WP_002289795.1",
+          "WP_002293569.1",
+          "WP_002293989.1",
+          "WP_019722502.1",
+          "WP_002328174.1",
+          "WP_002339746.1",
+          "WP_016172918.1",
+          "WP_016177698.1",
+          "WP_010723742.1",
+          "WP_010727362.1",
+          "WP_010728104.1",
+          "WP_010736157.1",
+          "WP_010750427.1",
+          "WP_010752789.1",
+          "WP_010768325.1",
+          "WP_002373947.1",
+          "WP_023519215.1",
+          "WP_016628216.1",
+          "WP_024635824.1",
+          "WP_010737153.1",
+          "WP_048603867.1",
+          "WP_034688908.1",
+          "WP_034700626.1",
+          "WP_034860925.1",
+          "WP_071846353.1",
+          "WP_053766315.1"
+        ]
+      },
+      "id": "ncbi:WP_008940904.1",
+      "name": "aac(6')-I",
+      "phenotype": "confers resistance to subclass AMIKACIN/KANAMYCIN/TOBRAMYCIN",
+      "product": "AAC(6')-Ighjkrstuvwx family aminoglycoside N-acetyltransferase"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_051844.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_003159191.1",
+      "name": "aac(6')-Ib4",
+      "phenotype": "confers resistance to subclass GENTAMICIN",
+      "product": "aminoglycoside N-acetyltransferase AAC(6')-Ib4"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:aac(3)-Ib-aac(6')-Ib",
+      "name": "aac(3)-Ib-aac(6')-Ib",
+      "phenotype": "confers resistance to Amikacin, Gentamicin, Tobramycin, Streptomycin"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:blaDHA-7",
+      "name": "blaDHA-7",
+      "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefotaxime, Cefoxitin, Ceftazidime, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid"
+    },
+    {
+      "PMID": [
+        "18794381"
+      ],
+      "additional_phenotype": "confers resistance to drug class: diaminopyrimidine antibiotic",
+      "database": "card",
+      "id": "card:ARO:3002859",
+      "is_a": "ARO:3001218:trimethoprim resistant dihydrofolate reductase dfr",
+      "name": "dfrA14",
+      "phenotype": "confers resistance to antibiotic: trimethoprim"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_047218.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063839878.1",
+      "name": "ant(3'')-Ih/aac(6')-IId",
+      "phenotype": "confers resistance to subclass AMINOGLYCOSIDE/SPECTINOMYCIN/STREPTOMYCIN",
+      "product": "bifunctional aminoglycoside nucleotidyltransferase ANT(3'')-Ih/aminoglycoside N-acetyltransferase AAC(6')-Iid"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_048004.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [
+          "NG_048003.1"
+        ],
+        "protein_accessions": [
+          "WP_063854349.1"
+        ]
+      },
+      "id": "ncbi:WP_002314314.1",
+      "name": "msr(C)",
+      "phenotype": "confers resistance to subclass MACROLIDE",
+      "product": "ABC-F type ribosomal protection protein Msr(C)"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:qacA",
+      "name": "qacA",
+      "phenotype": "confers resistance to Benzylkonium Chloride, Ethidium Bromide, Chlorhexidine, Cetylpyridinium Chloride"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:tetB(46)",
+      "name": "tetB(46)",
+      "phenotype": "confers resistance to Doxycycline, Tetracycline, Tigecycline"
+    },
+    {
+      "PMID": [
+        "9145849"
+      ],
+      "database": "card",
+      "id": "card:ARO:3001070",
+      "is_a": "ARO:3000015:SHV beta-lactamase",
+      "name": "SHV-11",
+      "phenotype": "confers resistance to drug class: carbapenem,cephalosporin,penam"
+    },
+    {
+      "PMID": [
+        "12107133"
+      ],
+      "database": "card",
+      "id": "card:ARO:3000793",
+      "is_a": "ARO:3000748:subunit of efflux pump conferring antibiotic resistance",
+      "name": "mdtB"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_048768.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_032488864.1",
+      "name": "blaCMY-1",
+      "phenotype": "confers resistance to subclass CEPHALOSPORIN",
+      "product": "class C beta-lactamase CMY-1"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_047696.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [
+          "NG_047699.2",
+          "NG_056035.1",
+          "NG_047695.1",
+          "NG_047694.1"
+        ],
+        "protein_accessions": [
+          "WP_109545031.1",
+          "WP_004201280.1",
+          "WP_032488755.1",
+          "WP_063844340.1"
+        ]
+      },
+      "id": "ncbi:WP_021529707.1",
+      "name": "dfrA14",
+      "phenotype": "confers resistance to subclass TRIMETHOPRIM",
+      "product": "trimethoprim-resistant dihydrofolate reductase DfrA14"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_051879.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_032492104.1",
+      "name": "cmlA8",
+      "phenotype": "confers resistance to subclass CHLORAMPHENICOL",
+      "product": "chloramphenicol efflux MFS transporter CmlA8"
+    },
+    {
+      "PMID": [
+        "12107133"
+      ],
+      "database": "card",
+      "id": "card:ARO:3000828",
+      "is_a": "ARO:3000750:protein of two-component regulatory system modulating antibiotic efflux",
+      "name": "baeR"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_050428.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063865404.1",
+      "name": "oqxB10",
+      "phenotype": "confers resistance to subclass PHENICOL/QUINOLONE",
+      "product": "multidrug efflux RND transporter permease subunit OqxB10"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_076636.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_034065037.1",
+      "name": "tmexD3",
+      "phenotype": "confers resistance to subclass TIGECYCLINE",
+      "product": "multidrug efflux RND transporter permease subunit TMexD3"
+    },
+    {
+      "PMID": [
+        "28533247"
+      ],
+      "additional_phenotype": "confers resistance to drug class: fosfomycin",
+      "database": "card",
+      "id": "card:ARO:3004113",
+      "is_a": "ARO:3000133:fosfomycin thiol transferase",
+      "name": "FosA7",
+      "phenotype": "confers resistance to antibiotic: fosfomycin"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_048450.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063856748.1",
+      "name": "vanS-M",
+      "phenotype": "confers resistance to subclass VANCOMYCIN",
+      "product": "VanM-type vancomycin resistance histidine kinase VanS"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_048094.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [
+          "NG_048084.1",
+          "NG_048083.1",
+          "NG_048086.1",
+          "NG_048088.1",
+          "NG_048090.1",
+          "NG_048093.1",
+          "NG_048091.1",
+          "NG_048097.1",
+          "NG_048085.1",
+          "NG_048089.1",
+          "NG_048087.1",
+          "NG_048098.1",
+          "NG_048095.1",
+          "NG_048096.1",
+          "NG_048099.1",
+          "NG_048101.1",
+          "NG_048100.1",
+          "NG_048102.1",
+          "NG_048103.1",
+          "NG_048105.1",
+          "NG_048082.1",
+          "NG_048081.1"
+        ],
+        "protein_accessions": [
+          "WP_063855037.1",
+          "WP_000946487.1",
+          "WP_032490794.1",
+          "WP_032490976.1",
+          "WP_032491228.1",
+          "WP_032491570.1",
+          "WP_063855074.1",
+          "WP_012312004.1",
+          "WP_063855046.1",
+          "WP_063855066.1",
+          "WP_007929940.1",
+          "WP_019727244.1",
+          "WP_032491966.1",
+          "WP_032492024.1",
+          "WP_063855103.1",
+          "WP_058685609.1",
+          "WP_063855106.1",
+          "WP_000259018.1",
+          "WP_063855115.1",
+          "WP_063855129.1",
+          "WP_000259031.1",
+          "WP_000259032.1"
+        ]
+      },
+      "id": "ncbi:WP_063855091.1",
+      "name": "sul1",
+      "phenotype": "confers resistance to subclass SULFONAMIDE",
+      "product": "sulfonamide-resistant dihydropteroate synthase Sul1"
+    },
+    {
+      "PMID": [
+        "10991849"
+      ],
+      "additional_phenotype": "confers resistance to drug class: cephalosporin,monobactam,penam,penem",
+      "database": "card",
+      "id": "card:ARO:3000951",
+      "is_a": "ARO:3000014:TEM beta-lactamase",
+      "name": "TEM-84",
+      "phenotype": "confers resistance to antibiotic: ampicillin"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_076635.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_034039546.1",
+      "name": "tmexC3",
+      "phenotype": "confers resistance to subclass TIGECYCLINE",
+      "product": "multidrug efflux RND transporter periplasmic adaptor subunit TMexC3"
+    },
+    {
+      "PMID": [
+        "10817740"
+      ],
+      "database": "card",
+      "id": "card:ARO:3001082",
+      "is_a": "ARO:3000015:SHV beta-lactamase",
+      "name": "SHV-24",
+      "phenotype": "confers resistance to drug class: carbapenem,cephalosporin,penam"
+    },
+    {
+      "PMID": [
+        "19528276"
+      ],
+      "database": "card",
+      "id": "card:ARO:3003923",
+      "is_a": "ARO:3000748:subunit of efflux pump conferring antibiotic resistance",
+      "name": "oqxB"
+    },
+    {
+      "database": "card",
+      "id": "card:ARO:3001364",
+      "is_a": "ARO:3000015:SHV beta-lactamase",
+      "name": "SHV-182",
+      "phenotype": "confers resistance to drug class: carbapenem,cephalosporin,penam"
+    },
+    {
+      "PMID": [
+        "26238402",
+        "9811673"
+      ],
+      "database": "card",
+      "id": "card:ARO:3001328",
+      "is_a": "ARO:0010002:major facilitator superfamily (MFS) antibiotic efflux pump",
+      "name": "Escherichia coli mdfA",
+      "phenotype": "confers resistance to antibiotic: benzalkonium chloride,rhodamine,tetracycline"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:blaNDM-1",
+      "name": "blaNDM-1",
+      "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Cefixime, Cefotaxime, Cefoxitin, Ceftazidime, Ertapenem, Imipenem, Meropenem, Piperacillin, Piperacillin+Tazobactam"
+    },
+    {
+      "PMID": [
+        "19166984",
+        "12374972",
+        "19453279",
+        "18073115",
+        "17275331"
+      ],
+      "database": "card",
+      "id": "card:ARO:3000216",
+      "is_a": "ARO:3000748:subunit of efflux pump conferring antibiotic resistance",
+      "name": "acrB"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:blaOXA-1",
+      "name": "blaOXA-1",
+      "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefepime, Piperacillin, Piperacillin+Tazobactam"
+    },
+    {
+      "PMID": [
+        "12107133"
+      ],
+      "database": "card",
+      "id": "card:ARO:3000794",
+      "is_a": "ARO:3000748:subunit of efflux pump conferring antibiotic resistance",
+      "name": "mdtC"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:tetB(60)",
+      "name": "tetB(60)",
+      "phenotype": "confers resistance to Doxycycline, Tetracycline, Tigecycline"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_048593.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063857702.1",
+      "name": "blaACC-2",
+      "phenotype": "confers resistance to subclass CEPHALOSPORIN",
+      "product": "cephalosporin-hydrolyzing class C beta-lactamase ACC-2"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:aac(6')-Ib",
+      "name": "aac(6')-Ib",
+      "phenotype": "confers resistance to Amikacin, Tobramycin, Kanamycin"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:qnrB2",
+      "name": "qnrB2",
+      "phenotype": "confers resistance to Ciprofloxacin"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:blaSHV-24",
+      "name": "blaSHV-24",
+      "phenotype": "confers resistance to Amoxicillin, Ampicillin, Aztreonam, Cefepime, Cefotaxime, Ceftazidime, Ceftriaxone, Piperacillin, Ticarcillin"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_048418.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063856724.1",
+      "name": "vanR-L",
+      "phenotype": "confers resistance to subclass VANCOMYCIN",
+      "product": "VanL-type vancomycin resistance DNA-binding response regulator VanR"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:aac(6')-Ig",
+      "name": "aac(6')-Ig",
+      "phenotype": "confers resistance to Tobramycin, Dibekacin, Amikacin, Sisomicin, Netilmicin"
+    },
+    {
+      "PMID": [
+        "19528276"
+      ],
+      "database": "card",
+      "id": "card:ARO:3003922",
+      "is_a": "ARO:3000748:subunit of efflux pump conferring antibiotic resistance",
+      "name": "oqxA"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_047251.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [
+          "NG_047246.1"
+        ],
+        "protein_accessions": [
+          "WP_063840265.1"
+        ]
+      },
+      "id": "ncbi:WP_000557454.1",
+      "name": "aac(3)-IId",
+      "phenotype": "confers resistance to subclass GENTAMICIN",
+      "product": "aminoglycoside N-acetyltransferase AAC(3)-IId"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_047655.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_001256773.1",
+      "name": "cmlA6",
+      "phenotype": "confers resistance to subclass CHLORAMPHENICOL",
+      "product": "chloramphenicol efflux MFS transporter CmlA6"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:blaTEM-84",
+      "name": "blaTEM-84",
+      "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_050061.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063864670.1",
+      "name": "blaSHV-24",
+      "phenotype": "confers resistance to subclass CEPHALOSPORIN",
+      "product": "class A extended-spectrum beta-lactamase SHV-24"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:fosA",
+      "name": "fosA",
+      "phenotype": "confers resistance to Fosfomycin"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_050431.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063865418.1",
+      "name": "oqxB13",
+      "phenotype": "confers resistance to subclass PHENICOL/QUINOLONE",
+      "product": "multidrug efflux RND transporter permease subunit OqxB13"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:aac(6')-Iv",
+      "name": "aac(6')-Iv",
+      "phenotype": "confers resistance to Amikacin, Tobramycin"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:qacZ",
+      "name": "qacZ",
+      "phenotype": "confers resistance to Benzylkonium Chloride, Ethidium Bromide, Chlorhexidine, Cetylpyridinium Chloride"
+    },
+    {
+      "PMID": [
+        "2823258",
+        "33416461"
+      ],
+      "additional_phenotype": "confers resistance to drug class: carbapenem,cephalosporin,penam",
+      "database": "card",
+      "id": "card:ARO:3001396",
+      "is_a": "ARO:3000017:OXA beta-lactamase",
+      "name": "OXA-1",
+      "phenotype": "confers resistance to antibiotic: amoxicillin,amoxicillin-clavulanic acid,ampicillin,cefalotin,piperacillin,piperacillin-tazobactam"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:VanHMX",
+      "name": "VanHMX",
+      "phenotype": "confers resistance to Vancomycin, Teicoplanin"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:blaACC-2",
+      "name": "blaACC-2",
+      "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefotaxime, Cefoxitin, Ceftazidime, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:blaBIL-1",
+      "name": "blaBIL-1",
+      "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefotaxime, Cefoxitin, Ceftazidime, Piperacillin, Piperacillin+Tazobactam"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_050453.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063865552.1",
+      "name": "oqxB4",
+      "phenotype": "confers resistance to subclass PHENICOL/QUINOLONE",
+      "product": "multidrug efflux RND transporter permease subunit OqxB4"
+    },
+    {
+      "PMID": [
+        "9835490",
+        "12654674",
+        "12821475",
+        "7793874"
+      ],
+      "additional_phenotype": "confers resistance to drug class: phenicol antibiotic",
+      "database": "card",
+      "id": "card:ARO:3002676",
+      "is_a": "ARO:3000122:chloramphenicol acetyltransferase (CAT)",
+      "name": "catB3",
+      "phenotype": "confers resistance to antibiotic: azidamfenicol,chloramphenicol,thiamphenicol"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:blaOKP-B-2",
+      "name": "blaOKP-B-2",
+      "phenotype": "confers resistance to Unknown Beta-lactam"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_049377.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063860914.1",
+      "name": "blaOKP-B-2",
+      "phenotype": "confers resistance to subclass BETA-LACTAM",
+      "product": "class A broad-spectrum beta-lactamase OKP-B-2"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:OqxA",
+      "name": "OqxA",
+      "phenotype": "confers resistance to Chloramphenicol, Benzylkonium Chloride, Cetylpyridinium Chloride, Nalidixic acid, Ciprofloxacin, Trimethoprim"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:blaSHV-180",
+      "name": "blaSHV-180",
+      "phenotype": "confers resistance to Unknown Beta-lactam"
+    },
+    {
+      "PMID": [
+        "19075060",
+        "17827139",
+        "17158944",
+        "21537009",
+        "11432417",
+        "18753343"
+      ],
+      "additional_phenotype": "confers resistance to drug class: sulfonamide antibiotic",
+      "database": "card",
+      "id": "card:ARO:3000410",
+      "is_a": "ARO:3004238:sulfonamide resistant sul",
+      "name": "sul1",
+      "phenotype": "confers resistance to antibiotic: mafenide,sulfacetamide,sulfadiazine,sulfadimidine,sulfadoxine,sulfamethizole,sulfamethoxazole,sulfasalazine,sulfisoxazole"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:ant(3'')-Ii-aac(6')-IId",
+      "name": "ant(3'')-Ii-aac(6')-IId",
+      "phenotype": "confers resistance to Gentamicin, Streptomycin, Tobramycin, Spectinomycin"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:fosA6",
+      "name": "fosA6",
+      "phenotype": "confers resistance to Fosfomycin"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:blaAST-1",
+      "name": "blaAST-1",
+      "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Piperacillin, Ticarcillin, Piperacillin+Tazobactam"
+    },
+    {
+      "PMID": [
+        "16377684",
+        "20350396",
+        "26488937",
+        "21177880"
+      ],
+      "additional_phenotype": "confers resistance to drug class: aminoglycoside antibiotic",
+      "database": "card",
+      "id": "card:ARO:3000861",
+      "is_a": "ARO:3004271:16S rRNA methyltransferase (G1405)",
+      "name": "rmtC",
+      "phenotype": "confers resistance to antibiotic: G418,amikacin,arbekacin,dibekacin,gentamicin B,gentamicin C,isepamicin,kanamycin A,netilmicin,sisomicin,tobramycin"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:blaACI-1",
+      "name": "blaACI-1",
+      "phenotype": "confers resistance to Amoxicillin, Ampicillin, Ticarcillin, Ceftazidime, Cefotaxime"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:VanH",
+      "name": "VanH",
+      "phenotype": "confers resistance to Vancomycin, Teicoplanin"
+    },
+    {
+      "database": "card",
+      "id": "card:ARO:3004612",
+      "is_a": "ARO:3004232:ampC-type beta-lactamase",
+      "name": "Escherichia coli ampH beta-lactamase",
+      "phenotype": "confers resistance to drug class: cephalosporin,penam"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:OqxB",
+      "name": "OqxB",
+      "phenotype": "confers resistance to Chloramphenicol, Benzylkonium Chloride, Cetylpyridinium Chloride, Nalidixic acid, Ciprofloxacin, Trimethoprim"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_052213.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_071846215.1",
+      "name": "aac(6')-Ib-cr",
+      "phenotype": "confers resistance to subclass AMIKACIN/KANAMYCIN/QUINOLONE/TOBRAMYCIN",
+      "product": "fluoroquinolone-acetylating aminoglycoside 6'-N-acetyltransferase AAC(6')-Ib-cr"
+    },
+    {
+      "PMID": [
+        "33077665"
+      ],
+      "database": "card",
+      "id": "card:ARO:3005162",
+      "is_a": "ARO:3000133:fosfomycin thiol transferase",
+      "name": "FosA7.5",
+      "phenotype": "confers resistance to drug class: fosfomycin"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_048029.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063854500.1",
+      "name": "otr(B)",
+      "phenotype": "confers resistance to subclass TETRACYCLINE",
+      "product": "oxytetracycline resistance efflux MFS transporter OtrB"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_047857.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [
+          "NG_047858.1",
+          "NG_047859.1"
+        ],
+        "protein_accessions": [
+          "WP_032491576.1",
+          "WP_032491881.1"
+        ]
+      },
+      "id": "ncbi:WP_015585966.1",
+      "name": "fexA",
+      "phenotype": "confers resistance to subclass CHLORAMPHENICOL/FLORFENICOL",
+      "product": "chloramphenicol/florfenicol efflux MFS transporter FexA"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:qacA4",
+      "name": "qacA4",
+      "phenotype": "confers resistance to Benzylkonium Chloride, Ethidium Bromide, Chlorhexidine, Cetylpyridinium Chloride"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_048024.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_002914189.1",
+      "name": "oqxA",
+      "phenotype": "confers resistance to subclass PHENICOL/QUINOLONE",
+      "product": "multidrug efflux RND transporter periplasmic adaptor subunit OqxA"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_067976.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_164461284.1",
+      "name": "blaACT-82",
+      "phenotype": "confers resistance to subclass CEPHALOSPORIN",
+      "product": "cephalosporin-hydrolyzing class C beta-lactamase ACT-82"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:qacE",
+      "name": "qacE",
+      "phenotype": "confers resistance to Benzylkonium Chloride, Ethidium Bromide, Chlorhexidine, Cetylpyridinium Chloride"
+    },
+    {
+      "PMID": [
+        "20185552"
+      ],
+      "database": "card",
+      "id": "card:ARO:3004621",
+      "is_a": "ARO:3000322:AAC(3)",
+      "name": "AAC(3)-IIe",
+      "phenotype": "confers resistance to drug class: aminoglycoside antibiotic"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_074692.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_118842626.1",
+      "name": "tmexC1",
+      "phenotype": "confers resistance to subclass TIGECYCLINE",
+      "product": "multidrug efflux RND transporter periplasmic adaptor subunit TMexC1"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_048312.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063856469.1",
+      "name": "tetA(46)",
+      "phenotype": "confers resistance to subclass TETRACYCLINE",
+      "product": "tetracycline efflux ABC transporter Tet(46) subunit A"
+    },
+    {
+      "PMID": [
+        "20733041"
+      ],
+      "database": "card",
+      "id": "card:ARO:3002947",
+      "is_a": "ARO:3000006:vanH",
+      "name": "vanHM",
+      "phenotype": "confers resistance to drug class: glycopeptide antibiotic"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_048388.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063856706.1",
+      "name": "vanH-M",
+      "phenotype": "confers resistance to subclass VANCOMYCIN",
+      "product": "D-lactate dehydrogenase VanH-M"
+    },
+    {
+      "PMID": [
+        "21392044"
+      ],
+      "database": "card",
+      "id": "card:ARO:3002804",
+      "is_a": "ARO:3000133:fosfomycin thiol transferase",
+      "name": "FosA2",
+      "phenotype": "confers resistance to drug class: fosfomycin"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:blaCMY-51",
+      "name": "blaCMY-51",
+      "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefotaxime, Cefoxitin, Ceftazidime, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:blaCMY-1",
+      "name": "blaCMY-1",
+      "phenotype": "confers resistance to Amoxicillin, Amoxicillin+Clavulanic acid, Ampicillin, Ampicillin+Clavulanic acid, Cefotaxime, Cefoxitin, Ceftazidime, Piperacillin, Piperacillin+Tazobactam, Ticarcillin, Ticarcillin+Clavulanic acid"
+    },
+    {
+      "PMID": [
+        "20733041"
+      ],
+      "database": "card",
+      "id": "card:ARO:3002953",
+      "is_a": "ARO:3000011:vanX",
+      "name": "vanXM",
+      "phenotype": "confers resistance to drug class: glycopeptide antibiotic"
+    },
+    {
+      "PMID": [
+        "8843306"
+      ],
+      "database": "card",
+      "id": "card:ARO:3002012",
+      "is_a": "ARO:3000069:CMY beta-lactamase",
+      "name": "CMY-1",
+      "phenotype": "confers resistance to drug class: cephamycin"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_051497.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_069174570.1",
+      "name": "fosA6",
+      "phenotype": "confers resistance to subclass FOSFOMYCIN",
+      "product": "fosfomycin resistance glutathione transferase FosA6"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_048318.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_048717443.1",
+      "name": "tetB(46)",
+      "phenotype": "confers resistance to subclass TETRACYCLINE",
+      "product": "tetracycline efflux ABC transporter Tet(46) subunit B"
+    },
+    {
+      "PMID": [
+        "18467306",
+        "8385262"
+      ],
+      "additional_phenotype": "confers resistance to drug class: aminoglycoside antibiotic",
+      "database": "card",
+      "id": "card:ARO:3002535",
+      "is_a": "ARO:3000322:AAC(3)",
+      "name": "AAC(3)-IIc",
+      "phenotype": "confers resistance to antibiotic: butirosin,kanamycin A,neomycin,paromomycin"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_052052.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_071593228.1",
+      "name": "catB8/aac(6')-Ib'",
+      "phenotype": "confers resistance to subclass AMINOGLYCOSIDE/CHLORAMPHENICOL/GENTAMICIN",
+      "product": "bifunctional type B-3 chloramphenicol O-acetyltransferase CatB8/aminoglycoside N-acetyltransferase AAC(6')-Ib"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:VanHOX",
+      "name": "VanHOX",
+      "phenotype": "confers resistance to Vancomycin"
+    },
+    {
+      "PMID": [
+        "20185552"
+      ],
+      "database": "card",
+      "id": "card:ARO:3004623",
+      "is_a": "ARO:3000322:AAC(3)",
+      "name": "AAC(3)-IId",
+      "phenotype": "confers resistance to drug class: aminoglycoside antibiotic"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_049075.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_058648119.1",
+      "name": "blaDHA-7",
+      "phenotype": "confers resistance to subclass CEPHALOSPORIN",
+      "product": "class C beta-lactamase DHA-7"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_050480.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_012695489.1",
+      "name": "qnrB2",
+      "phenotype": "confers resistance to subclass QUINOLONE",
+      "product": "quinolone resistance pentapeptide repeat protein QnrB2"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_048121.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_052413892.1",
+      "name": "tcmA",
+      "phenotype": "confers resistance to subclass TETRACENOMYCIN",
+      "product": "tetracenomycin C efflux MFS transporter"
+    },
+    {
+      "alternative_id": {
+        "nucleotide_accession": "NG_047214.1"
+      },
+      "database": "ncbi",
+      "duplicate_allele_ids": {
+        "nucleotide_accessions": [],
+        "protein_accessions": []
+      },
+      "id": "ncbi:WP_063839875.1",
+      "name": "ant(3'')-Ij/aac(6')-Ib",
+      "phenotype": "confers resistance to subclass GENTAMICIN/SPECTINOMYCIN/STREPTOMYCIN",
+      "product": "bifunctional aminoglycoside nucleotidyltransferase ANT(3'')-Ij/aminoglycoside N-acetyltransferase AAC(6')-Ib"
+    }
+  ]
+}

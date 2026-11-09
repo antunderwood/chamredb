@@ -70,7 +70,7 @@ def test_corrupted_cache_is_not_trusted(tmp_path):
 def test_default_is_the_bundled_graph_and_its_pin_matches():
     path, release = graph_loader.resolve_graph()
     pin = json.loads((graph_loader.PACKAGE_DATA / "graph_release.json").read_text())
-    assert release == pin["data_release"] == "2021-10-20"
+    assert release == pin["data_release"] and pin["url"] is None
     assert hashlib.sha256(path.read_bytes()).hexdigest() == pin["sha256"]  # editing graph.json requires a new pin
 
 
@@ -87,12 +87,13 @@ def test_cli_graph_flag_uses_the_given_graph_and_reports_its_release(tmp_path):
 
 
 def test_cli_prints_data_release_of_the_default_graph():
+    pin = json.loads((graph_loader.PACKAGE_DATA / "graph_release.json").read_text())
     out = run_cli("-d", "card", "-i", "ARO:3002735")
-    assert "data release: 2021-10-20" in out and "WP_063865914.1 (qnrB20)" in out
+    assert f"data release: {pin['data_release']}" in out and "QnrB20" in out
 
 
 def test_tsv_gets_data_release_as_extra_last_column_and_otherwise_unchanged():
-    graph = graph_functions.read_graph()
+    graph = graph_functions.read_graph(os.path.join(os.path.dirname(os.path.realpath(__file__)), "test_data", "graph_2021_subset.json"))
     id_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), "test_data", "card_ids.txt")
     id_data = [{"id": i, "database": "card"} for i in utility_functions.parse_id_file(id_file)]
     with tempfile.NamedTemporaryFile(mode="r") as plain, tempfile.NamedTemporaryFile(mode="r") as tagged:

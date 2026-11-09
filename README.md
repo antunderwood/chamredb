@@ -62,7 +62,29 @@ The hypothesis for the project is as follows:
 \
 ![network diagram](docs/images/chamredb_network.png)
 
+## Current data release
+
+The graph shipped with this version of the package is the release of **2026-11-09**. It was built from
+
+| Database | Release |
+| --- | --- |
+| CARD | 4.0.2 (sequences and ontology from the same release) |
+| NCBI AMRFinderPlus | database 4.2, 2026-10-29.1 |
+| ResFinder | db 2.6.0, commit `eecf0aa` |
+
+using MMseqs2 18.8cc5c (reciprocal best hits `easy-rbh -s 7.5`, one-way hits `search -s 7.0 --max-accept 3`). The graph is built by `builder/` (see the [builder tests](builder/tests/README.md)); the exact input files, with source URL and sha256, are listed in the `data_manifest.json` of the release.
+
+| | Count |
+| --- | --- |
+| Nodes (proteins with at least one match) | 15,859 (NCBI 7,299, CARD 5,971, ResFinder 2,589) |
+| Directed edges | 51,971 (RBH 21,428, one-way hits 30,543) |
+| Reciprocal best hit pairs | 10,714 (CARD-NCBI 5,685, NCBI-ResFinder 2,538, CARD-ResFinder 2,491) |
+
+The version of the data a result came from is printed by `chamredb query` (`data release:`) and written to the last column (`data_release`) of the TSV output. The earlier 2021 graph (11,718 nodes, 33,632 edges) can be rebuilt with `builder/reproduce_2021/`.
+
 ## Assessing the graph
+
+_N.B. The assessment in this section was made on an earlier version of the graph, before the 2026 data refresh. Its counts, figures and CSV files have **not** been regenerated for the current release._
 
 In order to look at the 19132 matches within the database and assess the effectiveness of the methodology the database names for matches were compared with the [Normalized Levensthein algorithm](https://devopedia.org/levenshtein-distance#qst-ans-3).
 Before calculating the name similarity between the source and target of a match the name was cleaned using the following steps
@@ -126,9 +148,12 @@ usage: chamredb query
   [-h]
   [-d {card,ncbi,resfinder}]
   [-ct COVERAGE_THRESHOLD] [-it IDENTITY_THRESHOLD]
+  [--graph GRAPH]
   (-i ID | -f ID_FILE | -j HAMRONIZATION_JSON_FILE)
   [-o OUTFILE_PATH]
 ```
+
+`--graph` uses a graph JSON file instead of the one shipped with the package (for example a newer release downloaded from the releases page), which also works offline.  
 
 The graph can be queried in one of 3 ways  
 
