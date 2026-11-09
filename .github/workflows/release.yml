@@ -55,6 +55,9 @@ jobs:
           prev=previous_manifest.json; [ "$(cat $prev)" = none ] && prev=none
           python3 builder/release/plan_release.py needs-build --previous "$prev" --inputs resolved_inputs.json | tee decision.txt
           cat decision.txt >> "$GITHUB_OUTPUT"
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$prev" = none ]; then
+            echo "build=false" >> "$GITHUB_OUTPUT"; echo "scheduled runs never make the first release (ticket #15 is a manual step)" | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.force }}" = "true" ]; then echo "build=true" >> "$GITHUB_OUTPUT"; fi
           cat decision.txt >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@0b2256b8c012f0828dc542b3febcab082c67f72b # v4.3.4
