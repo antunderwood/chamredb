@@ -1,0 +1,31 @@
+{
+  "purpose": "CARD 4.0.2 (as adopted in #12) with NCBI AMRFinderPlus database 4.2, 2026-10-29.1 and ResFinder at its 2021 version (ADR 0003 step 2, ticket #13).",
+  "card": {
+    "release": "4.0.2",
+    "url": "https://card.mcmaster.ca/download/0/broadstreet-v4.0.2.tar.bz2",
+    "sha256": "94b89501fc26daafbe65e4151c17a8b007dc1272c4f8201737e44e44cdd4c065",
+    "member": "./protein_fasta_protein_homolog_model.fasta"
+  },
+  "ncbi": {
+    "release": "AMRFinderPlus database 4.2, 2026-10-29.1",
+    "base_url": "https://ftp.ncbi.nlm.nih.gov/pathogen/Antimicrobial_resistance/AMRFinderPlus/database/4.2/2026-10-29.1/",
+    "files": {
+      "ReferenceGeneCatalog.txt": "396ccc7b02ad9e56219abed6da513648b5f08259878ab3f8fdc3a6558ad55592",
+      "AMRProt.fa": "c60040cddf242e012601cc50beb295bcb4e721d290b8d9fe9e1992034902319f",
+      "AMR_CDS.fa": "12edc653f90c83bf4bb636c0b65a12f58d93eeb8413f44e1fb32eec164e448bb"
+    }
+  },
+  "resfinder": {
+    "release": "resfinder_db commit 7562716 (2021-10-06), last commit before the 2021-10-20 build",
+    "git_url": "https://bitbucket.org/genomicepidemiology/resfinder_db",
+    "commit": "7562716b99c6637bfc1d0bd44d097985fb908b6d"
+  },
+  "ontology": {
+    "release": "4.0.2",
+    "url": "https://card.mcmaster.ca/download/5/ontology-v4.0.2.tar.bz2",
+    "sha256": "b6c48b73d80dbe58eb9aefec9bf133b1c552a3993d363fd104aa161d45b294e2",
+    "member": "./aro.obo",
+    "member_sha256": "d12ec5d36c55f371079c392492b034d115adb256f8d2ff4a84041c6202f4a1c4",
+    "note": "contains 1,402 valueless property_value lines, removed before parsing (builder/scripts/functions/obo_cleaning.py)"
+  }
+}

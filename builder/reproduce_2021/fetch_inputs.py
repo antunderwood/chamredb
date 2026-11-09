@@ -40,9 +40,11 @@ def main(data, inputs=None):
     (data / "db_metadata").mkdir(parents=True, exist_ok=True)
     (data / "db_metadata" / "card.metadata.obo").write_bytes(obo)
     n = m["ncbi"]
-    for name, dest in (("ReferenceGeneCatalog.txt", "db_metadata/ncbi.metadata.tsv"),
-                       ("AMRProt", "db_fastas/ncbi.protein.raw.fasta"), ("AMR_CDS", "db_fastas/ncbi.nucl.raw.fasta")):
-        get(n["base_url"] + name, n["files"][name], data / dest)
+    # file names changed between releases (AMRProt in 2021, AMRProt.fa in 2026); the role is the name prefix
+    for name, sha in n["files"].items():
+        dest = {"ReferenceGeneCatalog": "db_metadata/ncbi.metadata.tsv", "AMRProt": "db_fastas/ncbi.protein.raw.fasta",
+                "AMR_CDS": "db_fastas/ncbi.nucl.raw.fasta"}[name.split(".")[0]]
+        get(n["base_url"] + name, sha, data / dest)
     r, repo = m["resfinder"], tmp / "resfinder_db"
     subprocess.run(["git", "clone", "-q", r["git_url"], str(repo)], check=True)
     subprocess.run(["git", "-C", str(repo), "checkout", "-q", r["commit"]], check=True)

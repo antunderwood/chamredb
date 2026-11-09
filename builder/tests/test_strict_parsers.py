@@ -91,7 +91,7 @@ def test_ncbi_protein_parser_refuses_renamed_column(tmp_path):
     meta = tmp_path / "m.tsv"
     write_ncbi(meta, header, [["a1", "g", "p", "S", "WP_1", "NG_1", "core", "AMR", "AMR"]])
     fa = tmp_path / "p.fa"
-    fa.write_text(">x|WP_1|x|x|a1\nMKV\n")
+    fa.write_text(">WP_1|1|1|a1|g|h|1|S|C|prod\nMKV\n")
     r = run("parse_ncbi_proteins.py", "--meta", meta, "--input", fa, "--output", tmp_path / "o.fa")
     assert r.returncode != 0 and "missing required columns" in r.stderr and "refseq_protein_accession" in r.stderr
 
@@ -108,7 +108,7 @@ def test_ncbi_protein_parser_refuses_count_outside_bounds(tmp_path):
     meta = tmp_path / "m.tsv"
     write_ncbi(meta, NCBI_HEADER, [["a1", "g", "p", "S", "WP_1", "NG_1", "core", "AMR", "AMR"]])
     fa = tmp_path / "p.fa"
-    fa.write_text(">x|WP_1|x|x|a1\nMKV\n")
+    fa.write_text(">WP_1|1|1|a1|g|h|1|S|C|prod\nMKV\n")
     bounds = tmp_path / "b.json"
     bounds.write_text(json.dumps({"ncbi": {"min": 2, "max": 10}}))
     r = run("parse_ncbi_proteins.py", "--meta", meta, "--input", fa, "--output", tmp_path / "o.fa", "--bounds", bounds)

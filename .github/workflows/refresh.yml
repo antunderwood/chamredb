@@ -1,17 +1,23 @@
-name: refresh-card
+name: refresh
 
-# ADR 0003 step 2, ticket #12: change one thing at a time. Both builds use MMseqs2 18 (builder/environment.yml).
-#   baseline : 2021 inputs (CARD 3.1.4 with its own ontology, NCBI 2021-09-30.1, ResFinder 7562716)
-#   candidate: CARD 4.0.2 (data and ontology from the same release), NCBI and ResFinder as in the baseline
-# The diff job compares candidate with baseline, so every difference is attributable to CARD alone.
+# ADR 0003 step 2: change one thing at a time. Both builds use MMseqs2 18 (builder/environment.yml).
+#   baseline : the previous accepted inputs (default: CARD 4.0.2 with 2021 NCBI and ResFinder, from ticket #12)
+#   candidate: one database changed (default: NCBI AMRFinderPlus 2026-10-29.1, ticket #13)
+# The diff job compares candidate with baseline, so every difference is attributable to that one change.
+# Run by hand with other inputs files: gh workflow run refresh.yml -f baseline=builder/refresh/X.json -f candidate=...
 on:
   workflow_dispatch:
+    inputs:
+      baseline:
+        default: builder/refresh/inputs_card402.json
+      candidate:
+        default: builder/refresh/inputs_ncbi.json
   pull_request:
     paths:
       - builder/refresh/**
-      - builder/scripts/functions/obo_cleaning.py
-      - builder/scripts/parse_card_metadata.py
-      - .github/workflows/refresh-card.yml
+      - builder/scripts/functions/ncbi_headers.py
+      - builder/scripts/parse_ncbi_proteins.py
+      - .github/workflows/refresh.yml
 
 jobs:
   build:
@@ -20,9 +26,9 @@ jobs:
       matrix:
         include:
           - name: baseline
-            inputs: builder/reproduce_2021/inputs.json
+            inputs: ${{ inputs.baseline || 'builder/refresh/inputs_card402.json' }}
           - name: candidate
-            inputs: builder/refresh/inputs_card402.json
+            inputs: ${{ inputs.candidate || 'builder/refresh/inputs_ncbi.json' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 120
     steps:
@@ -61,11 +67,11 @@ jobs:
           path: artifacts
       - name: Diff candidate against baseline
         run: |
-          python3 builder/scripts/diff_graphs.py artifacts/baseline/graph.json artifacts/candidate/graph.json --out card-refresh-report.md --json card-refresh-diff.json
-          cat card-refresh-report.md >> "$GITHUB_STEP_SUMMARY"
+          python3 builder/scripts/diff_graphs.py artifacts/baseline/graph.json artifacts/candidate/graph.json --out refresh-report.md --json refresh-diff.json
+          cat refresh-report.md >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@0b2256b8c012f0828dc542b3febcab082c67f72b # v4.3.4
         with:
-          name: card-refresh-report
+          name: refresh-report
           path: |
-            card-refresh-report.md
-            card-refresh-diff.json
+            refresh-report.md
+            refresh-diff.json
