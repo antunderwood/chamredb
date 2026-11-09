@@ -2,6 +2,7 @@ from typing import Sequence
 import orfipy_core 
 import re
 import argparse
+import sys
 from functions import validation
 from Bio import SeqIO
 from Bio.Seq import Seq
@@ -9,6 +10,7 @@ from Bio.Seq import Seq
 parser = argparse.ArgumentParser(description='Process input/output files')
 parser.add_argument('--nucl', type=str, help='input file name')
 parser.add_argument('--protein', type=str, help='output file name')
+parser.add_argument('--max-duplicates', type=int, default=50, help='most identical duplicate records tolerated (the 2021 file has 5)')
 
 parser.add_argument('--bounds', type=str, help='JSON file with min and max protein counts per database (optional)')
 
@@ -26,7 +28,17 @@ else:
 
 with open(nucl_path) as in_file, open(prot_path, "w") as out_file:
     genes_added = []
+    seen_records = {}
+    duplicates = 0
     for record in SeqIO.parse(in_file, "fasta"):
+        # the same allele can be listed in two class files; the same record twice is collapsed and counted, the
+        # same id with another sequence is an error (ticket #14; all.fsa would double every record)
+        if record.id in seen_records:
+            if seen_records[record.id] != str(record.seq):
+                raise ValueError(f"{nucl_path}: {record.id} appears with different sequences")
+            duplicates += 1
+            continue
+        seen_records[record.id] = str(record.seq)
         id = record.id.split("_")[0]
         if id in genes_added:
             continue
@@ -52,3 +64,8 @@ with open(nucl_path) as in_file, open(prot_path, "w") as out_file:
         out_file.write(f">{id}\n{protein_sequence}\n")
 
 validation.check_count(len(genes_added), validation.load_bounds(args.bounds).get('resfinder'), 'resfinder proteins')
+
+if duplicates:
+    print(f"{duplicates} duplicate records collapsed in {nucl_path}", file=sys.stderr)
+if duplicates > args.max_duplicates:
+    raise ValueError(f"{nucl_path}: {duplicates} duplicate records (more than {args.max_duplicates}): is all.fsa included twice?")

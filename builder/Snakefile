@@ -136,12 +136,13 @@ rule resfinder_parse_proteins:
 
 rule resfinder_parse_metadata:
 	input:
-		join(DATA, 'db_metadata', 'resfinder.metadata.tsv')
+		meta = join(DATA, 'db_metadata', 'resfinder.metadata.tsv'),
+		nucl = join(DATA, 'db_fastas', 'resfinder.nucl.fasta')
 	output:
 		join(DATA, 'db_metadata', 'resfinder.metadata.json')
 	shell:
 		"""
-		python scripts/parse_resfinder_metadata.py --meta {input} --output {output}
+		python scripts/parse_resfinder_metadata.py --meta {input.meta} --nucl {input.nucl} --output {output}
 		"""
 
 rule mmseqs_easy_rbh:
