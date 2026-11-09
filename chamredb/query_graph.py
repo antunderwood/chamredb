@@ -34,5 +34,5 @@ def query_graph_multiple_ids(id_data,outfile_path,coverage_threshold,identity_th
     """
     path, data_release = graph_loader.resolve_graph(graph_path)
     graph = graph_functions.read_graph(path)
-    graph_visualisation_functions.write_multiple_node_info(id_data,graph,outfile_path,coverage_threshold,identity_threshold,data_release=data_release)
+    graph_visualisation_functions.write_multiple_node_info(id_data,graph,outfile_path,coverage_threshold,identity_threshold,data_release=data_release,metadata=lambda database: graph_loader.resolve_metadata(database, graph_path))
         
