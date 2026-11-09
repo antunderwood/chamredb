@@ -1,0 +1,28 @@
+{
+  "purpose": "Archived inputs closest to the shipped 2021 graph (built 2021-10-20 from 'latest' downloads). See ticket #2.",
+  "card": {
+    "release": "3.1.4",
+    "url": "https://card.mcmaster.ca/download/0/broadstreet-v3.1.4.tar.bz2",
+    "sha256": "ca9190336d7692caf9b5b4e03a10c1cc2b089180f5e4c705471912367a27a47b",
+    "member": "./protein_fasta_protein_homolog_model.fasta"
+  },
+  "aro": {
+    "release": "arpcard/aro commit c42e7065cd (2021-10-08)",
+    "url": "https://raw.githubusercontent.com/arpcard/aro/c42e7065cd/src/ontology/aro.obo",
+    "sha256": "4805e757cb02e801c0972df57b0d219e48731835b132b0c2d97a3a4f3a5543a9"
+  },
+  "ncbi": {
+    "release": "AMRFinderPlus database 3.10, 2021-09-30.1",
+    "base_url": "https://ftp.ncbi.nlm.nih.gov/pathogen/Antimicrobial_resistance/AMRFinderPlus/database/3.10/2021-09-30.1/",
+    "files": {
+      "ReferenceGeneCatalog.txt": "cc406e492f143b36cb55c51643377704523a91a0b13b5cf52582b235fe52f23d",
+      "AMRProt": "952ee18496ee628bca8c5b427a29b0d16fc7d95d463f10babf06b1b8811fb545",
+      "AMR_CDS": "643ffa087cf251a5af93001246e60f71b23b9968b9a336294e7d9532cb0a388b"
+    }
+  },
+  "resfinder": {
+    "release": "resfinder_db commit 7562716 (2021-10-06), last commit before the 2021-10-20 build",
+    "git_url": "https://bitbucket.org/genomicepidemiology/resfinder_db",
+    "commit": "7562716b99c6637bfc1d0bd44d097985fb908b6d"
+  }
+}
