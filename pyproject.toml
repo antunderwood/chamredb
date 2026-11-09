@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chAMReDb"
+version = "0.2.1"
+description = "Package to find the equivalent antibiotic resistance genes (ARGs) in other databases based on ARG(s) from one AMR determinant database"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Anthony Underwood", email = "anthony.underwood@cgps.group" }]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+# networkx>=3.4 for the explicit edges="links" argument; versions below the upper bounds are the tested ones
+dependencies = ["networkx>=3.4,<4", "pandas>=2.0,<4", "rich>=13,<16"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+chamredb = "chamredb.run_chamredb:main"
+
+[tool.setuptools.packages.find]
+include = ["chamredb*"]
+exclude = ["chamredb.tests*"]
+
+[tool.setuptools.package-data]
+chamredb = ["data/graph.json", "data/db_metadata/*.json", "data/db_fastas/*.fasta", "data/mmseqs2_results/*.tsv"]

@@ -25,7 +25,7 @@ def test_adding_rbh_hits(expected_rbh_graph_json):
         sep="\t"
     )
     graph_functions.add_rbh_hits_to_graph("card","ncbi",rbh_data,G)
-    graph_json = json.loads(json.dumps(json_graph.node_link_data(G), sort_keys=True))
+    graph_json = json.loads(json.dumps(json_graph.node_link_data(G, edges="links"), sort_keys=True))
     assert expected_rbh_graph_json == graph_json
     
 def test_adding_search_hits(expected_search_graph_json):
@@ -35,5 +35,5 @@ def test_adding_search_hits(expected_search_graph_json):
         sep="\t"
     )
     graph_functions.add_search_hits_to_graph("card","ncbi",search_data,G)
-    graph_json = json.loads(json.dumps(json_graph.node_link_data(G), sort_keys=True))
+    graph_json = json.loads(json.dumps(json_graph.node_link_data(G, edges="links"), sort_keys=True))
     assert expected_search_graph_json == graph_json
