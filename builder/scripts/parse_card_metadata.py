@@ -3,8 +3,11 @@ import json
 import os
 import re
 import argparse
+import sys
 
 from pronto import relationship
+import tempfile
+from functions import obo_cleaning
 
 parser = argparse.ArgumentParser(description='Process input/output files')
 parser.add_argument('--input', type=str, help='input file name')
@@ -30,7 +33,15 @@ else:
 		"card.metadata.json"
 	)
 
-o = pronto.Ontology(metadata_file)
+# CARD 4.0.2 writes valueless `property_value:` lines that pronto rejects; parse a cleaned copy (ticket #12)
+with open(metadata_file) as fh:
+    cleaned_text, n_removed = obo_cleaning.strip_valueless_property_values(fh.read())
+if n_removed:
+    print(f"removed {n_removed} valueless property_value lines from {metadata_file} before parsing", file=sys.stderr)
+with tempfile.NamedTemporaryFile("w", suffix=".obo") as cleaned:
+    cleaned.write(cleaned_text)
+    cleaned.flush()
+    o = pronto.Ontology(cleaned.name)
 
 metadata = {}
 for term in o.terms():
