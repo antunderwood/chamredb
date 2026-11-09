@@ -23,6 +23,11 @@ Run 2026-11-09 in the working tree, then restored:
 | best match ignores identity | the three frozen-script tests |
 | no `blaPAO` skip rule | the two hand-graph tests |
 
+Added in ticket #37 (run 2026-11-09): pattern two group back to pattern one fails the `dfrA6 from Proteus mirabilis` case and the
+bundled-graph invariants; comparing a name with itself instead of its match fails the differential and invariant tests; allowing
+digits at the start of the allele pattern fails the frozen-script tests. `1 - distance` instead of `similarity` survives because
+strsimpy's normalised distance is already distance over longest length (an equivalent mutant, not a gap).
+
 ## Behaviour kept on purpose (defects, fixed in later tickets)
 
 - **Best match depends on edge order.** A later target replaces the best only if its coverage *and* its identity both exceed the
@@ -30,8 +35,11 @@ Run 2026-11-09 in the working tree, then restored:
   (identity 0.9, coverage 0.95) over blaTEM-1 (0.95, 0.9).
 - **The allele-free threshold uses the wrong regression.** `predicted_similarity_without_alleles` is computed from the full-name
   fit, so both thresholds are the same number (test asserts equality). This is probably the source of the README's 0.69 and 0.86.
-- **Second CARD species pattern** (`... from Genus species`) takes its group from the first pattern and would raise
-  `AttributeError` (ticket #37).
+- ~~Second CARD species pattern~~ fixed in ticket #37: it took its group from the first pattern (would raise `AttributeError`)
+  and its epithet was one letter, so it never matched a real name. In the 2026-11-09 graph it now applies to one CARD name
+  (`dfrA6 from Proteus mirabilis` becomes `dfra6`); patterns one and three apply to 3 and 46 names.
+- **`bla` is removed wherever it occurs, not only as a prefix** (README says prefix): 6 names are affected, for example
+  `cblA` becomes `c`. Pinned as a strict expected failure in `test_cleaning.py`; needs a decision (#36).
 - **Skip rule:** the code skips only nodes named exactly `blaPAO`; the README also names blaPDC (decision #36).
 - A node whose targets all have coverage 0 would crash the script; the library skips it (cannot occur on a valid graph: coverage > 0).
 

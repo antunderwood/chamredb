@@ -2,8 +2,8 @@
 
 A port of the logic of scripts/assess_matches.py as functions on a graph read from a path, with no import of package
 internals. Ticket #35 is a characterisation: behaviour is kept exactly, including the defects listed in
-analysis/tests/README.md (fixed later: the second CARD species pattern in clean_name, the 'bla' skip rule, the
-regression used for the allele-free threshold).
+analysis/tests/README.md (fixed later: the 'bla' skip rule, the regression used for the allele-free threshold; the second
+CARD species pattern was fixed in ticket #37).
 """
 import json
 import re
@@ -47,12 +47,12 @@ def best_target(targets):
 
 def clean_name(name, database, remove_alleles=False):
     species_pattern_one = r"^[A-Z][a-z]+ [a-z]+ (.+) conferring resistance to .+$"
-    species_pattern_two = r"^(.+) from [A-Z][a-z]+ [a-z]$"
+    species_pattern_two = r"^(.+) from [A-Z][a-z]+ [a-z]+$"  # ticket #37: the epithet was [a-z] (one letter), so it never matched
     species_pattern_three = r"^[A-Z][a-z]+ [a-z]+ (.+)$"
     if database == "card" and re.search(species_pattern_one, name):
         cleaned = re.search(species_pattern_one, name).group(1)
     elif database == "card" and re.search(species_pattern_two, name):
-        cleaned = re.search(species_pattern_one, name).group(1)  # defect kept: should use pattern two (ticket #37)
+        cleaned = re.search(species_pattern_two, name).group(1)  # ticket #37: used pattern one
     elif database == "card" and re.search(species_pattern_three, name):
         cleaned = re.search(species_pattern_three, name).group(1)
     else:
