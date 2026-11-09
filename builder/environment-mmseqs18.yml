@@ -1,0 +1,17 @@
+# Same as environment.yml except MMseqs2 (ticket #11): isolates the effect of the tool upgrade.
+name: chamredb
+channels:
+    - conda-forge
+    - bioconda
+dependencies:
+    - git
+    - python=3.9
+    - pip
+    - snakemake=7.32.4
+    - biopython=1.81
+    - pronto=2.4.3
+    - orfipy
+    - mmseqs2=18.8cc5c
+    - pandas=1.5.3
+    - networkx=2.8.8
+    - pytest

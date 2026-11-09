@@ -23,7 +23,7 @@ Re-checked 2026-11-07: commit 6c2645e moved the build code to `chamredb-builder`
 | --- | --- | --- | --- | --- | --- |
 | hAMRonization | 1.3.1 | LGPLv3 | yes | defines the JSON input chamredb consumes | use as input format, test against current output |
 | argNorm | 1.1.0 | MIT | yes | maps tool outputs to ARO; different goal (normalise, not cross-database equivalence) | not suitable as replacement, note in README |
-| mmseqs2 (bioconda) | 17.b804f | GPLv3 | yes | the search engine | upgrade in step 2 of ADR 0003 |
+| mmseqs2 (bioconda) | 18.8cc5c (2025-07-27; 17.b804f was the previous release) | GPLv3 | yes | the search engine | upgrade in step 2 of ADR 0003 |
 | ncbi-amrfinderplus, resfinder (bioconda) | 4.2.7, 4.7.2 | public domain, Apache-2.0 | yes | sources of data, not replacements | not used |
 
 Looked up via PyPI and the anaconda.org API on 2026-11-07. A GitHub keyword search for cross-database AMR mapping tools returned nothing useful. nf-core, bio.tools and recent papers were not searched, so "no close competitor" is unverified. NCBI's new `hierarchy_node` and `synonyms` catalogue columns may overlap with chamredb's purpose (not yet assessed).

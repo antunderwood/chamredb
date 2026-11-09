@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Rebuild the graph from the archived 2021 inputs and compare it with the shipped graph (ADR 0003 step 1).
-# Usage: run_reproduction.sh <workdir>  -> <workdir>/graph.json, data_manifest.json, report.md, timings.txt, versions.txt
+# Usage: run_reproduction.sh <workdir>  -> <workdir>/graph.json, data_manifest.json, report.md, invariants.txt, timings.txt, versions.txt
+# REPORT_ONLY=1 writes an informational diff report (for tool upgrades) instead of the pass/fail comparison.
 # Needs the builder environment (builder/environment.yml, MMseqs2 13.45111 on Linux amd64) and network.
 set -euo pipefail
 here=$(cd "$(dirname "$0")" && pwd)
@@ -40,6 +41,19 @@ for m in (pandas, networkx, Bio, pronto):
 print("orfipy", version("orfipy"))
 PY
 } > versions.txt
-python scripts/functions/graph_compare.py "$shipped" graph.json report.md || status=$?
+python - <<'PY' > invariants.txt || status=$?
+import json, sys
+sys.path.insert(0, "scripts/functions")
+import graph_invariants
+v = graph_invariants.check_graph(json.load(open("graph.json")))
+print("graph invariants (predicates 1 to 3):", "hold" if not v else {k: len(x) for k, x in v.items()})
+sys.exit(1 if v else 0)
+PY
+cat invariants.txt
+if [ -n "${REPORT_ONLY:-}" ]; then
+  python scripts/diff_graphs.py "$shipped" graph.json --out report.md
+else
+  python scripts/functions/graph_compare.py "$shipped" graph.json report.md || status=$?
+fi
 cat timings.txt
 exit "${status:-0}"
