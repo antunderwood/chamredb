@@ -101,7 +101,8 @@ def test_regression_equals_closed_form_least_squares_on_the_hand_table():
 
 @pytest.fixture(scope="module")
 def result():
-    return matches.assess(matches.read_graph(SUBSET))
+    # legacy=True: the behaviour of the unmodified script; ADR 0006 changed two rules (bla prefix, allele-free regression)
+    return matches.assess(matches.read_graph(SUBSET), legacy=True)
 
 
 def test_statistics_equal_the_unmodified_script(result):

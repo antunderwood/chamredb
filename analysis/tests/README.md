@@ -1,6 +1,6 @@
-# Analysis harness (ticket #35)
+# Analysis harness (tickets #35, #37, #38)
 
-`make test-analysis` runs `test_matches.py` (about 3 s). It needs the optional extra: `pip install -e ".[analysis]" pytest`.
+`make test-analysis` runs `test_matches.py`, `test_cleaning.py` and `test_run.py` (about 3 s; the last also runs the command twice on the bundled release graph). It needs the optional extra: `pip install -e ".[analysis]" pytest`.
 
 ## Oracles
 
@@ -28,18 +28,28 @@ bundled-graph invariants; comparing a name with itself instead of its match fail
 digits at the start of the allele pattern fails the frozen-script tests. `1 - distance` instead of `similarity` survives because
 strsimpy's normalised distance is already distance over longest length (an equivalent mutant, not a gap).
 
-## Behaviour kept on purpose (defects, fixed in later tickets)
+Added in ticket #38 (run 2026-11-09): `bla` removed everywhere again fails `test_bla_is_removed_only_as_a_prefix`; the allele-free
+threshold from the full-name fit fails `test_allele_free_threshold_comes_from_its_own_regression`; RBH pairs counted per direction fails
+`test_statistics_on_the_hand_graph`.
+
+## Decisions of ADR 0006 and `legacy=True`
+
+The frozen-script tests (level 6) call the library with `legacy=True`, which keeps the two rules ADR 0006 changed: `bla` removed
+anywhere, and the allele-free threshold from the full-name regression. Everything else is the same code for both, so the frozen
+CSVs still prove that the library equals the script apart from those two named rules. The default (`legacy=False`) applies ADR 0006.
+
+## Behaviour kept on purpose by `legacy=True` (defects, now changed by default except where noted)
 
 - **Best match depends on edge order.** A later target replaces the best only if its coverage *and* its identity both exceed the
   current best (`best_target`), so a higher-identity target with lower coverage is ignored. Hand-graph case: c4 keeps vanHAX
   (identity 0.9, coverage 0.95) over blaTEM-1 (0.95, 0.9).
-- **The allele-free threshold uses the wrong regression.** `predicted_similarity_without_alleles` is computed from the full-name
+- **The allele-free threshold uses the wrong regression** (changed by ADR 0006). `predicted_similarity_without_alleles` is computed from the full-name
   fit, so both thresholds are the same number (test asserts equality). This is probably the source of the README's 0.69 and 0.86.
 - ~~Second CARD species pattern~~ fixed in ticket #37: it took its group from the first pattern (would raise `AttributeError`)
   and its epithet was one letter, so it never matched a real name. In the 2026-11-09 graph it now applies to one CARD name
   (`dfrA6 from Proteus mirabilis` becomes `dfra6`); patterns one and three apply to 3 and 46 names.
 - **`bla` is removed wherever it occurs, not only as a prefix** (README says prefix): 6 names are affected, for example
-  `cblA` becomes `c`. Pinned as a strict expected failure in `test_cleaning.py`; needs a decision (#36).
+  `cblA` becomes `c`. Changed by ADR 0006 (prefix only).
 - **Skip rule:** the code skips only nodes named exactly `blaPAO`; the README also names blaPDC (decision #36).
 - A node whose targets all have coverage 0 would crash the script; the library skips it (cannot occur on a valid graph: coverage > 0).
 

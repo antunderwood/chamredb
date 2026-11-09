@@ -44,10 +44,7 @@ def test_clean_name_hand_cases(name, database, remove_alleles, expected):
     assert matches.clean_name(name, database, remove_alleles=remove_alleles) == expected
 
 
-@pytest.mark.xfail(strict=True, reason=(
-    "FINDING (ticket #37): clean_name removes 'bla' wherever it occurs, not only as a prefix (the README says prefix). "
-    "6 of 15,859 names in the 2026-11-09 graph are affected, for example cblA (lower case cbla) becomes c. Not fixed here: "
-    "it changes the numbers, so it needs your decision (comment on #36)."))
+# ADR 0006 (2026-11-09): bla is removed only as a leading prefix (was: anywhere, so cblA became c); see also test_run.py
 def test_bla_is_removed_only_as_a_prefix():
     assert matches.clean_name("cblA", "ncbi") == "cbla"
 
