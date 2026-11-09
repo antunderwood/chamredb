@@ -7,6 +7,7 @@ from functions import validation
 
 parser = argparse.ArgumentParser(description='Process input/output files')
 parser.add_argument('--meta', type=str, help='input metadata file name')
+parser.add_argument('--nucl', type=str, required=True, help='resfinder nucleotide FASTA; the allele that comes first for each gene is the one whose sequence is used')
 parser.add_argument('--output', type=str, help='output file name')
 
 args = parser.parse_args()
@@ -41,12 +42,26 @@ with open(metadata_file) as metadata_fh:
 		validation.require_columns(metadata_df.columns, ['Gene_accession no.', 'Phenotype'], metadata_file)
 		metadata_df = metadata_df[['Gene_accession no.', 'Phenotype']]
 
+		# the phenotype of a gene is the phenotype of the allele whose sequence is used (the first record of the gene in the
+		# nucleotide FASTA, as in resfinder_orfs_to_proteins.py); before ticket #14 the last row of the table won
+		used_allele = {}
+		with open(args.nucl) as nucl_fh:
+			for line in nucl_fh:
+				if line.startswith('>'):
+					allele = line[1:].split()[0]
+					used_allele.setdefault(allele.split("_")[0], allele)
+		phenotype_by_allele = dict(zip(metadata_df['Gene_accession no.'], metadata_df['Phenotype']))
 		metadata = {}
 		for _, row in metadata_df.iterrows():
 			name = row['Gene_accession no.'].split("_")[0]
+			if name not in used_allele:
+				metadata.setdefault(name, {'name': name, 'phenotype': f"confers resistance to {row['Phenotype']}"})
+		for name, allele in used_allele.items():
+			if allele not in phenotype_by_allele:
+				raise ValueError(f"{metadata_file}: no phenotype row for {allele}, the allele whose sequence is used for {name}")
 			metadata[name] = {
 				'name': name,
-				'phenotype': f"confers resistance to {row['Phenotype']}"
+				'phenotype': f"confers resistance to {phenotype_by_allele[allele]}"
 			}
 
 		with open(out_path, "w") as out_file:

@@ -50,12 +50,18 @@ def main(data, inputs=None):
     subprocess.run(["git", "-C", str(repo), "checkout", "-q", r["commit"]], check=True)
     (data / "db_metadata").mkdir(parents=True, exist_ok=True)
     (data / "db_metadata" / "resfinder.metadata.tsv").write_bytes((repo / "phenotypes.txt").read_bytes())
-    # same as the builder's `cat resfinder_db/*.fsa` (all.fsa did not exist at this commit)
+    # concatenate the per-class files; all.fsa (present from 2022, a copy of all the others) must never be included:
+    # it would double every record (ticket #14). When it exists it is used only to cross-check the per-class union.
     (data / "db_fastas").mkdir(parents=True, exist_ok=True)
+    per_class = [f for f in sorted(repo.glob("*.fsa")) if f.name != "all.fsa"]
     with open(data / "db_fastas" / "resfinder.nucl.fasta", "wb") as out:
-        for f in sorted(repo.glob("*.fsa")):
+        for f in per_class:
             out.write(f.read_bytes())
-
+    all_fsa = repo / "all.fsa"
+    if all_fsa.is_file():
+        ids = lambda paths: {line[1:].split()[0] for p in paths for line in open(p) if line.startswith(">")}
+        if ids([all_fsa]) != ids(per_class):
+            sys.exit("resfinder all.fsa does not match the union of the per-class files")
 
 if __name__ == "__main__":
     main(Path(sys.argv[1]), sys.argv[2] if len(sys.argv) > 2 else None)

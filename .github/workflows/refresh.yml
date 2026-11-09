@@ -1,22 +1,23 @@
 name: refresh
 
 # ADR 0003 step 2: change one thing at a time. Both builds use MMseqs2 18 (builder/environment.yml).
-#   baseline : the previous accepted inputs (default: CARD 4.0.2 with 2021 NCBI and ResFinder, from ticket #12)
-#   candidate: one database changed (default: NCBI AMRFinderPlus 2026-10-29.1, ticket #13)
+#   baseline : the previous accepted inputs (default: CARD 4.0.2 and NCBI 2026-10-29.1, both accepted, with 2021 ResFinder)
+#   candidate: one database changed (default: ResFinder db 2.6.0 current commit, ticket #14)
 # The diff job compares candidate with baseline, so every difference is attributable to that one change.
 # Run by hand with other inputs files: gh workflow run refresh.yml -f baseline=builder/refresh/X.json -f candidate=...
 on:
   workflow_dispatch:
     inputs:
       baseline:
-        default: builder/refresh/inputs_card402.json
-      candidate:
         default: builder/refresh/inputs_ncbi.json
+      candidate:
+        default: builder/refresh/inputs_resfinder.json
   pull_request:
     paths:
       - builder/refresh/**
-      - builder/scripts/functions/ncbi_headers.py
-      - builder/scripts/parse_ncbi_proteins.py
+      - builder/scripts/resfinder_orfs_to_proteins.py
+      - builder/scripts/parse_resfinder_metadata.py
+      - builder/reproduce_2021/fetch_inputs.py
       - .github/workflows/refresh.yml
 
 jobs:
@@ -26,9 +27,9 @@ jobs:
       matrix:
         include:
           - name: baseline
-            inputs: ${{ inputs.baseline || 'builder/refresh/inputs_card402.json' }}
+            inputs: ${{ inputs.baseline || 'builder/refresh/inputs_ncbi.json' }}
           - name: candidate
-            inputs: ${{ inputs.candidate || 'builder/refresh/inputs_ncbi.json' }}
+            inputs: ${{ inputs.candidate || 'builder/refresh/inputs_resfinder.json' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 120
     steps:

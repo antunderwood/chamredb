@@ -130,7 +130,9 @@ def test_card_protein_parser_refuses_duplicate_ids_and_bad_headers(tmp_path):
 def test_resfinder_metadata_parser_refuses_missing_column(tmp_path):
     meta = tmp_path / "r.tsv"
     meta.write_text("Gene_accession no.\tClass\nblaX_1_A\tbeta\n")
-    r = run("parse_resfinder_metadata.py", "--meta", meta, "--output", tmp_path / "o.json")
+    nucl = tmp_path / "n.fa"
+    nucl.write_text(">blaX_1_A\nATG\n")
+    r = run("parse_resfinder_metadata.py", "--meta", meta, "--nucl", nucl, "--output", tmp_path / "o.json")
     assert r.returncode != 0 and "missing required columns" in r.stderr and "Phenotype" in r.stderr
 
 
@@ -145,7 +147,7 @@ def test_write_manifest_records_every_input_with_its_hash(tmp_path):
     inputs = tmp_path / "inputs.json"
     inputs.write_text(json.dumps({
         "card": {"release": "3.1.4", "url": "u1"}, "ontology": {"release": "3.1.4", "url": "u2"},
-        "ncbi": {"release": "2021-09-30.1", "base_url": "u3/"}, "resfinder": {"git_url": "u4", "commit": "abc"}}))
+        "ncbi": {"release": "2021-09-30.1", "base_url": "u3/", "files": {"ReferenceGeneCatalog.txt": "x", "AMRProt": "x", "AMR_CDS": "x"}}, "resfinder": {"git_url": "u4", "commit": "abc"}}))
     out = tmp_path / "m.json"
     r = run("write_manifest.py", "--inputs", inputs, "--data", data, "--out", out, "--retrieved", "2026-11-09")
     assert r.returncode == 0, r.stderr
