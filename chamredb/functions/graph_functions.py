@@ -76,7 +76,7 @@ def read_graph():
                 "..", "data", "graph.json"
                 )
     with open(json_path) as json_file:
-        G = json_graph.node_link_graph(json.load(json_file))
+        G = json_graph.node_link_graph(json.load(json_file), edges="links")
     return(G)
 
 # private methods

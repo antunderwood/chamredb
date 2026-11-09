@@ -10,7 +10,6 @@ build
 .eggs
 .python-version
 poetry.lock
-pyproject.toml
 
 # raw data (bio-skills guard)
 *.bam

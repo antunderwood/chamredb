@@ -30,7 +30,7 @@ out_path = os.path.join(
 print("Saving graph to {}".format(out_path))
 with open(out_path, "w") as out_file:
     out_file.write(
-        json.dumps(json_graph.node_link_data(G), sort_keys=True, indent=2)
+        json.dumps(json_graph.node_link_data(G, edges="links"), sort_keys=True, indent=2)
     )
 
 

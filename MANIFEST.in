@@ -1,4 +1,0 @@
-include chamredb/data/graph.json
-include chamredb/data/db_metadata/*.json
-include chamredb/data/db_fastas/*.fasta
-include chamredb/data/mmseqs2_results/*.tsv
