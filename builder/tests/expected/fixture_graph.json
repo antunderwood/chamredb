@@ -558,8 +558,8 @@
     },
     {
       "PMID": [
-        "19719593",
-        "17261525"
+        "17261525",
+        "19719593"
       ],
       "additional_phenotype": "confers resistance to drug class: diaminopyrimidine antibiotic",
       "database": "card",
@@ -634,9 +634,9 @@
     },
     {
       "PMID": [
-        "16723588",
+        "11036060",
         "14617152",
-        "11036060"
+        "16723588"
       ],
       "database": "card",
       "id": "card:ARO:3004253",

@@ -37,7 +37,8 @@ for term in o.terms():
     metadata[term.id] = {'name': term.name}
     # add is_a superclass
     if len(list(term.superclasses(distance=1, with_self=False))) > 0:
-        is_a = ','.join([f"{term.id}:{term.name}" for term in term.superclasses(distance=1, with_self=False)])
+        # sorted: superclasses() returns a set, so its order changed with PYTHONHASHSEED (ticket #18)
+        is_a = ','.join(sorted(f"{term.id}:{term.name}" for term in term.superclasses(distance=1, with_self=False)))
         metadata[term.id]['is_a'] = is_a
     # parse relationship
     relationships = term.relationships
@@ -53,9 +54,12 @@ for term in o.terms():
         metadata[term.id]["PMID"] = []
         for item in term.definition.xrefs:
             metadata[term.id]["PMID"].append(item.id.replace("PMID:", ""))
+        metadata[term.id]["PMID"].sort()  # xrefs is a set: order depended on PYTHONHASHSEED (ticket #18)
 
 # second pass to pull out extra confers resistance from is_a relationships
-for id in metadata:
+# sorted ids: a term inherits from its first parent as that parent stands at that moment, so the result
+# depends on the order; term order came from a set and changed with PYTHONHASHSEED (ticket #18)
+for id in sorted(metadata):
     if "is_a" in metadata[id]:
         is_a_ARO_id = ":".join(metadata[id]["is_a"].split(":")[0:2])
         if "phenotype" in metadata[is_a_ARO_id]:

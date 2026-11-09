@@ -65,21 +65,12 @@ def test_fixture_files_unchanged():
     assert got == want
 
 
-def normalised(node):
-    # CARD PMID lists come from a set in pronto, so their order changes with PYTHONHASHSEED (found by a
-    # full run); compare them as sorted lists. The builder's own output order is a follow-up (README).
-    node = dict(node)
-    if "PMID" in node:
-        node["PMID"] = sorted(node["PMID"])
-    return node
-
-
 def test_matches_frozen_graph(graph):
     expected = json.loads(EXPECTED.read_text())
     assert len(graph["nodes"]) == len(expected["nodes"])
     assert len(graph["links"]) == len(expected["links"])
-    assert ({n["id"]: normalised(n) for n in graph["nodes"]}
-            == {n["id"]: normalised(n) for n in expected["nodes"]})
+    assert ({n["id"]: n for n in graph["nodes"]}
+            == {n["id"]: n for n in expected["nodes"]})
     got = {(e["source"], e["target"]): e for e in graph["links"]}
     want = {(e["source"], e["target"]): e for e in expected["links"]}
     assert got.keys() == want.keys()

@@ -53,12 +53,14 @@ Run in a scratch copy of a finished build, rebuild the affected stage, and run t
 - The download rules and `rule all`: the harness requests explicit targets with the fixture files in place
   of the downloads.
 
-## Known nondeterminism in the builder
+## Determinism of the CARD metadata (fixed in ticket #18)
 
-`parse_card_metadata.py` writes each term's `PMID` list from a set, so its order changes with
-`PYTHONHASHSEED`: the same inputs give a differently ordered `graph.json`. The harness compares `PMID` as a
-sorted list. Sorting in the builder would make byte-for-byte comparison possible (relevant to ticket #2),
-but changes output and is left to a follow-up ticket.
+`parse_card_metadata.py` used to take `PMID` lists, the `is_a` parent list and the term order for phenotype
+inheritance from sets, so output changed with `PYTHONHASHSEED` (3 to 8 CARD terms differed between seeds on the
+2021 ontology). It now sorts `PMID`, sorts parents and visits terms in sorted id order.
+`test_card_metadata_determinism.py` checks byte identity over 10 seeds on a hand-built ontology; the fixture
+graph compares `PMID` exactly (expected file stores them sorted). Phenotype inheritance still follows the
+first parent only and depends on visit order by design of the 2021 code, now a fixed order.
 
 ## Notes
 
