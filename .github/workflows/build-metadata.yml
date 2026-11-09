@@ -1,0 +1,37 @@
+name: build-metadata
+
+# Builds only the three database metadata JSON files (about 3 minutes, no MMseqs2) from a pinned inputs file, in the
+# pinned builder environment, so they can be bundled with a graph without repeating the one hour graph build.
+on:
+  pull_request:
+    paths:
+      - builder/release/build_metadata.sh
+      - .github/workflows/build-metadata.yml
+  workflow_dispatch:
+    inputs:
+      inputs:
+        description: Pinned inputs file
+        default: builder/refresh/inputs_resfinder.json
+
+jobs:
+  metadata:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - uses: mamba-org/setup-micromamba@f8b8a1e23a26f60a44c853292711bacfd3eac822 # v1.9.0
+        with:
+          environment-file: builder/environment.yml
+          environment-name: chamredb
+          cache-environment: true
+      - name: Build the metadata files
+        shell: micromamba-shell {0}
+        run: bash builder/release/build_metadata.sh "$RUNNER_TEMP/metadata" "$GITHUB_WORKSPACE/${{ inputs.inputs || 'builder/refresh/inputs_resfinder.json' }}"
+      - uses: actions/upload-artifact@0b2256b8c012f0828dc542b3febcab082c67f72b # v4.3.4
+        with:
+          name: metadata
+          path: |
+            ${{ runner.temp }}/metadata/data/db_metadata/card.metadata.json
+            ${{ runner.temp }}/metadata/data/db_metadata/ncbi.metadata.json
+            ${{ runner.temp }}/metadata/data/db_metadata/resfinder.metadata.json
+            ${{ runner.temp }}/metadata/data_manifest.json
