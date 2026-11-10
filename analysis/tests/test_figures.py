@@ -366,7 +366,7 @@ def test_graph_example_figure_names_size_and_determinism(tmp_path):
     graph = matches.read_graph(BUNDLED)
     fig = figures.graph_example(graph, tmp_path / "a")
     figures.graph_example(graph, tmp_path / "b")
-    assert tuple(round(v * 25.4, 6) for v in fig.get_size_inches()) == (180.0, 140.0)
+    assert tuple(round(v * 25.4, 6) for v in fig.get_size_inches()) == (180.0, 118.0)
     texts = " ".join(" ".join(t.get_text().split()) for ax in fig.axes for t in ax.texts)
     for needle in ("blaB-21", "Chryseobacterium meningosepticum BlaB", "blaB-11", '"RBH"', '"OWH"', "0.976", "WP_029728367.1"):
         assert needle in texts, needle

@@ -571,19 +571,31 @@ def graph_example(graph, out_dir, name=GRAPH_EXAMPLE_NAME):
     nodes = [node_object(n) for n in GRAPH_EXAMPLE]
     edges = [{"source": s, "target": t, **edge_object(s, t)} for s, t in edges_wanted]
 
+    def json_lines(obj):
+        """json.dumps with indent 2, except that lists of scalars stay on one line (still valid JSON)."""
+        items = list(obj.items())
+        lines = ["{"]
+        for n, (key, value) in enumerate(items):
+            text = json.dumps(value) if isinstance(value, list) else json.dumps(value, indent=2).replace("\n", "\n  ")
+            lines.extend(f'  {json.dumps(key)}: {text}{"," if n < len(items) - 1 else ""}'.split("\n"))
+        return lines + ["}"]
+
     def wrapped(obj, width):
         lines = []
-        for line in json.dumps(obj, indent=2).splitlines():
+        for line in json_lines(obj):
             indent = len(line) - len(line.lstrip())
-            lines.extend(textwrap.wrap(line, width, subsequent_indent=" " * (indent + 4), drop_whitespace=False, break_long_words=True) or [line])
+            lines.extend(l.rstrip() for l in textwrap.wrap(line, width, subsequent_indent=" " * (indent + 4), drop_whitespace=False, break_long_words=True) or [line])
         return lines
 
-    fig = style.new_figure(180, 140)
-    ax = style.axes_mm(fig, 0, 0, 180, 140)
+    HEIGHT = 118
+    fig = style.new_figure(180, HEIGHT)
+    ax = style.axes_mm(fig, 0, 0, 180, HEIGHT)
     ax.set_xlim(0, 180)
-    ax.set_ylim(0, 140)
+    ax.set_ylim(0, HEIGHT)
     ax.axis("off")
     cell, step = 1.4866, 3.1
+
+    extents = []
 
     def box(lines, x, y_top, colour=None):
         width = (max(len(l) for l in lines) + 2) * cell
@@ -592,16 +604,21 @@ def graph_example(graph, out_dir, name=GRAPH_EXAMPLE_NAME):
             ax.add_patch(FancyBboxPatch((x, y_top - height), width, height, boxstyle="square,pad=0", facecolor=colour, edgecolor="none", alpha=0.22, zorder=0))
         for i, line in enumerate(lines):
             ax.text(x + cell, y_top - 1.5 - i * step, line, family="DejaVu Sans Mono", fontsize=7, ha="left", va="top", zorder=2)
+        extents.append((x, y_top - height, x + width, y_top))
         return width, height
 
-    # a triangle: NCBI at the apex, CARD bottom left, ResFinder bottom right; boxes are placed clear of the arrows
-    place = {ncbi: (40, 128), card: (12, 66), resfinder: (112, 62)}
+    # Layout (as the original figure): NCBI at the apex with its box to the right, CARD and ResFinder below with their boxes to the right.
+    # The OWH edge is steep so that it passes left of the NCBI box. Both edge labels sit beside their edge, outside the arrows' path,
+    # and a thin line in the database colour joins each circle to its box.
+    dx, dy = 8, 4
+    place = {ncbi: (50 + dx, 97 + dy), card: (5 + dx, 22 + dy), resfinder: (106 + dx, 22 + dy)}
     for node_id, (x, y) in place.items():
         ax.add_patch(Circle((x, y), 3.6, facecolor=style.DATABASE_COLOURS[node_id.split(":")[0]], edgecolor="white", linewidth=0.8, zorder=3))
-    ax.plot([place[ncbi][0] + 3.6, 80], [128, 128], color=style.DATABASE_COLOURS["ncbi"], linewidth=0.6, zorder=1)
-    box(wrapped(nodes[1], 36), 80, 136, style.DATABASE_COLOURS["ncbi"])
-    box(wrapped(nodes[0], 36), 3, 58, style.DATABASE_COLOURS["card"])
-    box(wrapped(nodes[2], 32), 96, 54, style.DATABASE_COLOURS["resfinder"])
+    for node_id, obj, width, left, top in ((ncbi, nodes[1], 40, 76, 111 + dy), (card, nodes[0], 44, 20, 37 + dy), (resfinder, nodes[2], 32, 114, 37 + dy)):
+        colour = style.DATABASE_COLOURS[node_id.split(":")[0]]
+        x, y = place[node_id]
+        ax.plot([x + 3.6, left + dx], [y, y], color=colour, linewidth=0.6, zorder=1)
+        box(wrapped(obj, width), left + dx, top, colour)
 
     def arrow(a, b, offset=0.0):
         (x0, y0), (x1, y1) = place[a], place[b]
@@ -613,8 +630,9 @@ def graph_example(graph, out_dir, name=GRAPH_EXAMPLE_NAME):
     arrow(card, ncbi, 1.6)
     arrow(ncbi, card, 1.6)
     arrow(ncbi, resfinder)
-    box(wrapped(edge_object(card, ncbi), 30), 33, 100)
-    box(wrapped(edge_object(ncbi, resfinder), 30), 108, 88)
+    box(wrapped(edge_object(card, ncbi), 30), 34 + dx, 69 + dy)
+    box(wrapped(edge_object(ncbi, resfinder), 30), 95 + dx, 63 + dy)
+    assert all(x0 >= 0 and y0 >= 0 and x1 <= 180 and y1 <= HEIGHT for x0, y0, x1, y1 in extents), extents
     style.save_figure(fig, out_dir / name)
     (out_dir / f"source_data_{name}.json").write_text(json.dumps({"nodes": nodes, "edges": edges}, indent=2) + "\n")
     return fig
