@@ -64,7 +64,9 @@ def run_cli(graph, out):
                    check=True, cwd=ROOT, capture_output=True)
 
 
-FILES = ["statistics.json", "analysis/low_name_similarity.csv", "analysis/low_name_similarity_without_alleles.csv"]
+NAME = "figure_name_similarity_vs_identity"
+FILES = ["statistics.json", "analysis/low_name_similarity.csv", "analysis/low_name_similarity_without_alleles.csv",
+         f"images/{NAME}.png", f"images/{NAME}.svg"] + [f"images/source_data_{NAME}_{s}.csv" for s in ("A_histogram", "B_histogram", "C_density", "C_fit")]
 
 
 def test_run_writes_the_three_files_and_is_byte_identical_across_runs(tmp_path):

@@ -60,3 +60,16 @@ name similarity = 1.3431 x identity - 0.3989, predicted similarity at identity 0
 19,618 matches with identity >= 0.95, 2,360 rows in the low-name-similarity table and 369 without alleles (the committed
 CSVs in `scripts/` have 2,715 and 389). The committed README numbers, CSVs and figures therefore do not come from the shipped 2021
 graph either.
+
+## Figure style (ticket #39)
+
+`analysis/style.py` is the shared style: sizes in millimetres (`new_figure(w_mm, h_mm)`, `axes_mm`), fonts of at least 7 pt, the
+Okabe-Ito palette (one colour per database), editable text (`svg.fonttype none`, `pdf.fonttype 42`), and `save_figure`, which writes SVG
+and a 300 dpi PNG with no date or software metadata so re-runs are byte-identical. `analysis/figures.py` draws the figures and writes a
+`source_data_*` CSV for every panel beside them (`docs/images/`). Tests check sizes, fonts, palette, that the source data sum to the
+statistics, that numbers written on the figure equal the statistics, and byte-identity across renders; the picture itself is reviewed
+by the maintainer. Mutation (run 2026-11-09): a fit line with a 10% steeper slope fails `test_source_data_equals_the_statistics`.
+
+Byte-identical outputs are guaranteed between runs in one environment (tested). Another platform's numpy gives regression coefficients that
+agree to about 1e-13 but not bit for bit (found when CI disagreed with a Mac run), so tests that compare with the committed
+`docs/statistics.json` use a tolerance of 1e-9 for floats and exact equality for counts.
