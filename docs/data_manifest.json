@@ -1,0 +1,72 @@
+{
+  "files": [
+    {
+      "card_release": "4.0.2",
+      "database": "card",
+      "note": "extracted from the release tarball; sha256 is of the extracted file",
+      "path": "protein_fasta_protein_homolog_model.fasta",
+      "release": "4.0.2",
+      "retrieved": "2026-11-09",
+      "role": "sequences",
+      "sha256": "86346a3e34a381a17101ba1dd8aba6e18161fc5369f61532952a292b25d3c788",
+      "url": "https://card.mcmaster.ca/download/0/broadstreet-v4.0.2.tar.bz2"
+    },
+    {
+      "card_release": "4.0.2",
+      "database": "card",
+      "note": "extracted from the CARD ontology tarball of the same release; sha256 is of the extracted aro.obo",
+      "path": "db_metadata/card.metadata.obo",
+      "release": "4.0.2",
+      "retrieved": "2026-11-09",
+      "role": "ontology",
+      "sha256": "d12ec5d36c55f371079c392492b034d115adb256f8d2ff4a84041c6202f4a1c4",
+      "url": "https://card.mcmaster.ca/download/5/ontology-v4.0.2.tar.bz2"
+    },
+    {
+      "database": "ncbi",
+      "path": "db_metadata/ncbi.metadata.tsv",
+      "release": "AMRFinderPlus database 4.2, 2026-10-29.1",
+      "retrieved": "2026-11-09",
+      "role": "catalogue",
+      "sha256": "396ccc7b02ad9e56219abed6da513648b5f08259878ab3f8fdc3a6558ad55592",
+      "url": "https://ftp.ncbi.nlm.nih.gov/pathogen/Antimicrobial_resistance/AMRFinderPlus/database/4.2/2026-10-29.1/ReferenceGeneCatalog.txt"
+    },
+    {
+      "database": "ncbi",
+      "path": "db_fastas/ncbi.protein.raw.fasta",
+      "release": "AMRFinderPlus database 4.2, 2026-10-29.1",
+      "retrieved": "2026-11-09",
+      "role": "proteins",
+      "sha256": "c60040cddf242e012601cc50beb295bcb4e721d290b8d9fe9e1992034902319f",
+      "url": "https://ftp.ncbi.nlm.nih.gov/pathogen/Antimicrobial_resistance/AMRFinderPlus/database/4.2/2026-10-29.1/AMRProt.fa"
+    },
+    {
+      "database": "ncbi",
+      "path": "db_fastas/ncbi.nucl.raw.fasta",
+      "release": "AMRFinderPlus database 4.2, 2026-10-29.1",
+      "retrieved": "2026-11-09",
+      "role": "nucleotides",
+      "sha256": "12edc653f90c83bf4bb636c0b65a12f58d93eeb8413f44e1fb32eec164e448bb",
+      "url": "https://ftp.ncbi.nlm.nih.gov/pathogen/Antimicrobial_resistance/AMRFinderPlus/database/4.2/2026-10-29.1/AMR_CDS.fa"
+    },
+    {
+      "database": "resfinder",
+      "path": "db_metadata/resfinder.metadata.tsv",
+      "release": "eecf0aa207594fe6d51badf808473de62b28cb06",
+      "retrieved": "2026-11-09",
+      "role": "phenotypes",
+      "sha256": "42e16d3dc631859e081f45f7a4e926878e98812b49ba0a7fdf3bd7907d93b9df",
+      "url": "https://bitbucket.org/genomicepidemiology/resfinder_db"
+    },
+    {
+      "database": "resfinder",
+      "note": "concatenation of the per-class *.fsa files at this commit",
+      "path": "db_fastas/resfinder.nucl.fasta",
+      "release": "eecf0aa207594fe6d51badf808473de62b28cb06",
+      "retrieved": "2026-11-09",
+      "role": "nucleotides",
+      "sha256": "0f69c1d6eaa63274c028e704ed1e829aff9798c89802dde87e24ab2f00429bcf",
+      "url": "https://bitbucket.org/genomicepidemiology/resfinder_db"
+    }
+  ]
+}

@@ -266,3 +266,67 @@ def test_distribution_quantiles_on_a_small_untied_example_worked_out_by_hand(tmp
     for panel, expected in (("A", [0.1, 0.11, 0.2, 0.3, 0.4, 0.85, 0.9]), ("C", [0.05, 0.055, 0.1, 0.2, 0.4, 0.76, 0.8])):
         got = summary.loc[panel, ["min", "p2_5", "p25", "median", "p75", "p97_5", "max"]].tolist()
         assert got == pytest.approx(expected, abs=1e-12), panel
+
+
+# ---- pipeline diagram, ticket #50 ----
+
+PIPE = "figure_pipeline"
+
+
+def pipeline_inputs():
+    manifest = {"files": [
+        {"database": "card", "role": "sequences", "release": "9.9.9", "retrieved": "2030-01-02", "card_release": "9.9.9"},
+        {"database": "card", "role": "ontology", "release": "9.9.9", "retrieved": "2030-01-02", "card_release": "9.9.9"},
+        {"database": "ncbi", "role": "catalogue", "release": "AMRFinderPlus database 1.2, 2030-01-01.1", "retrieved": "2030-01-02"},
+        {"database": "resfinder", "role": "phenotypes", "release": "abcdef1234567890", "retrieved": "2030-01-02"}]}
+    stats = {"graph": {"nodes": 1234, "edges": 5678, "edges_by_type": {"OWH": 3000, "RBH": 2678}, "rbh_pairs": 1339,
+                       "nodes_by_database": {"card": 500, "ncbi": 600, "resfinder": 134}},
+             "groups": {"total": 900}}
+    pin = {"data_release": "2030-01-02", "release_tag": "graph-2030.01.02", "sha256": "0123456789abcdef" * 4}
+    snakefile = ("rule mmseqs_easy_rbh:\n\tparams:\n\t\tsensitivity = 6.5\nrule mmseqs_search:\n\tparams:\n\t\tsensitivity = 5.5\n\t\tmax_accept = 4\n")
+    environment = "dependencies:\n    - mmseqs2=99.abcde\n    - python=3.9\n"
+    return manifest, stats, pin, snakefile, environment
+
+
+def test_pipeline_facts_on_hand_inputs_worked_out_by_hand():
+    facts = figures.pipeline_facts(*pipeline_inputs())
+    got = {(f["box"], f["item"]): f["value"] for f in facts}
+    assert got[("inputs", "card")] == "CARD 9.9.9"
+    assert got[("inputs", "ncbi")] == "NCBI AMRFinderPlus database 1.2, 2030-01-01.1"
+    assert got[("inputs", "resfinder")] == "ResFinder db commit abcdef1"
+    assert got[("match", "tool")] == "MMseqs2 99.abcde"
+    assert got[("match", "rbh")] == "reciprocal best hits: easy-rbh, sensitivity 6.5"
+    assert got[("match", "search")] == "one-way hits: search, sensitivity 5.5, max-accept 4"
+    assert got[("graph", "nodes")] == "1,234 nodes"
+    assert got[("graph", "edges")] == "5,678 edges (2,678 RBH, 3,000 one-way)"
+    assert got[("graph", "groups")] == "1,339 RBH pairs, 900 equivalence groups"
+    assert got[("release", "tag")] == "graph-2030.01.02"
+    assert got[("release", "sha256")] == "sha256 01234567"
+
+
+def test_pipeline_diagram_numbers_come_from_the_committed_files(tmp_path):
+    graph_stats = json.loads((ROOT / "docs" / "statistics.json").read_text())
+    manifest = json.loads((ROOT / "docs" / "data_manifest.json").read_text())
+    pin = json.loads((ROOT / "chamredb" / "data" / "graph_release.json").read_text())
+    snakefile = (ROOT / "builder" / "Snakefile").read_text()
+    environment = (ROOT / "builder" / "environment.yml").read_text()
+    fig = figures.pipeline_diagram(manifest, graph_stats, pin, snakefile, environment, tmp_path)
+    assert tuple(round(v * 25.4, 6) for v in fig.get_size_inches()) == (180.0, 50.0)
+    # an independent read of the same files
+    g = graph_stats["graph"]
+    texts = " ".join(t.get_text() for ax in fig.axes for t in ax.texts)
+    for expected in (f"{g['nodes']:,} nodes", f"{g['rbh_pairs']:,} RBH pairs", f"{graph_stats['groups']['total']:,} equivalence groups",
+                     f"{g['edges_by_type']['RBH']:,} RBH", pin["release_tag"], "sensitivity 7.5", "sensitivity 7.0", "max-accept 3", "MMseqs2 18.8cc5c",
+                     "CARD 4.0.2", "AMRFinderPlus database 4.2, 2026-10-29.1", "commit eecf0aa"):
+        assert expected in texts, expected
+    rows = pd.read_csv(tmp_path / f"source_data_{PIPE}.csv")
+    assert set(rows.columns) == {"box", "item", "value", "source"} and rows["value"].str.len().min() > 0
+    assert pin["nodes"] == g["nodes"] and pin["edges"] == g["edges"]    # the pin and the statistics describe the same graph
+
+
+def test_pipeline_diagram_is_byte_identical_across_renders(tmp_path):
+    args = pipeline_inputs()
+    figures.pipeline_diagram(*args, tmp_path / "a")
+    figures.pipeline_diagram(*args, tmp_path / "b")
+    for name in sorted(p.name for p in (tmp_path / "a").iterdir()):
+        assert (tmp_path / "a" / name).read_bytes() == (tmp_path / "b" / name).read_bytes(), name
