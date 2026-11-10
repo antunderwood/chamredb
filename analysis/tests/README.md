@@ -80,3 +80,13 @@ agree to about 1e-13 but not bit for bit (found when CI disagreed with a Mac run
 graph (24 nodes in 8 groups, including a path of 12 across two databases), a union-find written independently of networkx compared on the hand graph and
 on the bundled release graph (7,589 groups), and source data summing to the statistics. Mutation (run 2026-11-09): letting one-way hits join groups fails
 the hand-graph tests.
+
+## Real families in the hero figure (ticket #41)
+
+`analysis/families.py` chooses the six families by stated rules (docstring): names agree, case and punctuation differ, allele number differs,
+different names for identical proteins (lowest agreement), a family of six proteins, and a CARD+NCBI pair with a one-way hit to ResFinder.
+The first four use groups of one node per database whose RBH edges have identity and coverage of at least 0.999 and names of at most 14
+characters. The examples are illustrative, not representative: ties go to the first by name. Tests: a hand graph with one candidate per category
+and decoys (identity 0.95, a family of 7, a pair whose one-way targets differ, an over-long name), and the selection on the release graph read back
+from the graph file without networkx. Mutations (run 2026-11-09): dropping the identity filter and picking the highest instead of the lowest
+agreement both fail the hand-graph test (my first decoy tied with the right pick and did not catch the first; the decoy was changed).

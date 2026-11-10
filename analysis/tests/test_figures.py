@@ -146,3 +146,38 @@ def test_overlap_figure_on_the_release_graph_matches_the_committed_statistics(tm
     figures.overlap_upset(stats, tmp_path)
     inter = pd.read_csv(tmp_path / f"source_data_{OVERLAP}_intersections.csv")
     assert inter["groups"].sum() == committed["total"] and inter["proteins"].sum() == graph.number_of_nodes()
+
+
+# ---- real-gene hero figure, ticket #41 ----
+
+HERO = "figure_real_families"
+
+
+def test_hero_source_data_is_read_back_from_the_graph_file(tmp_path):
+    graph = matches.read_graph(BUNDLED)
+    figures.real_families(graph, tmp_path)
+    raw = json.loads(BUNDLED.read_text())                          # independent of networkx
+    names = {n["id"]: n["name"] for n in raw["nodes"]}
+    edges = {(e["source"], e["target"]): e for e in raw["links"]}
+    nodes = pd.read_csv(tmp_path / f"source_data_{HERO}_nodes.csv")
+    drawn = pd.read_csv(tmp_path / f"source_data_{HERO}_edges.csv")
+    assert nodes["panel"].nunique() == drawn["panel"].nunique() == 6
+    for row in nodes.itertuples():
+        assert names[row.node_id] == row.name and row.node_id.split(":")[0] == row.database
+    for row in drawn.itertuples():
+        e = edges[(row.source, row.target)]
+        assert (e["type"], e["identity"], e["coverage"]) == (row.type, row.identity, row.coverage)
+
+
+def test_hero_figure_names_identities_size_and_determinism(tmp_path):
+    graph = matches.read_graph(BUNDLED)
+    fig = figures.real_families(graph, tmp_path / "a")
+    figures.real_families(graph, tmp_path / "b")
+    assert tuple(round(v * 25.4, 6) for v in fig.get_size_inches()) == (180.0, 100.0)
+    texts = " ".join(t.get_text() for ax in fig.axes for t in ax.texts)
+    nodes = pd.read_csv(tmp_path / "a" / f"source_data_{HERO}_nodes.csv")
+    for name in nodes["name"]:
+        assert name in texts, name
+    assert "0.48" in texts                                         # the one-way hit identity written on its edge
+    for name in sorted(p.name for p in (tmp_path / "a").iterdir()):
+        assert (tmp_path / "a" / name).read_bytes() == (tmp_path / "b" / name).read_bytes(), name

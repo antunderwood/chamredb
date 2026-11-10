@@ -72,6 +72,11 @@ def main(argv=None):
     figure = figures.name_similarity_vs_identity(result, statistics(graph, result, graph_path.name, sha), out / "images")
     plt.close(figure)
     plt.close(figures.overlap_upset(group_statistics(graph), out / "images"))
+    from analysis import families
+    if len(families.select_families(graph)) == 6:
+        plt.close(figures.real_families(graph, out / "images"))
+    else:
+        print("graph too small for the six real families: hero figure skipped")
     print(f"wrote {out}/statistics.json, two tables and the figures for {graph.number_of_nodes()} nodes")
 
 
