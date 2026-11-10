@@ -56,6 +56,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--graph", required=True, help="graph JSON file (node-link, key 'links')")
     parser.add_argument("--out", default="docs", help="output directory (default docs)")
+    parser.add_argument("--manifest", help="data_manifest.json of the release; with it the pipeline diagram is drawn")
     args = parser.parse_args(argv)
     graph_path = Path(args.graph)
     graph = matches.read_graph(graph_path)
@@ -81,6 +82,15 @@ def main(argv=None):
         plt.close(figures.name_disagreement_gallery(result["distance_ignoring_alleles"], images))
     else:
         print("graph too small for the 12 name disagreements: gallery skipped")
+    if args.manifest:
+        root = Path(__file__).resolve().parents[1]
+        pin = json.loads((root / "chamredb" / "data" / "graph_release.json").read_text())
+        if pin["sha256"] != sha:
+            print("pipeline diagram skipped: the graph is not the one pinned in graph_release.json")
+        else:
+            plt.close(figures.pipeline_diagram(json.loads(Path(args.manifest).read_text()), stats, pin,
+                                               (root / "builder" / "Snakefile").read_text(),
+                                               (root / "builder" / "environment.yml").read_text(), images))
     print(f"wrote {out}/statistics.json, two tables and the figures for {graph.number_of_nodes()} nodes")
 
 

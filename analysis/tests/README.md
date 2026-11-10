@@ -98,3 +98,13 @@ least 0.95) with a summary CSV of quantiles and a histogram CSV. The real data a
 are one number), so a wrong quantile cannot be caught on them; `test_distribution_quantiles_on_a_small_untied_example_worked_out_by_hand` uses five untied
 values with hand-worked percentiles and fails when the median is taken from the 25th percentile (run 2026-11-09). `families.select_disagreements` and
 `figures.name_disagreement_gallery` give the table of 12 striking name disagreements (4 per pair of databases) with the counts that qualify them.
+
+## Pipeline diagram (ticket #50)
+
+`figures.pipeline_facts` collects every number and name in the pipeline diagram together with the file it comes from (`docs/data_manifest.json`,
+`docs/statistics.json`, `chamredb/data/graph_release.json`, `builder/Snakefile`, `builder/environment.yml`); the drawing code only prints those facts and
+`source_data_figure_pipeline.csv` lists them with their files. `docs/data_manifest.json` is a copy of the manifest of the release `graph-2026.11.09`
+(the release asset is the original). Regenerate everything with
+`python -m analysis.run --graph chamredb/data/graph.json --out docs --manifest docs/data_manifest.json`. A mutation (RBH and one-way counts swapped) fails the
+hand-input test and the committed-files test (run 2026-11-09). The diagram does not show the number of proteins parsed per database: the graph does not record
+it, only the proteins that have a match (nodes by database).

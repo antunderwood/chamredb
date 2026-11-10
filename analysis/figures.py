@@ -384,3 +384,92 @@ def name_disagreement_gallery(table, out_dir, name=GALLERY_NAME, per_pair=4):
 def plt_line(x0, y, x1):
     from matplotlib.lines import Line2D
     return Line2D([x0, x1], [y, y], color="black", linewidth=0.5)
+
+
+PIPELINE_NAME = "figure_pipeline"
+
+
+def pipeline_facts(manifest, stats, pin, snakefile_text, environment_text):
+    """Every number and name in the pipeline diagram with the file it comes from (no value is typed in the drawing code)."""
+    import re
+
+    def release(database, role=None):
+        entry = next(f for f in manifest["files"] if f["database"] == database and (role is None or f["role"] == role))
+        return entry
+    card = release("card", "sequences")["release"]
+    ncbi = release("ncbi")["release"]
+    resfinder = release("resfinder")["release"][:7]
+    rbh = re.search(r"rule mmseqs_easy_rbh:.*?sensitivity\s*=\s*([\d.]+)", snakefile_text, re.S).group(1)
+    search = re.search(r"rule mmseqs_search:.*?sensitivity\s*=\s*([\d.]+).*?max_accept\s*=\s*(\d+)", snakefile_text, re.S)
+    mmseqs = re.search(r"mmseqs2=(\S+)", environment_text).group(1)
+    g = stats["graph"]
+    m, s, p, b = "docs/data_manifest.json", "docs/statistics.json", "chamredb/data/graph_release.json", "builder/Snakefile"
+    return [
+        {"box": "inputs", "item": "card", "value": f"CARD {card}", "source": m},
+        {"box": "inputs", "item": "ncbi", "value": f"NCBI {ncbi}", "source": m},
+        {"box": "inputs", "item": "resfinder", "value": f"ResFinder db commit {resfinder}", "source": m},
+        {"box": "inputs", "item": "retrieved", "value": f"retrieved {release('card', 'sequences')['retrieved']}", "source": m},
+        {"box": "match", "item": "tool", "value": f"MMseqs2 {mmseqs}", "source": "builder/environment.yml"},
+        {"box": "match", "item": "rbh", "value": f"reciprocal best hits: easy-rbh, sensitivity {rbh}", "source": b},
+        {"box": "match", "item": "search", "value": f"one-way hits: search, sensitivity {search.group(1)}, max-accept {search.group(2)}", "source": b},
+        {"box": "graph", "item": "nodes", "value": f"{g['nodes']:,} nodes", "source": s},
+        {"box": "graph", "item": "edges", "value": f"{g['edges']:,} edges ({g['edges_by_type']['RBH']:,} RBH, {g['edges_by_type']['OWH']:,} one-way)", "source": s},
+        {"box": "graph", "item": "groups", "value": f"{g['rbh_pairs']:,} RBH pairs, {stats['groups']['total']:,} equivalence groups", "source": s},
+        {"box": "release", "item": "tag", "value": pin["release_tag"], "source": p},
+        {"box": "release", "item": "sha256", "value": f"sha256 {pin['sha256'][:8]}", "source": p},
+    ]
+
+
+def pipeline_diagram(manifest, stats, pin, snakefile_text, environment_text, out_dir, name=PIPELINE_NAME):
+    """The repository end to end as a diagram whose numbers are read from the manifest, the statistics, the pin, the
+    Snakefile and the environment file. Writes the figure (svg, png) and a source-data CSV of every fact and its file."""
+    import textwrap
+    from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
+
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    facts = pipeline_facts(manifest, stats, pin, snakefile_text, environment_text)
+    value = {(f["box"], f["item"]): f["value"] for f in facts}
+
+    fig = style.new_figure(180, 50)
+    ax = style.axes_mm(fig, 0, 0, 180, 50)
+    ax.set_xlim(0, 180)
+    ax.set_ylim(0, 50)
+    ax.axis("off")
+
+    boxes = [  # key, title, x, width
+        ("inputs", "Inputs", 5, 30), ("match", "Parse and match", 41, 42), ("graph", "Graph", 89, 28),
+        ("release", "Release", 123, 28), ("query", "Query", 157, 18)]
+    bottom, height = 9, 36
+    for key, title, x, width in boxes:
+        ax.add_patch(FancyBboxPatch((x, bottom), width, height, boxstyle="round,pad=0,rounding_size=1.5", facecolor="#F4F4F4",
+                                    edgecolor=style.GREY, linewidth=0.6))
+        ax.text(x + 2, bottom + height - 2, title, fontsize=7, fontweight="bold", ha="left", va="top")
+    for (_, _, x0, w0), (_, _, x1, _) in zip(boxes, boxes[1:]):
+        ax.add_patch(FancyArrowPatch((x0 + w0 + 0.6, bottom + height / 2), (x1 - 0.6, bottom + height / 2), arrowstyle="-|>",
+                                     mutation_scale=7, linewidth=0.8, color="black"))
+
+    def lines(x, y, items, width_chars, colour="black", step=3.1):
+        for text in items:
+            for piece in textwrap.wrap(text, width_chars, break_on_hyphens=False):
+                ax.text(x, y, piece, fontsize=7, ha="left", va="top", color=colour)
+                y -= step
+            y -= 0.8
+        return y
+
+    y = bottom + height - 7
+    for database in ("card", "ncbi", "resfinder"):
+        top = y
+        y = lines(9.5, y, [value[("inputs", database)]], 19)
+        ax.add_patch(FancyBboxPatch((6.5, y + 0.8), 1.6, top - y - 0.8, boxstyle="square,pad=0", facecolor=style.DATABASE_COLOURS[database], edgecolor="none"))
+    lines(9.5, y, [value[("inputs", "retrieved")]], 19, colour=style.GREY)
+    lines(43, bottom + height - 7, ["parse proteins and metadata with strict checks", value[("match", "tool")], value[("match", "rbh")],
+                                    value[("match", "search")]], 29)
+    lines(91, bottom + height - 7, [value[("graph", "nodes")], value[("graph", "edges")], value[("graph", "groups")]], 19)
+    lines(125, bottom + height - 7, [value[("release", "tag")], "graph.json, data manifest, diff report, metadata files", value[("release", "sha256")]], 19)
+    lines(159, bottom + height - 7, ["chamredb query", "matches and the data release"], 12)
+    ax.text(5, 4, "Numbers are read from docs/data_manifest.json, docs/statistics.json, graph_release.json, builder/Snakefile and builder/environment.yml.",
+            fontsize=7, ha="left", va="center")
+    style.save_figure(fig, out_dir / name)
+    pd.DataFrame(facts).to_csv(out_dir / f"source_data_{name}.csv", index=False)
+    return fig

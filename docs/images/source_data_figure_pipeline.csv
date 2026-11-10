@@ -1,0 +1,13 @@
+box,item,value,source
+inputs,card,CARD 4.0.2,docs/data_manifest.json
+inputs,ncbi,"NCBI AMRFinderPlus database 4.2, 2026-10-29.1",docs/data_manifest.json
+inputs,resfinder,ResFinder db commit eecf0aa,docs/data_manifest.json
+inputs,retrieved,retrieved 2026-11-09,docs/data_manifest.json
+match,tool,MMseqs2 18.8cc5c,builder/environment.yml
+match,rbh,"reciprocal best hits: easy-rbh, sensitivity 7.5",builder/Snakefile
+match,search,"one-way hits: search, sensitivity 7.0, max-accept 3",builder/Snakefile
+graph,nodes,"15,859 nodes",docs/statistics.json
+graph,edges,"51,971 edges (21,428 RBH, 30,543 one-way)",docs/statistics.json
+graph,groups,"10,714 RBH pairs, 7,589 equivalence groups",docs/statistics.json
+release,tag,graph-2026.11.09,chamredb/data/graph_release.json
+release,sha256,sha256 1c7f0f08,chamredb/data/graph_release.json
