@@ -1,5 +1,6 @@
 """Figures of the README analysis (spec #34). Display transforms only (binning, a fitted line and its 95% interval);
 every statistic comes from the result of analysis.matches.assess and analysis.run.statistics."""
+import textwrap
 from pathlib import Path
 
 import numpy as np
@@ -104,4 +105,81 @@ def name_similarity_vs_identity(result, stats, out_dir, name=NAME):
     style.save_figure(fig, out_dir / name)
     for suffix, frame in (("A_histogram", hist_a), ("B_histogram", hist_b), ("C_density", density), ("C_fit", fits)):
         frame.to_csv(out_dir / f"source_data_{name}_{suffix}.csv", index=False)
+    return fig
+
+
+OVERLAP_NAME = "figure_overlap_upset"
+DATABASES = ["card", "ncbi", "resfinder"]
+DATABASE_LABELS = {"card": "CARD", "ncbi": "NCBI", "resfinder": "ResFinder"}
+
+
+def overlap_upset(group_stats, out_dir, name=OVERLAP_NAME):
+    """UpSet figure of the equivalence groups (proteins joined by reciprocal best hits) by the databases they contain.
+    group_stats is the `groups` block of statistics.json. Writes the figure (svg, png) and two source-data CSVs."""
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    rows = []
+    for profile, groups in group_stats["by_databases"].items():
+        members = profile.split("+")
+        rows.append({"databases": profile, **{d: int(d in members) for d in DATABASES},
+                     "groups": groups, "proteins": group_stats["proteins_by_databases"][profile]})
+    inter = pd.DataFrame(rows).sort_values(["groups", "databases"], ascending=[False, True]).reset_index(drop=True)
+    sets = pd.DataFrame({"database": DATABASES,
+                         "groups": [int(inter.loc[inter[d] == 1, "groups"].sum()) for d in DATABASES]})
+    total, proteins = group_stats["total"], int(inter["proteins"].sum())
+    assert inter["groups"].sum() == total
+
+    fig = style.new_figure(180, 105)
+    ax_bars = style.axes_mm(fig, 62, 50, 114, 48)
+    ax_matrix = style.axes_mm(fig, 62, 12, 114, 30)
+    ax_sets = style.axes_mm(fig, 10, 12, 32, 30)
+    positions = np.arange(len(inter))
+
+    ax_bars.bar(positions, inter["groups"], width=0.6, color=style.GREY, linewidth=0)
+    for x, value in zip(positions, inter["groups"]):
+        ax_bars.text(x, value, f"{value:,}", ha="center", va="bottom", fontsize=7)
+    ax_bars.set_xlim(-0.6, len(inter) - 0.4)
+    ax_bars.set_ylim(0, inter["groups"].max() * 1.12)
+    ax_bars.set_xticks([])
+    ax_bars.spines["bottom"].set_visible(False)
+    ax_bars.set_ylabel("Equivalence groups")
+    ax_bars.yaxis.set_major_formatter(FuncFormatter(lambda value, _: f"{value:,.0f}"))
+    ax_bars.text(0.99, 0.97, f"{total:,} groups from {proteins:,} proteins", transform=ax_bars.transAxes,
+                 ha="right", va="top", fontsize=7)
+
+    ax_matrix.set_xlim(ax_bars.get_xlim())
+    ax_matrix.set_ylim(-0.6, len(DATABASES) - 0.4)
+    ax_matrix.invert_yaxis()
+    for x, row in inter.iterrows():
+        members = [i for i, d in enumerate(DATABASES) if row[d]]
+        ax_matrix.plot([x, x], [min(members), max(members)], color="black", linewidth=1.0, zorder=1)
+        for i, d in enumerate(DATABASES):
+            ax_matrix.scatter([x], [i], s=22, color="black" if row[d] else "#DDDDDD", zorder=2, linewidths=0)
+    ax_matrix.set_yticks(range(len(DATABASES)))
+    ax_matrix.set_yticklabels([DATABASE_LABELS[d] for d in DATABASES])
+    ax_matrix.set_xticks([])
+    for spine in ("left", "bottom"):
+        ax_matrix.spines[spine].set_visible(False)
+    ax_matrix.tick_params(axis="y", length=0)
+
+    ax_sets.barh(range(len(DATABASES)), sets["groups"], color=[style.DATABASE_COLOURS[d] for d in DATABASES], height=0.6, linewidth=0)
+    for i, value in enumerate(sets["groups"]):
+        ax_sets.annotate(f"{value:,}", xy=(value, i), xytext=(-3, 0), textcoords="offset points", ha="right", va="center", fontsize=7)
+    ax_sets.set_xlim(sets["groups"].max() * 1.45, 0)
+    ax_sets.set_ylim(-0.6, len(DATABASES) - 0.4)
+    ax_sets.invert_yaxis()
+    ax_sets.set_yticks([])
+    ax_sets.spines["left"].set_visible(False)
+    ax_sets.spines["right"].set_visible(True)
+    ax_sets.yaxis.tick_right()
+    ax_sets.set_xlabel("Groups containing\nthe database")
+    ax_sets.xaxis.set_major_formatter(FuncFormatter(lambda value, _: f"{value:,.0f}"))
+
+    fig.text(8 / 180, 98 / 105, "\n".join(textwrap.wrap(
+        "Equivalence groups are proteins joined by reciprocal best hits across the three databases. "
+        "Each bar counts the groups that contain exactly the databases marked by the dots below it.", 36)),
+        ha="left", va="top", fontsize=7)
+    style.save_figure(fig, out_dir / name)
+    inter.to_csv(out_dir / f"source_data_{name}_intersections.csv", index=False)
+    sets.to_csv(out_dir / f"source_data_{name}_set_sizes.csv", index=False)
     return fig

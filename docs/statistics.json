@@ -38,5 +38,42 @@
       "ncbi+resfinder": 2538
     },
     "sha256": "1c7f0f080de1faf854ba5e6247c3bf2a9fced864b17670e87fd0efb0fc32b74e"
+  },
+  "groups": {
+    "by_databases": {
+      "card": 272,
+      "card+ncbi": 3226,
+      "card+ncbi+resfinder": 2406,
+      "card+resfinder": 23,
+      "ncbi": 1539,
+      "ncbi+resfinder": 67,
+      "resfinder": 56
+    },
+    "largest_group_by_database": {
+      "card": 5,
+      "ncbi": 6,
+      "resfinder": 1
+    },
+    "largest_group_size": 12,
+    "proteins_by_databases": {
+      "card": 272,
+      "card+ncbi": 6466,
+      "card+ncbi+resfinder": 7344,
+      "card+resfinder": 47,
+      "ncbi": 1539,
+      "ncbi+resfinder": 135,
+      "resfinder": 56
+    },
+    "size_distribution": {
+      "1": 1867,
+      "12": 1,
+      "2": 3300,
+      "3": 2345,
+      "4": 46,
+      "5": 23,
+      "6": 3,
+      "7": 4
+    },
+    "total": 7589
   }
 }

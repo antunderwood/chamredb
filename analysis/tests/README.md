@@ -73,3 +73,10 @@ by the maintainer. Mutation (run 2026-11-09): a fit line with a 10% steeper slop
 Byte-identical outputs are guaranteed between runs in one environment (tested). Another platform's numpy gives regression coefficients that
 agree to about 1e-13 but not bit for bit (found when CI disagreed with a Mac run), so tests that compare with the committed
 `docs/statistics.json` use a tolerance of 1e-9 for floats and exact equality for counts.
+
+## Equivalence groups and the overlap figure (ticket #49)
+
+`analysis/groups.py` joins proteins by RBH edges (networkx components; a node without an RBH is a group of its own; one-way hits never join). Tests: hand
+graph (24 nodes in 8 groups, including a path of 12 across two databases), a union-find written independently of networkx compared on the hand graph and
+on the bundled release graph (7,589 groups), and source data summing to the statistics. Mutation (run 2026-11-09): letting one-way hits join groups fails
+the hand-graph tests.

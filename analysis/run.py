@@ -11,7 +11,16 @@ import json
 from collections import Counter
 from pathlib import Path
 
-from analysis import matches
+from analysis import groups, matches
+
+
+def group_statistics(graph):
+    """The `groups` block of statistics.json: equivalence groups (proteins joined by RBH) by database profile."""
+    found = groups.equivalence_groups(graph)
+    p = groups.profiles(found)
+    return {"total": len(found), "by_databases": p["groups"], "proteins_by_databases": p["proteins"],
+            "size_distribution": {str(k): v for k, v in p["size_distribution"].items()},
+            "largest_group_size": p["largest_group_size"], "largest_group_by_database": p["largest_group_by_database"]}
 
 
 def statistics(graph, result, graph_name, graph_sha256):
@@ -30,6 +39,7 @@ def statistics(graph, result, graph_name, graph_sha256):
             "edges_by_type": dict(sorted(Counter(d["type"] for _, _, d in graph.edges(data=True)).items())),
             "rbh_pairs": len(rbh_pairs), "rbh_pairs_by_databases": dict(sorted(by_databases.items())),
         },
+        "groups": group_statistics(graph),
         "analysis": {
             "identity_threshold": matches.IDENTITY_THRESHOLD, "matches_analysed": len(result["distance"]),
             "matches_skipped_blaPAO": result["skipped_blaPAO"],
@@ -61,7 +71,8 @@ def main(argv=None):
     import matplotlib.pyplot as plt
     figure = figures.name_similarity_vs_identity(result, statistics(graph, result, graph_path.name, sha), out / "images")
     plt.close(figure)
-    print(f"wrote {out}/statistics.json, two tables and the figure for {graph.number_of_nodes()} nodes")
+    plt.close(figures.overlap_upset(group_statistics(graph), out / "images"))
+    print(f"wrote {out}/statistics.json, two tables and the figures for {graph.number_of_nodes()} nodes")
 
 
 if __name__ == "__main__":
