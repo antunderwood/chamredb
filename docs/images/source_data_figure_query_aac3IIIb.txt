@@ -1,0 +1,27 @@
+$ chamredb query -d resfinder -i "aac(3)-IIIb"
+data release: 2026-11-09
+
+🧬 aac(3)-IIIb (aac(3)-IIIb)
+📄 phenotype: confers resistance to Gentamicin, Tobramycin, Dibekacin, Sisomicin
+  🗄 card
+      ➡ ARO3002537 (AAC(3)-IIIb)
+        🔗 coverage: 1.0
+        🔗 identity: 0.928
+        🔗 type: OWH
+        📄 PMID: ['20387903']
+        📄 is_a: ARO:3007386:AAC(3)-III
+        📄 phenotype: confers resistance to antibiotic: 
+5-episisomicin,dibekacin,gentamicin,kanamycin 
+A,lividomycin,neomycin,paromomycin,sisomicin,tobramycin
+  🗄 ncbi
+      ➡ WP_058179966.1 (aac(3)-IIIb)
+        🔗 coverage: 1.0
+        🔗 identity: 0.928
+        🔗 type: OWH
+        📄 alternative_id: {'nucleotide_accession': 'NG_051746.1'}
+        📄 duplicate_allele_ids: {'nucleotide_accessions': [], 'protein_accessions': []}
+        📄 phenotype: confers resistance to subclass GENTAMICIN
+        📄 product: aminoglycoside N-acetyltransferase AAC(3)-IIIb
+================================================================================
+
+

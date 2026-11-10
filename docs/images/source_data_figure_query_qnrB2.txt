@@ -1,0 +1,25 @@
+$ chamredb query -d ncbi -i qnrB2
+data release: 2026-11-09
+
+🧬 qnrB2 (qnrB2)
+📄 phenotype: confers resistance to subclass QUINOLONE
+📄 product: quinolone resistance pentapeptide repeat protein QnrB2
+  🗄 card
+    ↔ ARO3002735 (QnrB20)
+        🔗 coverage: 1.0
+        🔗 identity: 0.995
+        🔗 type: RBH
+        📄 PMID: ['18993034']
+        📄 additional_phenotype: confers resistance to drug class: fluoroquinolone antibiotic
+        📄 is_a: ARO:3000419:quinolone resistance protein (qnr)
+        📄 phenotype: confers resistance to antibiotic: 
+ciprofloxacin,gatifloxacin,levofloxacin,moxifloxacin,nalidixic acid,norfloxacin,sparfloxacin
+  🗄 resfinder
+    ↔ qnrB2 (qnrB2)
+        🔗 coverage: 1.0
+        🔗 identity: 1.0
+        🔗 type: RBH
+        📄 phenotype: confers resistance to Ciprofloxacin
+================================================================================
+
+

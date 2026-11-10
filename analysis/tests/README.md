@@ -108,3 +108,13 @@ values with hand-worked percentiles and fails when the median is taken from the 
 `python -m analysis.run --graph chamredb/data/graph.json --out docs --manifest docs/data_manifest.json`. A mutation (RBH and one-way counts swapped) fails the
 hand-input test and the committed-files test (run 2026-11-09). The diagram does not show the number of proteins parsed per database: the graph does not record
 it, only the proteins that have a match (nodes by database).
+
+## Terminal screenshots (ticket #42)
+
+`analysis/screenshots.py` captures the text of `chamredb query` by running the package's own query function with its printing redirected (nothing is typed
+in), then writes an SVG made by rich (real emoji and colours, monokai theme) and a PNG drawn by matplotlib in DejaVu Sans Mono with the same colours. No bundled font
+has the emoji icons (dna, page, file cabinet, link), so the PNG replaces them by plain symbols of the same cell width and a test checks that every character it draws has
+a glyph; the SVG keeps the real emoji. The source text of each screenshot is committed (`source_data_*.txt`). The screenshots show the default graph, as a user's first query.
+Mutations (run 2026-11-09): taking the screenshots from an explicit graph path (which printed "data release: unknown (custom graph)", found by looking at the first render)
+fails the bundled-graph run test; changing the query thresholds from the CLI defaults fails the hand-graph threshold test (the real queries cannot show it: every match
+already passes both thresholds, and the query prints only the best match per database).

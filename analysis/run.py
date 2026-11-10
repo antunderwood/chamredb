@@ -91,6 +91,11 @@ def main(argv=None):
             plt.close(figures.pipeline_diagram(json.loads(Path(args.manifest).read_text()), stats, pin,
                                                (root / "builder" / "Snakefile").read_text(),
                                                (root / "builder" / "environment.yml").read_text(), images))
+    if args.manifest and json.loads((Path(__file__).resolve().parents[1] / "chamredb" / "data" / "graph_release.json").read_text())["sha256"] == sha:
+        from analysis import screenshots
+        for name, database, identifier in (("figure_query_qnrB2", "ncbi", "qnrB2"), ("figure_query_aac3IIIb", "resfinder", "aac(3)-IIIb")):
+            command, markups = screenshots.capture_query(identifier, database)   # the default graph, as a user's first query
+            plt.close(screenshots.render_screenshot(command, markups, images, name))
     print(f"wrote {out}/statistics.json, two tables and the figures for {graph.number_of_nodes()} nodes")
 
 
