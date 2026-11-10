@@ -1,6 +1,6 @@
 # 0002. Data build pipeline lives in this repo and stays Snakemake
 
-- Status: proposed
+- Status: accepted (2026-11-10)
 - Date: 2026-11-07
 - Deciders: @antunderwood
 - Kind: engineering
@@ -21,4 +21,4 @@ Merge `chamredb-builder` into this repo with its history (under `builder/`), kee
 
 ## Consequences
 
-One repo owns data, build and query. Pipeline tests and a test profile are now required. The old builder repo is archived after the merge.
+One repo owns data, build and query. Pipeline tests and a test profile are now required. The old builder repo is to be archived after the merge (a manual step for the maintainer, not done yet).
