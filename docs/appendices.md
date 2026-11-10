@@ -106,28 +106,33 @@ These commands can be found in [find_rbhs_and_search_matches.sh](scripts/find_rb
 
 ### Summary of RBH analysis
 
-| Comparison | Number of proteins |Number of RBH |
-| ----| ---- | ----- |
-| CARD vs NCBI |  2979 (CARD)<br>4542 (NCBI) | 2601 (87.3% of CARD proteins) |
-| CARD vs Resfinder |  2979 (CARD)<br>2543 (Resfinder) | 2073 (69.6% of CARD proteins) |
-| NCBI vs CARD |  4542 (NCBI)<br>2979 (CARD) | 2624 (57.7% of NCBI proteins) |
-| NCBI vs Resfinder |  4542 (NCBI)<br>Resfinder (CARD) | 2399 (52.8% of NCBI proteins) |
-| Resfinder vs CARD |  2543 (Resfinder)<br>2979 (CARD) | 2096 (82.4% of Resfinder proteins) |
-| Resfinder vs NCBI |  2543 (Resfinder)<br>4542 (NCBI) | 2408 (94.7% of Resfinder proteins) |
+For each pair of databases: how many proteins of the first database are in the graph (a protein is in the graph if it has at least one match in another database), and how many of them have a reciprocal best hit (RBH) in the second. Generated from `docs/statistics.json` by `python -m analysis.readme`; the percentages are of the proteins in the graph, not of all proteins parsed from the database.
 
+<!-- table:rbh -->
+| Comparison | Proteins of the first database in the graph | With a reciprocal best hit |
+| --- | --- | --- |
+| CARD vs NCBI | 5,971 | 5,662 (94.8%) |
+| CARD vs ResFinder | 5,971 | 2,458 (41.2%) |
+| NCBI vs CARD | 7,299 | 5,682 (77.8%) |
+| NCBI vs ResFinder | 7,299 | 2,509 (34.4%) |
+| ResFinder vs CARD | 2,589 | 2,461 (95.1%) |
+| ResFinder vs NCBI | 2,589 | 2,504 (96.7%) |
+<!-- /table -->
 
 ### Summary of non-RBH searches
-After searching the results were filtered to remove RBH hits using the script [build_graph_from_mmseqs_data.py](package/build_graph_from_mmseqs_data.py) (see later for a description)
-By combining these non-RBHs with the RBHs the total coverage of each database by another can be determined
 
-| Comparison |Number of proteins that return matches | total proteins covered by RBH and search|
-| ----| ---- | ---- |
-| CARD vs NCBI | 274 | 2875 (96.5%)|
-| CARD vs Resfinder | 739 | 2778 (93.2%)|
-| NCBI vs CARD | 1898 | 4542 (99.6%) |
-| NCBI vs Resfinder | 2069 | 4495 (99.4%) |
-| Resfinder vs CARD | 413 | 2509 (98.6%) |
-| Resfinder vs NCBI | 111 | 2519 (99.1%) |
+After the RBH search, a second MMseqs2 search (sensitivity 7.0, up to three accepted hits) finds one-way hits for proteins without a reciprocal best hit. Combining the two gives the coverage of one database by another.
+
+<!-- table:search -->
+| Comparison | With a one-way hit only | Covered by a reciprocal best hit or a one-way hit |
+| --- | --- | --- |
+| CARD vs NCBI | 307 | 5,969 (100.0%) |
+| CARD vs ResFinder | 3,414 | 5,872 (98.3%) |
+| NCBI vs CARD | 1,613 | 7,295 (99.9%) |
+| NCBI vs ResFinder | 4,683 | 7,192 (98.5%) |
+| ResFinder vs CARD | 124 | 2,585 (99.8%) |
+| ResFinder vs NCBI | 84 | 2,588 (100.0%) |
+<!-- /table -->
 
 ## Building a Networkx graph
 Steps include

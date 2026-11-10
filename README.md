@@ -26,6 +26,14 @@ The hypothesis for the project is as follows:
 * aggregate the combined descriptive information pertaining to antimicrobial resistance contained in the union of the metadata
 * report this to user for them to make intelligent informed choices
 
+## At a glance
+
+![Real families: the same protein under different names in CARD, NCBI and ResFinder](docs/images/figure_real_families.png)
+
+The same protein often carries a different name in each database (panels B to D), and many proteins exist in only some of them. Of the <!-- stat:groups.total -->7,589<!-- /stat --> groups of proteins linked by reciprocal best hits, only <!-- stat:groups.all_three -->2,406<!-- /stat --> (<!-- stat:groups.all_three_share -->32%<!-- /stat -->) contain all three databases.
+
+![Overlap of the equivalence groups between CARD, NCBI and ResFinder](docs/images/figure_overlap_upset.png)
+
 ## Methodology
 
 * Download sequences and associated metadata of ARGs from 3 databases
@@ -55,12 +63,10 @@ The hypothesis for the project is as follows:
     * type, either RBH or OWH (one way hit)
     * coverage, (alignment length/query length)
     * identity, (percent identity of match)  
-  See the image below for a pictoral example using made up data  
 
+![Pipeline from the three databases to the released graph](docs/images/figure_pipeline.png)
 
-\
-\
-![network diagram](docs/images/chamredb_network.png)
+The numbers in this figure are read from the release's manifest and statistics, so they match the graph described below.
 
 ## Current data release
 
@@ -76,70 +82,40 @@ using MMseqs2 18.8cc5c (reciprocal best hits `easy-rbh -s 7.5`, one-way hits `se
 
 | | Count |
 | --- | --- |
-| Nodes (proteins with at least one match) | 15,859 (NCBI 7,299, CARD 5,971, ResFinder 2,589) |
-| Directed edges | 51,971 (RBH 21,428, one-way hits 30,543) |
-| Reciprocal best hit pairs | 10,714 (CARD-NCBI 5,685, NCBI-ResFinder 2,538, CARD-ResFinder 2,491) |
+| Nodes (proteins with at least one match) | <!-- stat:graph.nodes -->15,859<!-- /stat --> |
+| Directed edges | <!-- stat:graph.edges -->51,971<!-- /stat --> (reciprocal best hits <!-- stat:graph.edges_rbh -->21,428<!-- /stat -->, one-way hits <!-- stat:graph.edges_owh -->30,543<!-- /stat -->) |
+| Reciprocal best hit pairs | <!-- stat:graph.rbh_pairs -->10,714<!-- /stat --> |
+| Equivalence groups (proteins joined by reciprocal best hits) | <!-- stat:groups.total -->7,589<!-- /stat --> |
 
-The version of the data a result came from is printed by `chamredb query` (`data release:`) and written to the last column (`data_release`) of the TSV output. The earlier 2021 graph (11,718 nodes, 33,632 edges) can be rebuilt with `builder/reproduce_2021/`.
+The version of the data a result came from is printed by `chamredb query` (`data release:`) and written to the last column (`data_release`) of the TSV output. The earlier 2021 graph (11,718 nodes, 33,632 edges) can be rebuilt with `builder/reproduce_2021/`. How the graph grew from 2021 to this release, step by step, is in [docs/release-2026-11-09.md](docs/release-2026-11-09.md).
 
 ## Assessing the graph
 
-_N.B. The assessment in this section was made on an earlier version of the graph, before the 2026 data refresh. Its counts, figures and CSV files have **not** been regenerated for the current release._
+How well do database names agree where the sequences match? For every protein the best match in each other database was found (the match with the highest coverage and identity, ties broken by edge order), and the two names were compared with the [normalised Levenshtein similarity](https://devopedia.org/levenshtein-distance#qst-ans-3), where 1 means identical names. Before the comparison each name was cleaned:
 
-In order to look at the 19132 matches within the database and assess the effectiveness of the methodology the database names for matches were compared with the [Normalized Levensthein algorithm](https://devopedia.org/levenshtein-distance#qst-ans-3).
-Before calculating the name similarity between the source and target of a match the name was cleaned using the following steps
-
-1. Removing species names from database names (exclusively in the CARD database) e.g `Staphylococcus aureus mupB conferring resistance to mupirocin`
-2. Coversion to lower case
-3. Removing the bla prefix
+1. Removing species names from database names (CARD only), for example `Staphylococcus aureus mupB conferring resistance to mupirocin` becomes `mupB`
+2. Conversion to lower case
+3. Removing a leading `bla`
 4. Removing parentheses
 5. Removing hyphens
 
-_N.B blaPAO-N and blaPDC matches are the source of 562 low name similarities so were skipped_
+For the analysis that ignores alleles a trailing allele number is also removed (`qnrB20` becomes `qnrb`).
 
-The resulting data is plotted below showing
-A: distribution of levenshtein smilarities between the database names of the best matches
-B: distribution sequence identities for the best matches
-C: plot of the levenshtein smilarity versus the sequence identity for each match  
+<!-- stat:analysis.matches -->30,152<!-- /stat --> best matches were analysed. A further <!-- stat:analysis.skipped -->1,349<!-- /stat --> were skipped because their target is the ResFinder entry `blaPAO`, a single entry that is the best ResFinder match of every one of the PDC alleles in CARD and NCBI, so comparing its name says nothing (the blaPDC alleles themselves are kept). Of the analysed matches, <!-- stat:analysis.high_identity -->24,637<!-- /stat --> have a sequence identity of at least 0.95.
 
-![analysis plots](scripts/seq_id_and_name_sim_analysis.png)  
+![Name similarity against sequence identity](docs/images/figure_name_similarity_vs_identity.png)
 
-The red line shows the correlation including 95% confidence intervals.
+Names agree more where sequences agree more, but not always. A linear regression of name similarity on sequence identity predicts a similarity of <!-- stat:analysis.full.predicted -->0.84<!-- /stat --> at identity 0.95 when names are compared in full, and <!-- stat:analysis.free.predicted -->0.93<!-- /stat --> when alleles are ignored (each analysis uses its own regression). Among the matches with identity of at least 0.95, <!-- stat:analysis.full.low_share -->16.9%<!-- /stat --> (<!-- stat:analysis.full.low_rows -->4,153<!-- /stat -->) have a name similarity at or below the full-name prediction, and <!-- stat:analysis.free.low_share -->2.4%<!-- /stat --> (<!-- stat:analysis.free.low_rows -->597<!-- /stat -->) when alleles are ignored. Most of the disagreement is therefore about alleles: the same gene family, a different allele number.
 
-Based on this regression the expected name similarity for a sequence identity of 0.95 can be calculated (0.69)
+![Distributions of name similarity and of the difference from the prediction](docs/images/figure_name_distributions.png)
 
-```
-linear_fit = np.polyfit(
-    distance_dataframe['sequence_identity'],
-    distance_dataframe['name_similarity'],
-    1
-)
-np.polyval(linear_fit, 0.95)
-0.6898250936869554
-```
-To examine data matches where the sequence identity is > 0.95 **BUT** the name similarity is less than the predicted 0.69 was created and explored, a [CSV file](scripts/low_name_similarity.csv) was created.
+The tables of these matches are [docs/analysis/low_name_similarity.csv](docs/analysis/low_name_similarity.csv) and [docs/analysis/low_name_similarity_without_alleles.csv](docs/analysis/low_name_similarity_without_alleles.csv).
 
-In this data, many of the differences in the names are due to matches with the same gene family but different alleles e.g `blaADC-125` in the `ncbi` database and `blaADC-25` in the `resfinder 4` database.  
-Therefore data calculating name smilarities ignoring alleles was created.
+Some disagreements are not about alleles. These examples are proteins whose sequences are identical (identity of at least 0.999) and whose names share nothing once alleles are ignored; the caption explains how they were chosen and that they are illustrative, not representative.
 
+![Examples of identical proteins with unrelated names](docs/images/figure_name_disagreements.png)
 
-A second series of plots explores this data by plotting the distributions of the name smilarities.
-In the top panel the violin plots show the distribution of the name similarity differences for those matches where the sequence identity is greater than 0.95. In A: this name similarities are based on complete cleaned locus names and in B: they are based on names where the alleles are ignored. 
-The lower panel of the figure contains violin plots showing the distribution of the **difference** between the **observed name similarity** and that **predicted** by a linear regression model fitting name smilarity to sequence identity. The right hand 2 plots are data where the name simialrities were calculated excluding alleles.
-![analysis plots](scripts/name_similarity_distribution_analysis.png)
-
-The data was filtered for those matches where the sequence identity is > 0.95 but the name similarity is less than the predicted value of 0.86 based on the linear regression model. 
-
-To examine these anomalous results a [CSV sheet](scripts/low_name_similarity_without_alleles.csv) was created.  
-
-Exploring this data some of these are clearly related genes but the databases have different nomneclature e.g  
-`vanA` in `card` and `VanHAX` in `resfinder 4.0` or  
-`catA15` in `ncbi` or `Clostridium butyricum catB` in `card`
-
-_**N.B** The species names are removed in the name cleaning function._  
-
-In other cases the names are completely different, e.g  
-`gimA` in `card` and `mgt`  in `ncbi` but the sequences are 99.5% identical. `gimA` is a macrolide glycosyltransferase and may confer resistance to spiramycin. `mgt` in the `ncbi` database stands for `macrolide-inactivating glycosyltransferase`. Clearly the genes are likely to have the same function but have been assigned different names in the two databases.
+All figures and tables in this section are made from the release graph by `python -m analysis.run --graph chamredb/data/graph.json --out docs --manifest docs/data_manifest.json`, with the data behind every figure in `docs/images/source_data_*`.
 
 ## Querying the graph
 
@@ -172,7 +148,7 @@ chamredb query -d ncbi -i qnrB2
 ```
 
 The output reports the matches and metadata from the other databases  
-![qnrB2](/docs/images/qnrB2.png)
+![chamredb query -d ncbi -i qnrB2](docs/images/figure_query_qnrB2.png)
 
 Another example where the matches are one way hits not RBHs
 
@@ -180,7 +156,7 @@ Another example where the matches are one way hits not RBHs
 chamredb query -d resfinder -i "aac(3)-IIIb"
 ```
 
-![aac(3)-IIIb](/docs/images/aac(3)-IIIb.png)
+![chamredb query -d resfinder -i aac(3)-IIIb](docs/images/figure_query_aac3IIIb.png)
 In these outputs ↔ means a RBH, and ➡ a search hit
 
 ### 2. Providing a list of identifiers from a single database

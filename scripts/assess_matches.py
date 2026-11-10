@@ -1,3 +1,5 @@
+# Superseded by the `analysis` package (python -m analysis.run), which reproduces this script's behaviour (see analysis/tests/README.md) with the
+# decisions of ADR 0006. Kept as the source of the characterisation test. It needs networkx below 3.6 and reads the bundled graph.
 import os
 import json
 import re

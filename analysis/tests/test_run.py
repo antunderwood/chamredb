@@ -66,7 +66,7 @@ def run_cli(graph, out, manifest=False):
 
 
 NAME = "figure_name_similarity_vs_identity"
-FILES = ["statistics.json", "analysis/low_name_similarity.csv", "analysis/low_name_similarity_without_alleles.csv",
+FILES = ["statistics.json", "analysis/environment.txt", "analysis/low_name_similarity.csv", "analysis/low_name_similarity_without_alleles.csv",
          f"images/{NAME}.png", f"images/{NAME}.svg"] + [f"images/source_data_{NAME}_{s}.csv" for s in ("A_histogram", "B_histogram", "C_density", "C_fit")]
 OVERLAP = "figure_overlap_upset"
 HERO = "figure_real_families"
@@ -97,6 +97,8 @@ def test_run_is_byte_identical_across_runs_on_the_bundled_release_graph(tmp_path
     for name in FILES + HERO_FILES + PIPELINE_FILES + QUERY_FILES:
         assert (tmp_path / "a" / name).read_bytes() == (tmp_path / "b" / name).read_bytes(), name
     pin = json.loads((ROOT / "chamredb" / "data" / "graph_release.json").read_text())
+    environment = (tmp_path / "a" / "analysis" / "environment.txt").read_text()    # versions and the graph hash are recorded with the outputs
+    assert f"graph_sha256 {pin['sha256']}" in environment and all(m in environment for m in ("python ", "matplotlib ", "pandas ", "networkx "))
     for query in ("figure_query_qnrB2", "figure_query_aac3IIIb"):   # the screenshots show the default graph's release, not "custom graph"
         shown = (tmp_path / "a" / "images" / f"source_data_{query}.txt").read_text()
         assert f"data release: {pin['data_release']}" in shown and "custom graph" not in shown
