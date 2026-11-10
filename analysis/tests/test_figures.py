@@ -82,8 +82,21 @@ def test_two_renders_are_byte_identical(tmp_path):
         assert (tmp_path / "a" / name).read_bytes() == (tmp_path / "b" / name).read_bytes(), name
 
 
+def assert_same_statistics(got, expected, path="analysis"):
+    """Integers and strings exactly; floats within 1e-9. Another platform's numpy gives regression coefficients that agree to
+    about 1e-13 but not bit for bit, so exact equality is only expected between runs in one environment."""
+    if isinstance(expected, dict):
+        assert got.keys() == expected.keys(), path
+        for key in expected:
+            assert_same_statistics(got[key], expected[key], f"{path}.{key}")
+    elif isinstance(expected, float):
+        assert got == pytest.approx(expected, abs=1e-9), path
+    else:
+        assert got == expected, path
+
+
 def test_figure_on_the_bundled_release_graph_matches_the_committed_statistics(tmp_path):
     result, stats, _ = build(BUNDLED, tmp_path)
     committed = json.loads((ROOT / "docs" / "statistics.json").read_text())
-    assert stats["analysis"] == committed["analysis"]
+    assert_same_statistics(stats["analysis"], committed["analysis"])
     assert pd.read_csv(tmp_path / f"source_data_{NAME}_C_density.csv")["matches"].sum() == committed["analysis"]["matches_analysed"]

@@ -69,3 +69,7 @@ and a 300 dpi PNG with no date or software metadata so re-runs are byte-identica
 `source_data_*` CSV for every panel beside them (`docs/images/`). Tests check sizes, fonts, palette, that the source data sum to the
 statistics, that numbers written on the figure equal the statistics, and byte-identity across renders; the picture itself is reviewed
 by the maintainer. Mutation (run 2026-11-09): a fit line with a 10% steeper slope fails `test_source_data_equals_the_statistics`.
+
+Byte-identical outputs are guaranteed between runs in one environment (tested). Another platform's numpy gives regression coefficients that
+agree to about 1e-13 but not bit for bit (found when CI disagreed with a Mac run), so tests that compare with the committed
+`docs/statistics.json` use a tolerance of 1e-9 for floats and exact equality for counts.
