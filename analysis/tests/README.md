@@ -118,3 +118,12 @@ a glyph; the SVG keeps the real emoji. The source text of each screenshot is com
 Mutations (run 2026-11-09): taking the screenshots from an explicit graph path (which printed "data release: unknown (custom graph)", found by looking at the first render)
 fails the bundled-graph run test; changing the query thresholds from the CLI defaults fails the hand-graph threshold test (the real queries cannot show it: every match
 already passes both thresholds, and the query prints only the best match per database).
+
+## Release waterfall (ticket #51)
+
+`analysis/waterfall.py` summarises each step of the data refresh (nodes, edges, type changes, absent and renamed ids) with `builder/scripts/functions/graph_diff`; the
+summary is committed as `docs/waterfall_steps.json` and the figure reads it, so the step graphs (10 to 14 MB each) are not committed. The graphs came from the CI runs
+that were reviewed (run ids and sha256 are in the summary and in `docs/release-2026-11-09.md`); the baseline graph of each refresh run is byte-identical to the previous
+step's graph (checked by sha256). Tests: hand-built graph pair; the committed steps chain and add up, and end at the bundled graph; the counts equal the numbers typed from the
+reviewed reports (pull requests 28 to 31). Mutations (run 2026-11-09): edges lost off by one fails the hand and addition tests; a running total that ignores losses fails the
+figure test. The figure's numbers are therefore only as good as the step graphs, which cannot be rebuilt from this repository alone without four CI builds.
