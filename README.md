@@ -148,7 +148,7 @@ chamredb query -d ncbi -i qnrB2
 ```
 
 The output reports the matches and metadata from the other databases  
-![chamredb query -d ncbi -i qnrB2](docs/images/figure_query_qnrB2.png)
+![chamredb query -d ncbi -i qnrB2](docs/images/figure_query_qnrB2.svg)
 
 Another example where the matches are one way hits not RBHs
 
@@ -156,7 +156,7 @@ Another example where the matches are one way hits not RBHs
 chamredb query -d resfinder -i "aac(3)-IIIb"
 ```
 
-![chamredb query -d resfinder -i aac(3)-IIIb](docs/images/figure_query_aac3IIIb.png)
+![chamredb query -d resfinder -i aac(3)-IIIb](docs/images/figure_query_aac3IIIb.svg)
 In these outputs ↔ means a RBH, and ➡ a search hit
 
 ### 2. Providing a list of identifiers from a single database

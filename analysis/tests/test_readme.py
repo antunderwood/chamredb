@@ -112,3 +112,10 @@ def test_docs_examples_equal_fresh_output_on_the_bundled_graph(tmp_path):
         out = tmp_path / name
         subprocess.run([sys.executable, "-m", "chamredb.run_chamredb", "query", *args, "-o", str(out)], check=True, cwd=ROOT, capture_output=True)
         assert out.read_bytes() == (ROOT / "docs" / "data" / name).read_bytes(), name
+
+
+def test_the_query_screenshots_in_the_readme_are_the_svg_with_the_real_emoji():
+    for name in ("figure_query_qnrB2", "figure_query_aac3IIIb"):
+        assert f"docs/images/{name}.svg)" in README and f"docs/images/{name}.png)" not in README
+        svg = (ROOT / "docs" / "images" / f"{name}.svg").read_text()
+        assert "\U0001F9EC" in svg    # the DNA emoji of the query output
