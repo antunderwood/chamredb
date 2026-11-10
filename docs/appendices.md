@@ -149,7 +149,7 @@ Steps include
   * the edges link nodes which have attributes
     * `type` either `RBH` or `OWH` (one way hit) for a search match
     * `coverage` alignment length/query length
-    * `identity` percent identity of hit
+    * `identity` fraction of identical residues in the hit (0 to 1)
   * See functions `add_rbh_hits_to_graph` and `add_search_hits_to_graph` in [graph_functions.py](/chamredb/functions/graph_functions.py)
 
 These are all combined in the [build_graph_from_mmseqs_data.py](/chamredb/build_graph_from_mmseqs_data.py) script

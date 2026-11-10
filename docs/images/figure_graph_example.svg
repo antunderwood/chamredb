@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="509.76pt" height="282.96pt" viewBox="0 0 509.76 282.96" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="509.76pt" height="396.72pt" viewBox="0 0 509.76 396.72" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
@@ -20,8 +20,8 @@
  </defs>
  <g id="figure_1">
   <g id="patch_1">
-   <path d="M 0 282.96 
-L 509.76 282.96 
+   <path d="M 0 396.72 
+L 509.76 396.72 
 L 509.76 0 
 L 0 0 
 z
@@ -29,241 +29,246 @@ z
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 8.503937 244.692283 
-L 164.421354 244.692283 
-L 164.421354 104.377323 
-L 8.503937 104.377323 
+    <path d="M 226.771654 133.948346 
+L 382.689071 133.948346 
+L 382.689071 11.208189 
+L 226.771654 11.208189 
 z
-" clip-path="url(#pd27b2df4ef)" style="fill: #009e73; opacity: 0.22"/>
+" clip-path="url(#p84d4fe5623)" style="fill: #0072b2; opacity: 0.22"/>
    </g>
    <g id="patch_3">
-    <path d="M 175.748031 227.11748 
-L 331.665449 227.11748 
-L 331.665449 104.377323 
-L 175.748031 104.377323 
+    <path d="M 8.503937 372.625512 
+L 164.421354 372.625512 
+L 164.421354 232.310551 
+L 8.503937 232.310551 
 z
-" clip-path="url(#pd27b2df4ef)" style="fill: #0072b2; opacity: 0.22"/>
+" clip-path="url(#p84d4fe5623)" style="fill: #009e73; opacity: 0.22"/>
    </g>
    <g id="patch_4">
-    <path d="M 342.992126 183.180472 
-L 498.909543 183.180472 
-L 498.909543 104.377323 
-L 342.992126 104.377323 
+    <path d="M 272.125984 322.452283 
+L 415.401449 322.452283 
+L 415.401449 243.649134 
+L 272.125984 243.649134 
 z
-" clip-path="url(#pd27b2df4ef)" style="fill: #d55e00; opacity: 0.22"/>
+" clip-path="url(#p84d4fe5623)" style="fill: #d55e00; opacity: 0.22"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 123.590551 33.885354 
+L 226.771654 33.885354 
+" clip-path="url(#p84d4fe5623)" style="fill: none; stroke: #0072b2; stroke-width: 0.6; stroke-linecap: square"/>
    </g>
    <g id="patch_5">
-    <path d="M 96.874716 74.330079 
-Q 171.498009 74.330079 244.891464 74.330079 
-" clip-path="url(#pd27b2df4ef)" style="fill: none; stroke: #000000; stroke-width: 1.1; stroke-linecap: round"/>
-    <path d="M 241.291464 72.530079 
-L 244.891464 74.330079 
-L 241.291464 76.130079 
+    <path d="M 33.587016 199.563335 
+Q 69.567197 119.892934 105.041193 41.34337 
+" clip-path="url(#p84d4fe5623)" style="fill: none; stroke: #000000; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 101.919014 43.883449 
+L 105.041193 41.34337 
+L 105.199948 45.365161 
 z
-" clip-path="url(#pd27b2df4ef)" style="stroke: #000000; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p84d4fe5623)" style="stroke: #000000; stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_6">
-    <path d="M 246.11741 83.400945 
-Q 171.494117 83.400945 98.100662 83.400945 
-" clip-path="url(#pd27b2df4ef)" style="fill: none; stroke: #000000; stroke-width: 1.1; stroke-linecap: round"/>
-    <path d="M 101.700662 85.200945 
-L 98.100662 83.400945 
-L 101.700662 81.600945 
+    <path d="M 113.814559 43.955405 
+Q 77.834378 123.625806 42.360381 202.17537 
+" clip-path="url(#p84d4fe5623)" style="fill: none; stroke: #000000; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 45.482561 199.635292 
+L 42.360381 202.17537 
+L 42.201626 198.153579 
 z
-" clip-path="url(#pd27b2df4ef)" style="stroke: #000000; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p84d4fe5623)" style="stroke: #000000; stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_7">
-    <path d="M 264.118811 78.865512 
-Q 338.742103 78.865512 412.135558 78.865512 
-" clip-path="url(#pd27b2df4ef)" style="fill: none; stroke: #000000; stroke-width: 1.1; stroke-linecap: round"/>
-    <path d="M 408.535558 77.065512 
-L 412.135558 78.865512 
-L 408.535558 80.665512 
+    <path d="M 120.022261 39.968752 
+Q 215.435514 127.430901 309.942187 214.062017 
+" clip-path="url(#p84d4fe5623)" style="fill: none; stroke: #000000; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 308.504736 210.302531 
+L 309.942187 214.062017 
+L 306.072127 212.956286 
 z
-" clip-path="url(#pd27b2df4ef)" style="stroke: #000000; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p84d4fe5623)" style="stroke: #000000; stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="text_1">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="113.948198" transform="rotate(-0 12.717921 113.948198)">{</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="230.985638" y="20.779064" transform="rotate(-0 230.985638 20.779064)">{</text>
    </g>
    <g id="text_2">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="122.735599" transform="rotate(-0 12.717921 122.735599)">  "database": "card",</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="230.985638" y="29.566465" transform="rotate(-0 230.985638 29.566465)">  "database": "ncbi",</text>
    </g>
    <g id="text_3">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="131.523001" transform="rotate(-0 12.717921 131.523001)">  "id": "card:ARO:3000579",</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="230.985638" y="38.353867" transform="rotate(-0 230.985638 38.353867)">  "id": "ncbi:WP_029728367.1",</text>
    </g>
    <g id="text_4">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="140.310402" transform="rotate(-0 12.717921 140.310402)">  "name": "Chryseobacterium </text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="230.985638" y="47.178456" transform="rotate(-0 230.985638 47.178456)">  "alternative_id": {</text>
    </g>
    <g id="text_5">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="149.134991" transform="rotate(-0 12.717921 149.134991)">      meningosepticum BlaB",</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="230.985638" y="55.965858" transform="rotate(-0 230.985638 55.965858)">    "nucleotide_accession": </text>
    </g>
    <g id="text_6">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="157.922393" transform="rotate(-0 12.717921 157.922393)">  "is_a": "ARO:3004201:BlaB beta-</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="230.985638" y="64.715525" transform="rotate(-0 230.985638 64.715525)">        "NG_067210.1"</text>
    </g>
    <g id="text_7">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="166.709795" transform="rotate(-0 12.717921 166.709795)">      lactamase",</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="230.985638" y="73.503473" transform="rotate(-0 230.985638 73.503473)">  },</text>
    </g>
    <g id="text_8">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="175.460009" transform="rotate(-0 12.717921 175.460009)">  "PMID": [</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="230.985638" y="82.328062" transform="rotate(-0 230.985638 82.328062)">  "name": "blaB-21",</text>
    </g>
    <g id="text_9">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="184.246863" transform="rotate(-0 12.717921 184.246863)">    "12019109"</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="230.985638" y="91.078276" transform="rotate(-0 230.985638 91.078276)">  "phenotype": "confers resistance </text>
    </g>
    <g id="text_10">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="193.034812" transform="rotate(-0 12.717921 193.034812)">  ],</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="230.985638" y="99.902865" transform="rotate(-0 230.985638 99.902865)">      to subclass CARBAPENEM",</text>
    </g>
    <g id="text_11">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="201.822213" transform="rotate(-0 12.717921 201.822213)">  "phenotype": "confers resistance </text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="230.985638" y="108.690267" transform="rotate(-0 230.985638 108.690267)">  "product": "subclass B1 metallo-</text>
    </g>
    <g id="text_12">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="210.646802" transform="rotate(-0 12.717921 210.646802)">      to drug class: </text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="230.985638" y="117.477669" transform="rotate(-0 230.985638 117.477669)">      beta-lactamase BlaB-21"</text>
    </g>
    <g id="text_13">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="219.434204" transform="rotate(-0 12.717921 219.434204)">      carbapenem,penicillin beta-</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="230.985638" y="126.227883" transform="rotate(-0 230.985638 126.227883)">}</text>
    </g>
    <g id="text_14">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="228.221606" transform="rotate(-0 12.717921 228.221606)">      lactam"</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="241.881426" transform="rotate(-0 12.717921 241.881426)">{</text>
    </g>
    <g id="text_15">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="236.97182" transform="rotate(-0 12.717921 236.97182)">}</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="250.668828" transform="rotate(-0 12.717921 250.668828)">  "database": "card",</text>
    </g>
    <g id="text_16">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="179.962016" y="113.948198" transform="rotate(-0 179.962016 113.948198)">{</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="259.456229" transform="rotate(-0 12.717921 259.456229)">  "id": "card:ARO:3000579",</text>
    </g>
    <g id="text_17">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="179.962016" y="122.735599" transform="rotate(-0 179.962016 122.735599)">  "database": "ncbi",</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="268.243631" transform="rotate(-0 12.717921 268.243631)">  "name": "Chryseobacterium </text>
    </g>
    <g id="text_18">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="179.962016" y="131.523001" transform="rotate(-0 179.962016 131.523001)">  "id": "ncbi:WP_029728367.1",</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="277.06822" transform="rotate(-0 12.717921 277.06822)">      meningosepticum BlaB",</text>
    </g>
    <g id="text_19">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="179.962016" y="140.34759" transform="rotate(-0 179.962016 140.34759)">  "alternative_id": {</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="285.855621" transform="rotate(-0 12.717921 285.855621)">  "is_a": "ARO:3004201:BlaB beta-</text>
    </g>
    <g id="text_20">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="179.962016" y="149.134991" transform="rotate(-0 179.962016 149.134991)">    "nucleotide_accession": </text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="294.643023" transform="rotate(-0 12.717921 294.643023)">      lactamase",</text>
    </g>
    <g id="text_21">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="179.962016" y="157.884659" transform="rotate(-0 179.962016 157.884659)">        "NG_067210.1"</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="303.393237" transform="rotate(-0 12.717921 303.393237)">  "PMID": [</text>
    </g>
    <g id="text_22">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="179.962016" y="166.672607" transform="rotate(-0 179.962016 166.672607)">  },</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="312.180092" transform="rotate(-0 12.717921 312.180092)">    "12019109"</text>
    </g>
    <g id="text_23">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="179.962016" y="175.497196" transform="rotate(-0 179.962016 175.497196)">  "name": "blaB-21",</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="320.96804" transform="rotate(-0 12.717921 320.96804)">  ],</text>
    </g>
    <g id="text_24">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="179.962016" y="184.24741" transform="rotate(-0 179.962016 184.24741)">  "phenotype": "confers resistance </text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="329.755442" transform="rotate(-0 12.717921 329.755442)">  "phenotype": "confers resistance </text>
    </g>
    <g id="text_25">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="179.962016" y="193.071999" transform="rotate(-0 179.962016 193.071999)">      to subclass CARBAPENEM",</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="338.580031" transform="rotate(-0 12.717921 338.580031)">      to drug class: </text>
    </g>
    <g id="text_26">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="179.962016" y="201.859401" transform="rotate(-0 179.962016 201.859401)">  "product": "subclass B1 metallo-</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="347.367432" transform="rotate(-0 12.717921 347.367432)">      carbapenem,penicillin beta-</text>
    </g>
    <g id="text_27">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="179.962016" y="210.646802" transform="rotate(-0 179.962016 210.646802)">      beta-lactamase BlaB-21"</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="356.154834" transform="rotate(-0 12.717921 356.154834)">      lactam"</text>
    </g>
    <g id="text_28">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="179.962016" y="219.397016" transform="rotate(-0 179.962016 219.397016)">}</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="12.717921" y="364.905048" transform="rotate(-0 12.717921 364.905048)">}</text>
    </g>
    <g id="text_29">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="347.20611" y="113.948198" transform="rotate(-0 347.20611 113.948198)">{</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="276.339969" y="253.220009" transform="rotate(-0 276.339969 253.220009)">{</text>
    </g>
    <g id="text_30">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="347.20611" y="122.735599" transform="rotate(-0 347.20611 122.735599)">  "database": "resfinder",</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="276.339969" y="262.00741" transform="rotate(-0 276.339969 262.00741)">  "database": "resfinder",</text>
    </g>
    <g id="text_31">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="347.20611" y="131.560188" transform="rotate(-0 347.20611 131.560188)">  "id": "resfinder:blaB-11",</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="276.339969" y="270.831999" transform="rotate(-0 276.339969 270.831999)">  "id": "resfinder:blaB-11",</text>
    </g>
    <g id="text_32">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="347.20611" y="140.34759" transform="rotate(-0 347.20611 140.34759)">  "name": "blaB-11",</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="276.339969" y="279.619401" transform="rotate(-0 276.339969 279.619401)">  "name": "blaB-11",</text>
    </g>
    <g id="text_33">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="347.20611" y="149.097804" transform="rotate(-0 347.20611 149.097804)">  "phenotype": "confers resistance </text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="276.339969" y="288.369615" transform="rotate(-0 276.339969 288.369615)">  "phenotype": "confers </text>
    </g>
    <g id="text_34">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="347.20611" y="157.922393" transform="rotate(-0 347.20611 157.922393)">      to Amoxicillin, Ampicillin, </text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="276.339969" y="297.194204" transform="rotate(-0 276.339969 297.194204)">      resistance to Amoxicillin,</text>
    </g>
    <g id="text_35">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="347.20611" y="166.709795" transform="rotate(-0 347.20611 166.709795)">      Ticarcillin"</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="276.339969" y="305.981606" transform="rotate(-0 276.339969 305.981606)">       Ampicillin, Ticarcillin"</text>
    </g>
    <g id="text_36">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="347.20611" y="175.460009" transform="rotate(-0 347.20611 175.460009)">}</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="276.339969" y="314.73182" transform="rotate(-0 276.339969 314.73182)">}</text>
    </g>
    <g id="text_37">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="133.570205" y="14.735599" transform="rotate(-0 133.570205 14.735599)">{</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="97.757291" y="122.826308" transform="rotate(-0 97.757291 122.826308)">{</text>
    </g>
    <g id="text_38">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="133.570205" y="23.522454" transform="rotate(-0 133.570205 23.522454)">  "coverage": 1.0,</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="97.757291" y="131.613163" transform="rotate(-0 97.757291 131.613163)">  "coverage": 1.0,</text>
    </g>
    <g id="text_39">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="133.570205" y="32.310402" transform="rotate(-0 133.570205 32.310402)">  "identity": 1.0,</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="97.757291" y="140.401111" transform="rotate(-0 97.757291 140.401111)">  "identity": 1.0,</text>
    </g>
    <g id="text_40">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="133.570205" y="41.097257" transform="rotate(-0 133.570205 41.097257)">  "type": "RBH"</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="97.757291" y="149.187966" transform="rotate(-0 97.757291 149.187966)">  "type": "RBH"</text>
    </g>
    <g id="text_41">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="133.570205" y="49.885205" transform="rotate(-0 133.570205 49.885205)">}</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="97.757291" y="157.975914" transform="rotate(-0 97.757291 157.975914)">}</text>
    </g>
    <g id="text_42">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="296.600315" y="14.735599" transform="rotate(-0 296.600315 14.735599)">{</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="310.355717" y="156.842056" transform="rotate(-0 310.355717 156.842056)">{</text>
    </g>
    <g id="text_43">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="296.600315" y="23.522454" transform="rotate(-0 296.600315 23.522454)">  "coverage": 1.0,</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="310.355717" y="165.628911" transform="rotate(-0 310.355717 165.628911)">  "coverage": 1.0,</text>
    </g>
    <g id="text_44">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="296.600315" y="32.310402" transform="rotate(-0 296.600315 32.310402)">  "identity": 0.976,</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="310.355717" y="174.416859" transform="rotate(-0 310.355717 174.416859)">  "identity": 0.976,</text>
    </g>
    <g id="text_45">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="296.600315" y="41.097257" transform="rotate(-0 296.600315 41.097257)">  "type": "OWH"</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="310.355717" y="183.203714" transform="rotate(-0 310.355717 183.203714)">  "type": "OWH"</text>
    </g>
    <g id="text_46">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="296.600315" y="49.885205" transform="rotate(-0 296.600315 49.885205)">}</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="310.355717" y="191.991662" transform="rotate(-0 310.355717 191.991662)">}</text>
    </g>
    <g id="patch_8">
-    <path d="M 87.874016 89.070236 
-C 90.58034 89.070236 93.176185 87.995002 95.089846 86.081342 
-C 97.003506 84.167681 98.07874 81.571836 98.07874 78.865512 
-C 98.07874 76.159187 97.003506 73.563342 95.089846 71.649682 
-C 93.176185 69.736022 90.58034 68.660787 87.874016 68.660787 
-C 85.167691 68.660787 82.571846 69.736022 80.658186 71.649682 
-C 78.744525 73.563342 77.669291 76.159187 77.669291 78.865512 
-C 77.669291 81.571836 78.744525 84.167681 80.658186 86.081342 
-C 82.571846 87.995002 85.167691 89.070236 87.874016 89.070236 
+    <path d="M 113.385827 44.090079 
+C 116.092151 44.090079 118.687996 43.014845 120.601657 41.101184 
+C 122.515317 39.187524 123.590551 36.591679 123.590551 33.885354 
+C 123.590551 31.17903 122.515317 28.583185 120.601657 26.669525 
+C 118.687996 24.755864 116.092151 23.68063 113.385827 23.68063 
+C 110.679502 23.68063 108.083657 24.755864 106.169997 26.669525 
+C 104.256337 28.583185 103.181102 31.17903 103.181102 33.885354 
+C 103.181102 36.591679 104.256337 39.187524 106.169997 41.101184 
+C 108.083657 43.014845 110.679502 44.090079 113.385827 44.090079 
 z
-" clip-path="url(#pd27b2df4ef)" style="fill: #009e73; stroke: #ffffff; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p84d4fe5623)" style="fill: #0072b2; stroke: #ffffff; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_9">
-    <path d="M 255.11811 89.070236 
-C 257.824435 89.070236 260.42028 87.995002 262.33394 86.081342 
-C 264.247601 84.167681 265.322835 81.571836 265.322835 78.865512 
-C 265.322835 76.159187 264.247601 73.563342 262.33394 71.649682 
-C 260.42028 69.736022 257.824435 68.660787 255.11811 68.660787 
-C 252.411786 68.660787 249.815941 69.736022 247.90228 71.649682 
-C 245.98862 73.563342 244.913386 76.159187 244.913386 78.865512 
-C 244.913386 81.571836 245.98862 84.167681 247.90228 86.081342 
-C 249.815941 87.995002 252.411786 89.070236 255.11811 89.070236 
+    <path d="M 34.015748 219.83811 
+C 36.722073 219.83811 39.317917 218.762876 41.231578 216.849216 
+C 43.145238 214.935555 44.220472 212.33971 44.220472 209.633386 
+C 44.220472 206.927061 43.145238 204.331216 41.231578 202.417556 
+C 39.317917 200.503896 36.722073 199.428661 34.015748 199.428661 
+C 31.309423 199.428661 28.713579 200.503896 26.799918 202.417556 
+C 24.886258 204.331216 23.811024 206.927061 23.811024 209.633386 
+C 23.811024 212.33971 24.886258 214.935555 26.799918 216.849216 
+C 28.713579 218.762876 31.309423 219.83811 34.015748 219.83811 
 z
-" clip-path="url(#pd27b2df4ef)" style="fill: #0072b2; stroke: #ffffff; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p84d4fe5623)" style="fill: #009e73; stroke: #ffffff; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_10">
-    <path d="M 422.362205 89.070236 
-C 425.068529 89.070236 427.664374 87.995002 429.578035 86.081342 
-C 431.491695 84.167681 432.566929 81.571836 432.566929 78.865512 
-C 432.566929 76.159187 431.491695 73.563342 429.578035 71.649682 
-C 427.664374 69.736022 425.068529 68.660787 422.362205 68.660787 
-C 419.65588 68.660787 417.060035 69.736022 415.146375 71.649682 
-C 413.232714 73.563342 412.15748 76.159187 412.15748 78.865512 
-C 412.15748 81.571836 413.232714 84.167681 415.146375 86.081342 
-C 417.060035 87.995002 419.65588 89.070236 422.362205 89.070236 
+    <path d="M 317.480315 231.176693 
+C 320.18664 231.176693 322.782484 230.101459 324.696145 228.187798 
+C 326.609805 226.274138 327.685039 223.678293 327.685039 220.971969 
+C 327.685039 218.265644 326.609805 215.669799 324.696145 213.756139 
+C 322.782484 211.842478 320.18664 210.767244 317.480315 210.767244 
+C 314.77399 210.767244 312.178146 211.842478 310.264485 213.756139 
+C 308.350825 215.669799 307.275591 218.265644 307.275591 220.971969 
+C 307.275591 223.678293 308.350825 226.274138 310.264485 228.187798 
+C 312.178146 230.101459 314.77399 231.176693 317.480315 231.176693 
 z
-" clip-path="url(#pd27b2df4ef)" style="fill: #d55e00; stroke: #ffffff; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p84d4fe5623)" style="fill: #d55e00; stroke: #ffffff; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="pd27b2df4ef">
-   <rect x="0" y="-0.504567" width="510.23622" height="283.464567"/>
+  <clipPath id="p84d4fe5623">
+   <rect x="0" y="-0.130394" width="510.23622" height="396.850394"/>
   </clipPath>
  </defs>
 </svg>

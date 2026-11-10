@@ -578,10 +578,10 @@ def graph_example(graph, out_dir, name=GRAPH_EXAMPLE_NAME):
             lines.extend(textwrap.wrap(line, width, subsequent_indent=" " * (indent + 4), drop_whitespace=False, break_long_words=True) or [line])
         return lines
 
-    fig = style.new_figure(180, 100)
-    ax = style.axes_mm(fig, 0, 0, 180, 100)
+    fig = style.new_figure(180, 140)
+    ax = style.axes_mm(fig, 0, 0, 180, 140)
     ax.set_xlim(0, 180)
-    ax.set_ylim(0, 100)
+    ax.set_ylim(0, 140)
     ax.axis("off")
     cell, step = 1.4866, 3.1
 
@@ -594,26 +594,27 @@ def graph_example(graph, out_dir, name=GRAPH_EXAMPLE_NAME):
             ax.text(x + cell, y_top - 1.5 - i * step, line, family="DejaVu Sans Mono", fontsize=7, ha="left", va="top", zorder=2)
         return width, height
 
-    centres = {card: 31, ncbi: 90, resfinder: 149}
-    row = 72
-    place = {n: (x, row) for n, x in centres.items()}
+    # a triangle: NCBI at the apex, CARD bottom left, ResFinder bottom right; boxes are placed clear of the arrows
+    place = {ncbi: (40, 128), card: (12, 66), resfinder: (112, 62)}
     for node_id, (x, y) in place.items():
         ax.add_patch(Circle((x, y), 3.6, facecolor=style.DATABASE_COLOURS[node_id.split(":")[0]], edgecolor="white", linewidth=0.8, zorder=3))
-    for node_id, obj in zip(GRAPH_EXAMPLE, nodes):
-        box(wrapped(obj, 36), centres[node_id] - 28, row - 9, style.DATABASE_COLOURS[node_id.split(":")[0]])
+    ax.plot([place[ncbi][0] + 3.6, 80], [128, 128], color=style.DATABASE_COLOURS["ncbi"], linewidth=0.6, zorder=1)
+    box(wrapped(nodes[1], 36), 80, 136, style.DATABASE_COLOURS["ncbi"])
+    box(wrapped(nodes[0], 36), 3, 58, style.DATABASE_COLOURS["card"])
+    box(wrapped(nodes[2], 32), 96, 54, style.DATABASE_COLOURS["resfinder"])
 
     def arrow(a, b, offset=0.0):
         (x0, y0), (x1, y1) = place[a], place[b]
-        ax.add_patch(FancyArrowPatch((x0, y0 + offset), (x1, y1 + offset), arrowstyle="-|>", mutation_scale=9,
+        length = ((x1 - x0) ** 2 + (y1 - y0) ** 2) ** 0.5
+        nx, ny = -(y1 - y0) / length, (x1 - x0) / length
+        ax.add_patch(FancyArrowPatch((x0 + nx * offset, y0 + ny * offset), (x1 + nx * offset, y1 + ny * offset), arrowstyle="-|>", mutation_scale=9,
                                      shrinkA=9, shrinkB=9, linewidth=1.1, color="black", zorder=1))
 
     arrow(card, ncbi, 1.6)
-    arrow(ncbi, card, -1.6)
+    arrow(ncbi, card, 1.6)
     arrow(ncbi, resfinder)
-    for (a_, b_), obj in (((card, ncbi), edge_object(card, ncbi)), ((ncbi, resfinder), edge_object(ncbi, resfinder))):
-        lines = wrapped(obj, 30)
-        width = (max(len(l) for l in lines) + 2) * cell
-        box(lines, (centres[a_] + centres[b_]) / 2 - width / 2, row + 26)
+    box(wrapped(edge_object(card, ncbi), 30), 33, 100)
+    box(wrapped(edge_object(ncbi, resfinder), 30), 108, 88)
     style.save_figure(fig, out_dir / name)
     (out_dir / f"source_data_{name}.json").write_text(json.dumps({"nodes": nodes, "edges": edges}, indent=2) + "\n")
     return fig
