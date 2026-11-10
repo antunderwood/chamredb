@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+- `.github/workflows/publish.yml`: builds, checks and smoke-tests the wheel and uploads to PyPI by trusted publishing when a `vX.Y.Z` tag is pushed (approval of the `pypi` environment required).
+
 ### Removed
 
 - `chamredb/build_graph_from_mmseqs_data.py`: a leftover that failed on import (the graph is built by `builder/`).
