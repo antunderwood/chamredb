@@ -1,0 +1,8 @@
+databases,card,ncbi,resfinder,groups,proteins
+card+ncbi,1,1,0,3226,6466
+card+ncbi+resfinder,1,1,1,2406,7344
+ncbi,0,1,0,1539,1539
+card,1,0,0,272,272
+ncbi+resfinder,0,1,1,67,135
+resfinder,0,0,1,56,56
+card+resfinder,1,0,1,23,47

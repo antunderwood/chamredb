@@ -100,3 +100,49 @@ def test_figure_on_the_bundled_release_graph_matches_the_committed_statistics(tm
     committed = json.loads((ROOT / "docs" / "statistics.json").read_text())
     assert_same_statistics(stats["analysis"], committed["analysis"])
     assert pd.read_csv(tmp_path / f"source_data_{NAME}_C_density.csv")["matches"].sum() == committed["analysis"]["matches_analysed"]
+
+
+# ---- overlap (UpSet) figure, ticket #49 ----
+
+OVERLAP = "figure_overlap_upset"
+
+
+def hand_group_stats():
+    from analysis.tests.test_groups import HAND
+    return run.group_statistics(HAND)
+
+
+def test_overlap_source_data_equal_the_group_statistics_on_the_hand_graph(tmp_path):
+    stats = hand_group_stats()
+    figures.overlap_upset(stats, tmp_path)
+    inter = pd.read_csv(tmp_path / f"source_data_{OVERLAP}_intersections.csv")
+    assert inter["groups"].sum() == stats["total"] == 8 and inter["proteins"].sum() == 24 and len(inter) == 7
+    assert inter.iloc[0]["groups"] == 2 and inter.iloc[0]["databases"] == "card+ncbi"   # largest first
+    row = inter[inter["databases"] == "card+resfinder"].iloc[0]
+    assert (row["card"], row["ncbi"], row["resfinder"], row["groups"], row["proteins"]) == (1, 0, 1, 1, 2)
+    sets = pd.read_csv(tmp_path / f"source_data_{OVERLAP}_set_sizes.csv").set_index("database")["groups"].to_dict()
+    # groups containing each database, by hand: card 1+2+1+1 = 5 (G1, G2, G3, G5, G6 -> 5), ncbi G1 G2 G3 G4 G8 = 5, resfinder G1 G6 G7 G8 = 4
+    assert sets == {"card": 5, "ncbi": 5, "resfinder": 4}
+
+
+def test_overlap_figure_numbers_size_and_determinism(tmp_path):
+    stats = hand_group_stats()
+    fig = figures.overlap_upset(stats, tmp_path / "a")
+    figures.overlap_upset(stats, tmp_path / "b")
+    assert tuple(round(v * 25.4, 6) for v in fig.get_size_inches()) == (180.0, 105.0)
+    texts = " ".join(t.get_text() for ax in fig.axes for t in ax.texts)
+    assert "8 groups" in texts and "24 proteins" in texts
+    for count in stats["by_databases"].values():
+        assert str(count) in texts
+    for name in sorted(p.name for p in (tmp_path / "a").iterdir()):
+        assert (tmp_path / "a" / name).read_bytes() == (tmp_path / "b" / name).read_bytes(), name
+
+
+def test_overlap_figure_on_the_release_graph_matches_the_committed_statistics(tmp_path):
+    graph = matches.read_graph(BUNDLED)
+    stats = run.group_statistics(graph)
+    committed = json.loads((ROOT / "docs" / "statistics.json").read_text())["groups"]
+    assert stats == committed
+    figures.overlap_upset(stats, tmp_path)
+    inter = pd.read_csv(tmp_path / f"source_data_{OVERLAP}_intersections.csv")
+    assert inter["groups"].sum() == committed["total"] and inter["proteins"].sum() == graph.number_of_nodes()
