@@ -67,6 +67,10 @@ def run_cli(graph, out):
 NAME = "figure_name_similarity_vs_identity"
 FILES = ["statistics.json", "analysis/low_name_similarity.csv", "analysis/low_name_similarity_without_alleles.csv",
          f"images/{NAME}.png", f"images/{NAME}.svg"] + [f"images/source_data_{NAME}_{s}.csv" for s in ("A_histogram", "B_histogram", "C_density", "C_fit")]
+OVERLAP = "figure_overlap_upset"
+HERO = "figure_real_families"
+FILES += [f"images/{OVERLAP}.png", f"images/{OVERLAP}.svg", f"images/source_data_{OVERLAP}_intersections.csv", f"images/source_data_{OVERLAP}_set_sizes.csv"]
+HERO_FILES = [f"images/{HERO}.png", f"images/{HERO}.svg", f"images/source_data_{HERO}_nodes.csv", f"images/source_data_{HERO}_edges.csv"]
 
 
 def test_run_writes_the_three_files_and_is_byte_identical_across_runs(tmp_path):
@@ -82,7 +86,7 @@ def test_run_writes_the_three_files_and_is_byte_identical_across_runs(tmp_path):
 def test_run_is_byte_identical_across_runs_on_the_bundled_release_graph(tmp_path):
     run_cli(BUNDLED, tmp_path / "a")
     run_cli(BUNDLED, tmp_path / "b")
-    for name in FILES:
+    for name in FILES + HERO_FILES:
         assert (tmp_path / "a" / name).read_bytes() == (tmp_path / "b" / name).read_bytes(), name
     stats = json.loads((tmp_path / "a" / "statistics.json").read_text())
     pin = json.loads((ROOT / "chamredb" / "data" / "graph_release.json").read_text())

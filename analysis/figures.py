@@ -183,3 +183,95 @@ def overlap_upset(group_stats, out_dir, name=OVERLAP_NAME):
     inter.to_csv(out_dir / f"source_data_{name}_intersections.csv", index=False)
     sets.to_csv(out_dir / f"source_data_{name}_set_sizes.csv", index=False)
     return fig
+
+
+HERO_NAME = "figure_real_families"
+_ORDER = ["card", "ncbi", "resfinder"]
+
+
+def real_families(graph, out_dir, name=HERO_NAME):
+    """Six real families chosen by the rules of analysis.families, drawn with the databases in three columns: node colour
+    is the database, solid lines are reciprocal best hits, dashed arrows are one-way hits, identity is written on the edges
+    (when a panel has more than four edges, one note states that every edge has identity 1.00). Writes the figure and two
+    source-data CSVs (every drawn node and edge)."""
+    from matplotlib.lines import Line2D
+    from matplotlib.patches import FancyArrowPatch
+    from analysis import families
+
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    chosen = families.select_families(graph)
+    assert len(chosen) == 6
+
+    fig = style.new_figure(180, 100)
+    lefts, bottoms = [6, 66, 126], [56, 12]
+    node_rows, edge_rows = [], []
+    for index, family in enumerate(chosen):
+        ax = style.axes_mm(fig, lefts[index % 3], bottoms[index // 3], 52, 30)
+        ax.axis("off")
+        by_db = {d: [n for n in family["nodes"] if n.split(":")[0] == d] for d in _ORDER}
+        tallest = max(len(v) for v in by_db.values())
+        ax.set_xlim(-0.55, 3.0)
+        ax.set_ylim(-2.5, 2.5)   # the same scale in every panel
+        position = {}
+        for column, database in enumerate(_ORDER):
+            members = by_db[database]
+            for row, node in enumerate(members):
+                position[node] = (column, (len(members) - 1) / 2 - row)
+            ax.text(column, 2.45, style_label(database), ha="center", va="top", fontsize=7,
+                    color=style.DATABASE_COLOURS[database], fontweight="bold")
+        letter = "ABCDEF"[index]
+        top = ax.get_xaxis_transform()   # x in data units, y as a fraction of the axes
+        ax.text(-0.55, 1.02, letter, fontsize=8, fontweight="bold", ha="left", va="bottom", clip_on=False, transform=top)
+        ax.text(-0.3, 1.02, family["title"], fontsize=7, ha="left", va="bottom", clip_on=False, transform=top)
+
+        label_edges = len(family["edges"]) <= 4
+        for source, target in family["edges"]:
+            data = graph.get_edge_data(source, target)
+            (x0, y0), (x1, y1) = position[source], position[target]
+            if abs(x1 - x0) < 2:
+                rad = 0.0
+            elif y1 > y0:
+                rad = -0.25      # bow upwards for targets above the source
+            elif y1 < y0:
+                rad = 0.25       # bow downwards for targets below the source
+            else:
+                rad = 0.9        # same height: a wide arc below the middle column
+            owh = data["type"] == "OWH"
+            ax.add_patch(FancyArrowPatch(
+                (x0, y0), (x1, y1), arrowstyle="-|>" if owh else "-", mutation_scale=6, shrinkA=4, shrinkB=4,
+                linestyle="--" if owh else "-", color=style.GREY if owh else "black", linewidth=0.8,
+                connectionstyle=f"arc3,rad={rad}", zorder=1))
+            if label_edges:
+                mx, my = (x0 + x1) / 2, (y0 + y1) / 2
+                dx, dy = x1 - x0, y1 - y0
+                mx, my = mx + 0.5 * rad * dy, my - 0.5 * rad * dx   # apex of the arc
+                ax.text(mx, my - (0.12 if rad == 0 else 0.1), f"{data['identity']:.2f}", ha="center", va="top", fontsize=7,
+                        bbox={"boxstyle": "round,pad=0.1", "facecolor": "white", "edgecolor": "none", "alpha": 0.9}, zorder=3)
+            edge_rows.append({"panel": letter, "key": family["key"], "source": source, "target": target,
+                              "type": data["type"], "identity": data["identity"], "coverage": data["coverage"]})
+        if not label_edges:
+            ax.text(1.0, -2.45, f"identity 1.00 on all {len(family['edges'])} edges", ha="center", va="bottom", fontsize=7)
+        for node, (x, y) in position.items():
+            database = node.split(":")[0]
+            ax.scatter([x], [y], s=60, color=style.DATABASE_COLOURS[database], edgecolors="white", linewidths=0.6, zorder=4)
+            stacked = database == "resfinder" and len(by_db["resfinder"]) > 1   # names to the right of stacked nodes
+            ax.text(x + (0.12 if stacked else 0), y + (0 if stacked else 0.2), graph.nodes[node]["name"],
+                    ha="left" if stacked else "center", va="center" if stacked else "bottom", fontsize=7, zorder=5,
+                    bbox={"boxstyle": "round,pad=0.05", "facecolor": "white", "edgecolor": "none", "alpha": 0.85})
+            node_rows.append({"panel": letter, "key": family["key"], "database": database, "node_id": node,
+                              "name": graph.nodes[node]["name"]})
+
+    handles = [Line2D([0], [0], marker="o", linestyle="", markersize=6, color=style.DATABASE_COLOURS[d], label=style_label(d)) for d in _ORDER]
+    handles += [Line2D([0], [0], color="black", linewidth=0.8, label="reciprocal best hit"),
+                Line2D([0], [0], color=style.GREY, linewidth=0.8, linestyle="--", label="one-way hit (arrow: from, to)")]
+    fig.legend(handles=handles, loc="lower center", ncol=5, frameon=False, bbox_to_anchor=(0.5, 0.0), handlelength=1.8, columnspacing=1.2)
+
+    style.save_figure(fig, out_dir / name)
+    pd.DataFrame(node_rows).to_csv(out_dir / f"source_data_{name}_nodes.csv", index=False)
+    pd.DataFrame(edge_rows).to_csv(out_dir / f"source_data_{name}_edges.csv", index=False)
+    return fig
+
+
+def style_label(database):
+    return DATABASE_LABELS[database]
