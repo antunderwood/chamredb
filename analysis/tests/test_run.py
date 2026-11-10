@@ -59,8 +59,9 @@ def test_allele_free_threshold_comes_from_its_own_regression():
 
 # ---- the run command ----
 
-def run_cli(graph, out):
-    subprocess.run([sys.executable, "-m", "analysis.run", "--graph", str(graph), "--out", str(out)],
+def run_cli(graph, out, manifest=False):
+    extra = ["--manifest", str(ROOT / "docs" / "data_manifest.json")] if manifest else []
+    subprocess.run([sys.executable, "-m", "analysis.run", "--graph", str(graph), "--out", str(out)] + extra,
                    check=True, cwd=ROOT, capture_output=True)
 
 
@@ -73,6 +74,9 @@ FILES += [f"images/{OVERLAP}.png", f"images/{OVERLAP}.svg", f"images/source_data
 DIST = "figure_name_distributions"
 GALLERY = "figure_name_disagreements"
 FILES += [f"images/{DIST}.png", f"images/{DIST}.svg", f"images/source_data_{DIST}_summary.csv", f"images/source_data_{DIST}_histogram.csv"]
+PIPELINE_FILES = ["images/figure_pipeline.png", "images/figure_pipeline.svg", "images/source_data_figure_pipeline.csv"]
+QUERY_FILES = [f"images/{b}{s}" for b in ("figure_query_qnrB2", "figure_query_aac3IIIb") for s in (".png", ".svg")] + [
+    f"images/source_data_{b}.txt" for b in ("figure_query_qnrB2", "figure_query_aac3IIIb")]
 HERO_FILES = [f"images/{GALLERY}.png", f"images/{GALLERY}.svg", f"images/source_data_{GALLERY}_rows.csv", f"images/source_data_{GALLERY}_eligible.csv",
               f"images/{HERO}.png", f"images/{HERO}.svg", f"images/source_data_{HERO}_nodes.csv", f"images/source_data_{HERO}_edges.csv"]
 
@@ -88,10 +92,13 @@ def test_run_writes_the_three_files_and_is_byte_identical_across_runs(tmp_path):
 
 
 def test_run_is_byte_identical_across_runs_on_the_bundled_release_graph(tmp_path):
-    run_cli(BUNDLED, tmp_path / "a")
-    run_cli(BUNDLED, tmp_path / "b")
-    for name in FILES + HERO_FILES:
+    run_cli(BUNDLED, tmp_path / "a", manifest=True)
+    run_cli(BUNDLED, tmp_path / "b", manifest=True)
+    for name in FILES + HERO_FILES + PIPELINE_FILES + QUERY_FILES:
         assert (tmp_path / "a" / name).read_bytes() == (tmp_path / "b" / name).read_bytes(), name
-    stats = json.loads((tmp_path / "a" / "statistics.json").read_text())
     pin = json.loads((ROOT / "chamredb" / "data" / "graph_release.json").read_text())
+    for query in ("figure_query_qnrB2", "figure_query_aac3IIIb"):   # the screenshots show the default graph's release, not "custom graph"
+        shown = (tmp_path / "a" / "images" / f"source_data_{query}.txt").read_text()
+        assert f"data release: {pin['data_release']}" in shown and "custom graph" not in shown
+    stats = json.loads((tmp_path / "a" / "statistics.json").read_text())
     assert (stats["graph"]["nodes"], stats["graph"]["edges"]) == (pin["nodes"], pin["edges"])
