@@ -17,7 +17,7 @@ Previously known as Project ![mAMRite](docs/images/mAMRite_small.png)
 
 ## Introduction
 
-This project originated from the dilemma a scientist faces when choosing a database that stores antimicrobial resistance determinants. Multiple databases exist with comparative strengths and weaknesses. This project builds on the concepts of the [haAMRonization](https://github.com/pha4ge/hAMRonization) project aiming to aggeregate and combine the information contained within the metadata associated with each project. The problem is exacerbated by the fact that the equivalent antimicrobial resistance genes (ARGs) can be named differently in each database.
+This project originated from the dilemma a scientist faces when choosing a database that stores antimicrobial resistance determinants. Multiple databases exist with comparative strengths and weaknesses. This project builds on the concepts of the [hAMRonization](https://github.com/pha4ge/hAMRonization) project aiming to aggregate and combine the information contained within the metadata associated with each project. The problem is exacerbated by the fact that the equivalent antimicrobial resistance genes (ARGs) can be named differently in each database.
 
 The hypothesis for the project is as follows:  
 
@@ -39,7 +39,7 @@ The same protein often carries a different name in each database (panels B to D)
 * Download sequences and associated metadata of ARGs from 3 databases
   * [CARD](https://card.mcmaster.ca/) ([Manuscript](http://www.ncbi.nlm.nih.gov/pubmed/31665441))
   * [NCBI AMR Reference Gene Catalog](https://www.ncbi.nlm.nih.gov/pathogens/refgene/)
-  * [Resfinder 4](https://bitbucket.org/genomicepidemiology/resfinder/src/4.0/) ([Manuscipt](https://academic.oup.com/jac/article/75/12/3491/5890997))  
+  * [Resfinder 4](https://bitbucket.org/genomicepidemiology/resfinder/src/4.0/) ([Manuscript](https://academic.oup.com/jac/article/75/12/3491/5890997))  
    Details can be found in the [appendices](/docs/appendices.md#data-download)
 * Parse the data to
   * extract the protein sequences and write into fasta format with the gene identifiers as the record ids.
@@ -171,7 +171,7 @@ This will produce a [TSV file](/docs/data/card_ids.tsv) containing the matches a
 
 ### 3. Use hAMRonization summary output
 
-Use the [hAMRonization softare](https://github.com/pha4ge/hAMRonization) to convert the outputs from antimicrobial resistance gene detection tools into a unified format. Concatenate and summarize AMR detection reports into a single summary JSON file using the `hamronize summarize` command from this package. The JSON output from this step can be used to query ChamreDb.  
+Use the [hAMRonization software](https://github.com/pha4ge/hAMRonization) to convert the outputs from antimicrobial resistance gene detection tools into a unified format. Concatenate and summarize AMR detection reports into a single summary JSON file using the `hamronize summarize` command from this package. The JSON output from this step can be used to query ChamreDb.  
 Use `-j` to specify the json summary file and `-o` the path for the TSV output  
 **Please Note**  
 Only outputs using data derived from AMR detection tools that have searched either the `CARD`, `NCBI` or `Resfinder 4` databases can be used.
