@@ -536,3 +536,84 @@ def release_waterfall(steps, out_dir, name=WATERFALL_NAME):
     style.save_figure(fig, out_dir / name)
     pd.DataFrame(rows).to_csv(out_dir / f"source_data_{name}.csv", index=False)
     return fig
+
+
+GRAPH_EXAMPLE_NAME = "figure_graph_example"
+# the example of the original README hero: one protein in each database (a metallo-beta-lactamase), matched by a reciprocal best hit
+# between CARD and NCBI and a one-way hit from NCBI to ResFinder
+GRAPH_EXAMPLE = ("card:ARO:3000579", "ncbi:WP_029728367.1", "resfinder:blaB-11")
+_FIELD_ORDER = ["database", "id", "alternative_id", "name", "is_a", "PMID", "phenotype", "product"]
+
+
+def graph_example(graph, out_dir, name=GRAPH_EXAMPLE_NAME):
+    """The graph model in one picture: three real nodes with their metadata as JSON, the two directed RBH edges and the one-way edge
+    with theirs. Everything shown is read from the graph; empty fields are left out. Writes the figure and a JSON of the drawn objects."""
+    import json
+    import textwrap
+    from matplotlib.patches import Circle, FancyArrowPatch, FancyBboxPatch
+
+    card, ncbi, resfinder = GRAPH_EXAMPLE
+    edges_wanted = [(card, ncbi), (ncbi, card), (ncbi, resfinder)]
+    if not all(n in graph for n in GRAPH_EXAMPLE) or not all(graph.has_edge(*e) for e in edges_wanted):
+        raise ValueError(f"the graph does not contain the example {GRAPH_EXAMPLE}")
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    def node_object(node_id):
+        attributes = dict(graph.nodes[node_id])
+        attributes["id"] = node_id
+        return {k: attributes[k] for k in _FIELD_ORDER if k in attributes and attributes[k] not in ("", [], {})}
+
+    def edge_object(source, target):
+        data = graph.get_edge_data(source, target)
+        return {"coverage": data["coverage"], "identity": data["identity"], "type": data["type"]}
+
+    nodes = [node_object(n) for n in GRAPH_EXAMPLE]
+    edges = [{"source": s, "target": t, **edge_object(s, t)} for s, t in edges_wanted]
+
+    def wrapped(obj, width):
+        lines = []
+        for line in json.dumps(obj, indent=2).splitlines():
+            indent = len(line) - len(line.lstrip())
+            lines.extend(textwrap.wrap(line, width, subsequent_indent=" " * (indent + 4), drop_whitespace=False, break_long_words=True) or [line])
+        return lines
+
+    fig = style.new_figure(180, 100)
+    ax = style.axes_mm(fig, 0, 0, 180, 100)
+    ax.set_xlim(0, 180)
+    ax.set_ylim(0, 100)
+    ax.axis("off")
+    cell, step = 1.4866, 3.1
+
+    def box(lines, x, y_top, colour=None):
+        width = (max(len(l) for l in lines) + 2) * cell
+        height = len(lines) * step + 3
+        if colour:
+            ax.add_patch(FancyBboxPatch((x, y_top - height), width, height, boxstyle="square,pad=0", facecolor=colour, edgecolor="none", alpha=0.22, zorder=0))
+        for i, line in enumerate(lines):
+            ax.text(x + cell, y_top - 1.5 - i * step, line, family="DejaVu Sans Mono", fontsize=7, ha="left", va="top", zorder=2)
+        return width, height
+
+    centres = {card: 31, ncbi: 90, resfinder: 149}
+    row = 72
+    place = {n: (x, row) for n, x in centres.items()}
+    for node_id, (x, y) in place.items():
+        ax.add_patch(Circle((x, y), 3.6, facecolor=style.DATABASE_COLOURS[node_id.split(":")[0]], edgecolor="white", linewidth=0.8, zorder=3))
+    for node_id, obj in zip(GRAPH_EXAMPLE, nodes):
+        box(wrapped(obj, 36), centres[node_id] - 28, row - 9, style.DATABASE_COLOURS[node_id.split(":")[0]])
+
+    def arrow(a, b, offset=0.0):
+        (x0, y0), (x1, y1) = place[a], place[b]
+        ax.add_patch(FancyArrowPatch((x0, y0 + offset), (x1, y1 + offset), arrowstyle="-|>", mutation_scale=9,
+                                     shrinkA=9, shrinkB=9, linewidth=1.1, color="black", zorder=1))
+
+    arrow(card, ncbi, 1.6)
+    arrow(ncbi, card, -1.6)
+    arrow(ncbi, resfinder)
+    for (a_, b_), obj in (((card, ncbi), edge_object(card, ncbi)), ((ncbi, resfinder), edge_object(ncbi, resfinder))):
+        lines = wrapped(obj, 30)
+        width = (max(len(l) for l in lines) + 2) * cell
+        box(lines, (centres[a_] + centres[b_]) / 2 - width / 2, row + 26)
+    style.save_figure(fig, out_dir / name)
+    (out_dir / f"source_data_{name}.json").write_text(json.dumps({"nodes": nodes, "edges": edges}, indent=2) + "\n")
+    return fig

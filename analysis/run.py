@@ -103,6 +103,8 @@ def main(argv=None):
     plt.close(figures.name_similarity_vs_identity(result, stats, images))
     plt.close(figures.name_distributions(result, stats, images))
     plt.close(figures.overlap_upset(group_statistics(graph), images))
+    if all(n in graph for n in figures.GRAPH_EXAMPLE):  # the small test graphs lack the example nodes
+        plt.close(figures.graph_example(graph, images))
     if len(families.select_families(graph)) == 6:
         plt.close(figures.real_families(graph, images))
     else:

@@ -64,6 +64,10 @@ The same protein often carries a different name in each database (panels B to D)
     * coverage, (alignment length/query length)
     * identity, (percent identity of match)  
 
+![Three proteins, one from each database, with the metadata stored on each node and the type, coverage and identity stored on each edge. CARD and NCBI are reciprocal best hits (RBH, one edge each way); NCBI also has a one-way hit (OWH) to ResFinder.](docs/images/figure_graph_example.png)
+
+The example is read from the release graph (CARD ARO:3000579, NCBI WP_029728367.1, ResFinder blaB-11); empty fields are not shown.
+
 ![Pipeline from the three databases to the released graph](docs/images/figure_pipeline.png)
 
 The numbers in this figure are read from the release's manifest and statistics, so they match the graph described below.

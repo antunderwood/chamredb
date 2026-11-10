@@ -330,3 +330,51 @@ def test_pipeline_diagram_is_byte_identical_across_renders(tmp_path):
     figures.pipeline_diagram(*args, tmp_path / "b")
     for name in sorted(p.name for p in (tmp_path / "a").iterdir()):
         assert (tmp_path / "a" / name).read_bytes() == (tmp_path / "b" / name).read_bytes(), name
+
+
+# ---- the graph example (the original README hero, redrawn from the graph) ----
+
+EXAMPLE = "figure_graph_example"
+
+
+def raw_node_and_edges():
+    raw = json.loads(BUNDLED.read_text())
+    nodes = {n["id"]: n for n in raw["nodes"]}
+    edges = {(e["source"], e["target"]): e for e in raw["links"]}
+    return nodes, edges
+
+
+def test_graph_example_objects_equal_the_graph_file(tmp_path):
+    graph = matches.read_graph(BUNDLED)
+    figures.graph_example(graph, tmp_path)
+    shown = json.loads((tmp_path / f"source_data_{EXAMPLE}.json").read_text())
+    nodes, edges = raw_node_and_edges()
+    assert [n["id"] for n in shown["nodes"]] == list(figures.GRAPH_EXAMPLE)
+    for n in shown["nodes"]:
+        original = {k: v for k, v in nodes[n["id"]].items() if k != "id"}
+        for key, value in n.items():
+            if key != "id":
+                assert original[key] == value, (n["id"], key)       # every shown field is the graph's value
+        assert n["database"] == n["id"].split(":")[0] and n["name"] == original["name"]
+    types = {(e["source"], e["target"]): e for e in shown["edges"]}
+    assert {k: (v["type"], v["identity"], v["coverage"]) for k, v in types.items()} == {
+        k: (edges[k]["type"], edges[k]["identity"], edges[k]["coverage"]) for k in types}
+    assert sorted(v["type"] for v in types.values()) == ["OWH", "RBH", "RBH"]
+
+
+def test_graph_example_figure_names_size_and_determinism(tmp_path):
+    graph = matches.read_graph(BUNDLED)
+    fig = figures.graph_example(graph, tmp_path / "a")
+    figures.graph_example(graph, tmp_path / "b")
+    assert tuple(round(v * 25.4, 6) for v in fig.get_size_inches()) == (180.0, 100.0)
+    texts = " ".join(" ".join(t.get_text().split()) for ax in fig.axes for t in ax.texts)
+    for needle in ("blaB-21", "Chryseobacterium meningosepticum BlaB", "blaB-11", '"RBH"', '"OWH"', "0.976", "WP_029728367.1"):
+        assert needle in texts, needle
+    for name in sorted(p.name for p in (tmp_path / "a").iterdir()):
+        assert (tmp_path / "a" / name).read_bytes() == (tmp_path / "b" / name).read_bytes(), name
+
+
+def test_graph_example_refuses_a_graph_without_the_example(tmp_path):
+    from networkx import DiGraph
+    with pytest.raises(ValueError, match="example"):
+        figures.graph_example(DiGraph(), tmp_path)

@@ -1,0 +1,53 @@
+{
+  "nodes": [
+    {
+      "database": "card",
+      "id": "card:ARO:3000579",
+      "name": "Chryseobacterium meningosepticum BlaB",
+      "is_a": "ARO:3004201:BlaB beta-lactamase",
+      "PMID": [
+        "12019109"
+      ],
+      "phenotype": "confers resistance to drug class: carbapenem,penicillin beta-lactam"
+    },
+    {
+      "database": "ncbi",
+      "id": "ncbi:WP_029728367.1",
+      "alternative_id": {
+        "nucleotide_accession": "NG_067210.1"
+      },
+      "name": "blaB-21",
+      "phenotype": "confers resistance to subclass CARBAPENEM",
+      "product": "subclass B1 metallo-beta-lactamase BlaB-21"
+    },
+    {
+      "database": "resfinder",
+      "id": "resfinder:blaB-11",
+      "name": "blaB-11",
+      "phenotype": "confers resistance to Amoxicillin, Ampicillin, Ticarcillin"
+    }
+  ],
+  "edges": [
+    {
+      "source": "card:ARO:3000579",
+      "target": "ncbi:WP_029728367.1",
+      "coverage": 1.0,
+      "identity": 1.0,
+      "type": "RBH"
+    },
+    {
+      "source": "ncbi:WP_029728367.1",
+      "target": "card:ARO:3000579",
+      "coverage": 1.0,
+      "identity": 1.0,
+      "type": "RBH"
+    },
+    {
+      "source": "ncbi:WP_029728367.1",
+      "target": "resfinder:blaB-11",
+      "coverage": 1.0,
+      "identity": 0.976,
+      "type": "OWH"
+    }
+  ]
+}
