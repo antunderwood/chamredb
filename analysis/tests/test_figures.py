@@ -173,7 +173,7 @@ def test_hero_figure_names_identities_size_and_determinism(tmp_path):
     graph = matches.read_graph(BUNDLED)
     fig = figures.real_families(graph, tmp_path / "a")
     figures.real_families(graph, tmp_path / "b")
-    assert tuple(round(v * 25.4, 6) for v in fig.get_size_inches()) == (180.0, 140.0)
+    assert tuple(round(v * 25.4, 6) for v in fig.get_size_inches()) == (180.0, 100.0)
     texts = " ".join(t.get_text() for ax in fig.axes for t in ax.texts)
     nodes = pd.read_csv(tmp_path / "a" / f"source_data_{HERO}_nodes.csv")
     for name in nodes["name"]:
