@@ -610,11 +610,11 @@ def graph_example(graph, out_dir, name=GRAPH_EXAMPLE_NAME):
     # Layout (as the original figure): NCBI at the apex with its box to the right, CARD and ResFinder below with their boxes to the right.
     # The OWH edge is steep so that it passes left of the NCBI box. Both edge labels sit beside their edge, outside the arrows' path,
     # and a thin line in the database colour joins each circle to its box.
-    dx, dy = 8, 4
+    dx, dy = 16, 4
     place = {ncbi: (50 + dx, 97 + dy), card: (5 + dx, 22 + dy), resfinder: (106 + dx, 22 + dy)}
     for node_id, (x, y) in place.items():
         ax.add_patch(Circle((x, y), 3.6, facecolor=style.DATABASE_COLOURS[node_id.split(":")[0]], edgecolor="white", linewidth=0.8, zorder=3))
-    for node_id, obj, width, left, top in ((ncbi, nodes[1], 40, 76, 111 + dy), (card, nodes[0], 44, 20, 37 + dy), (resfinder, nodes[2], 32, 114, 37 + dy)):
+    for node_id, obj, width, left, top in ((ncbi, nodes[1], 52, 76, 111 + dy), (card, nodes[0], 44, 20, 37 + dy), (resfinder, nodes[2], 31, 114, 37 + dy)):
         colour = style.DATABASE_COLOURS[node_id.split(":")[0]]
         x, y = place[node_id]
         ax.plot([x + 3.6, left + dx], [y, y], color=colour, linewidth=0.6, zorder=1)
@@ -630,8 +630,15 @@ def graph_example(graph, out_dir, name=GRAPH_EXAMPLE_NAME):
     arrow(card, ncbi, 1.6)
     arrow(ncbi, card, 1.6)
     arrow(ncbi, resfinder)
-    box(wrapped(edge_object(card, ncbi), 30), 34 + dx, 69 + dy)
-    box(wrapped(edge_object(ncbi, resfinder), 30), 95 + dx, 63 + dy)
+    # both edge labels sit outside the triangle, on the same row (the same bottom edge), 5 mm clear of their edge at the label's lowest point
+    def line_x(a, b, y):
+        (x0, y0), (x1, y1) = place[a], place[b]
+        return x0 + (y - y0) * (x1 - x0) / (y1 - y0)
+
+    label_bottom = 51 + dy
+    rbh, owh = wrapped(edge_object(card, ncbi), 30), wrapped(edge_object(ncbi, resfinder), 30)
+    box(rbh, line_x(card, ncbi, label_bottom) - 5 - (max(len(l) for l in rbh) + 2) * cell, label_bottom + len(rbh) * step + 3)
+    box(owh, line_x(ncbi, resfinder, label_bottom) + 5, label_bottom + len(owh) * step + 3)
     assert all(x0 >= 0 and y0 >= 0 and x1 <= 180 and y1 <= HEIGHT for x0, y0, x1, y1 in extents), extents
     style.save_figure(fig, out_dir / name)
     (out_dir / f"source_data_{name}.json").write_text(json.dumps({"nodes": nodes, "edges": edges}, indent=2) + "\n")
