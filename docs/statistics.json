@@ -75,5 +75,43 @@
       "7": 4
     },
     "total": 7589
+  },
+  "pairs": {
+    "card>ncbi": {
+      "covered": 5969,
+      "source_nodes": 5971,
+      "with_rbh": 5662,
+      "with_search_only": 307
+    },
+    "card>resfinder": {
+      "covered": 5872,
+      "source_nodes": 5971,
+      "with_rbh": 2458,
+      "with_search_only": 3414
+    },
+    "ncbi>card": {
+      "covered": 7295,
+      "source_nodes": 7299,
+      "with_rbh": 5682,
+      "with_search_only": 1613
+    },
+    "ncbi>resfinder": {
+      "covered": 7192,
+      "source_nodes": 7299,
+      "with_rbh": 2509,
+      "with_search_only": 4683
+    },
+    "resfinder>card": {
+      "covered": 2585,
+      "source_nodes": 2589,
+      "with_rbh": 2461,
+      "with_search_only": 124
+    },
+    "resfinder>ncbi": {
+      "covered": 2588,
+      "source_nodes": 2589,
+      "with_rbh": 2504,
+      "with_search_only": 84
+    }
   }
 }

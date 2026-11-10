@@ -23,6 +23,29 @@ def group_statistics(graph):
             "largest_group_size": p["largest_group_size"], "largest_group_by_database": p["largest_group_by_database"]}
 
 
+def pair_statistics(graph):
+    """For each ordered pair of databases (source, target): the source proteins in the graph, those with a reciprocal best hit to the
+    target, those with only a one-way hit, and those covered by either (the `pairs` block of statistics.json)."""
+    database = lambda node_id: node_id.split(":", 1)[0]
+    names = sorted({database(n) for n in graph.nodes})
+    counts = {f"{a}>{b}": {"source_nodes": 0, "with_rbh": 0, "with_search_only": 0, "covered": 0} for a in names for b in names if a != b}
+    for node in graph.nodes:
+        a = database(node)
+        kinds = {}
+        for _, target, data in graph.out_edges(node, data=True):
+            kinds.setdefault(database(target), set()).add(data["type"])
+        for b in names:
+            if b == a:
+                continue
+            row = counts[f"{a}>{b}"]
+            row["source_nodes"] += 1
+            has = kinds.get(b, set())
+            row["with_rbh"] += "RBH" in has
+            row["with_search_only"] += bool(has) and "RBH" not in has
+            row["covered"] += bool(has)
+    return counts
+
+
 def statistics(graph, result, graph_name, graph_sha256):
     database = lambda node_id: node_id.split(":", 1)[0]
     rbh_pairs = {frozenset((u, v)) for u, v, d in graph.edges(data=True) if d["type"] == "RBH"}
@@ -40,6 +63,7 @@ def statistics(graph, result, graph_name, graph_sha256):
             "rbh_pairs": len(rbh_pairs), "rbh_pairs_by_databases": dict(sorted(by_databases.items())),
         },
         "groups": group_statistics(graph),
+        "pairs": pair_statistics(graph),
         "analysis": {
             "identity_threshold": matches.IDENTITY_THRESHOLD, "matches_analysed": len(result["distance"]),
             "matches_skipped_blaPAO": result["skipped_blaPAO"],
@@ -66,6 +90,11 @@ def main(argv=None):
     sha = hashlib.sha256(graph_path.read_bytes()).hexdigest()
     stats = statistics(graph, result, graph_path.name, sha)
     (out / "statistics.json").write_text(json.dumps(stats, sort_keys=True, indent=2) + "\n")
+    import platform
+    from importlib.metadata import version
+    (out / "analysis" / "environment.txt").write_text(
+        f"python {platform.python_version()}\n" + "".join(f"{m} {version(m)}\n" for m in ("matplotlib", "networkx", "numpy", "pandas", "rich", "strsimpy")) +
+        f"graph_sha256 {sha}\n")
     result["low_name_similarity"].to_csv(out / "analysis" / "low_name_similarity.csv", index=False)
     result["low_name_similarity_without_alleles"].to_csv(out / "analysis" / "low_name_similarity_without_alleles.csv", index=False)
     from analysis import families, figures  # needs matplotlib (optional extra `analysis`)

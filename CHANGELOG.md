@@ -26,6 +26,12 @@ Data refresh and modernisation (spec: GitHub issue #1).
 - ResFinder: the phenotype of a gene now comes from the allele whose sequence is used (9 of 2,601 genes changed).
 - The unit tests read a fixed subset of the 2021 graph, so data refreshes cannot change their expected outputs.
 
+### README
+
+- The README, the appendix summaries and the examples in `docs/data/` are regenerated from the release graph: figures and numbers come from `python -m analysis.run` and `python -m analysis.readme` (the numbers sit between markers and a test checks them against `docs/statistics.json`). The old assessment (19,132 matches, a predicted similarity of 0.69, hand-made figures) is replaced by the analysis of the 2026-11-09 graph; the old CSV files and figures in `scripts/` are removed.
+- Analysis decisions (ADR 0006): only `blaPAO` is skipped; `bla` is removed only as a prefix; the allele-free analysis uses its own regression.
+- Versions of the analysis tools and the hash of the graph used are recorded in `docs/analysis/environment.txt`.
+
 ### Known
 
 - The assessment in the README ("Assessing the graph") describes an earlier graph and was not regenerated.
