@@ -61,8 +61,12 @@ The same protein often carries a different name in each database (panels B to D)
     * Node attributes contain the phenotype from the JSON metadata
   * the edges link nodes and represent the matches and attributes include
     * type, either RBH or OWH (one way hit)
-    * coverage, (alignment length/query length)
-    * identity, (percent identity of match)  
+    * coverage, (alignment length/query length, a fraction that can exceed 1)
+    * identity, (fraction of identical residues in the match, 0 to 1)  
+
+![Three proteins, one from each database, with the metadata stored on each node and the type, coverage and identity stored on each edge. CARD and NCBI are reciprocal best hits (RBH, one edge each way); NCBI also has a one-way hit (OWH) to ResFinder.](docs/images/figure_graph_example.png)
+
+The example is read from the release graph (CARD ARO:3000579, NCBI WP_029728367.1, ResFinder blaB-11). Only a subset of the stored fields is shown, long lines are wrapped, and both RBH edges carry the same values. CARD also has a one-way hit to ResFinder (identity 0.976), which is not drawn. This pair is a clean illustration; many edges have lower identity or coverage.
 
 ![Pipeline from the three databases to the released graph](docs/images/figure_pipeline.png)
 

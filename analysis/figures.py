@@ -536,3 +536,110 @@ def release_waterfall(steps, out_dir, name=WATERFALL_NAME):
     style.save_figure(fig, out_dir / name)
     pd.DataFrame(rows).to_csv(out_dir / f"source_data_{name}.csv", index=False)
     return fig
+
+
+GRAPH_EXAMPLE_NAME = "figure_graph_example"
+# the example of the original README hero: one protein in each database (a metallo-beta-lactamase), matched by a reciprocal best hit
+# between CARD and NCBI and a one-way hit from NCBI to ResFinder
+GRAPH_EXAMPLE = ("card:ARO:3000579", "ncbi:WP_029728367.1", "resfinder:blaB-11")
+_FIELD_ORDER = ["database", "id", "alternative_id", "name", "is_a", "PMID", "phenotype", "product"]
+
+
+def graph_example(graph, out_dir, name=GRAPH_EXAMPLE_NAME):
+    """The graph model in one picture: three real nodes with their metadata as JSON, the two directed RBH edges and the one-way edge
+    with theirs. Everything shown is read from the graph; empty fields are left out. Writes the figure and a JSON of the drawn objects."""
+    import json
+    import textwrap
+    from matplotlib.patches import Circle, FancyArrowPatch, FancyBboxPatch
+
+    card, ncbi, resfinder = GRAPH_EXAMPLE
+    edges_wanted = [(card, ncbi), (ncbi, card), (ncbi, resfinder)]
+    if not all(n in graph for n in GRAPH_EXAMPLE) or not all(graph.has_edge(*e) for e in edges_wanted):
+        raise ValueError(f"the graph does not contain the example {GRAPH_EXAMPLE}")
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    def node_object(node_id):
+        attributes = dict(graph.nodes[node_id])
+        attributes["id"] = node_id
+        return {k: attributes[k] for k in _FIELD_ORDER if k in attributes and attributes[k] not in ("", [], {})}
+
+    def edge_object(source, target):
+        data = graph.get_edge_data(source, target)
+        return {"coverage": data["coverage"], "identity": data["identity"], "type": data["type"]}
+
+    nodes = [node_object(n) for n in GRAPH_EXAMPLE]
+    edges = [{"source": s, "target": t, **edge_object(s, t)} for s, t in edges_wanted]
+
+    def json_lines(obj):
+        """json.dumps with indent 2, except that lists of scalars stay on one line (still valid JSON)."""
+        items = list(obj.items())
+        lines = ["{"]
+        for n, (key, value) in enumerate(items):
+            text = json.dumps(value) if isinstance(value, list) else json.dumps(value, indent=2).replace("\n", "\n  ")
+            lines.extend(f'  {json.dumps(key)}: {text}{"," if n < len(items) - 1 else ""}'.split("\n"))
+        return lines + ["}"]
+
+    def wrapped(obj, width):
+        lines = []
+        for line in json_lines(obj):
+            indent = len(line) - len(line.lstrip())
+            lines.extend(l.rstrip() for l in textwrap.wrap(line, width, subsequent_indent=" " * (indent + 4), drop_whitespace=False, break_long_words=True) or [line])
+        return lines
+
+    HEIGHT = 118
+    fig = style.new_figure(180, HEIGHT)
+    ax = style.axes_mm(fig, 0, 0, 180, HEIGHT)
+    ax.set_xlim(0, 180)
+    ax.set_ylim(0, HEIGHT)
+    ax.axis("off")
+    cell, step = 1.4866, 3.1
+
+    extents = []
+
+    def box(lines, x, y_top, colour=None):
+        width = (max(len(l) for l in lines) + 2) * cell
+        height = len(lines) * step + 3
+        if colour:
+            ax.add_patch(FancyBboxPatch((x, y_top - height), width, height, boxstyle="square,pad=0", facecolor=colour, edgecolor="none", alpha=0.22, zorder=0))
+        for i, line in enumerate(lines):
+            ax.text(x + cell, y_top - 1.5 - i * step, line, family="DejaVu Sans Mono", fontsize=7, ha="left", va="top", zorder=2)
+        extents.append((x, y_top - height, x + width, y_top))
+        return width, height
+
+    # Layout (as the original figure): NCBI at the apex with its box to the right, CARD and ResFinder below with their boxes to the right.
+    # The OWH edge is steep so that it passes left of the NCBI box. Both edge labels sit beside their edge, outside the arrows' path,
+    # and a thin line in the database colour joins each circle to its box.
+    dx, dy = 16, 4
+    place = {ncbi: (50 + dx, 97 + dy), card: (5 + dx, 22 + dy), resfinder: (106 + dx, 22 + dy)}
+    for node_id, (x, y) in place.items():
+        ax.add_patch(Circle((x, y), 3.6, facecolor=style.DATABASE_COLOURS[node_id.split(":")[0]], edgecolor="white", linewidth=0.8, zorder=3))
+    for node_id, obj, width, left, top in ((ncbi, nodes[1], 52, 76, 111 + dy), (card, nodes[0], 44, 20, 37 + dy), (resfinder, nodes[2], 31, 114, 37 + dy)):
+        colour = style.DATABASE_COLOURS[node_id.split(":")[0]]
+        x, y = place[node_id]
+        ax.plot([x + 3.6, left + dx], [y, y], color=colour, linewidth=0.6, zorder=1)
+        box(wrapped(obj, width), left + dx, top, colour)
+
+    def arrow(a, b, offset=0.0):
+        (x0, y0), (x1, y1) = place[a], place[b]
+        length = ((x1 - x0) ** 2 + (y1 - y0) ** 2) ** 0.5
+        nx, ny = -(y1 - y0) / length, (x1 - x0) / length
+        ax.add_patch(FancyArrowPatch((x0 + nx * offset, y0 + ny * offset), (x1 + nx * offset, y1 + ny * offset), arrowstyle="-|>", mutation_scale=9,
+                                     shrinkA=9, shrinkB=9, linewidth=1.1, color="black", zorder=1))
+
+    arrow(card, ncbi, 1.6)
+    arrow(ncbi, card, 1.6)
+    arrow(ncbi, resfinder)
+    # both edge labels sit outside the triangle, on the same row (the same bottom edge), 5 mm clear of their edge at the label's lowest point
+    def line_x(a, b, y):
+        (x0, y0), (x1, y1) = place[a], place[b]
+        return x0 + (y - y0) * (x1 - x0) / (y1 - y0)
+
+    label_bottom = 51 + dy
+    rbh, owh = wrapped(edge_object(card, ncbi), 30), wrapped(edge_object(ncbi, resfinder), 30)
+    box(rbh, line_x(card, ncbi, label_bottom) - 5 - (max(len(l) for l in rbh) + 2) * cell, label_bottom + len(rbh) * step + 3)
+    box(owh, line_x(ncbi, resfinder, label_bottom) + 5, label_bottom + len(owh) * step + 3)
+    assert all(x0 >= 0 and y0 >= 0 and x1 <= 180 and y1 <= HEIGHT for x0, y0, x1, y1 in extents), extents
+    style.save_figure(fig, out_dir / name)
+    (out_dir / f"source_data_{name}.json").write_text(json.dumps({"nodes": nodes, "edges": edges}, indent=2) + "\n")
+    return fig
