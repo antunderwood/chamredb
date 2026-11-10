@@ -473,3 +473,66 @@ def pipeline_diagram(manifest, stats, pin, snakefile_text, environment_text, out
     style.save_figure(fig, out_dir / name)
     pd.DataFrame(facts).to_csv(out_dir / f"source_data_{name}.csv", index=False)
     return fig
+
+
+WATERFALL_NAME = "figure_release_waterfall"
+SHORT_LABELS = {"2021 graph": "2021", "MMseqs2 18": "MMseqs2 18", "CARD 4.0.2": "CARD 4.0.2", "NCBI 2026-10-29.1": "NCBI 2026",
+                "ResFinder 2.6.0": "ResFinder 2.6.0"}
+
+
+def release_waterfall(steps, out_dir, name=WATERFALL_NAME):
+    """Waterfalls of nodes and of edges across the accepted data steps (docs/waterfall_steps.json): the start total, for each step the
+    gained (blue) and lost (orange) bars, the end total, and a table of type changes, absent and renamed ids. Writes the figure and a
+    source-data CSV."""
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    transitions = steps["transitions"]
+    labels = [SHORT_LABELS.get(transitions[0]["from"], transitions[0]["from"])] + [SHORT_LABELS.get(t["to"], t["to"]) for t in transitions] + ["2026-11-09"]
+    fig = style.new_figure(180, 110)
+    rows = []
+    for panel, quantity, left, letter in (("nodes", "Nodes", 16, "A"), ("edges", "Edges", 104, "B")):
+        ax = style.axes_mm(fig, left, 56, 70, 48)
+        start = transitions[0][f"{panel}_before"]
+        running = start
+        ax.bar(0, start, width=0.6, color=style.GREY, linewidth=0)
+        ax.text(0, start, f"{start:,}", ha="center", va="bottom", fontsize=7)
+        rows.append({"quantity": quantity, "step": labels[0], "gained": 0, "lost": 0, "total": start})
+        top = start
+        for i, t in enumerate(transitions, 1):
+            gained, lost = t[f"{panel}_gained"], t[f"{panel}_lost"]
+            ax.bar(i - 0.17, gained, bottom=running, width=0.32, color="#0072B2", linewidth=0)
+            ax.bar(i + 0.17, lost, bottom=running + gained - lost, width=0.32, color="#D55E00", linewidth=0)
+            ax.annotate(f"+{gained:,}", xy=(i - 0.17, running + gained), xytext=(0, 2), textcoords="offset points",
+                        ha="center", va="bottom", fontsize=7, rotation=90)
+            ax.annotate(f"-{lost:,}", xy=(i + 0.17, running + gained - lost), xytext=(0, -2), textcoords="offset points",
+                        ha="center", va="top", fontsize=7, rotation=90)
+            running = running + gained - lost
+            assert running == t[f"{panel}_after"]
+            rows.append({"quantity": quantity, "step": labels[i], "gained": gained, "lost": lost, "total": running})
+            top = max(top, running + gained)
+        end = transitions[-1][f"{panel}_after"]
+        ax.bar(len(transitions) + 1, end, width=0.6, color=style.GREY, linewidth=0)
+        ax.text(len(transitions) + 1, end, f"{end:,}", ha="center", va="bottom", fontsize=7)
+        rows.append({"quantity": quantity, "step": labels[-1], "gained": 0, "lost": 0, "total": end})
+        ax.set_xticks(range(len(labels)))
+        ax.set_xticklabels(labels, rotation=40, ha="right", fontsize=7)
+        ax.set_ylim(0, top * 1.3)
+        ax.set_ylabel(quantity)
+        ax.yaxis.set_major_formatter(FuncFormatter(lambda value, _: f"{value:,.0f}"))
+        ax.text(-0.22, 1.04, letter, transform=ax.transAxes, fontsize=8, fontweight="bold", ha="left", va="bottom")
+    table = style.axes_mm(fig, 0, 0, 180, 40)
+    table.set_xlim(0, 180)
+    table.set_ylim(0, 40)
+    table.axis("off")
+    for x, header in zip([8, 60, 95, 125, 150], ["Step", "Edges that changed type", "Ids absent", "Ids renamed", "Absent by database"]):
+        table.text(x, 38, header, fontsize=7, fontweight="bold", ha="left", va="top")
+    for i, t in enumerate(transitions):
+        y = 32 - i * 5.5
+        by_db = ", ".join(f"{DATABASE_LABELS[db]} {n:,}" for db, n in t["ids_absent_by_database"].items()) or "none"
+        for x, text in zip([8, 60, 95, 125, 150], [t["to"], f"{t['edges_type_changed']:,}", f"{t['ids_absent']:,}", f"{t['ids_renamed']:,}", by_db]):
+            table.text(x, y, text, fontsize=7, ha="left", va="top")
+    table.text(8, 8, "Blue: gained, orange: lost, between consecutive data steps (each step changes one thing); source: docs/waterfall_steps.json.",
+               fontsize=7, ha="left", va="top")
+    style.save_figure(fig, out_dir / name)
+    pd.DataFrame(rows).to_csv(out_dir / f"source_data_{name}.csv", index=False)
+    return fig

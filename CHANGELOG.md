@@ -7,6 +7,7 @@ Data refresh and modernisation (spec: GitHub issue #1).
 ### Data
 
 - New graph built from CARD 4.0.2 (sequences and ontology from the same release), NCBI AMRFinderPlus database 4.2 (2026-10-29.1) and ResFinder db 2.6.0 (commit `eecf0aa`) with MMseqs2 18.8cc5c: 15,859 nodes and 51,971 edges (was 11,718 and 33,632, built 2021-10-20).
+- A waterfall of the four steps, with the counts and where each graph came from: [docs/release-2026-11-09.md](docs/release-2026-11-09.md).
 - Each upgrade was reviewed as a diff against the previous step (MMseqs2, then CARD, NCBI, ResFinder); reports are in the pull requests #28 to #31. Summary of the changes seen: all reciprocal best hits unchanged by the MMseqs2 upgrade, 2.4% of one-way hits shifted; CARD +1,491 nodes, 108 names changed, 17 ids absent; NCBI +2,633 nodes, 23 accessions renamed, 29 NCBI and 2 ResFinder ids absent; ResFinder step 29 ResFinder and 13 CARD ids absent, 51 edges changed type.
 - Ids removed by a refresh are not kept as tombstones (ADR 0005); each release lists them in its diff and ID-continuity report.
 

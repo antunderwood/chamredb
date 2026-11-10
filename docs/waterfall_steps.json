@@ -1,0 +1,113 @@
+{
+  "steps": [
+    {
+      "edges": 33632,
+      "graph_sha256": "14e395c34426ab5e3dd1005d05ab8bbded5cd6bd38785541b11199bcba06203d",
+      "label": "2021 graph",
+      "nodes": 11718,
+      "source": "the graph shipped in 0.2.1, commit 359d3fe (chamredb/data/graph.json)"
+    },
+    {
+      "edges": 33632,
+      "graph_sha256": "513be26dfff19e2ecb6ea81f4f966f66702c564d663b460c8d279bb7fa29ab88",
+      "label": "MMseqs2 18",
+      "nodes": 11718,
+      "source": "CI run 42624538261 (mmseqs2-upgrade, since removed): 2021 inputs, MMseqs2 18.8cc5c"
+    },
+    {
+      "edges": 41282,
+      "graph_sha256": "a42fab77b37a1898f895a5d40efab13dc5a5496ee2789bb7cedc27cd68b7b802",
+      "label": "CARD 4.0.2",
+      "nodes": 13193,
+      "source": "CI run 42642062602 (refresh, candidate): CARD 4.0.2, NCBI and ResFinder 2021, MMseqs2 18"
+    },
+    {
+      "edges": 51951,
+      "graph_sha256": "d49e872564824abffff7f3c4cc34a52ddfa1a3d3c7ef1e9e745e69674a3f421f",
+      "label": "NCBI 2026-10-29.1",
+      "nodes": 15801,
+      "source": "CI run 42652988653 (refresh, candidate): CARD 4.0.2, NCBI 2026-10-29.1, ResFinder 2021"
+    },
+    {
+      "edges": 51971,
+      "graph_sha256": "1c7f0f080de1faf854ba5e6247c3bf2a9fced864b17670e87fd0efb0fc32b74e",
+      "label": "ResFinder 2.6.0",
+      "nodes": 15859,
+      "source": "CI run 42666536631 (refresh, candidate): inputs of builder/refresh/inputs_resfinder.json; the release graph"
+    }
+  ],
+  "transitions": [
+    {
+      "edges_after": 33632,
+      "edges_before": 33632,
+      "edges_gained": 802,
+      "edges_lost": 802,
+      "edges_type_changed": 0,
+      "from": "2021 graph",
+      "ids_absent": 0,
+      "ids_absent_by_database": {},
+      "ids_renamed": 0,
+      "nodes_after": 11718,
+      "nodes_before": 11718,
+      "nodes_gained": 0,
+      "nodes_lost": 0,
+      "to": "MMseqs2 18"
+    },
+    {
+      "edges_after": 41282,
+      "edges_before": 33632,
+      "edges_gained": 8762,
+      "edges_lost": 1112,
+      "edges_type_changed": 29,
+      "from": "MMseqs2 18",
+      "ids_absent": 17,
+      "ids_absent_by_database": {
+        "card": 17
+      },
+      "ids_renamed": 108,
+      "nodes_after": 13193,
+      "nodes_before": 11718,
+      "nodes_gained": 1492,
+      "nodes_lost": 17,
+      "to": "CARD 4.0.2"
+    },
+    {
+      "edges_after": 51951,
+      "edges_before": 41282,
+      "edges_gained": 14738,
+      "edges_lost": 4069,
+      "edges_type_changed": 15,
+      "from": "CARD 4.0.2",
+      "ids_absent": 31,
+      "ids_absent_by_database": {
+        "ncbi": 29,
+        "resfinder": 2
+      },
+      "ids_renamed": 23,
+      "nodes_after": 15801,
+      "nodes_before": 13193,
+      "nodes_gained": 2639,
+      "nodes_lost": 31,
+      "to": "NCBI 2026-10-29.1"
+    },
+    {
+      "edges_after": 51971,
+      "edges_before": 51951,
+      "edges_gained": 2876,
+      "edges_lost": 2856,
+      "edges_type_changed": 51,
+      "from": "NCBI 2026-10-29.1",
+      "ids_absent": 42,
+      "ids_absent_by_database": {
+        "card": 13,
+        "resfinder": 29
+      },
+      "ids_renamed": 0,
+      "nodes_after": 15859,
+      "nodes_before": 15801,
+      "nodes_gained": 100,
+      "nodes_lost": 42,
+      "to": "ResFinder 2.6.0"
+    }
+  ]
+}
