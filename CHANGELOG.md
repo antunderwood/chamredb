@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Removed
+
+- `chamredb/build_graph_from_mmseqs_data.py`: a leftover that failed on import (the graph is built by `builder/`).
+
 ## 0.3.0 (2026-11-09)
 
 Data refresh and modernisation (spec: GitHub issue #1).
