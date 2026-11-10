@@ -2,7 +2,7 @@
 
     python -m analysis.run --graph PATH [--out docs]
 
-Writes <out>/statistics.json and <out>/analysis/low_name_similarity{,_without_alleles}.csv. Deterministic: no timestamps,
+Writes <out>/statistics.json, <out>/analysis/low_name_similarity{,_without_alleles}.csv and the figures under <out>/images. Deterministic: no timestamps,
 sorted keys, rows in graph order, so two runs on the same graph give byte-identical files.
 """
 import argparse
@@ -57,7 +57,11 @@ def main(argv=None):
         json.dumps(statistics(graph, result, graph_path.name, sha), sort_keys=True, indent=2) + "\n")
     result["low_name_similarity"].to_csv(out / "analysis" / "low_name_similarity.csv", index=False)
     result["low_name_similarity_without_alleles"].to_csv(out / "analysis" / "low_name_similarity_without_alleles.csv", index=False)
-    print(f"wrote {out}/statistics.json and two tables for {graph.number_of_nodes()} nodes")
+    from analysis import figures  # needs matplotlib (optional extra `analysis`)
+    import matplotlib.pyplot as plt
+    figure = figures.name_similarity_vs_identity(result, statistics(graph, result, graph_path.name, sha), out / "images")
+    plt.close(figure)
+    print(f"wrote {out}/statistics.json, two tables and the figure for {graph.number_of_nodes()} nodes")
 
 
 if __name__ == "__main__":
