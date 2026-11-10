@@ -70,7 +70,11 @@ FILES = ["statistics.json", "analysis/low_name_similarity.csv", "analysis/low_na
 OVERLAP = "figure_overlap_upset"
 HERO = "figure_real_families"
 FILES += [f"images/{OVERLAP}.png", f"images/{OVERLAP}.svg", f"images/source_data_{OVERLAP}_intersections.csv", f"images/source_data_{OVERLAP}_set_sizes.csv"]
-HERO_FILES = [f"images/{HERO}.png", f"images/{HERO}.svg", f"images/source_data_{HERO}_nodes.csv", f"images/source_data_{HERO}_edges.csv"]
+DIST = "figure_name_distributions"
+GALLERY = "figure_name_disagreements"
+FILES += [f"images/{DIST}.png", f"images/{DIST}.svg", f"images/source_data_{DIST}_summary.csv", f"images/source_data_{DIST}_histogram.csv"]
+HERO_FILES = [f"images/{GALLERY}.png", f"images/{GALLERY}.svg", f"images/source_data_{GALLERY}_rows.csv", f"images/source_data_{GALLERY}_eligible.csv",
+              f"images/{HERO}.png", f"images/{HERO}.svg", f"images/source_data_{HERO}_nodes.csv", f"images/source_data_{HERO}_edges.csv"]
 
 
 def test_run_writes_the_three_files_and_is_byte_identical_across_runs(tmp_path):
