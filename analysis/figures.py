@@ -275,3 +275,112 @@ def real_families(graph, out_dir, name=HERO_NAME):
 
 def style_label(database):
     return DATABASE_LABELS[database]
+
+
+DIST_NAME = "figure_name_distributions"
+GALLERY_NAME = "figure_name_disagreements"
+
+
+def name_distributions(result, stats, out_dir, name=DIST_NAME):
+    """Violin plots of the matches with identity at or above the threshold: A and B the name similarity (full names; alleles
+    ignored), C and D the absolute difference from each analysis's own regression prediction. Writes the figure, a summary CSV
+    (n, minimum, 2.5th and 97.5th percentiles, quartiles, median, maximum per panel) and a histogram CSV."""
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    a = stats["analysis"]
+    high, high_free = result["high_identity"], result["high_identity_without_alleles"]
+    panels = [
+        ("A", "full_names", "Name similarity, full names", high["name_similarity"].to_numpy(), "Name similarity"),
+        ("B", "without_alleles", "Name similarity, alleles ignored", high_free["name_similarity_without_alleles"].to_numpy(), "Name similarity"),
+        ("C", "full_names", "Difference from the prediction, full names", high["similarity_difference"].to_numpy(), "|observed - predicted|"),
+        ("D", "without_alleles", "Difference from the prediction, alleles ignored", high_free["similarity_difference"].to_numpy(), "|observed - predicted|"),
+    ]
+    fig = style.new_figure(180, 115)
+    lefts, bottoms = [22, 108], [66, 14]
+    summary_rows, hist_rows = [], []
+    for index, (letter, block, title, values, ylabel) in enumerate(panels):
+        ax = style.axes_mm(fig, lefts[index % 2], bottoms[index // 2], 62, 36)
+        n = len(values)
+        assert n == a[block]["matches_at_or_above_threshold"]
+        parts = ax.violinplot(values, positions=[0], widths=0.9, showextrema=False, showmedians=False)
+        for body in parts["bodies"]:
+            body.set_facecolor(style.GREY)
+            body.set_alpha(0.55)
+            body.set_linewidth(0)
+        percentiles = np.percentile(values, [2.5, 25, 50, 75, 97.5])
+        ax.plot([0, 0], [percentiles[0], percentiles[4]], color="black", linewidth=1.0)
+        ax.plot([-0.12, 0.12], [percentiles[2]] * 2, color=style.FULL, linewidth=1.6)
+        ax.set_xlim(-0.6, 0.6)
+        ax.set_ylim(0, 1)
+        ax.set_xticks([])
+        ax.spines["bottom"].set_visible(False)
+        ax.set_ylabel(ylabel)
+        top = ax.get_xaxis_transform()
+        ax.text(-0.6, 1.06, letter, fontsize=8, fontweight="bold", ha="left", va="bottom", clip_on=False, transform=top)
+        ax.text(-0.5, 1.06, title, fontsize=7, ha="left", va="bottom", clip_on=False, transform=top)
+        notes = [f"n = {n:,}", f"median {percentiles[2]:.2f}"]
+        if letter in "AB":
+            predicted = a[block]["predicted_similarity_at_threshold"]
+            notes.append(f"{a[block]['low_name_similarity_rows'] / n:.1%} below {predicted:.2f}")
+        else:
+            notes.append(f"97.5% within {percentiles[4]:.2f}")
+        ax.text(0.58, 0.97, "\n".join(notes), ha="right", va="top", fontsize=7, clip_on=False)
+        summary_rows.append({"panel": letter, "analysis": block, "quantity": ylabel, "n": n, "min": values.min(),
+                             "p2_5": percentiles[0], "p25": percentiles[1], "median": percentiles[2], "p75": percentiles[3],
+                             "p97_5": percentiles[4], "max": values.max()})
+        counts, edges = np.histogram(values, bins=20, range=(0, 1))
+        assert counts.sum() == n
+        hist_rows.append(pd.DataFrame({"panel": letter, "bin_low": edges[:-1], "bin_high": edges[1:], "matches": counts}))
+    fig.text(6 / 180, 2 / 115, f"Matches with sequence identity of at least {stats['analysis']['identity_threshold']}; "
+             "violin: kernel density over the observed range, black line: 2.5th to 97.5th percentile, orange: median.",
+             ha="left", va="bottom", fontsize=7)
+    style.save_figure(fig, out_dir / name)
+    pd.DataFrame(summary_rows).to_csv(out_dir / f"source_data_{name}_summary.csv", index=False)
+    pd.concat(hist_rows, ignore_index=True).to_csv(out_dir / f"source_data_{name}_histogram.csv", index=False)
+    return fig
+
+
+def name_disagreement_gallery(table, out_dir, name=GALLERY_NAME, per_pair=4):
+    """A table figure of the most striking name disagreements (analysis.families.select_disagreements): identical or
+    near-identical proteins whose names have nothing in common once alleles are ignored. Illustrative, not representative."""
+    from analysis import families
+
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    chosen = families.select_disagreements(table, per_pair=per_pair)
+    everything = families.select_disagreements(table, per_pair=10 ** 9)
+    eligible = len(everything)
+    tied = int((everything["name_similarity_without_alleles"] == 0).sum())
+
+    fig = style.new_figure(180, 95)
+    width, height = fig.get_size_inches() * 25.4
+    columns = [8, 58, 100, 140, 154]       # x in mm: databases, name in the first, name in the second, identity, similarity
+    y = height - 6
+    for x, header in zip(columns, ["Databases", "Name in the first", "Name in the second", "Identity", "Name similarity"]):
+        fig.text(x / width, y / height, header, fontsize=7, fontweight="bold", ha="left", va="top")
+    fig.add_artist(plt_line(8 / width, (y - 5) / height, 176 / width))
+    y -= 7
+    previous = None
+    for r in chosen.itertuples():
+        if r.database_pair != previous:
+            previous = r.database_pair
+        fig.text(columns[0] / width, y / height, f"{DATABASE_LABELS[r.database_a]} and {DATABASE_LABELS[r.database_b]}", fontsize=7, ha="left", va="top")
+        fig.text(columns[1] / width, y / height, r.name_a, fontsize=7, ha="left", va="top", color=style.DATABASE_COLOURS[r.database_a], fontweight="bold")
+        fig.text(columns[2] / width, y / height, r.name_b, fontsize=7, ha="left", va="top", color=style.DATABASE_COLOURS[r.database_b], fontweight="bold")
+        fig.text(columns[3] / width, y / height, f"{r.sequence_identity:.2f}", fontsize=7, ha="left", va="top")
+        fig.text(columns[4] / width, y / height, f"{r.name_similarity_without_alleles:.2f}", fontsize=7, ha="left", va="top")
+        y -= 4.9
+    fig.text(8 / width, 8 / height,
+             f"First {per_pair} for each pair of databases among {eligible:,} best matches with identity of at least {families.MIN_IDENTICAL} and names of at most "
+             f"{families.GALLERY_NAME_LENGTH} characters,\nordered by name similarity (alleles ignored, lowest first) then by name; {tied:,} of them have similarity 0, "
+             "so these examples are illustrative, not representative.\nEvery low name similarity at identity of at least 0.95: docs/analysis/low_name_similarity_without_alleles.csv.",
+             fontsize=7, ha="left", va="bottom")
+    style.save_figure(fig, out_dir / name)
+    chosen.to_csv(out_dir / f"source_data_{name}_rows.csv", index=False)
+    pd.DataFrame([{"eligible_matches": eligible, "with_similarity_0": tied}]).to_csv(out_dir / f"source_data_{name}_eligible.csv", index=False)
+    return fig
+
+
+def plt_line(x0, y, x1):
+    from matplotlib.lines import Line2D
+    return Line2D([x0, x1], [y, y], color="black", linewidth=0.5)

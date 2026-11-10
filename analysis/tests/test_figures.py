@@ -181,3 +181,88 @@ def test_hero_figure_names_identities_size_and_determinism(tmp_path):
     assert "0.48" in texts                                         # the one-way hit identity written on its edge
     for name in sorted(p.name for p in (tmp_path / "a").iterdir()):
         assert (tmp_path / "a" / name).read_bytes() == (tmp_path / "b" / name).read_bytes(), name
+
+
+# ---- distributions and the name disagreement gallery, ticket #40 ----
+
+DIST = "figure_name_distributions"
+GALLERY = "figure_name_disagreements"
+
+
+def test_distribution_summary_equals_the_statistics_and_an_independent_median(tmp_path):
+    import statistics as py_statistics
+    graph = matches.read_graph(BUNDLED)
+    result = matches.assess(graph)
+    stats = run.statistics(graph, result, graph_name="graph.json", graph_sha256="x")
+    figures.name_distributions(result, stats, tmp_path)
+    summary = pd.read_csv(tmp_path / f"source_data_{DIST}_summary.csv").set_index("panel")
+    a = stats["analysis"]
+    assert summary.loc["A", "n"] == summary.loc["C", "n"] == a["full_names"]["matches_at_or_above_threshold"]
+    assert summary.loc["B", "n"] == summary.loc["D", "n"] == a["without_alleles"]["matches_at_or_above_threshold"]
+    high = result["high_identity"]
+    high_free = result["high_identity_without_alleles"]
+    for panel, values in (("A", high["name_similarity"]), ("B", high_free["name_similarity_without_alleles"]),
+                          ("C", high["similarity_difference"]), ("D", high_free["similarity_difference"])):
+        assert summary.loc[panel, "median"] == pytest.approx(py_statistics.median(values.tolist()), abs=1e-12)
+        assert summary.loc[panel, "min"] <= summary.loc[panel, "p2_5"] <= summary.loc[panel, "median"] <= summary.loc[panel, "p97_5"] <= summary.loc[panel, "max"]
+    hist = pd.read_csv(tmp_path / f"source_data_{DIST}_histogram.csv")
+    for panel in "ABCD":
+        assert hist[hist["panel"] == panel]["matches"].sum() == summary.loc[panel, "n"]
+
+
+def test_distribution_figure_numbers_size_and_determinism(tmp_path):
+    graph = matches.read_graph(BUNDLED)
+    result = matches.assess(graph)
+    stats = run.statistics(graph, result, graph_name="graph.json", graph_sha256="x")
+    fig = figures.name_distributions(result, stats, tmp_path / "a")
+    figures.name_distributions(result, stats, tmp_path / "b")
+    assert tuple(round(v * 25.4, 6) for v in fig.get_size_inches()) == (180.0, 115.0)
+    texts = " ".join(t.get_text() for ax in fig.axes for t in ax.texts)
+    a = stats["analysis"]
+    for block in ("full_names", "without_alleles"):
+        n = a[block]["matches_at_or_above_threshold"]
+        share = a[block]["low_name_similarity_rows"] / n
+        assert f"n = {n:,}" in texts
+        assert f"{share:.1%} below {a[block]['predicted_similarity_at_threshold']:.2f}" in texts
+    for name in sorted(p.name for p in (tmp_path / "a").iterdir()):
+        assert (tmp_path / "a" / name).read_bytes() == (tmp_path / "b" / name).read_bytes(), name
+
+
+def test_gallery_rows_numbers_size_and_determinism(tmp_path):
+    from analysis import families
+    graph = matches.read_graph(BUNDLED)
+    table = matches.assess(graph)["distance_ignoring_alleles"]
+    chosen = families.select_disagreements(table, per_pair=4)
+    fig = figures.name_disagreement_gallery(table, tmp_path / "a")
+    figures.name_disagreement_gallery(table, tmp_path / "b")
+    assert tuple(round(v * 25.4, 6) for v in fig.get_size_inches()) == (180.0, 95.0)
+    rows = pd.read_csv(tmp_path / "a" / f"source_data_{GALLERY}_rows.csv")
+    assert rows[["name_a", "name_b"]].values.tolist() == chosen[["name_a", "name_b"]].values.tolist()
+    eligible = pd.read_csv(tmp_path / "a" / f"source_data_{GALLERY}_eligible.csv").iloc[0]
+    everything = families.select_disagreements(table, per_pair=10 ** 9)
+    assert eligible["eligible_matches"] == len(everything)
+    assert eligible["with_similarity_0"] == int((everything["name_similarity_without_alleles"] == 0).sum())
+    texts = " ".join(t.get_text() for t in fig.texts) + " ".join(t.get_text() for ax in fig.axes for t in ax.texts)
+    for name in list(rows["name_a"]) + list(rows["name_b"]):
+        assert name in texts, name
+    assert f"{int(eligible['eligible_matches']):,}" in texts
+    for name in sorted(p.name for p in (tmp_path / "a").iterdir()):
+        assert (tmp_path / "a" / name).read_bytes() == (tmp_path / "b" / name).read_bytes(), name
+
+
+def test_distribution_quantiles_on_a_small_untied_example_worked_out_by_hand(tmp_path):
+    # the real data are so tied that median, p25 and p75 coincide in several panels, so they cannot catch a wrong quantile;
+    # five untied values per panel, with linear-interpolation percentiles worked out by hand:
+    #   [0.1, 0.2, 0.3, 0.4, 0.9]: min 0.1, p2.5 = 0.1 + 0.1 * 0.1 = 0.11, p25 0.2, median 0.3, p75 0.4, p97.5 = 0.4 + 0.9 * 0.5 = 0.85, max 0.9
+    #   [0.05, 0.1, 0.2, 0.4, 0.8]: p2.5 = 0.05 + 0.1 * 0.05 = 0.055, p25 0.1, median 0.2, p75 0.4, p97.5 = 0.4 + 0.9 * 0.4 = 0.76
+    sim = [0.1, 0.2, 0.3, 0.4, 0.9]
+    diff = [0.05, 0.1, 0.2, 0.4, 0.8]
+    result = {"high_identity": pd.DataFrame({"name_similarity": sim, "similarity_difference": diff}),
+              "high_identity_without_alleles": pd.DataFrame({"name_similarity_without_alleles": sim, "similarity_difference": diff})}
+    block = {"matches_at_or_above_threshold": 5, "predicted_similarity_at_threshold": 0.8, "low_name_similarity_rows": 2}
+    stats = {"analysis": {"identity_threshold": 0.95, "full_names": block, "without_alleles": block}}
+    figures.name_distributions(result, stats, tmp_path)
+    summary = pd.read_csv(tmp_path / f"source_data_{DIST}_summary.csv").set_index("panel")
+    for panel, expected in (("A", [0.1, 0.11, 0.2, 0.3, 0.4, 0.85, 0.9]), ("C", [0.05, 0.055, 0.1, 0.2, 0.4, 0.76, 0.8])):
+        got = summary.loc[panel, ["min", "p2_5", "p25", "median", "p75", "p97_5", "max"]].tolist()
+        assert got == pytest.approx(expected, abs=1e-12), panel

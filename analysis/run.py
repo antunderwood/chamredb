@@ -63,20 +63,24 @@ def main(argv=None):
     out = Path(args.out)
     (out / "analysis").mkdir(parents=True, exist_ok=True)
     sha = hashlib.sha256(graph_path.read_bytes()).hexdigest()
-    (out / "statistics.json").write_text(
-        json.dumps(statistics(graph, result, graph_path.name, sha), sort_keys=True, indent=2) + "\n")
+    stats = statistics(graph, result, graph_path.name, sha)
+    (out / "statistics.json").write_text(json.dumps(stats, sort_keys=True, indent=2) + "\n")
     result["low_name_similarity"].to_csv(out / "analysis" / "low_name_similarity.csv", index=False)
     result["low_name_similarity_without_alleles"].to_csv(out / "analysis" / "low_name_similarity_without_alleles.csv", index=False)
-    from analysis import figures  # needs matplotlib (optional extra `analysis`)
+    from analysis import families, figures  # needs matplotlib (optional extra `analysis`)
     import matplotlib.pyplot as plt
-    figure = figures.name_similarity_vs_identity(result, statistics(graph, result, graph_path.name, sha), out / "images")
-    plt.close(figure)
-    plt.close(figures.overlap_upset(group_statistics(graph), out / "images"))
-    from analysis import families
+    images = out / "images"
+    plt.close(figures.name_similarity_vs_identity(result, stats, images))
+    plt.close(figures.name_distributions(result, stats, images))
+    plt.close(figures.overlap_upset(group_statistics(graph), images))
     if len(families.select_families(graph)) == 6:
-        plt.close(figures.real_families(graph, out / "images"))
+        plt.close(figures.real_families(graph, images))
     else:
         print("graph too small for the six real families: hero figure skipped")
+    if len(families.select_disagreements(result["distance_ignoring_alleles"])) == 12:
+        plt.close(figures.name_disagreement_gallery(result["distance_ignoring_alleles"], images))
+    else:
+        print("graph too small for the 12 name disagreements: gallery skipped")
     print(f"wrote {out}/statistics.json, two tables and the figures for {graph.number_of_nodes()} nodes")
 
 

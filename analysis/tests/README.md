@@ -90,3 +90,11 @@ characters. The examples are illustrative, not representative: ties go to the fi
 and decoys (identity 0.95, a family of 7, a pair whose one-way targets differ, an over-long name), and the selection on the release graph read back
 from the graph file without networkx. Mutations (run 2026-11-09): dropping the identity filter and picking the highest instead of the lowest
 agreement both fail the hand-graph test (my first decoy tied with the right pick and did not catch the first; the decoy was changed).
+
+## Distributions and the name disagreement gallery (ticket #40)
+
+`figures.name_distributions` draws four violins (name similarity and the difference from the prediction, full names and alleles ignored, identity at
+least 0.95) with a summary CSV of quantiles and a histogram CSV. The real data are heavily tied (for example the median, p25 and p75 of the differences
+are one number), so a wrong quantile cannot be caught on them; `test_distribution_quantiles_on_a_small_untied_example_worked_out_by_hand` uses five untied
+values with hand-worked percentiles and fails when the median is taken from the 25th percentile (run 2026-11-09). `families.select_disagreements` and
+`figures.name_disagreement_gallery` give the table of 12 striking name disagreements (4 per pair of databases) with the counts that qualify them.

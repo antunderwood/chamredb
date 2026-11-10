@@ -108,3 +108,51 @@ def test_release_graph_selection_is_read_back_from_the_graph_file():
 def test_selection_is_deterministic():
     graph = matches.read_graph(BUNDLED)
     assert families.select_families(graph) == families.select_families(graph)
+
+
+# ---- name disagreement gallery, ticket #40 ----
+
+import pandas as pd
+
+
+def row(source, source_db, source_name, target, target_db, target_name, identity, similarity):
+    return {"source_id": f"{source_db}:{source}", "source_database": source_db, "source_name": source_name,
+            "target_id": f"{target_db}:{target}", "target_database": target_db, "target_name": target_name,
+            "sequence_identity": identity, "name_similarity_without_alleles": similarity}
+
+
+# hand table: per database pair the first `per_pair` rows by (similarity ascending, then names), one row per unordered pair
+TABLE = pd.DataFrame([
+    row("1", "card", "gimA", "1", "ncbi", "mgt", 1.0, 0.0),
+    row("1", "ncbi", "mgt", "1", "card", "gimA", 1.0, 0.0),                # the same pair from the other side: counted once
+    row("2", "card", "cmlA9", "2", "ncbi", "floR2", 1.0, 0.0),
+    row("3", "card", "aadX", "3", "ncbi", "tetY", 0.95, 0.0),              # identity below 0.999: excluded
+    row("4", "card", "a_very_long_gene_name_x", "4", "ncbi", "zzz", 1.0, 0.0),   # name over 16 characters: excluded
+    row("5", "card", "vanA", "5", "ncbi", "vanHAX", 1.0, 0.25),
+    row("6", "card", "imiH", "6", "resfinder", "cphA", 1.0, 0.0),
+    row("7", "ncbi", "catB1", "7", "resfinder", "aadD", 1.0, 0.0),
+])
+
+
+def test_disagreements_are_one_row_per_unordered_pair_per_database_pair_by_agreement_then_names():
+    from analysis import families
+    chosen = families.select_disagreements(TABLE, per_pair=2)
+    assert list(zip(chosen["database_a"], chosen["name_a"], chosen["database_b"], chosen["name_b"])) == [
+        ("card", "cmlA9", "ncbi", "floR2"), ("card", "gimA", "ncbi", "mgt"),   # card-ncbi: similarity 0 first, then by names; vanA row is third
+        ("card", "imiH", "resfinder", "cphA"),
+        ("ncbi", "catB1", "resfinder", "aadD")]
+    assert chosen["database_pair"].tolist() == ["card+ncbi", "card+ncbi", "card+resfinder", "ncbi+resfinder"]
+
+
+def test_disagreement_gallery_on_the_release_graph_is_read_back_from_the_graph_file():
+    from analysis import families
+    graph = matches.read_graph(BUNDLED)
+    chosen = families.select_disagreements(matches.assess(graph)["distance_ignoring_alleles"], per_pair=4)
+    raw = json.loads(BUNDLED.read_text())
+    names = {n["id"]: n["name"] for n in raw["nodes"]}
+    edges = {(e["source"], e["target"]): e for e in raw["links"]}
+    assert len(chosen) == 12 and chosen["database_pair"].value_counts().to_dict() == {"card+ncbi": 4, "card+resfinder": 4, "ncbi+resfinder": 4}
+    for r in chosen.itertuples():
+        assert names[r.id_a] == r.name_a and names[r.id_b] == r.name_b
+        e = edges.get((r.id_a, r.id_b)) or edges[(r.id_b, r.id_a)]
+        assert e["identity"] >= families.MIN_IDENTICAL and max(len(r.name_a), len(r.name_b)) <= families.GALLERY_NAME_LENGTH

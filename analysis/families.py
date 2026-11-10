@@ -110,3 +110,37 @@ def select_families(graph):
                                    "edges": [(card, ncbi), (card, target), (ncbi, target)]})
                     break
     return result
+
+
+GALLERY_NAME_LENGTH = 16
+PAIR_ORDER = ["card+ncbi", "card+resfinder", "ncbi+resfinder"]
+
+
+def select_disagreements(table, per_pair=4, min_identity=MIN_IDENTICAL, max_name_length=GALLERY_NAME_LENGTH):
+    """The most striking name disagreements for the gallery (ticket #40): best matches with identity of at least min_identity
+    and names of at most max_name_length characters, one row per unordered pair of proteins, the first `per_pair` for each
+    pair of databases ordered by allele-free name similarity (lowest first), then by names. `table` is the allele-free table
+    of analysis.matches.assess (columns source_id, source_name, target_id, target_name, sequence_identity and
+    name_similarity_without_alleles). Illustrative, not representative: on the release graph only 20 of the 10,137 eligible
+    matches reach similarity 0, so the first four per pair come from a small tied set."""
+    import pandas as pd
+
+    rows, seen = [], set()
+    for r in table.itertuples():
+        if r.sequence_identity < min_identity or max(len(r.source_name), len(r.target_name)) > max_name_length:
+            continue
+        a, b = sorted([(_rank(r.source_id), r.source_id, r.source_name), (_rank(r.target_id), r.target_id, r.target_name)])
+        if (a[1], b[1]) in seen:
+            continue
+        seen.add((a[1], b[1]))
+        rows.append({"database_pair": f"{_database(a[1])}+{_database(b[1])}", "database_a": _database(a[1]), "name_a": a[2],
+                     "id_a": a[1], "database_b": _database(b[1]), "name_b": b[2], "id_b": b[1],
+                     "sequence_identity": r.sequence_identity,
+                     "name_similarity_without_alleles": r.name_similarity_without_alleles})
+    if not rows:
+        return pd.DataFrame(columns=["database_pair", "database_a", "name_a", "id_a", "database_b", "name_b", "id_b",
+                                     "sequence_identity", "name_similarity_without_alleles"])
+    frame = pd.DataFrame(rows)
+    frame["_order"] = frame["database_pair"].map(PAIR_ORDER.index)
+    frame = frame.sort_values(["_order", "name_similarity_without_alleles", "name_a", "name_b"])
+    return frame.groupby("database_pair", sort=False).head(per_pair).drop(columns="_order").reset_index(drop=True)

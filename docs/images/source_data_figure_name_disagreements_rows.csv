@@ -1,0 +1,13 @@
+database_pair,database_a,name_a,id_a,database_b,name_b,id_b,sequence_identity,name_similarity_without_alleles
+card+ncbi,card,EXO-1,card:ARO:3003564,ncbi,bla2a,ncbi:WP_063842239.1,1.0,0.0
+card+ncbi,card,MSI-OXA,card:ARO:3003719,ncbi,blaOXA-MSI,ncbi:WP_263305326.1,1.0,0.0
+card+ncbi,card,SED-2,card:ARO:3009044,ncbi,cdiA-3,ncbi:WP_338424140.1,1.0,0.0
+card+ncbi,card,cmlA9,card:ARO:3005043,ncbi,floR2,ncbi:WP_000214125.1,1.0,0.0
+card+resfinder,card,ACT-111,card:ARO:3007894,resfinder,blaCMG,resfinder:blaCMG,1.0,0.0
+card+resfinder,card,DHA-21,card:ARO:3002152,resfinder,blaMOR,resfinder:blaMOR,1.0,0.0
+card+resfinder,card,OXA-724,card:ARO:3004837,resfinder,ampH,resfinder:ampH,1.0,0.0
+card+resfinder,card,OXA-725,card:ARO:3008720,resfinder,ampS,resfinder:ampS,1.0,0.0
+ncbi+resfinder,ncbi,blaACT-111,ncbi:WP_069720053.1,resfinder,blaCMG,resfinder:blaCMG,1.0,0.0
+ncbi+resfinder,ncbi,blaDHA-21,ncbi:WP_063860105.1,resfinder,blaMOR,resfinder:blaMOR,1.0,0.0
+ncbi+resfinder,ncbi,blaLAT-3,ncbi:WP_032489027.1,resfinder,blaCMY-2b,resfinder:blaCMY-2b,1.0,0.0
+ncbi+resfinder,ncbi,blaOXA-724,ncbi:WP_077096319.1,resfinder,ampH,resfinder:ampH,1.0,0.0
