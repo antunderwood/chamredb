@@ -1,7 +1,9 @@
 """Fill the numbers and tables of README.md and docs/appendices.md from docs/statistics.json (spec #34, ticket #43).
 
 Numbers sit between `<!-- stat:KEY -->` and `<!-- /stat -->`; tables between `<!-- table:NAME -->` and `<!-- /table -->`.
-    python -m analysis.readme [--stats docs/statistics.json]
+Numbers of the mutation comparison sit between `<!-- vstat:KEY -->` and `<!-- /vstat -->` and come from
+docs/variants/statistics.json (python -m analysis.variants).
+    python -m analysis.readme [--stats docs/statistics.json] [--variant-stats docs/variants/statistics.json]
 """
 import argparse
 import json
@@ -49,7 +51,33 @@ def table(stats, name):
     return "\n".join(rows)
 
 
-def render(text, stats):
+def format_vstat(vs, key):
+    """A number of the mutation comparison, from docs/variants/statistics.json."""
+    so = vs["shared_organisms"]
+    values = {
+        "release": vs["data_release"], "records": f"{vs['records_total']:,}",
+        "ncbi": f"{vs['records']['ncbi']:,}", "card": f"{vs['records']['card']:,}", "pointfinder": f"{vs['records']['pointfinder']:,}",
+        "combinations": f"{vs['combinations']:,}",
+        "groups": f"{vs['organism_groups']['total']:,}", "groups_two": f"{vs['organism_groups']['two_or_more']:,}",
+        "groups_three": f"{vs['organism_groups']['all_three']:,}",
+        "card_tb_share": f"{vs['card_tuberculosis_share']:.0%}",
+        "loci": f"{vs['loci']['total']:,}", "loci_three": f"{vs['loci']['by_databases'].get('3', 0):,}",
+        "single": f"{vs['clusters']['single']:,}", "single_three": f"{vs['clusters']['by_databases'].get('3', 0):,}",
+        "single_one": f"{vs['clusters']['by_databases'].get('1', 0):,}",
+        "self_ncbi": f"{vs['self_check']['ncbi']['mismatch_share']:.1%}", "self_card": f"{vs['self_check']['card']['mismatch_share']:.1%}",
+        "self_pointfinder": f"{vs['self_check']['pointfinder']['mismatch_share']:.1%}",
+        "self_card_n": f"{vs['self_check']['card']['mismatch']:,}",
+        "share_ncbi_card": f"{so['card+ncbi']['share']:.0%}", "share_ncbi_pointfinder": f"{so['ncbi+pointfinder']['share']:.0%}",
+        "share_card_pointfinder": f"{so['card+pointfinder']['share']:.0%}",
+        "offset_pairs": f"{vs['offset_pairs']:,}", "systematic_offsets": f"{vs['systematic_offsets']:,}",
+    }
+    return values[key]
+
+
+def render(text, stats, variant_stats=None):
+    if variant_stats is not None:
+        text = re.sub(r"<!-- vstat:([\w.]+) -->.*?<!-- /vstat -->",
+                      lambda m: f"<!-- vstat:{m.group(1)} -->{format_vstat(variant_stats, m.group(1))}<!-- /vstat -->", text)
     text = re.sub(r"<!-- stat:([\w.]+) -->.*?<!-- /stat -->", lambda m: f"<!-- stat:{m.group(1)} -->{format_stat(stats, m.group(1))}<!-- /stat -->", text)
     return re.sub(r"<!-- table:(\w+) -->\n.*?\n<!-- /table -->", lambda m: f"<!-- table:{m.group(1)} -->\n{table(stats, m.group(1))}\n<!-- /table -->", text, flags=re.S)
 
@@ -57,11 +85,14 @@ def render(text, stats):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--stats", default="docs/statistics.json")
+    parser.add_argument("--variant-stats", default="docs/variants/statistics.json")
     args = parser.parse_args(argv)
     stats = json.loads(Path(args.stats).read_text())
+    vpath = Path(args.variant_stats)
+    variant_stats = json.loads(vpath.read_text()) if vpath.is_file() else None
     for name in ("README.md", "docs/appendices.md"):
         path = Path(name)
-        path.write_text(render(path.read_text(), stats))
+        path.write_text(render(path.read_text(), stats, variant_stats))
 
 
 if __name__ == "__main__":

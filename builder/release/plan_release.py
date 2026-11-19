@@ -27,12 +27,17 @@ def releases_from_manifest(manifest):
             out["ncbi"] = f["release"]
         elif f["database"] == "resfinder":
             out["resfinder"] = _short(f["release"])
+        elif f["database"] == "pointfinder":
+            out["pointfinder"] = _short(f["release"])
     return out
 
 
 def releases_from_inputs(inputs):
-    return {"card": inputs["card"]["release"], "ncbi": inputs["ncbi"]["release"],
-            "resfinder": _short(inputs["resfinder"]["commit"])}
+    out = {"card": inputs["card"]["release"], "ncbi": inputs["ncbi"]["release"],
+           "resfinder": _short(inputs["resfinder"]["commit"])}
+    if inputs.get("pointfinder"):   # mutation comparison
+        out["pointfinder"] = _short(inputs["pointfinder"]["commit"])
+    return out
 
 
 def needs_build(previous_manifest, inputs):
@@ -40,7 +45,8 @@ def needs_build(previous_manifest, inputs):
     if previous_manifest is None:
         return True, ["no previous release"]
     old, new = releases_from_manifest(previous_manifest), releases_from_inputs(inputs)
-    reasons = [f"{db}: {old.get(db)} -> {new[db]}" for db in ("card", "ncbi", "resfinder") if old.get(db) != new[db]]
+    reasons = [f"{db}: {old.get(db)} -> {new[db]}" for db in ("card", "ncbi", "resfinder", "pointfinder")
+               if db in new and old.get(db) != new[db]]
     return bool(reasons), reasons
 
 
@@ -51,8 +57,9 @@ def release_notes(tag, manifest, report):
         "Graph of Source database matches (RBH and one-way hits) built from:", "",
         f"- CARD {r['card']} (data and ontology from the same release)",
         f"- NCBI {r['ncbi']}",
-        f"- ResFinder db commit {r['resfinder']}", "",
-        "Assets: `graph.json`, `data_manifest.json` (URL, release, retrieval date and sha256 per input file), `diff_report.md`, and the three database metadata files (`card`, `ncbi`, `resfinder` `.metadata.json`) that go with the graph.", "",
+        f"- ResFinder db commit {r['resfinder']}"] + ([f"- PointFinder db commit {r['pointfinder']} (mutations only)"] if "pointfinder" in r else []) + ["",
+        "Assets: `graph.json`, `data_manifest.json` (URL, release, retrieval date and sha256 per input file), `diff_report.md`, and the three database metadata files (`card`, `ncbi`, `resfinder` `.metadata.json`) that go with the graph."
+        + (" Mutation comparison: `variants.json`, `variant_matches.tsv`, `variant_comparison.tsv`, `offset_review.tsv` and `mutation_report.md`." if "pointfinder" in r else ""), "",
         "## Changes since the previous release", "", report.strip(), ""])
 
 

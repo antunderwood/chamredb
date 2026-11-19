@@ -1,0 +1,3 @@
+# Reviewed possible_same_mutation_offset pairs. decision: same (treated as one mutation) or different.
+# record ids are those of variants.json; a decision applies in both directions.
+record_a	record_b	decision	reviewer	date	note

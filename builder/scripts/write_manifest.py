@@ -48,6 +48,18 @@ files = [
     entry("resfinder", "nucleotides", "db_fastas/resfinder.nucl.fasta", rf["git_url"], rf["commit"],
           note="concatenation of the per-class *.fsa files at this commit"),
 ]
+# mutation sources, when the inputs list them
+if src["card"].get("variants_member"):
+    files.append(entry("card", "mutations", "mutations/card.json", src["card"]["url"], card_release, card_release=card_release,
+                       note="card.json extracted from the release tarball; sha256 is of the extracted file"))
+if src.get("ncbi_mutations"):
+    nm = src["ncbi_mutations"]
+    for name in sorted(nm["files"]):
+        files.append(entry("ncbi", "mutations", f"mutations/ncbi/{name}", nm["base_url"] + name, nm["release"]))
+if src.get("pointfinder"):
+    pf = src["pointfinder"]
+    files.append(entry("pointfinder", "mutations", "mutations/pointfinder_db.sha256", pf["git_url"], pf["commit"],
+                       note="sha256 of every file of pointfinder_db at this commit; the manifest hash is of that list"))
 manifest = {"files": files}
 validation.check_manifest(manifest, data)
 Path(args.out).write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n")

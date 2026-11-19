@@ -69,3 +69,15 @@ def test_ncbi_directory_is_the_newest_major_directory_that_holds_the_version():
     assert ri.pick_ncbi_dir("2026-10-29.1", listing, lambda d, v: has.get((d, v), False)) == "4.2"
     with pytest.raises(ValueError, match="no database directory"):
         ri.pick_ncbi_dir("2099-01-01.1", listing, lambda d, v: False)
+
+
+def test_new_pointfinder_commit_means_build():
+    """the mutation comparison also reads pointfinder_db; a new commit there is a reason to build."""
+    m = manifest()
+    m["files"].append({"database": "pointfinder", "role": "mutations", "release": "3bd7d5e" + "0" * 33})
+    new = inputs()
+    new["pointfinder"] = {"release": "pointfinder_db commit 1234567", "commit": "1234567" + "0" * 33}
+    build, reasons = pr.needs_build(m, new)
+    assert build and reasons == ["pointfinder: 3bd7d5e -> 1234567"]
+    new["pointfinder"]["commit"] = "3bd7d5e" + "0" * 33
+    assert pr.needs_build(m, new) == (False, [])

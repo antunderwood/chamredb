@@ -1,0 +1,7 @@
+pair,same_mutation,same_mutation_different_reference,possible_same_mutation_offset,same_mutation_only_in_combination,same_position_different_change,different_mutation,same_mutation_related_organism,locus_not_covered,organism_not_covered
+card>ncbi,4,394,34,0,13,100,11,158,2517
+card>pointfinder,27,720,7,16,447,1117,33,495,369
+ncbi>card,4,381,30,14,67,316,43,718,63
+ncbi>pointfinder,130,147,4,109,41,177,31,442,555
+pointfinder>card,22,653,18,9,169,385,10,342,0
+pointfinder>ncbi,130,151,6,0,6,101,0,34,1180

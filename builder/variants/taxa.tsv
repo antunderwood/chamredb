@@ -1,0 +1,111 @@
+# Organism label of each database -> comparison group. Groups are the organisms the tools can call variants for:
+# the AMRFinderPlus --organism labels (taxgroup.tsv), else the PointFinder species folder, else the CARD species.
+# CARD labels are the first two words of the NCBI taxonomy name of the model sequence. group_family is used for
+# same_mutation_related_organism (empty: none). The build stops on a label that is not listed here.
+database	label	group	group_source	group_family	note
+card	Achromobacter insuavis	Achromobacter insuavis	card	Alcaligenaceae	
+card	Acinetobacter	Acinetobacter (genus)	card	Moraxellaceae	
+card	Acinetobacter baumannii	Acinetobacter_baumannii	amrfinderplus	Moraxellaceae	
+card	Bacillus subtilis	Bacillus subtilis	card	Bacillaceae	
+card	Bartonella bacilliformis	Bartonella bacilliformis	card	Bartonellaceae	
+card	Borreliella burgdorferi	Borreliella burgdorferi	card	Borreliaceae	
+card	Brachyspira hyodysenteriae	Brachyspira hyodysenteriae	card	Brachyspiraceae	
+card	Burkholderia dolosa	Burkholderia_cepacia	amrfinderplus	Burkholderiaceae	member of the B. cepacia complex (AMRFinderPlus Burkholderia_cepacia)
+card	Campylobacter jejuni	Campylobacter	amrfinderplus	Campylobacteraceae	
+card	Capnocytophaga gingivalis	Capnocytophaga gingivalis	card	Flavobacteriaceae	
+card	Chlamydia psittaci	Chlamydia psittaci	card	Chlamydiaceae	
+card	Chlamydia trachomatis	Chlamydia trachomatis	card	Chlamydiaceae	
+card	Chlamydomonas reinhardtii	Chlamydomonas reinhardtii	card	Chlamydomonadaceae	
+card	Clostridioides difficile	Clostridioides_difficile	amrfinderplus	Peptostreptococcaceae	
+card	Clostridium acetobutylicum	Clostridium acetobutylicum	card	Clostridiaceae	
+card	Clostridium ljungdahlii	Clostridium ljungdahlii	card	Clostridiaceae	
+card	Cutibacterium acnes	Cutibacterium acnes	card	Propionibacteriaceae	
+card	Enterobacter cloacae	Enterobacter_cloacae	amrfinderplus	Enterobacteriaceae	
+card	Enterococcus faecalis	Enterococcus_faecalis	amrfinderplus	Enterococcaceae	
+card	Enterococcus faecium	Enterococcus_faecium	amrfinderplus	Enterococcaceae	
+card	Erysipelothrix rhusiopathiae	Erysipelothrix rhusiopathiae	card	Erysipelotrichaceae	
+card	Escherichia coli	Escherichia	amrfinderplus	Enterobacteriaceae	
+card	Haemophilus influenzae	Haemophilus_influenzae	amrfinderplus	Pasteurellaceae	
+card	Haemophilus parainfluenzae	Haemophilus parainfluenzae	card	Pasteurellaceae	
+card	Halobacterium salinarum	Halobacterium salinarum	card	Halobacteriaceae	
+card	Helicobacter pylori	Helicobacter_pylori	amrfinderplus	Helicobacteraceae	
+card	Klebsiella aerogenes	Klebsiella aerogenes	card	Enterobacteriaceae	
+card	Klebsiella pneumoniae	Klebsiella_pneumoniae	amrfinderplus	Enterobacteriaceae	
+card	Moraxella catarrhalis	Moraxella catarrhalis	card	Moraxellaceae	
+card	Morganella morganii	Morganella morganii	card	Morganellaceae	
+card	Mycobacterium	Mycobacterium (genus)	card	Mycobacteriaceae	
+card	Mycobacterium avium	Mycobacterium avium	card	Mycobacteriaceae	
+card	Mycobacterium intracellulare	Mycobacterium intracellulare	card	Mycobacteriaceae	
+card	Mycobacterium kansasii	Mycobacterium kansasii	card	Mycobacteriaceae	
+card	Mycobacterium leprae	Mycobacterium leprae	card	Mycobacteriaceae	
+card	Mycobacterium tuberculosis	mycobacterium_tuberculosis	pointfinder	Mycobacteriaceae	
+card	Mycobacteroides abscessus	Mycobacteroides abscessus	card	Mycobacteriaceae	
+card	Mycobacteroides chelonae	Mycobacteroides chelonae	card	Mycobacteriaceae	
+card	Mycolicibacterium smegmatis	Mycolicibacterium smegmatis	card	Mycobacteriaceae	
+card	Mycoplasma gallisepticum	Mycoplasma gallisepticum	card		
+card	Mycoplasma hominis	Mycoplasma hominis	card		
+card	Mycoplasmoides genitalium	Mycoplasmoides genitalium	card	Mycoplasmoidaceae	
+card	Mycoplasmoides pneumoniae	Mycoplasmoides pneumoniae	card	Mycoplasmoidaceae	
+card	Mycoplasmopsis fermentans	Mycoplasmopsis fermentans	card		
+card	Neisseria gonorrhoeae	Neisseria_gonorrhoeae	amrfinderplus	Neisseriaceae	
+card	Neisseria meningitidis	Neisseria_meningitidis	amrfinderplus	Neisseriaceae	
+card	Pasteurella multocida	Pasteurella multocida	card	Pasteurellaceae	
+card	Planobispora rosea	Planobispora rosea	card	Streptosporangiaceae	
+card	Propionibacterium freudenreichii	Propionibacterium freudenreichii	card	Propionibacteriaceae	
+card	Pseudomonas aeruginosa	Pseudomonas_aeruginosa	amrfinderplus	Pseudomonadaceae	
+card	Salmonella enterica	Salmonella	amrfinderplus	Enterobacteriaceae	
+card	Shigella flexneri	Escherichia	amrfinderplus	Enterobacteriaceae	AMRFinderPlus Escherichia covers E. coli and Shigella
+card	Staphylococcus	Staphylococcus (genus)	card	Staphylococcaceae	
+card	Staphylococcus aureus	Staphylococcus_aureus	amrfinderplus	Staphylococcaceae	
+card	Streptococcus oralis	Streptococcus oralis	card	Streptococcaceae	
+card	Streptococcus pneumoniae	Streptococcus_pneumoniae	amrfinderplus	Streptococcaceae	
+card	Streptococcus pyogenes	Streptococcus_pyogenes	amrfinderplus	Streptococcaceae	
+card	Streptomyces ambofaciens	Streptomyces ambofaciens	card	Streptomycetaceae	
+card	Streptomyces cinnamoneus	Streptomyces cinnamoneus	card	Streptomycetaceae	
+card	Streptomyces lincolnensis	Streptomyces lincolnensis	card	Streptomycetaceae	
+card	Thermus thermophilus	Thermus thermophilus	card	Thermaceae	
+card	Treponema pallidum	Treponema pallidum	card	Treponemataceae	
+card	Ureaplasma parvum	Ureaplasma parvum	card	Mycoplasmoidaceae	
+card	Ureaplasma urealyticum	Ureaplasma urealyticum	card	Mycoplasmoidaceae	
+card	Vibrio vulnificus	Vibrio_vulnificus	amrfinderplus	Vibrionaceae	
+ncbi	Escherichia	Escherichia	amrfinderplus	Enterobacteriaceae	
+ncbi	Salmonella	Salmonella	amrfinderplus	Enterobacteriaceae	
+ncbi	Campylobacter	Campylobacter	amrfinderplus	Campylobacteraceae	
+ncbi	Klebsiella_pneumoniae	Klebsiella_pneumoniae	amrfinderplus	Enterobacteriaceae	
+ncbi	Klebsiella_oxytoca	Klebsiella_oxytoca	amrfinderplus	Enterobacteriaceae	
+ncbi	Enterobacter_cloacae	Enterobacter_cloacae	amrfinderplus	Enterobacteriaceae	
+ncbi	Enterobacter_asburiae	Enterobacter_asburiae	amrfinderplus	Enterobacteriaceae	
+ncbi	Citrobacter_freundii	Citrobacter_freundii	amrfinderplus	Enterobacteriaceae	
+ncbi	Serratia_marcescens	Serratia_marcescens	amrfinderplus	Yersiniaceae	
+ncbi	Staphylococcus_aureus	Staphylococcus_aureus	amrfinderplus	Staphylococcaceae	
+ncbi	Staphylococcus_epidermidis	Staphylococcus_epidermidis	amrfinderplus	Staphylococcaceae	
+ncbi	Staphylococcus_pseudintermedius	Staphylococcus_pseudintermedius	amrfinderplus	Staphylococcaceae	
+ncbi	Enterococcus_faecalis	Enterococcus_faecalis	amrfinderplus	Enterococcaceae	
+ncbi	Enterococcus_faecium	Enterococcus_faecium	amrfinderplus	Enterococcaceae	
+ncbi	Neisseria_gonorrhoeae	Neisseria_gonorrhoeae	amrfinderplus	Neisseriaceae	
+ncbi	Neisseria_meningitidis	Neisseria_meningitidis	amrfinderplus	Neisseriaceae	
+ncbi	Helicobacter_pylori	Helicobacter_pylori	amrfinderplus	Helicobacteraceae	
+ncbi	Streptococcus_pneumoniae	Streptococcus_pneumoniae	amrfinderplus	Streptococcaceae	
+ncbi	Streptococcus_pyogenes	Streptococcus_pyogenes	amrfinderplus	Streptococcaceae	
+ncbi	Streptococcus_agalactiae	Streptococcus_agalactiae	amrfinderplus	Streptococcaceae	
+ncbi	Pseudomonas_aeruginosa	Pseudomonas_aeruginosa	amrfinderplus	Pseudomonadaceae	
+ncbi	Clostridioides_difficile	Clostridioides_difficile	amrfinderplus	Peptostreptococcaceae	
+ncbi	Acinetobacter_baumannii	Acinetobacter_baumannii	amrfinderplus	Moraxellaceae	
+ncbi	Haemophilus_influenzae	Haemophilus_influenzae	amrfinderplus	Pasteurellaceae	
+ncbi	Burkholderia_cepacia	Burkholderia_cepacia	amrfinderplus	Burkholderiaceae	
+ncbi	Burkholderia_pseudomallei	Burkholderia_pseudomallei	amrfinderplus	Burkholderiaceae	
+ncbi	Vibrio_cholerae	Vibrio_cholerae	amrfinderplus	Vibrionaceae	
+ncbi	Vibrio_parahaemolyticus	Vibrio_parahaemolyticus	amrfinderplus	Vibrionaceae	
+ncbi	Vibrio_vulnificus	Vibrio_vulnificus	amrfinderplus	Vibrionaceae	
+ncbi	Corynebacterium_diphtheriae	Corynebacterium_diphtheriae	amrfinderplus	Corynebacteriaceae	
+ncbi	Bordetella_pertussis	Bordetella_pertussis	amrfinderplus	Alcaligenaceae	
+pointfinder	campylobacter	Campylobacter	amrfinderplus	Campylobacteraceae	
+pointfinder	enterococcus_faecalis	Enterococcus_faecalis	amrfinderplus	Enterococcaceae	
+pointfinder	enterococcus_faecium	Enterococcus_faecium	amrfinderplus	Enterococcaceae	
+pointfinder	escherichia_coli	Escherichia	amrfinderplus	Enterobacteriaceae	AMRFinderPlus Escherichia covers E. coli and Shigella
+pointfinder	helicobacter_pylori	Helicobacter_pylori	amrfinderplus	Helicobacteraceae	
+pointfinder	klebsiella	Klebsiella_pneumoniae	amrfinderplus	Enterobacteriaceae	PointFinder references are K. pneumoniae; AMRFinderPlus Klebsiella_pneumoniae
+pointfinder	mycobacterium_tuberculosis	mycobacterium_tuberculosis	pointfinder	Mycobacteriaceae	
+pointfinder	neisseria_gonorrhoeae	Neisseria_gonorrhoeae	amrfinderplus	Neisseriaceae	
+pointfinder	salmonella	Salmonella	amrfinderplus	Enterobacteriaceae	
+pointfinder	staphylococcus_aureus	Staphylococcus_aureus	amrfinderplus	Staphylococcaceae	

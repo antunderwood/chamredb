@@ -1,0 +1,45 @@
+# Truth set for the mutation comparison. Checked against the bundled variants.json by
+# chamredb/tests/test_variants.py: for each row, the record found by `query` (in `database`, `taxon`) must have the
+# `expected_class` against `other_database`, and, if given, one matched record whose notation contains `expected_match`.
+# Every match class appears at least once. Rationale gives why the class is expected; "E. coli numbering" is the
+# conventional numbering of the literature. Built against the 2026-11-19 data (CARD 4.0.2, NCBI 2026-10-29.1,
+# pointfinder_db 3bd7d5e); a change of class after a data refresh must be explained, not overwritten.
+database	query	taxon	other_database	expected_class	expected_match	rationale
+ncbi	gyrA_S83L	Escherichia	card	same_mutation_different_reference	S83L	Classic fluoroquinolone mutation; CARD numbers it on another E. coli gyrA sequence
+ncbi	gyrA_S83L	Escherichia	pointfinder	same_mutation_different_reference	gyrA_S83L	As above, PointFinder reference CP073768.1
+ncbi	gyrA_D87N	Escherichia	card	same_mutation_different_reference	D87N	Classic gyrA QRDR mutation
+ncbi	parC_S80I	Escherichia	card	same_mutation_different_reference	S80I	Classic parC QRDR mutation
+ncbi	parC_S80I	Escherichia	pointfinder	same_mutation_only_in_combination	parC_S80I+gyrA_S83	PointFinder lists parC S80I only with a gyrA S83 change (Required mutation)
+ncbi	parC_S80I	Enterococcus faecalis	pointfinder	same_mutation_different_reference	parC_S80I	NCBI writes S80I (conventional numbering) at position 82 of its sequence; the alignment matches it to PointFinder S80I
+ncbi	gyrA_D87N	Salmonella	pointfinder	same_mutation	gyrA_D87N	Same reference sequence in both databases
+pointfinder	rpoB S450L	Mycobacterium tuberculosis	card	same_mutation_different_reference	S450L	M. tuberculosis numbering (S531L in E. coli numbering) in both
+pointfinder	rpoB S450L	Mycobacterium tuberculosis	ncbi	organism_not_covered		AMRFinderPlus has no M. tuberculosis point mutations
+pointfinder	katG S315T	Mycobacterium tuberculosis	card	same_mutation_different_reference	S315T	Main isoniazid resistance mutation
+pointfinder	fabG1 C-15T	Mycobacterium tuberculosis	card	same_mutation_different_reference	-15c>t	inhA promoter c.-15C>T, written as the fabG1 promoter by both
+card	rpsL K43R	Mycobacterium tuberculosis	pointfinder	same_mutation_different_reference	rpsL_K43R	Streptomycin resistance
+pointfinder	23S A2075G	Campylobacter	ncbi	same_mutation	23S_A2075G	C. jejuni numbering (E. coli A2059G); identical 23S reference
+pointfinder	23S A2075G	Campylobacter	card	same_mutation	a2075g	As above, CARD on the same sequence
+ncbi	23S A2074G	Campylobacter	card	same_position_different_change	a2074c	CARD lists A2074C at this position, not A2074G
+ncbi	23S_C2617T	Neisseria gonorrhoeae	pointfinder	same_mutation_different_reference	C2604T	E. coli C2611T; NCBI numbers its 23S natively (2617), PointFinder each 23S copy natively (2603 to 2610)
+ncbi	23S_C2617T	Neisseria gonorrhoeae	card	possible_same_mutation_offset	c2611t	CARD writes E. coli numbering (2611) on its N. gonorrhoeae sequence; its self check fails; offset 6
+ncbi	23S_A2062G	Neisseria gonorrhoeae	card	possible_same_mutation_offset	a2059g	E. coli A2059G written on the N. gonorrhoeae sequence by CARD; offset 3
+ncbi	23S_A2062G	Neisseria gonorrhoeae	pointfinder	different_mutation	A2051G	PointFinder A2051G is E. coli A2058G (its own note), the adjacent base: a different mutation
+ncbi	gyrB_G84S	Staphylococcus aureus	card	possible_same_mutation_offset	G85S	CARD numbers S. aureus gyrB one higher than NCBI on an identical sequence
+ncbi	tufA_R234F	Escherichia	card	possible_same_mutation_offset	R234F	EF-Tu numbering differs (CARD on another reference, offset 15)
+ncbi	rpoB_H481N	Staphylococcus aureus	card	same_mutation_different_reference	H481N	Rifampicin resistance in S. aureus
+ncbi	rpoB_H481N	Staphylococcus aureus	pointfinder	same_mutation_different_reference	rpoB_H481N	As above
+ncbi	mgrB_Q30*	Klebsiella pneumoniae	card	locus_not_covered		mgrB truncation (colistin) is listed as a point mutation only by NCBI
+ncbi	mgrB_Q30*	Klebsiella pneumoniae	pointfinder	locus_not_covered		As above
+pointfinder	gyrA S83L	Klebsiella pneumoniae	card	same_mutation_related_organism	S83L	CARD lists gyrA S83L for E. coli, not for K. pneumoniae
+ncbi	folP_F28I	Salmonella	pointfinder	same_mutation_related_organism	folP_F28I	PointFinder lists folP F28I for E. coli only
+ncbi	penA_A501V	Neisseria gonorrhoeae	card	same_mutation_different_reference	A501V	Cephalosporin resistance (penA, PBP2)
+ncbi	ampC_C-42T	Escherichia	pointfinder	same_mutation_different_reference	ampC_C-42T	ampC promoter; positions are offsets from the gene start
+ncbi	ampC_C-42T	Escherichia	card	locus_not_covered		CARD has no E. coli ampC promoter mutations
+card	S83L,D87N	Escherichia	pointfinder	same_combination	gyrA_D87N+gyrA_S83L	Double gyrA mutant listed as a combination by both
+card	S83L,D87N	Escherichia	ncbi	components_listed_separately		NCBI lists both mutations but no combinations
+card	G452C,R659L	Staphylococcus aureus	pointfinder	partial_combination	R659L	PointFinder pairs fusA R659L with another mutation
+card	S450L,H445C	Mycobacterium tuberculosis	pointfinder	combination_not_listed		PointFinder has no rpoB combinations
+ncbi	fusA_R659L	Staphylococcus aureus	card	same_mutation_only_in_combination	R659L	CARD lists fusA R659L only together with G452C
+ncbi	16S_C1191T	Neisseria gonorrhoeae	pointfinder	same_mutation_different_reference	C1192T	NCBI stores this 16S antisense but numbers the rRNA itself; read on the sense strand it is the PointFinder site
+ncbi	16S_C1191T	Neisseria gonorrhoeae	card	same_mutation_different_reference	c1198t	As above; CARD numbers its longer 16S natively (1198)
+ncbi	23S_C658T	Clostridioides difficile	card	possible_same_mutation_offset	c656t	NCBI stores this 23S antisense; read on the sense strand it is 3 from the CARD change, and neither fits its sequence: review
