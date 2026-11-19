@@ -31,6 +31,9 @@ def main(data, inputs=None):
     with tarfile.open(tmp / "card.tar.bz2") as tar:
         member = tar.getmember(m["card"]["member"])
         (data / "protein_fasta_protein_homolog_model.fasta").write_bytes(tar.extractfile(member).read())
+        if m["card"].get("variants_member"):   # card.json, for the mutation comparison
+            (data / "mutations").mkdir(parents=True, exist_ok=True)
+            (data / "mutations" / "card.json").write_bytes(tar.extractfile(tar.getmember(m["card"]["variants_member"])).read())
     o = m["ontology"]
     get(o["url"], o["sha256"], tmp / "ontology.tar.bz2")
     with tarfile.open(tmp / "ontology.tar.bz2") as tar:
@@ -62,6 +65,31 @@ def main(data, inputs=None):
         ids = lambda paths: {line[1:].split()[0] for p in paths for line in open(p) if line.startswith(">")}
         if ids([all_fsa]) != ids(per_class):
             sys.exit("resfinder all.fsa does not match the union of the per-class files")
+
+    fetch_mutation_inputs(data, m, tmp)
+
+
+def fetch_mutation_inputs(data, m, tmp):
+    """NCBI point-mutation files and pointfinder_db, when the inputs file lists them."""
+    nm = m.get("ncbi_mutations")
+    if nm:
+        for name, sha in nm["files"].items():
+            get(nm["base_url"] + name, sha, data / "mutations" / "ncbi" / name)
+    pf = m.get("pointfinder")
+    if pf:
+        repo = tmp / "pointfinder_db"
+        subprocess.run(["git", "clone", "-q", pf["git_url"], str(repo)], check=True)
+        subprocess.run(["git", "-C", str(repo), "checkout", "-q", pf["commit"]], check=True)
+        dest = data / "mutations" / "pointfinder_db"
+        lines = []
+        for f in sorted(p for p in repo.rglob("*") if p.is_file() and ".git" not in p.relative_to(repo).parts):
+            rel = f.relative_to(repo)
+            (dest / rel).parent.mkdir(parents=True, exist_ok=True)
+            content = f.read_bytes()
+            (dest / rel).write_bytes(content)
+            lines.append(f"{hashlib.sha256(content).hexdigest()}  {rel.as_posix()}\n")
+        (data / "mutations" / "pointfinder_db.sha256").write_text("".join(lines))
+
 
 if __name__ == "__main__":
     main(Path(sys.argv[1]), sys.argv[2] if len(sys.argv) > 2 else None)

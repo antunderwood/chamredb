@@ -1,0 +1,21 @@
+# Gene labels that name the same locus. Compared case-insensitively after this mapping; loci are also
+# joined when their reference sequences are near-identical (see mutation_compare.match_loci), so only names whose
+# sequences are not compared (rRNA copies, promoters) need a row here.
+label	locus_gene
+16S	16S rRNA
+16S-rrsB	16S rRNA
+16S-rrsC	16S rRNA
+16S-rrsD	16S rRNA
+16S-rrsH	16S rRNA
+16S-rRNA	16S rRNA
+16S_rrsB	16S rRNA
+16S_rrsC	16S rRNA
+16S_rrsD	16S rRNA
+16rrsA	16S rRNA
+rrs	16S rRNA
+23S	23S rRNA
+23S-rRNA-a1	23S rRNA
+23S-rRNA-a2	23S rRNA
+23S-rRNA-a3	23S rRNA
+23S-rRNA-a4	23S rRNA
+rrl	23S rRNA

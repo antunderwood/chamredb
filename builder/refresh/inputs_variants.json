@@ -1,0 +1,71 @@
+{
+  "purpose": "Inputs of the 2026-11-09 graph release (as inputs_resfinder.json) plus the mutation sources of card.json from the same CARD tarball, the NCBI point-mutation files from the same dated directory, and pointfinder_db.",
+  "card": {
+    "release": "4.0.2",
+    "url": "https://card.mcmaster.ca/download/0/broadstreet-v4.0.2.tar.bz2",
+    "sha256": "94b89501fc26daafbe65e4151c17a8b007dc1272c4f8201737e44e44cdd4c065",
+    "member": "./protein_fasta_protein_homolog_model.fasta",
+    "variants_member": "./card.json"
+  },
+  "ncbi": {
+    "release": "AMRFinderPlus database 4.2, 2026-10-29.1",
+    "base_url": "https://ftp.ncbi.nlm.nih.gov/pathogen/Antimicrobial_resistance/AMRFinderPlus/database/4.2/2026-10-29.1/",
+    "files": {
+      "ReferenceGeneCatalog.txt": "396ccc7b02ad9e56219abed6da513648b5f08259878ab3f8fdc3a6558ad55592",
+      "AMRProt.fa": "c60040cddf242e012601cc50beb295bcb4e721d290b8d9fe9e1992034902319f",
+      "AMR_CDS.fa": "12edc653f90c83bf4bb636c0b65a12f58d93eeb8413f44e1fb32eec164e448bb"
+    }
+  },
+  "resfinder": {
+    "release": "resfinder_db 2.6.0, commit eecf0aa (2026-01-26)",
+    "git_url": "https://bitbucket.org/genomicepidemiology/resfinder_db",
+    "commit": "eecf0aa207594fe6d51badf808473de62b28cb06"
+  },
+  "ontology": {
+    "release": "4.0.2",
+    "url": "https://card.mcmaster.ca/download/5/ontology-v4.0.2.tar.bz2",
+    "sha256": "b6c48b73d80dbe58eb9aefec9bf133b1c552a3993d363fd104aa161d45b294e2",
+    "member": "./aro.obo",
+    "member_sha256": "d12ec5d36c55f371079c392492b034d115adb256f8d2ff4a84041c6202f4a1c4",
+    "note": "contains 1,402 valueless property_value lines, removed before parsing (builder/scripts/functions/obo_cleaning.py)"
+  },
+  "ncbi_mutations": {
+    "release": "AMRFinderPlus database 4.2, 2026-10-29.1",
+    "base_url": "https://ftp.ncbi.nlm.nih.gov/pathogen/Antimicrobial_resistance/AMRFinderPlus/database/4.2/2026-10-29.1/",
+    "files": {
+      "AMRProt-mutation.tsv": "d883ca3d9189200ddab5f7e8831ddc075c41bd0e735bdc4c446a80caf1f12a50",
+      "taxgroup.tsv": "e44282d5b30a3fb2adf618a27a0ffda163b1b5b2041b406eb35363249cb1c172",
+      "AMR_DNA-Acinetobacter_baumannii.fa": "472054eff1fb825a82f59c1b7ec5648eba113553cfc80d0e82547ec1ca07d8c2",
+      "AMR_DNA-Acinetobacter_baumannii.tsv": "99da88bc4e031f61dab5c5bcb17152b93f42c905f9c4f23a6072161276ddd00b",
+      "AMR_DNA-Bordetella_pertussis.fa": "57a1fc5c7734c33901daad4040a13825913149acaefaf82fb7ddf1139383598b",
+      "AMR_DNA-Bordetella_pertussis.tsv": "597ab237cd2ff52f79400f54d5506ee789353c9767fc0aaeb09447e9f076a4f2",
+      "AMR_DNA-Campylobacter.fa": "8fd355ba1ddc39184066d70fbf8419a2582da924c84e89d03144b0e815177134",
+      "AMR_DNA-Campylobacter.tsv": "ce6187e3292489d168b7e235c5c061f01fe22c6f9a8e91e5e744ad434f5a855b",
+      "AMR_DNA-Clostridioides_difficile.fa": "ac00fd727c0c32bc001b4c527508142fa7af1a4ac6f5e37bd1ebd87866d474ce",
+      "AMR_DNA-Clostridioides_difficile.tsv": "bf53151f2190dc2ea406abeb7e025247cf2cc8c5c787beab478d195a29f80d96",
+      "AMR_DNA-Enterococcus_faecalis.fa": "0916658691fdc453fdbe38ed90b0eccdfbfc99905c4fb3dd7843a2eede1d2aa8",
+      "AMR_DNA-Enterococcus_faecalis.tsv": "d10c34918f451fbca0fbed7dd0994446a21de71fa5cff585292e5dfa71a209a7",
+      "AMR_DNA-Enterococcus_faecium.fa": "a0121244330f4f61059357906e56ea3558696d006b0a3283598e7ce7f18f2f4b",
+      "AMR_DNA-Enterococcus_faecium.tsv": "5dfab0b2b8e721eb212ee1736021522bbe826170c31c2b573f5d3b1a3d807b91",
+      "AMR_DNA-Escherichia.fa": "920f32496f36cd35e5feffd95d878c17cbe3408fe2290528ee4b1d37befc45eb",
+      "AMR_DNA-Escherichia.tsv": "495c2c35bb396d7538d7562774f5029c69ee1940269435fbc91b8d7fe25f9fae",
+      "AMR_DNA-Klebsiella_oxytoca.fa": "78d81787e0ee2497d604e274b4f28b411e1e400d77274a055562e8227016d28b",
+      "AMR_DNA-Klebsiella_oxytoca.tsv": "b826f7209f75f6d02b2f46255b1d16ffd69cb1234155717e707241d24873b6fd",
+      "AMR_DNA-Klebsiella_pneumoniae.fa": "77ca0529b89781827cfb1077695b5dce0bb5da17b5e035c4ae33a014eb4bf340",
+      "AMR_DNA-Klebsiella_pneumoniae.tsv": "58050e41d93dc5879c946f33156153c0c5d6e49af9ae81091d01b6b824ab83a2",
+      "AMR_DNA-Neisseria_gonorrhoeae.fa": "dae318bd32754b9f591b44cc2e0f57c2b79cfbecce97862faf15220f950ccd1d",
+      "AMR_DNA-Neisseria_gonorrhoeae.tsv": "01b9e782881bb74b3c75993912f065c9c314e513aa9627f7729f7bf663012b3d",
+      "AMR_DNA-Salmonella.fa": "3bd08a2660c4de9128f1919297f9ebc4ebe156b3a98001ac86ad7e82c0c8ae44",
+      "AMR_DNA-Salmonella.tsv": "1be3f4d162297cdcd393014294e016ecb5e673bfe653b0ca7e40a646da0ea67d",
+      "AMR_DNA-Staphylococcus_aureus.fa": "31edbcd4dddfd83e7d713fa9da314054c957954fa1b6485ee537a096ffcbc3b6",
+      "AMR_DNA-Staphylococcus_aureus.tsv": "a4ba2b39aec5ba63fb531a8807fba866840f40f618c40ed5906e10efa38c445a",
+      "AMR_DNA-Streptococcus_pneumoniae.fa": "c83c78e212f21fb7867a35a26010cb34f40c0a062a51a411354f76450403f610",
+      "AMR_DNA-Streptococcus_pneumoniae.tsv": "0be2f4f2dbb661a1bdc95a62133af2445fd270ab790c92a5196378eb69277cdf"
+    }
+  },
+  "pointfinder": {
+    "release": "pointfinder_db 4.2.0, commit 3bd7d5e (2026-11-11)",
+    "git_url": "https://bitbucket.org/genomicepidemiology/pointfinder_db",
+    "commit": "3bd7d5ef2dbea88e7d40e19126dc587f5abb8e4b"
+  }
+}

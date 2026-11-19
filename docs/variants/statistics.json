@@ -1,0 +1,154 @@
+{
+  "card_tuberculosis_share": 0.694043321299639,
+  "clusters": {
+    "by_databases": {
+      "1": 4065,
+      "2": 1020,
+      "3": 98
+    },
+    "single": 5183
+  },
+  "combinations": 461,
+  "data_release": "2026-11-19",
+  "loci": {
+    "by_databases": {
+      "1": 314,
+      "2": 141,
+      "3": 31
+    },
+    "total": 486
+  },
+  "offset_pairs": 66,
+  "organism_groups": {
+    "all_three": 9,
+    "total": 76,
+    "two_or_more": 20
+  },
+  "organism_groups_by_database": {
+    "card": 64,
+    "ncbi": 31,
+    "pointfinder": 10
+  },
+  "pairs": {
+    "card>ncbi": {
+      "different_mutation": 100,
+      "locus_not_covered": 158,
+      "organism_not_covered": 2517,
+      "possible_same_mutation_offset": 34,
+      "same_mutation": 4,
+      "same_mutation_different_reference": 394,
+      "same_mutation_related_organism": 11,
+      "same_position_different_change": 13
+    },
+    "card>pointfinder": {
+      "different_mutation": 1117,
+      "locus_not_covered": 495,
+      "organism_not_covered": 369,
+      "possible_same_mutation_offset": 7,
+      "same_mutation": 27,
+      "same_mutation_different_reference": 720,
+      "same_mutation_only_in_combination": 16,
+      "same_mutation_related_organism": 33,
+      "same_position_different_change": 447
+    },
+    "ncbi>card": {
+      "different_mutation": 316,
+      "locus_not_covered": 718,
+      "organism_not_covered": 63,
+      "possible_same_mutation_offset": 30,
+      "same_mutation": 4,
+      "same_mutation_different_reference": 381,
+      "same_mutation_only_in_combination": 14,
+      "same_mutation_related_organism": 43,
+      "same_position_different_change": 67
+    },
+    "ncbi>pointfinder": {
+      "different_mutation": 177,
+      "locus_not_covered": 442,
+      "organism_not_covered": 555,
+      "possible_same_mutation_offset": 4,
+      "same_mutation": 130,
+      "same_mutation_different_reference": 147,
+      "same_mutation_only_in_combination": 109,
+      "same_mutation_related_organism": 31,
+      "same_position_different_change": 41
+    },
+    "pointfinder>card": {
+      "different_mutation": 385,
+      "locus_not_covered": 342,
+      "possible_same_mutation_offset": 18,
+      "same_mutation": 22,
+      "same_mutation_different_reference": 653,
+      "same_mutation_only_in_combination": 9,
+      "same_mutation_related_organism": 10,
+      "same_position_different_change": 169
+    },
+    "pointfinder>ncbi": {
+      "different_mutation": 101,
+      "locus_not_covered": 34,
+      "organism_not_covered": 1180,
+      "possible_same_mutation_offset": 6,
+      "same_mutation": 130,
+      "same_mutation_different_reference": 151,
+      "same_position_different_change": 6
+    }
+  },
+  "records": {
+    "card": 3324,
+    "ncbi": 1636,
+    "pointfinder": 1976
+  },
+  "records_total": 6936,
+  "rows_excluded": {
+    "card": 4,
+    "ncbi": 1,
+    "pointfinder": 52
+  },
+  "rows_read": {
+    "card": 3328,
+    "ncbi": 1637,
+    "pointfinder": 1338
+  },
+  "self_check": {
+    "card": {
+      "mismatch": 227,
+      "mismatch_share": 0.06751933372992266,
+      "ok": 3135,
+      "unchecked": 64
+    },
+    "ncbi": {
+      "mismatch": 3,
+      "mismatch_share": 0.0018337408312958435,
+      "ok": 1633,
+      "unchecked": 0
+    },
+    "pointfinder": {
+      "mismatch": 15,
+      "mismatch_share": 0.0064571674558760225,
+      "ok": 2308,
+      "unchecked": 80
+    }
+  },
+  "shared_organisms": {
+    "card+ncbi": {
+      "listed_by_both": 382,
+      "mutations": 1859,
+      "organism_groups": 19,
+      "share": 0.20548682087143624
+    },
+    "card+pointfinder": {
+      "listed_by_both": 663,
+      "mutations": 3706,
+      "organism_groups": 10,
+      "share": 0.17889908256880735
+    },
+    "ncbi+pointfinder": {
+      "listed_by_both": 269,
+      "mutations": 1194,
+      "organism_groups": 9,
+      "share": 0.22529313232830822
+    }
+  },
+  "single_mutations": 6475,
+  "systematic_offsets": 5
+}

@@ -14,6 +14,7 @@ Previously known as Project ![mAMRite](docs/images/mAMRite_small.png)
 [Thanh Le Viet](https://gitlab.com/thanhleviet)  
 [Trestan Pillonel](https://gitlab.com/tpillone)  
 [Varun Shamanna](https://gitlab.com/varunshamanna4)  
+[Finlay Maguire](https://github.com/fmaguire)
 
 ## Introduction
 
@@ -185,3 +186,75 @@ chamredb query -j docs/data/hamronize_summary.json -o docs/data/hamronize_summar
 ```
 
 This will produce a [TSV file](/docs/data/hamronize_summary.tsv) containing the matches and associated metadata with one row per id in the text file
+
+## Comparing resistance mutations
+
+Some resistance comes from mutations in genes every isolate carries (gyrA, rpoB, 23S rRNA, promoters) rather than from acquired genes. CARD lists these in its variant models, NCBI in the AMRFinderPlus point-mutation files, and ResFinder in [PointFinder](https://bitbucket.org/genomicepidemiology/pointfinder_db). `chamredb variants` compares the three.
+
+Data release <!-- vstat:release -->2026-11-19<!-- /vstat --> has <!-- vstat:records -->6,936<!-- /vstat --> mutations: CARD <!-- vstat:card -->3,324<!-- /vstat -->, NCBI <!-- vstat:ncbi -->1,636<!-- /vstat --> and PointFinder <!-- vstat:pointfinder -->1,976<!-- /vstat -->, <!-- vstat:combinations -->461<!-- /vstat --> of them combinations of mutations, in <!-- vstat:groups -->76<!-- /vstat --> organism groups. It was built from the CARD and NCBI releases of the graph above and pointfinder_db commit `3bd7d5e` (inputs in [docs/variants/data_manifest.json](docs/variants/data_manifest.json)).
+
+### Method
+
+Organisms are grouped by the organisms the tools can call mutations for: the AMRFinderPlus `--organism` labels (for example `Escherichia`, which covers *E. coli* and *Shigella*, and `Klebsiella_pneumoniae`), then the PointFinder species (`mycobacterium_tuberculosis`), then the CARD species for organisms neither tool covers. The mapping is in [builder/variants/taxa.tsv](builder/variants/taxa.tsv).
+
+Within an organism group, references from different databases are the same locus when their gene names agree or their sequences are near-identical (identity and coverage of at least 0.9). Each locus has one anchor sequence, CARD's if CARD has the gene, else NCBI's, else PointFinder's. Each database's positions are converted to the anchor by a global alignment of its reference sequence to the anchor, and positions are reported in the anchor's numbering. Records keep the database's own notation too. Promoter positions are offsets from the gene start in all three databases and are compared directly.
+
+The original residue each database gives is checked against its own reference sequence. It disagrees for <!-- vstat:self_ncbi -->0.2%<!-- /vstat --> of NCBI's mutations, <!-- vstat:self_pointfinder -->0.6%<!-- /vstat --> of PointFinder's and <!-- vstat:self_card -->6.8%<!-- /vstat --> of CARD's (<!-- vstat:self_card_n -->227<!-- /vstat --> residues). Most of the CARD mismatches are positions in another numbering, often *E. coli* numbering; they are listed in the [mutation report](docs/variants/mutation_report.md).
+
+Each mutation is compared with each other database and given one class:
+
+| Class | Meaning |
+| --- | --- |
+| `same_mutation` | same change, same position, same reference sequence |
+| `same_mutation_different_reference` | same change on different reference sequences that agree once aligned |
+| `possible_same_mutation_offset` | same change up to 10 positions away where a reference check fails or the database positions agree; probably a numbering difference, left for review |
+| `same_mutation_only_in_combination` | the other database lists it only together with other mutations (PointFinder lists *E. coli* parC S80I only with a gyrA S83 change) |
+| `same_position_different_change` | a different change at the same position |
+| `different_mutation` | the other database has mutations in the gene but not this one (the nearest is reported) |
+| `same_mutation_related_organism` | listed by the other database only for an organism of the same family |
+| `locus_not_covered` / `organism_not_covered` | the other database has no mutations in this gene for this organism, or none for the organism |
+
+Combinations are compared as sets: `same_combination`, `partial_combination`, `components_listed_separately` or `combination_not_listed`.
+
+### Results
+
+![Mutations of each organism by the databases that list them](docs/images/figure_variant_coverage.png)
+
+<!-- vstat:groups_two -->20<!-- /vstat --> of the <!-- vstat:groups -->76<!-- /vstat --> organism groups have mutations in more than one database and <!-- vstat:groups_three -->9<!-- /vstat --> in all three. <!-- vstat:card_tb_share -->69%<!-- /vstat --> of CARD's mutations are in *M. tuberculosis*, which AMRFinderPlus does not cover. Of the <!-- vstat:single -->5,183<!-- /vstat --> distinct single mutations, <!-- vstat:single_three -->98<!-- /vstat --> are in all three databases and <!-- vstat:single_one -->4,065<!-- /vstat --> in one only. In the organisms both databases cover, <!-- vstat:share_ncbi_card -->21%<!-- /vstat --> of the mutations are listed by both CARD and NCBI, <!-- vstat:share_card_pointfinder -->18%<!-- /vstat --> by both CARD and PointFinder, and <!-- vstat:share_ncbi_pointfinder -->23%<!-- /vstat --> by both NCBI and PointFinder.
+
+![Match classes of each database's mutations against each other database](docs/images/figure_variant_classes.png)
+
+The figure leaves out mutations of organisms the other database does not cover. Most matches need the conversion between reference sequences, because the databases seldom share one. <!-- vstat:offset_pairs -->66<!-- /vstat --> pairs of mutations may be the same mutation numbered differently, and at <!-- vstat:systematic_offsets -->5<!-- /vstat --> genes the same shift occurs three or more times (CARD numbers *S. aureus* gyrB one higher than NCBI on an identical sequence). They are in [docs/variants/offset_review.tsv](docs/variants/offset_review.tsv). The [mutation report](docs/variants/mutation_report.md) has the excluded rows, the reference checks and all class counts, and [docs/variants/variant_comparison.tsv](docs/variants/variant_comparison.tsv) has one row per mutation with a status for each database.
+
+### Querying mutations
+
+```
+usage: chamredb variants
+  [-d {card,ncbi,pointfinder}] [-t TAXON] [--variants VARIANTS]
+  (-i ID | -l LOCUS | -f ID_FILE | -j HAMRONIZATION_JSON_FILE)
+  [-o OUTFILE_PATH]
+```
+
+Mutations can be given as the database writes them or in HGVS-like form: `gyrA_S83L`, `"gyrA p.Ser83Leu"`, `"23S A2059G"`, `"fabG1 c.-15C>T"`. Mutations joined by commas are looked up as a combination. `-t` selects the organism (`-t Escherichia`, `-t "Mycobacterium tuberculosis"`).
+
+```
+chamredb variants -d ncbi -i gyrA_S83L -t Escherichia
+```
+
+prints the mutation in anchor numbering (`p.Ser83Leu` on CARD AAC75291.1) and how CARD and PointFinder list it.
+
+```
+chamredb variants -l Escherichia:gyrA
+```
+
+prints all mutations of a locus, one column per database. `-f` (one mutation per line, with `-d`) and `-j` (the mutation rows of AMRFinderPlus, RGI and PointFinder in a hAMRonization summary) write a TSV with one row per mutation, the status and notation in each database, and a `data_release` column.
+
+### Limitations
+
+- This compares the database catalogues; it does not say whether a mutation causes resistance in a given isolate.
+- PointFinder's rows for any premature stop codon in a gene (*M. tuberculosis* katG, ethA, pncA, gidB) have no position and are left out, so CARD's nonsense mutations in those genes are reported as not listed by PointFinder.
+- A mutation written for any residue (CARD `S315Var`) matches the specific changes at that position but is counted as its own mutation.
+- Some rRNA genes are stored as the reverse complement of the rRNA (four NCBI references, twelve CARD ones). The stored strand is detected from conserved rRNA stretches, anchor positions are always on the sense strand, and positions are read along the sense strand unless the stated residues fit the antisense strand at three more sites (only NCBI *S. pneumoniae* 23S); see the table in the [report](docs/variants/mutation_report.md). With one or two mutations per reference this choice rests on little evidence, so NCBI *Salmonella* 16S and *C. difficile* 23S, whose residues fit only the stored antisense strand, are read on the sense strand and left for review.
+- A numbering offset is only suspected when a reference check fails, so a shifted position that happens to land on the same residue is reported as a different mutation (CARD *S. aureus* gyrB S128L against NCBI S127L).
+- PointFinder's `klebsiella` folder is treated as `Klebsiella_pneumoniae`. CARD knockout models and PointFinder *Plasmodium falciparum* are left out.
+- Drug classes are compared at a coarse level ([builder/variants/drug_classes.tsv](builder/variants/drug_classes.tsv)).

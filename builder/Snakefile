@@ -10,6 +10,9 @@ shell.executable("bash")
 DATA       = 'data'
 # optional JSON of protein count bounds per database: snakemake --config bounds=path/to/bounds.json
 BOUNDS     = ('--bounds ' + config['bounds']) if config.get('bounds') else ''
+# mutation comparison: data manifest and release label recorded in variants.json
+MANIFEST   = ('--manifest ' + config['manifest']) if config.get('manifest') else ''
+RELEASE    = ('--release ' + config['release']) if config.get('release') else ''
 
 rule all:
 	input:
@@ -196,4 +199,30 @@ rule mmseqs_convertalis:
 	shell:
 		"""
 		mmseqs convertalis {input.db1} {input.db2} {params.stem} {output}
+		"""
+
+# Mutation comparison. Inputs are laid out by builder/reproduce_2021/fetch_inputs.py from the pinned inputs
+# (card.json from the CARD tarball, the NCBI point-mutation files, pointfinder_db at a commit); the tables in
+# variants/ (taxa, drug classes, gene aliases, reviewed equivalences) are maintained by hand. Fails if an invariant fails.
+rule compare_mutations:
+	input:
+		card   = join(DATA, 'mutations', 'card.json'),
+		ncbi   = join(DATA, 'mutations', 'ncbi', 'AMRProt-mutation.tsv'),
+		prot   = join(DATA, 'db_fastas', 'ncbi.protein.raw.fasta'),
+		pf     = join(DATA, 'mutations', 'pointfinder_db.sha256'),
+		tables = expand(join('variants', '{t}.tsv'), t=['taxa', 'drug_classes', 'gene_aliases', 'reviewed_equivalences'])
+	params:
+		ncbi_dir = join(DATA, 'mutations', 'ncbi'),
+		pf_dir   = join(DATA, 'mutations', 'pointfinder_db'),
+		out      = join(DATA, 'variants')
+	output:
+		join(DATA, 'variants', 'variants.json'),
+		join(DATA, 'variants', 'variant_matches.tsv'),
+		join(DATA, 'variants', 'variant_comparison.tsv'),
+		join(DATA, 'variants', 'offset_review.tsv'),
+		join(DATA, 'variants', 'mutation_report.md')
+	shell:
+		"""
+		python scripts/compare_mutations.py --card {input.card} --ncbi {params.ncbi_dir} --ncbi-proteins {input.prot} \
+			--pointfinder {params.pf_dir} --tables variants --out {params.out} {MANIFEST} {RELEASE}
 		"""

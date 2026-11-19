@@ -17,6 +17,13 @@ import urllib.request
 CARD = "https://card.mcmaster.ca"
 NCBI = "https://ftp.ncbi.nlm.nih.gov/pathogen/Antimicrobial_resistance/AMRFinderPlus/database"
 RESFINDER = "https://bitbucket.org/genomicepidemiology/resfinder_db"
+POINTFINDER = "https://bitbucket.org/genomicepidemiology/pointfinder_db"
+
+
+def ncbi_mutation_files(listing_html):
+    """Point-mutation files of an AMRFinderPlus database directory."""
+    names = re.findall(r'href="(AMRProt-mutation\.tsv|taxgroup\.tsv|AMR_DNA-[A-Za-z_]+\.(?:fa|tsv))"', listing_html)
+    return sorted(set(names))
 
 
 def parse_card_version(card_json_bytes):
@@ -74,14 +81,19 @@ def resolve():
     ncbi_dir = pick_ncbi_dir(ncbi_version, listing, exists)
     base = f"{NCBI}/{ncbi_dir}/{ncbi_version}/"
     files = {n: _sha(_get(base + n)) for n in ("ReferenceGeneCatalog.txt", "AMRProt.fa", "AMR_CDS.fa")}
+    mutation_files = {n: _sha(_get(base + n)) for n in ncbi_mutation_files(_get(base).decode())}
 
     head = subprocess.run(["git", "ls-remote", RESFINDER, "HEAD"], check=True, capture_output=True, text=True).stdout.split()[0]
+    pf_head = subprocess.run(["git", "ls-remote", POINTFINDER, "HEAD"], check=True, capture_output=True, text=True).stdout.split()[0]
     return {
         "purpose": "Current upstream releases resolved by builder/release/resolve_inputs.py",
-        "card": {"release": version, "url": data_url, "sha256": _sha(data), "member": "./protein_fasta_protein_homolog_model.fasta"},
+        "card": {"release": version, "url": data_url, "sha256": _sha(data), "member": "./protein_fasta_protein_homolog_model.fasta",
+                 "variants_member": "./card.json"},
         "ontology": {"release": version, "url": ont_url, "sha256": _sha(ontology), "member": "./aro.obo", "member_sha256": _sha(obo)},
         "ncbi": {"release": f"AMRFinderPlus database {ncbi_dir}, {ncbi_version}", "base_url": base, "files": files},
         "resfinder": {"release": f"resfinder_db commit {head[:7]}", "git_url": RESFINDER, "commit": head},
+        "ncbi_mutations": {"release": f"AMRFinderPlus database {ncbi_dir}, {ncbi_version}", "base_url": base, "files": mutation_files},
+        "pointfinder": {"release": f"pointfinder_db commit {pf_head[:7]}", "git_url": POINTFINDER, "commit": pf_head},
     }
 
 

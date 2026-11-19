@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Rebuild the graph from the archived 2021 inputs and compare it with the shipped graph (ADR 0003 step 1).
 # Usage: run_reproduction.sh <workdir>  -> <workdir>/graph.json, data_manifest.json, report.md, invariants.txt, timings.txt, versions.txt
+# and, when the inputs list the mutation sources, variants.json, variant_*.tsv, offset_review.tsv, mutation_report.md
 # REPORT_ONLY=1 writes an informational diff report (for tool upgrades) instead of the pass/fail comparison.
 # Run in builder/environment-mmseqs13.yml (MMseqs2 13.45111, Linux amd64) to reproduce the 2021 graph; any other
 # environment (REPORT_ONLY=1) gives a diff report and network.
@@ -11,7 +12,7 @@ shipped=$(cd "$builder/../chamredb/data" && pwd)/graph.json
 work=${1:?usage: run_reproduction.sh <workdir>}
 case "$work" in ""|/|.|..|~) echo "refusing to use $work as workdir" >&2; exit 2;; esac
 rm -rf "$work"; mkdir -p "$work"
-cp "$builder/Snakefile" "$work/"; cp -r "$builder/scripts" "$work/scripts"
+cp "$builder/Snakefile" "$work/"; cp -r "$builder/scripts" "$work/scripts"; cp -r "$builder/variants" "$work/variants"
 cd "$work"
 export MMSEQS_NUM_THREADS=1   # one thread keeps MMseqs2 output order deterministic
 t0=$(date +%s)
@@ -27,7 +28,12 @@ for a in card ncbi resfinder; do
     targets="$targets data/mmseqs2_results/${a}_vs_${b}.rbh.tsv data/mmseqs2_results/${a}_vs_${b}.search.tsv"
   done
 done
-snakemake $targets --cores 1 --rerun-triggers mtime --config bounds="$here/bounds.json" --quiet rules
+# mutation comparison when the inputs list its sources
+variants=$(python -c 'import json,sys; print("yes" if json.load(open(sys.argv[1])).get("pointfinder") else "")' "$inputs")
+if [ -n "$variants" ]; then targets="$targets data/variants/variants.json"; fi
+snakemake $targets --cores 1 --rerun-triggers mtime --config bounds="$here/bounds.json" manifest="$work/data_manifest.json" \
+  release="${RELEASE_LABEL:-$(date -u +%Y-%m-%d)}" --quiet rules
+if [ -n "$variants" ]; then cp data/variants/* .; fi
 t2=$(date +%s)
 python scripts/build_graph.py > build_graph.log
 t3=$(date +%s)
@@ -51,6 +57,7 @@ v = graph_invariants.check_graph(json.load(open("graph.json")))
 print("graph invariants (predicates 1 to 3):", "hold" if not v else {k: len(x) for k, x in v.items()})
 sys.exit(1 if v else 0)
 PY
+if [ -n "$variants" ]; then echo "mutation invariants: hold (checked by compare_mutations.py)" >> invariants.txt; fi
 cat invariants.txt
 if [ -n "${REPORT_ONLY:-}" ]; then
   python scripts/diff_graphs.py "$shipped" graph.json --out report.md

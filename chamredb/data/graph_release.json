@@ -19,5 +19,12 @@
       "file": "db_metadata/resfinder.metadata.json",
       "sha256": "94fb7fa59cd5c8a1a077f8e302ae3f22bab9e487ee646ebe498e03307d64aa7c"
     }
+  },
+  "variants": {
+    "file": "variants.json",
+    "sha256": "966a3d8f4220a0074ec71f519f20e840610fc55eebd9161243a417833b1a7236",
+    "data_release": "2026-11-19",
+    "records": 6936,
+    "note": "Mutation comparison built by builder/scripts/compare_mutations.py from builder/refresh/inputs_variants.json: the CARD 4.0.2 and NCBI 2026-10-29.1 inputs of the bundled graph plus pointfinder_db commit 3bd7d5e; inputs and sha256 in docs/variants/data_manifest.json."
   }
 }

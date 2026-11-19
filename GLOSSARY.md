@@ -21,3 +21,10 @@ Agents and humans use these words with exactly these meanings. Resolve ambiguity
 | Edge | Directed match between nodes, with type, coverage and identity | |
 | Graph | The networkx DiGraph of all nodes and edges, shipped as `chamredb/data/graph.json` | |
 | Snapshot | The retrieved upstream release of each database that a graph was built from | Package version |
+| Mutation | A resistance change in a gene or promoter of an organism (substitution, insertion, deletion, nonsense, frameshift, promoter or rRNA change); a combination is several mutations listed together | Acquired gene |
+| Organism group | An AMRFinderPlus organism, else a PointFinder species, else a CARD species (`builder/variants/taxa.tsv`) | Taxon of a node |
+| Locus | One gene (or promoter, or rRNA) of one organism group: the references of all databases for it | Node |
+| Anchor | The reference sequence of a locus whose numbering is reported: CARD's, else NCBI's, else PointFinder's | Reference of a database |
+| Lift-over | Moving a position onto the anchor by global alignment of the two reference sequences | |
+| Self check | The original residue a database states, compared with its own reference sequence | Anchor check |
+| Match class | How a mutation of one database relates to another database (`same_mutation`, `same_mutation_different_reference`, `possible_same_mutation_offset`, ...) | Edge type |

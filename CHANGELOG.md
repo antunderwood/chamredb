@@ -4,6 +4,11 @@
 
 ### Added
 
+- `chamredb variants`: compares resistance mutations between CARD (protein variant, rRNA variant and overexpression models), NCBI (AMRFinderPlus point mutations) and PointFinder. Organisms are grouped by AMRFinderPlus organism, else PointFinder species, else CARD species. Positions are given in the numbering of each gene's anchor sequence (CARD, else NCBI, else PointFinder). rRNA references stored as the reverse complement are detected, and rRNA positions are given on the sense strand. Options `-i`, `-l`, `-f` and `-j`.
+- `chamredb/data/variants.json` (6,936 mutations), pinned in `graph_release.json`; report, comparison table and offset review list in `docs/variants/`.
+- `builder/scripts/compare_mutations.py` and the Snakemake rule `compare_mutations` build the mutation tables from pinned inputs (`builder/refresh/inputs_variants.json`). The monthly release builds and publishes them, with a diff report (`builder/scripts/diff_variants.py`).
+- `builder/variants/`: organism groups, drug classes, gene aliases and reviewed equivalences.
+- README section "Comparing resistance mutations" (`python -m analysis.variants`).
 - `.github/workflows/publish.yml`: builds, checks and smoke-tests the wheel and uploads to PyPI by trusted publishing when a `vX.Y.Z` tag is pushed (approval of the `pypi` environment required).
 
 ### Removed

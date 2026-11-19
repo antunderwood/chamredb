@@ -1,0 +1,104 @@
+# Drug class terms of each database -> one shared class, used only to compare phenotypes of matched mutations.
+# Classes are coarse on purpose: beta-lactam subclasses are one class; polymyxins and lipopeptides are 'peptide' because
+# CARD's 'peptide antibiotic' covers both; sulfonamides, trimethoprim and para-aminosalicylic acid are 'folate pathway'.
+# Empty class = the term names no drug class (MULTIDRUG, EFFLUX, Unspecified). The build fails on a term not listed.
+database	term	class
+card	aminocoumarin antibiotic	aminocoumarin
+card	aminoglycoside antibiotic	aminoglycoside
+card	antibacterial free fatty acids	free fatty acid
+card	antibiotic without defined classification	
+card	carbapenem	beta-lactam
+card	cephalosporin	beta-lactam
+card	cycloserine-like antibiotic	cycloserine
+card	diaminopyrimidine antibiotic	folate pathway
+card	diarylquinoline antibiotic	diarylquinoline
+card	disinfecting agents and antiseptics	antiseptic
+card	elfamycin antibiotic	elfamycin
+card	fluoroquinolone antibiotic	quinolone
+card	fusidane antibiotic	fusidic acid
+card	glycopeptide antibiotic	glycopeptide
+card	glycylcycline	tetracycline
+card	isoniazid-like antibiotic	isoniazid
+card	lincosamide antibiotic	lincosamide
+card	macrolide antibiotic	macrolide
+card	monobactam	beta-lactam
+card	mupirocin-like antibiotic	mupirocin
+card	nitrofuran antibiotic	nitrofuran
+card	nitroimidazole antibiotic	nitroimidazole
+card	nonribosomal peptide antibiotics	nonribosomal peptide
+card	nucleoside antibiotic	nucleoside
+card	nybomycin-like antibiotic	nybomycin
+card	oxazolidinone antibiotic	oxazolidinone
+card	pactamycin-like antibiotic	pactamycin
+card	penicillin beta-lactam	beta-lactam
+card	peptide antibiotic	peptide
+card	phenicol antibiotic	phenicol
+card	phosphonic acid antibiotic	phosphonic acid
+card	pleuromutilin antibiotic	pleuromutilin
+card	polyamine antibiotic	polyamine
+card	pyrazine antibiotic	pyrazinamide
+card	rifamycin antibiotic	rifamycin
+card	salicylic acid antibiotic	folate pathway
+card	streptogramin antibiotic	streptogramin
+card	sulfonamide antibiotic	folate pathway
+card	sulfone antibiotic	folate pathway
+card	tetracycline antibiotic	tetracycline
+card	thioamide antibiotic	thioamide
+card	thiosemicarbazone antibiotic	thiosemicarbazone
+card	zoliflodacin-like antibiotic	spiropyrimidinetrione
+ncbi	AMINOCOUMARIN	aminocoumarin
+ncbi	AMINOGLYCOSIDE	aminoglycoside
+ncbi	AZABICYCLOALKANE	azabicycloalkane
+ncbi	BETA-LACTAM	beta-lactam
+ncbi	COLISTIN	peptide
+ncbi	EDEINE	edeine
+ncbi	EFFLUX	
+ncbi	FOSFOMYCIN	phosphonic acid
+ncbi	FOSMIDOMYCIN	phosphonic acid
+ncbi	FUSIDIC_ACID	fusidic acid
+ncbi	GLYCOPEPTIDE	glycopeptide
+ncbi	ISONIAZID	isoniazid
+ncbi	LINCOSAMIDE	lincosamide
+ncbi	LIPOPEPTIDE	peptide
+ncbi	MACROLIDE	macrolide
+ncbi	MULTIDRUG	
+ncbi	MUPIROCIN	mupirocin
+ncbi	NITROFURAN	nitrofuran
+ncbi	NITROIMIDAZOLE	nitroimidazole
+ncbi	OXAZOLIDINONE	oxazolidinone
+ncbi	PHENICOL	phenicol
+ncbi	PLEUROMUTILIN	pleuromutilin
+ncbi	POLYKETIDE	polyketide
+ncbi	QUINOLONE	quinolone
+ncbi	RIFAMPIN	rifamycin
+ncbi	RIFAMYCIN	rifamycin
+ncbi	SPIROPYRIMIDINETRIONE	spiropyrimidinetrione
+ncbi	STREPTOGRAMIN	streptogramin
+ncbi	SULFONAMIDE	folate pathway
+ncbi	TETRACYCLINE	tetracycline
+ncbi	TRICLOSAN	antiseptic
+ncbi	TRIMETHOPRIM	folate pathway
+ncbi	TRIMETHOPRIM-SULFAMETHOXAZOLE	folate pathway
+pointfinder	Aminoglycoside	aminoglycoside
+pointfinder	Amphenicol	phenicol
+pointfinder	Analog of d-alanine	cycloserine
+pointfinder	Beta-lactam	beta-lactam
+pointfinder	Carbapenem	beta-lactam
+pointfinder	Diarylquinoline	diarylquinoline
+pointfinder	Folate pathway antagonist	folate pathway
+pointfinder	Iminophenazine	iminophenazine
+pointfinder	Isonicotinic acid hydrazide	isoniazid
+pointfinder	Macrolide	macrolide
+pointfinder	Oxazolidinone	oxazolidinone
+pointfinder	Polymyxin	peptide
+pointfinder	Pseudomonic acid	mupirocin
+pointfinder	Quinolone	quinolone
+pointfinder	Rifampicin	rifamycin
+pointfinder	Rifamycin	rifamycin
+pointfinder	Salicylic acid - anti-folate	folate pathway
+pointfinder	Steroid antibacterial	fusidic acid
+pointfinder	Streptogramin A	streptogramin
+pointfinder	Synthetic derivative of nicotinamide	pyrazinamide
+pointfinder	Tetracycline	tetracycline
+pointfinder	Thioamide	thioamide
+pointfinder	Unspecified	
